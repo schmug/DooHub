@@ -1,0 +1,19 @@
+# Triangle Weekend Events — crontab snippet (NOT installed automatically).
+#
+# Install with:  crontab -e   then paste the line below (edit the path).
+# Verify with:   crontab -l
+#
+# Runs Saturday 05:30 local so the page is fresh for the weekend. Output and
+# errors are appended to run.log in the repo (gitignored). Use an absolute path
+# to run.sh; cron does not expand ~ the way your shell does.
+
+30 5 * * 6  /Users/cory/DooHub/run.sh >> /Users/cory/DooHub/run.log 2>&1
+
+# Field reference:  min hour day-of-month month day-of-week  command
+#                    30   5      *          *       6  (Sat)
+#
+# Tips:
+# - macOS: grant cron/your terminal "Full Disk Access" if file writes fail.
+# - Make sure `claude`, `node`, `npm`, and `git` are on PATH inside run.sh
+#   (run.sh prepends /usr/local/bin and /opt/homebrew/bin for you).
+# - Test the job once by hand first:  /Users/cory/DooHub/run.sh

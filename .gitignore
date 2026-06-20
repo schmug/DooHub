@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+site/node_modules/
+
+# Build output (Cloudflare Pages serves this; regenerated each run).
+# events.ics + the copied JSON live here but are produced by `npm run build`,
+# so we don't track the whole dir. If you'd rather version the built ics,
+# un-ignore public/events.ics below.
+public/
+
+# Vite / TS caches
+site/dist/
+*.tsbuildinfo
+
+# Secrets — never commit. (Backstopped by global settings, but don't stage them.)
+.env
+.env.*
+.dev.vars
+.wrangler/
+
+# Logs + transient run artifacts
+run.log
+*.log
+data/last_run_summary.txt
+
+# OS cruft
+.DS_Store

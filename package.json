@@ -1,0 +1,25 @@
+{
+  "name": "triangle-weekend-pipeline",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Weekly headless Claude Code job that discovers Triangle-metro events, dedups/enriches them, publishes a Cloudflare Pages site, and emits a subscribable events.ics.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "validate": "tsx scripts/validate.ts",
+    "validate:links": "tsx scripts/validate.ts --check-links",
+    "build:ics": "tsx scripts/build_ics.ts",
+    "build:data": "tsx scripts/publish_data.ts",
+    "build:site": "npm --prefix site run build",
+    "build": "npm run validate && npm run build:site && npm run build:data && npm run build:ics",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test scripts/*.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

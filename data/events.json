@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "generated_at": null,
+  "week": null,
+  "origin": {
+    "name": "Downtown Raleigh, NC",
+    "lat": 35.7796,
+    "lon": -78.6382
+  },
+  "events": []
+}
