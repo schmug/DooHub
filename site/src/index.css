@@ -191,12 +191,16 @@ button {
 .toolbar-row + .toolbar-row {
   margin-top: 10px;
 }
+/* Chip filters collapse behind the "Filters" toggle on every viewport. */
 .toolbar-filters {
+  display: none;
   margin-top: 10px;
 }
-/* Mobile-only "Filters" toggle; hidden on desktop where the panel is always open. */
+.toolbar-filters.open {
+  display: block;
+}
 .filters-toggle {
-  display: none;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
@@ -725,14 +729,7 @@ table.events td .nm {
   .toolbar {
     position: static;
   }
-  .filters-toggle {
-    display: inline-flex;
-  }
-  .toolbar-filters {
-    display: none;
-  }
   .toolbar-filters.open {
-    display: block;
     max-height: 62vh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
