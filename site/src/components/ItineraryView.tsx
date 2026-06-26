@@ -10,36 +10,30 @@ interface Props {
 function StopRow({ stop }: { stop: ItineraryStop }) {
   return (
     <div className="sched-stop">
-      <span className="t">{stop.time}</span>
-      <span className="what">
-        {stop.title}
-        {stop.price ? <span style={{ color: "var(--ink-3)" }}> · {stop.price}</span> : null}
-        {stop.location ? (
-          <>
-            <br />
-            <span className="loc">{stop.location}</span>
-          </>
-        ) : null}
-        {stop.notes ? (
-          <>
-            <br />
-            <span className="loc">{stop.notes}</span>
-          </>
-        ) : null}
-      </span>
+      <div className="stop-inner">
+        <span className="t">{stop.time}</span>
+        <div>
+          <div className="title">
+            {stop.title}
+            {stop.price ? <span className="muted"> · {stop.price}</span> : null}
+          </div>
+          {stop.location ? <div className="loc">{stop.location}</div> : null}
+          {stop.notes ? <div className="loc">{stop.notes}</div> : null}
+        </div>
+      </div>
     </div>
   );
 }
 
-function Block({ title, stops }: { title: string; stops: ItineraryStop[] }) {
+function Block({ label, stops }: { label: string; stops: ItineraryStop[] }) {
   if (!stops.length) return null;
   return (
-    <div className="sched-block">
-      <div className="sched-title">{title}</div>
+    <>
+      <div className="block-label">{label}</div>
       {stops.map((s, i) => (
         <StopRow key={i} stop={s} />
       ))}
-    </div>
+    </>
   );
 }
 
@@ -47,7 +41,7 @@ function ItineraryCard({ itin, eventsById }: { itin: Itinerary; eventsById: Map<
   const included = itin.event_ids.map((id) => eventsById.get(id)).filter((e): e is TriangleEvent => Boolean(e));
 
   return (
-    <article className="itin-card">
+    <article className="itin-card cat-green">
       <div className="itin-top">
         <div className="theme">{itin.theme}</div>
         <h3>{itin.title}</h3>
@@ -68,16 +62,18 @@ function ItineraryCard({ itin, eventsById }: { itin: Itinerary; eventsById: Map<
       <div className="itin-body">
         <p className="overview">{itin.overview}</p>
 
-        <Block title="Morning" stops={itin.schedule.morning} />
-        <Block title="Afternoon" stops={itin.schedule.afternoon} />
-        <Block title="Evening" stops={itin.schedule.evening} />
+        <div className="timeline">
+          <Block label="Morning" stops={itin.schedule.morning} />
+          <Block label="Afternoon" stops={itin.schedule.afternoon} />
+          <Block label="Evening" stops={itin.schedule.evening} />
+        </div>
 
         {itin.food.length > 0 && (
-          <div>
-            <div className="sched-title">Food</div>
+          <div className="itin-section">
+            <div className="sec-label">Food</div>
             {itin.food.map((m, i) => (
               <p className="food-row" key={i}>
-                <b style={{ textTransform: "capitalize" }}>{m.slot}:</b> {m.place}
+                <b>{m.slot}:</b> {m.place}
                 {m.city ? ` (${m.city})` : ""}
                 {m.vegan_dish ? (
                   <>
@@ -91,7 +87,7 @@ function ItineraryCard({ itin, eventsById }: { itin: Itinerary; eventsById: Map<
                     <span className="veg-dish">🥗 {m.vegetarian_dish}</span>
                   </>
                 ) : null}
-                {m.price ? <span style={{ color: "var(--ink-3)" }}> · {m.price}</span> : null}
+                {m.price ? <span style={{ color: "var(--mono-muted)" }}> · {m.price}</span> : null}
                 {m.notes ? (
                   <>
                     <br />
@@ -104,8 +100,8 @@ function ItineraryCard({ itin, eventsById }: { itin: Itinerary; eventsById: Map<
         )}
 
         {itin.alternatives.length > 0 && (
-          <div>
-            <div className="sched-title">Weather backup</div>
+          <div className="itin-section">
+            <div className="sec-label">Weather backup</div>
             {itin.alternatives.map((a, i) => (
               <p className="alt-note" key={i}>
                 <b>{a.leg}</b> — ☀️ {a.good_weather} &nbsp;·&nbsp; 🌧️ {a.rain}
@@ -115,8 +111,8 @@ function ItineraryCard({ itin, eventsById }: { itin: Itinerary; eventsById: Map<
         )}
 
         {itin.practical_notes.length > 0 && (
-          <div>
-            <div className="sched-title">Practical notes</div>
+          <div className="itin-section">
+            <div className="sec-label">Practical notes</div>
             <ul className="notes-list">
               {itin.practical_notes.map((n, i) => (
                 <li key={i}>{n}</li>
@@ -125,7 +121,7 @@ function ItineraryCard({ itin, eventsById }: { itin: Itinerary; eventsById: Map<
           </div>
         )}
 
-        <div className="actions" style={{ display: "flex", gap: 8 }}>
+        <div className="actions">
           <button
             className="btn btn-primary"
             disabled={included.length === 0}
@@ -146,6 +142,9 @@ export default function ItineraryView({ itineraries, events }: Props) {
     return (
       <div className="container section-pad">
         <div className="empty">
+          <div className="empty-mark" aria-hidden>
+            △
+          </div>
           <h3>No itineraries yet</h3>
           <p>Curated outings are generated alongside the weekly events run.</p>
         </div>

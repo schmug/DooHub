@@ -57,6 +57,19 @@ export function formatDayShort(iso: string): string {
   }).format(new Date(iso));
 }
 
+/** "SAT" — upper-case 3-letter NY-local weekday, for the departure-board look. */
+export function formatWeekdayShort(iso: string): string {
+  return new Intl.DateTimeFormat("en-US", { timeZone: TZ, weekday: "short" })
+    .format(new Date(iso))
+    .toUpperCase();
+}
+
+/** "18:00" — 24-hour NY-local clock, departure-board style. */
+export function formatClock24(iso: string): string {
+  const p = nyTimeParts(iso);
+  return `${String(p.hour24).padStart(2, "0")}:${String(p.minute).padStart(2, "0")}`;
+}
+
 function fmtClock(p: TimeParts): string {
   return p.minute === 0 ? `${p.hour12}` : `${p.hour12}:${String(p.minute).padStart(2, "0")}`;
 }
@@ -104,6 +117,53 @@ export function categoryIcon(category: string): string {
   return CATEGORY_ICONS[category] ?? "📍";
 }
 
+/**
+ * "Soft Transit" colour families. Every category maps to one of five pastel
+ * palettes; the chosen family drives the card tint, the 5px left "category
+ * line", badges, and map markers so the colour reads consistently across views.
+ */
+export type CategoryFamily = "green" | "purple" | "clay" | "blue" | "rose";
+
+const CATEGORY_FAMILY: Record<string, CategoryFamily> = {
+  museums: "green",
+  galleries: "green",
+  parks: "green",
+  trails: "green",
+  "historic sites": "green",
+  tours: "green",
+  "family/kids": "green",
+  concerts: "purple",
+  nightlife: "purple",
+  comedy: "purple",
+  markets: "clay",
+  "breweries/tastings": "clay",
+  shopping: "clay",
+  "food events": "clay",
+  festivals: "clay",
+  sports: "blue",
+  classes: "blue",
+  theater: "rose",
+  trivia: "rose",
+};
+
+/** The colour family for a category (defaults to the calm green palette). */
+export function categoryFamily(category: string): CategoryFamily {
+  return CATEGORY_FAMILY[category] ?? "green";
+}
+
+const FAMILY_ACCENT: Record<CategoryFamily, string> = {
+  green: "#3f8568",
+  purple: "#6f5aa6",
+  clay: "#b07b45",
+  blue: "#4a7aa6",
+  rose: "#b05f7a",
+};
+
+/** Solid accent hex for a category — for inline use (e.g. Leaflet markers). */
+export function categoryColor(category: string): string {
+  return FAMILY_ACCENT[categoryFamily(category)];
+}
+
 export function budgetColorVar(budget: Budget): string {
   switch (budget) {
     case "$":
@@ -115,7 +175,7 @@ export function budgetColorVar(budget: Budget): string {
     case "$$$$":
       return "var(--b-4)";
     default:
-      return "var(--ink-3)";
+      return "var(--muted-2)";
   }
 }
 

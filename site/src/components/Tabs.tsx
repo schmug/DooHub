@@ -9,10 +9,10 @@ export default function Tabs({ active, onChange }: Props) {
   return (
     <div className="tabs" role="tablist" aria-label="Views">
       <button role="tab" aria-selected={active === "events"} onClick={() => onChange("events")}>
-        Browse All Events
+        This Week's Events
       </button>
       <button role="tab" aria-selected={active === "itineraries"} onClick={() => onChange("itineraries")}>
-        View Itineraries
+        Itineraries
       </button>
     </div>
   );

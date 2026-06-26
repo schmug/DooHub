@@ -30,31 +30,32 @@ export default function App() {
     <div className="app">
       <header className="site-header">
         <div className="container">
-          <div className="wordmark">
-            <span className="mark" aria-hidden>
-              △
-            </span>
-            Triangle Weekend
+          <div className="head-row">
+            <div>
+              <div className="wordmark">
+                <span className="mark" aria-hidden>
+                  △
+                </span>
+                Triangle Weekend
+              </div>
+              <p className="tagline">
+                Everything worth doing this week across Raleigh, Durham, Chapel Hill &amp; Cary — refreshed weekly,
+                with maps, itineraries, and a calendar you can subscribe to.
+              </p>
+            </div>
+            <div className="head-aside">
+              {data && !data.isSample && data.generatedAt && (
+                <span className="head-stamp">Updated {formatGenerated(data.generatedAt)} ET</span>
+              )}
+              {data?.isSample && <span className="head-stamp">Sample data · pipeline pending</span>}
+              <a className="subscribe-pill" href={ICS_URL}>
+                📅 Subscribe
+              </a>
+            </div>
           </div>
-          <p className="tagline">
-            Everything worth doing this week across Raleigh, Durham, Chapel Hill, Cary &amp; the Triangle ring —
-            refreshed weekly, with maps, itineraries, and a calendar you can subscribe to.
-          </p>
-          <div className="header-meta">
-            <a className="subscribe-pill" href={ICS_URL}>
-              📅 Subscribe to calendar
-            </a>
-            {data && !data.isSample && data.generatedAt && (
-              <span>Updated {formatGenerated(data.generatedAt)} ET{data.week ? ` · ${data.week}` : ""}</span>
-            )}
-            {data?.isSample && <span>Showing sample data — the weekly pipeline hasn't published yet.</span>}
-          </div>
+          <Tabs active={tab} onChange={setTab} />
         </div>
       </header>
-
-      <div className="container">
-        <Tabs active={tab} onChange={setTab} />
-      </div>
 
       {!data ? (
         <div className="container">

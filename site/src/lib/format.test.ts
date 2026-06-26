@@ -1,5 +1,16 @@
 import { describe, it, expect } from "vitest";
-import { budgetColorVar, dayKey, formatTimeRange, slugify, timeOfDay, weatherIcon } from "./format";
+import {
+  budgetColorVar,
+  categoryColor,
+  categoryFamily,
+  dayKey,
+  formatClock24,
+  formatTimeRange,
+  formatWeekdayShort,
+  slugify,
+  timeOfDay,
+  weatherIcon,
+} from "./format";
 
 describe("dayKey", () => {
   it("returns the NY-local date", () => {
@@ -40,7 +51,45 @@ describe("budgetColorVar", () => {
     expect(budgetColorVar("$$")).toBe("var(--b-2)");
     expect(budgetColorVar("$$$")).toBe("var(--b-3)");
     expect(budgetColorVar("$$$$")).toBe("var(--b-4)");
-    expect(budgetColorVar("unknown")).toBe("var(--ink-3)");
+    expect(budgetColorVar("unknown")).toBe("var(--muted-2)");
+  });
+});
+
+describe("formatWeekdayShort", () => {
+  it("returns the upper-case NY-local weekday", () => {
+    expect(formatWeekdayShort("2026-06-20T18:00:00-04:00")).toBe("SAT");
+    expect(formatWeekdayShort("2026-06-20T23:30:00-04:00")).toBe("SAT");
+  });
+});
+
+describe("formatClock24", () => {
+  it("returns a zero-padded 24-hour NY-local clock", () => {
+    expect(formatClock24("2026-06-20T18:00:00-04:00")).toBe("18:00");
+    expect(formatClock24("2026-06-20T08:05:00-04:00")).toBe("08:05");
+  });
+});
+
+describe("categoryFamily", () => {
+  it("groups categories into the five Soft Transit palettes", () => {
+    expect(categoryFamily("museums")).toBe("green");
+    expect(categoryFamily("tours")).toBe("green");
+    expect(categoryFamily("concerts")).toBe("purple");
+    expect(categoryFamily("nightlife")).toBe("purple");
+    expect(categoryFamily("markets")).toBe("clay");
+    expect(categoryFamily("breweries/tastings")).toBe("clay");
+    expect(categoryFamily("sports")).toBe("blue");
+    expect(categoryFamily("theater")).toBe("rose");
+  });
+  it("falls back to the green palette for unknown categories", () => {
+    expect(categoryFamily("rocketry")).toBe("green");
+  });
+});
+
+describe("categoryColor", () => {
+  it("returns the accent hex for the category's family", () => {
+    expect(categoryColor("concerts")).toBe("#6f5aa6");
+    expect(categoryColor("sports")).toBe("#4a7aa6");
+    expect(categoryColor("markets")).toBe("#b07b45");
   });
 });
 
