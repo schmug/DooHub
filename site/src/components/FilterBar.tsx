@@ -1,7 +1,9 @@
+import { useState } from "react";
 import type { Budget, TimeOfDay } from "../types";
 import { DISTANCE_BANDS, type DistanceBand } from "../lib/distance";
 import { categoryIcon, formatDayShort } from "../lib/format";
 import {
+  activeFilterCount,
   emptyFilters,
   isFilterActive,
   SORT_OPTIONS,
@@ -45,6 +47,10 @@ function toggle<T>(arr: T[], v: T): T[] {
 export default function FilterBar({ filters, setFilters, sort, setSort, view, setView, days, categories }: Props) {
   const f = filters;
   const set = (patch: Partial<FilterState>) => setFilters({ ...f, ...patch });
+  // Chip filters collapse behind a toggle on mobile so events aren't buried
+  // under a full screen of filters. Desktop ignores this (CSS always shows them).
+  const [open, setOpen] = useState(false);
+  const count = activeFilterCount(f);
 
   return (
     <div className="toolbar">
@@ -77,6 +83,19 @@ export default function FilterBar({ filters, setFilters, sort, setSort, view, se
           </div>
         </div>
 
+        <button
+          type="button"
+          className="filters-toggle"
+          aria-expanded={open}
+          aria-controls="toolbar-filters"
+          onClick={() => setOpen((o) => !o)}
+        >
+          <span aria-hidden="true">⚙</span>
+          {open ? "Hide filters" : "Filters"}
+          {count > 0 && <span className="filters-count">{count}</span>}
+        </button>
+
+        <div id="toolbar-filters" className={"toolbar-filters" + (open ? " open" : "")}>
         <div className="toolbar-row">
           {days.length > 1 && (
             <>
@@ -200,6 +219,7 @@ export default function FilterBar({ filters, setFilters, sort, setSort, view, se
             )}
           </div>
         )}
+        </div>
       </div>
     </div>
   );

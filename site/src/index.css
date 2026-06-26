@@ -191,6 +191,37 @@ button {
 .toolbar-row + .toolbar-row {
   margin-top: 10px;
 }
+.toolbar-filters {
+  margin-top: 10px;
+}
+/* Mobile-only "Filters" toggle; hidden on desktop where the panel is always open. */
+.filters-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px 14px;
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-md);
+  background: var(--card);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+}
+.filters-count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--pine);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
 .search-input {
   flex: 1 1 220px;
   min-width: 180px;
@@ -480,6 +511,17 @@ select.control,
 }
 
 /* ---------- Table view ---------- */
+.table-scroller {
+  position: relative;
+}
+/* Mobile-only "swipe sideways" hint; hidden on desktop where the table fits. */
+.table-hint {
+  display: none;
+  margin: 16px 0 6px;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--ink-3);
+}
 .table-wrap {
   overflow-x: auto;
   border: 1px solid var(--line);
@@ -677,6 +719,24 @@ table.events td .nm {
 }
 
 @media (max-width: 640px) {
+  /* A full-height sticky toolbar would pin and cover the screen on phones —
+     keep it in normal flow and collapse the chip filters behind a toggle so
+     events sit right under the search box. */
+  .toolbar {
+    position: static;
+  }
+  .filters-toggle {
+    display: inline-flex;
+  }
+  .toolbar-filters {
+    display: none;
+  }
+  .toolbar-filters.open {
+    display: block;
+    max-height: 62vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
   .view-switch {
     margin-left: 0;
     width: 100%;
@@ -687,5 +747,25 @@ table.events td .nm {
   }
   .itin-list {
     grid-template-columns: 1fr;
+  }
+  /* Table overflows on phones — show the swipe hint and a right-edge fade so the
+     off-screen columns (time, price, links) are discoverable. The hint sits
+     above the table; the fade is anchored to the non-scrolling scroller. */
+  .table-hint {
+    display: block;
+  }
+  .table-wrap {
+    margin-top: 0;
+  }
+  .table-scroller::after {
+    content: "";
+    position: absolute;
+    top: 30px;
+    right: 0;
+    bottom: 0;
+    width: 40px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--card));
+    border-radius: 0 var(--r-md) var(--r-md) 0;
+    pointer-events: none;
   }
 }

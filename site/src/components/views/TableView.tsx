@@ -10,8 +10,12 @@ interface Props {
 
 export default function TableView({ events, origin }: Props) {
   return (
-    <div className="table-wrap">
-      <table className="events">
+    <div className="table-scroller">
+      <p className="table-hint" aria-hidden="true">
+        Swipe the table sideways for distance, time, price &amp; links →
+      </p>
+      <div className="table-wrap">
+        <table className="events">
         <thead>
           <tr>
             <th>Event</th>
@@ -84,7 +88,8 @@ export default function TableView({ events, origin }: Props) {
             );
           })}
         </tbody>
-      </table>
+        </table>
+      </div>
     </div>
   );
 }

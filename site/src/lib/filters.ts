@@ -53,6 +53,25 @@ export function isFilterActive(f: FilterState): boolean {
   );
 }
 
+/**
+ * Number of active chip-style filters — everything in the collapsible filter
+ * panel, i.e. excluding the always-visible search box. Drives the count badge
+ * on the mobile "Filters" toggle so applied filters are visible while collapsed.
+ */
+export function activeFilterCount(f: FilterState): number {
+  return (
+    f.days.length +
+    f.timesOfDay.length +
+    f.distanceBands.length +
+    (f.freeOnly ? 1 : 0) +
+    f.budgets.length +
+    f.indoorOutdoor.length +
+    (f.vegan ? 1 : 0) +
+    (f.vegetarian ? 1 : 0) +
+    f.categories.length
+  );
+}
+
 const budgetRank: Record<Budget, number> = {
   $: 1,
   $$: 2,
