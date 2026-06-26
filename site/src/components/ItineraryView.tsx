@@ -92,6 +92,12 @@ function ItineraryCard({ itin, eventsById }: { itin: Itinerary; eventsById: Map<
                   </>
                 ) : null}
                 {m.price ? <span style={{ color: "var(--ink-3)" }}> · {m.price}</span> : null}
+                {m.notes ? (
+                  <>
+                    <br />
+                    <span className="loc">{m.notes}</span>
+                  </>
+                ) : null}
               </p>
             ))}
           </div>

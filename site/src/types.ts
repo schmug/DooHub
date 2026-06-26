@@ -69,6 +69,7 @@ export interface ItineraryMeal {
   vegetarian_dish?: string;
   price?: string;
   url?: string;
+  notes?: string;
 }
 
 export interface ItineraryAlternative {
