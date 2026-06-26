@@ -1,6 +1,6 @@
 import type { Origin, TriangleEvent } from "../../types";
 import { distanceFrom } from "../../lib/distance";
-import { budgetColorVar, categoryIcon, formatDayShort, formatTimeRange, slugify } from "../../lib/format";
+import { categoryFamily, formatClock24, formatWeekdayShort, slugify } from "../../lib/format";
 import { downloadIcs } from "../../lib/ics";
 
 interface Props {
@@ -12,84 +12,72 @@ export default function TableView({ events, origin }: Props) {
   return (
     <div className="table-scroller">
       <p className="table-hint" aria-hidden="true">
-        Swipe the table sideways for distance, time, price &amp; links →
+        Swipe sideways for distance, time, price &amp; links →
       </p>
       <div className="table-wrap">
         <table className="events">
-        <thead>
-          <tr>
-            <th>Event</th>
-            <th>Category</th>
-            <th>City</th>
-            <th>Distance</th>
-            <th>When</th>
-            <th>Price</th>
-            <th>Links</th>
-          </tr>
-        </thead>
-        <tbody>
-          {events.map((ev) => {
-            const d = distanceFrom(origin, ev.lat, ev.lon);
-            const book = ev.booking_url && ev.booking_url !== "unknown" ? ev.booking_url : "";
-            const info = ev.info_url && ev.info_url !== "unknown" ? ev.info_url : "";
-            return (
-              <tr key={ev.id}>
-                <td>
-                  <span className="nm">{ev.name}</span>
-                  <br />
-                  <span style={{ color: "var(--ink-3)" }}>{ev.venue}</span>
-                </td>
-                <td>
-                  {categoryIcon(ev.category)} {ev.category}
-                </td>
-                <td>{ev.city}</td>
-                <td>{d ? `${d.minutes} min (${d.miles.toFixed(0)} mi)` : "—"}</td>
-                <td>
-                  {formatDayShort(ev.start)}
-                  <br />
-                  <span style={{ color: "var(--ink-2)" }}>{formatTimeRange(ev.start, ev.end)}</span>
-                </td>
-                <td>
-                  {ev.price || "—"}
-                  {ev.budget !== "unknown" && (
-                    <>
-                      {" "}
-                      <span
-                        className="pill budget"
-                        style={{ background: budgetColorVar(ev.budget), fontSize: 11 }}
-                      >
-                        {ev.budget}
-                      </span>
-                    </>
-                  )}
-                </td>
-                <td style={{ whiteSpace: "nowrap" }}>
-                  {book && (
-                    <a href={book} target="_blank" rel="noopener noreferrer">
-                      Book
-                    </a>
-                  )}
-                  {book && info && " · "}
-                  {info && (
-                    <a href={info} target="_blank" rel="noopener noreferrer">
-                      Info
-                    </a>
-                  )}
-                  {(book || info) && " · "}
-                  <button
-                    className="btn"
-                    style={{ padding: "2px 8px", fontSize: 12 }}
-                    onClick={() => downloadIcs([ev], slugify(ev.name), ev.name)}
-                  >
-                    📅
-                  </button>
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
+          <thead>
+            <tr>
+              <th>Event</th>
+              <th>Category</th>
+              <th>Stop</th>
+              <th>Dist</th>
+              <th>When</th>
+              <th>Price</th>
+              <th>Links</th>
+            </tr>
+          </thead>
+          <tbody>
+            {events.map((ev) => {
+              const d = distanceFrom(origin, ev.lat, ev.lon);
+              const book = ev.booking_url && ev.booking_url !== "unknown" ? ev.booking_url : "";
+              const info = ev.info_url && ev.info_url !== "unknown" ? ev.info_url : "";
+              const price = ev.price ? (/free/i.test(ev.price) ? "FREE" : ev.price) : "—";
+              return (
+                <tr key={ev.id} className={`cat-${categoryFamily(ev.category)}`}>
+                  <td>
+                    <div className="nm">{ev.name}</div>
+                    <div className="venue">{ev.venue}</div>
+                  </td>
+                  <td>
+                    <span className="cat-tag">{ev.category}</span>
+                  </td>
+                  <td className="mono">{ev.city}</td>
+                  <td className="mono">{d ? `${d.minutes}m` : "—"}</td>
+                  <td className="when">
+                    {formatWeekdayShort(ev.start)}
+                    <br />
+                    <span className="clock">{formatClock24(ev.start)}</span>
+                  </td>
+                  <td className="price">{price}</td>
+                  <td className="links">
+                    {book && (
+                      <a href={book} target="_blank" rel="noopener noreferrer">
+                        Book
+                      </a>
+                    )}
+                    {book && info && " · "}
+                    {info && (
+                      <a href={info} target="_blank" rel="noopener noreferrer">
+                        Info
+                      </a>
+                    )}
+                    {(book || info) && " · "}
+                    <button
+                      className="ics"
+                      title="Add to calendar"
+                      onClick={() => downloadIcs([ev], slugify(ev.name), ev.name)}
+                    >
+                      📅
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
         </table>
       </div>
+      <p className="table-note">↳ The left rule is the category line; mono times &amp; stops read like a transit board.</p>
     </div>
   );
 }

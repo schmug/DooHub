@@ -59,21 +59,23 @@ export default function FilterBar({ filters, setFilters, sort, setSort, view, se
           <input
             className="search-input"
             type="search"
-            placeholder="Search events, venues, cities…"
+            placeholder="⌕  Search events, venues, cities…"
             value={f.search}
             onChange={(e) => set({ search: e.target.value })}
             aria-label="Search events"
           />
-          <label className="control-label" htmlFor="sort">
-            Sort
-          </label>
-          <select id="sort" className="control" value={sort} onChange={(e) => setSort(e.target.value as SortKey)}>
-            {SORT_OPTIONS.map((o) => (
-              <option key={o.value} value={o.value}>
-                {o.label}
-              </option>
-            ))}
-          </select>
+          <div className="sort-group">
+            <label className="control-label" htmlFor="sort">
+              Sort
+            </label>
+            <select id="sort" className="control" value={sort} onChange={(e) => setSort(e.target.value as SortKey)}>
+              {SORT_OPTIONS.map((o) => (
+                <option key={o.value} value={o.value}>
+                  {o.label}
+                </option>
+              ))}
+            </select>
+          </div>
           <div className="view-switch" role="group" aria-label="View">
             {VIEWS.map((v) => (
               <button key={v.key} aria-pressed={view === v.key} onClick={() => setView(v.key)}>
@@ -96,15 +98,14 @@ export default function FilterBar({ filters, setFilters, sort, setSort, view, se
         </button>
 
         <div id="toolbar-filters" className={"toolbar-filters" + (open ? " open" : "")}>
-        <div className="toolbar-row">
           {days.length > 1 && (
-            <>
-              <span className="control-label">Day</span>
+            <div className="chip-row">
+              <span className="row-label">Day</span>
               <div className="chips">
                 {days.map((d) => (
                   <button
                     key={d}
-                    className="chip small"
+                    className="chip"
                     aria-pressed={f.days.includes(d)}
                     onClick={() => set({ days: toggle(f.days, d) })}
                   >
@@ -112,113 +113,108 @@ export default function FilterBar({ filters, setFilters, sort, setSort, view, se
                   </button>
                 ))}
               </div>
-            </>
+            </div>
           )}
-        </div>
 
-        <div className="toolbar-row">
-          <span className="control-label">Time</span>
-          <div className="chips">
-            {TIMES.map((t) => (
-              <button
-                key={t.value}
-                className="chip small"
-                aria-pressed={f.timesOfDay.includes(t.value)}
-                onClick={() => set({ timesOfDay: toggle(f.timesOfDay, t.value) })}
-              >
-                {t.label}
-              </button>
-            ))}
-          </div>
-
-          <span className="control-label">Distance</span>
-          <div className="chips">
-            {DISTANCE_BANDS.map((b) => (
-              <button
-                key={b.value}
-                className="chip small"
-                aria-pressed={f.distanceBands.includes(b.value as DistanceBand)}
-                onClick={() => set({ distanceBands: toggle(f.distanceBands, b.value) })}
-              >
-                {b.label}
-              </button>
-            ))}
-          </div>
-
-          <span className="control-label">Price</span>
-          <div className="chips">
-            <button
-              className="chip small"
-              aria-pressed={f.freeOnly}
-              onClick={() => set({ freeOnly: !f.freeOnly })}
-            >
-              Free
-            </button>
-            {BUDGETS.map((b) => (
-              <button
-                key={b}
-                className="chip small"
-                aria-pressed={f.budgets.includes(b)}
-                onClick={() => set({ budgets: toggle(f.budgets, b) })}
-              >
-                {b}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="toolbar-row">
-          <span className="control-label">Setting</span>
-          <div className="chips">
-            <button
-              className="chip small"
-              aria-pressed={f.indoorOutdoor.includes("indoor")}
-              onClick={() => set({ indoorOutdoor: toggle(f.indoorOutdoor, "indoor") })}
-            >
-              🏠 Indoor
-            </button>
-            <button
-              className="chip small"
-              aria-pressed={f.indoorOutdoor.includes("outdoor")}
-              onClick={() => set({ indoorOutdoor: toggle(f.indoorOutdoor, "outdoor") })}
-            >
-              🌳 Outdoor
-            </button>
-            <button className="chip small" aria-pressed={f.vegan} onClick={() => set({ vegan: !f.vegan })}>
-              🌱 Vegan
-            </button>
-            <button
-              className="chip small"
-              aria-pressed={f.vegetarian}
-              onClick={() => set({ vegetarian: !f.vegetarian })}
-            >
-              🥗 Vegetarian
-            </button>
-          </div>
-        </div>
-
-        {categories.length > 1 && (
-          <div className="toolbar-row">
-            <span className="control-label">Category</span>
+          <div className="chip-row">
+            <span className="row-label">Time</span>
             <div className="chips">
-              {categories.map((c) => (
+              {TIMES.map((t) => (
                 <button
-                  key={c}
-                  className="chip small"
-                  aria-pressed={f.categories.includes(c)}
-                  onClick={() => set({ categories: toggle(f.categories, c) })}
+                  key={t.value}
+                  className="chip"
+                  aria-pressed={f.timesOfDay.includes(t.value)}
+                  onClick={() => set({ timesOfDay: toggle(f.timesOfDay, t.value) })}
                 >
-                  {categoryIcon(c)} {c}
+                  {t.label}
                 </button>
               ))}
             </div>
-            {isFilterActive(f) && (
-              <button className="btn" style={{ marginLeft: "auto" }} onClick={() => setFilters(emptyFilters)}>
-                Clear all
-              </button>
-            )}
           </div>
-        )}
+
+          <div className="chip-row">
+            <span className="row-label">Distance</span>
+            <div className="chips">
+              {DISTANCE_BANDS.map((b) => (
+                <button
+                  key={b.value}
+                  className="chip"
+                  aria-pressed={f.distanceBands.includes(b.value as DistanceBand)}
+                  onClick={() => set({ distanceBands: toggle(f.distanceBands, b.value) })}
+                >
+                  {b.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="chip-row">
+            <span className="row-label">Price</span>
+            <div className="chips">
+              <button className="chip" aria-pressed={f.freeOnly} onClick={() => set({ freeOnly: !f.freeOnly })}>
+                Free
+              </button>
+              {BUDGETS.map((b) => (
+                <button
+                  key={b}
+                  className="chip"
+                  aria-pressed={f.budgets.includes(b)}
+                  onClick={() => set({ budgets: toggle(f.budgets, b) })}
+                >
+                  {b}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="chip-row">
+            <span className="row-label">Setting</span>
+            <div className="chips">
+              <button
+                className="chip"
+                aria-pressed={f.indoorOutdoor.includes("indoor")}
+                onClick={() => set({ indoorOutdoor: toggle(f.indoorOutdoor, "indoor") })}
+              >
+                🏠 Indoor
+              </button>
+              <button
+                className="chip"
+                aria-pressed={f.indoorOutdoor.includes("outdoor")}
+                onClick={() => set({ indoorOutdoor: toggle(f.indoorOutdoor, "outdoor") })}
+              >
+                🌳 Outdoor
+              </button>
+              <button className="chip" aria-pressed={f.vegan} onClick={() => set({ vegan: !f.vegan })}>
+                🌱 Vegan
+              </button>
+              <button className="chip" aria-pressed={f.vegetarian} onClick={() => set({ vegetarian: !f.vegetarian })}>
+                🥗 Vegetarian
+              </button>
+            </div>
+          </div>
+
+          {categories.length > 1 && (
+            <div className="chip-row">
+              <span className="row-label">Category</span>
+              <div className="chips">
+                {categories.map((c) => (
+                  <button
+                    key={c}
+                    className="chip"
+                    aria-pressed={f.categories.includes(c)}
+                    onClick={() => set({ categories: toggle(f.categories, c) })}
+                  >
+                    {categoryIcon(c)} {c}
+                  </button>
+                ))}
+                {isFilterActive(f) && (
+                  <button className="chip" onClick={() => setFilters(emptyFilters)}>
+                    ✕ Clear all
+                  </button>
+                )}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

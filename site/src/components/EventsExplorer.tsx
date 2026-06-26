@@ -73,8 +73,14 @@ export default function EventsExplorer({ events, origin }: Props) {
 
         {visible.length === 0 ? (
           <div className="empty">
+            <div className="empty-mark" aria-hidden>
+              △
+            </div>
             <h3>No events match these filters</h3>
             <p>Try clearing a filter or widening the distance band.</p>
+            <button className="btn btn-primary" onClick={() => setFilters(emptyFilters)}>
+              Clear all filters
+            </button>
           </div>
         ) : view === "table" ? (
           <TableView events={visible} origin={origin} />

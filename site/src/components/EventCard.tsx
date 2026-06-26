@@ -2,10 +2,10 @@ import { useState } from "react";
 import type { Origin, TriangleEvent } from "../types";
 import { distanceFrom } from "../lib/distance";
 import {
-  budgetColorVar,
+  categoryFamily,
   categoryIcon,
-  formatDayShort,
   formatTimeRange,
+  formatWeekdayShort,
   ioIcon,
   ioLabel,
   slugify,
@@ -19,19 +19,26 @@ interface Props {
   showDay?: boolean;
 }
 
-export default function EventCard({ ev, origin, showDay = false }: Props) {
+export default function EventCard({ ev, origin }: Props) {
   const [imgOk, setImgOk] = useState(Boolean(ev.image_url) && ev.image_url !== "unknown");
   const dist = distanceFrom(origin, ev.lat, ev.lon);
   const link = ev.booking_url && ev.booking_url !== "unknown" ? ev.booking_url : "";
   const info = ev.info_url && ev.info_url !== "unknown" ? ev.info_url : "";
+  const fam = categoryFamily(ev.category);
+
+  const isFree = Boolean(ev.price) && /free/i.test(ev.price);
+  const priceBadge = isFree ? "Free" : ev.budget !== "unknown" ? ev.budget : "";
+  // Third board cell: weather reads best for outdoor/free events; otherwise the
+  // price detail (e.g. "$25 ADV") is the more useful "departure-board" datum.
+  const hasWeather = Boolean(ev.weather && (ev.weather.summary || typeof ev.weather.temp_f === "number"));
 
   return (
-    <article className="event-card">
+    <article className={`event-card cat-${fam}`}>
       <div className="media">
         {imgOk ? (
           <img src={ev.image_url} alt="" loading="lazy" onError={() => setImgOk(false)} />
         ) : (
-          <div style={{ display: "grid", placeItems: "center", height: "100%", fontSize: 46 }} aria-hidden>
+          <div className="media-fallback" aria-hidden>
             {categoryIcon(ev.category)}
           </div>
         )}
@@ -39,47 +46,44 @@ export default function EventCard({ ev, origin, showDay = false }: Props) {
           <span aria-hidden>{categoryIcon(ev.category)}</span>
           {ev.category}
         </span>
-        {ev.budget !== "unknown" && (
-          <span className="budget-badge" style={{ background: budgetColorVar(ev.budget) }}>
-            {ev.budget}
-          </span>
-        )}
+        {priceBadge && <span className="budget-badge">{priceBadge}</span>}
       </div>
 
       <div className="body">
         <h3>{ev.name}</h3>
 
-        <div className="meta-line">
-          <span>📍 {ev.city}, NC</span>
-          {dist && (
-            <span className="dist">
-              {dist.minutes} min ({dist.miles.toFixed(0)} mi)
-            </span>
-          )}
-        </div>
-
-        <div className="when">
-          🕐 {showDay && <>{formatDayShort(ev.start)} · </>}
-          {formatTimeRange(ev.start, ev.end)}
-        </div>
-
-        <div className="price-weather">
-          💵 {ev.price || "—"}
-          {ev.weather && (
-            <>
-              {" · "}
-              {weatherIcon(ev.weather.summary)} {ev.weather.summary}
-              {typeof ev.weather.temp_f === "number" ? ` ${ev.weather.temp_f}°F` : ""}
-            </>
-          )}
+        <div className="board">
+          <div className="cell">
+            <div className="k">When</div>
+            {formatWeekdayShort(ev.start)} · {formatTimeRange(ev.start, ev.end)}
+          </div>
+          <div className="cell">
+            <div className="k">Where</div>
+            {ev.city.toUpperCase()}
+            {dist ? ` · ${dist.minutes}m` : ""}
+          </div>
+          <div className="cell">
+            {hasWeather ? (
+              <>
+                <div className="k">Weather</div>
+                {weatherIcon(ev.weather!.summary)}
+                {typeof ev.weather!.temp_f === "number" ? ` ${ev.weather!.temp_f}°F` : ` ${ev.weather!.summary}`}
+              </>
+            ) : (
+              <>
+                <div className="k">Price</div>
+                {ev.price || "—"}
+              </>
+            )}
+          </div>
         </div>
 
         <div className="tagrow">
-          <span className="pill io" title={ioLabel(ev.indoor_outdoor)}>
+          <span className="pill" title={ioLabel(ev.indoor_outdoor)}>
             {ioIcon(ev.indoor_outdoor)} {ioLabel(ev.indoor_outdoor)}
           </span>
-          {ev.vegan === "yes" && <span className="pill diet">🌱 Vegan</span>}
-          {ev.vegan !== "yes" && ev.vegetarian === "yes" && <span className="pill diet">🥗 Veg</span>}
+          {ev.vegan === "yes" && <span className="pill">🌱 Vegan</span>}
+          {ev.vegan !== "yes" && ev.vegetarian === "yes" && <span className="pill">🥗 Veg</span>}
           {ev.tags.slice(0, 2).map((t) => (
             <span className="pill" key={t}>
               {t}
@@ -90,16 +94,20 @@ export default function EventCard({ ev, origin, showDay = false }: Props) {
         {ev.description && <p className="desc">{ev.description}</p>}
 
         <div className="actions">
-          {link && (
-            <a className="btn btn-primary btn-link" href={link} target="_blank" rel="noopener noreferrer">
+          {link ? (
+            <a className="btn book btn-link" href={link} target="_blank" rel="noopener noreferrer">
               Book
             </a>
-          )}
-          <button className="btn" onClick={() => downloadIcs([ev], slugify(ev.name), ev.name)}>
-            📅 Add to Calendar
+          ) : info ? (
+            <a className="btn outline btn-link" href={info} target="_blank" rel="noopener noreferrer">
+              Info
+            </a>
+          ) : null}
+          <button className="btn soft" onClick={() => downloadIcs([ev], slugify(ev.name), ev.name)}>
+            📅 Add
           </button>
-          {info && (
-            <a className="btn btn-link" href={info} target="_blank" rel="noopener noreferrer">
+          {link && info && (
+            <a className="btn outline btn-link" href={info} target="_blank" rel="noopener noreferrer">
               Info
             </a>
           )}
