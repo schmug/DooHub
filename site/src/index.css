@@ -191,6 +191,37 @@ button {
 .toolbar-row + .toolbar-row {
   margin-top: 10px;
 }
+.toolbar-filters {
+  margin-top: 10px;
+}
+/* Mobile-only "Filters" toggle; hidden on desktop where the panel is always open. */
+.filters-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px 14px;
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-md);
+  background: var(--card);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+}
+.filters-count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--pine);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
 .search-input {
   flex: 1 1 220px;
   min-width: 180px;
@@ -677,6 +708,24 @@ table.events td .nm {
 }
 
 @media (max-width: 640px) {
+  /* A full-height sticky toolbar would pin and cover the screen on phones —
+     keep it in normal flow and collapse the chip filters behind a toggle so
+     events sit right under the search box. */
+  .toolbar {
+    position: static;
+  }
+  .filters-toggle {
+    display: inline-flex;
+  }
+  .toolbar-filters {
+    display: none;
+  }
+  .toolbar-filters.open {
+    display: block;
+    max-height: 62vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
   .view-switch {
     margin-left: 0;
     width: 100%;

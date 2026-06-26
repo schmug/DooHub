@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { applyFilters, emptyFilters, isFilterActive, sortEvents } from "./filters";
+import { activeFilterCount, applyFilters, emptyFilters, isFilterActive, sortEvents } from "./filters";
 import { makeEvent, RALEIGH } from "../test/factory";
 
 const ev1 = makeEvent({ id: "1" }); // trivia, Free, $, indoor, vegan, 6/20 7pm, near origin
@@ -81,5 +81,23 @@ describe("isFilterActive", () => {
     expect(isFilterActive(emptyFilters)).toBe(false);
     expect(isFilterActive({ ...emptyFilters, search: "x" })).toBe(true);
     expect(isFilterActive({ ...emptyFilters, freeOnly: true })).toBe(true);
+  });
+});
+
+describe("activeFilterCount", () => {
+  it("counts chip filters and ignores the search box", () => {
+    expect(activeFilterCount(emptyFilters)).toBe(0);
+    // search is the always-visible input, so it does not count toward the badge
+    expect(activeFilterCount({ ...emptyFilters, search: "music" })).toBe(0);
+    expect(
+      activeFilterCount({
+        ...emptyFilters,
+        days: ["2026-06-27"],
+        budgets: ["$", "$$"],
+        freeOnly: true,
+        vegan: true,
+        categories: ["concerts"],
+      }),
+    ).toBe(1 + 2 + 1 + 1 + 1);
   });
 });
