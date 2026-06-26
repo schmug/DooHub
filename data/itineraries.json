@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-06-25T20:30:00-04:00",
+  "generated_at": "2026-06-26T08:30:00-04:00",
   "week": "2026-W26",
   "itineraries": [
     {
@@ -11,7 +11,7 @@
       "drive_time": "Everything within ~10 min of downtown",
       "weather": {
         "summary": "Partly sunny, PM storms",
-        "temp_f": 97
+        "temp_f": 95
       },
       "cost_range": "$0–$60 (festival is free; evening concert ticketed)",
       "date": "2026-06-27",
@@ -99,7 +99,7 @@
       "drive_time": "Durham core + 15 min to Carrboro for the show",
       "weather": {
         "summary": "Partly sunny, PM storms",
-        "temp_f": 97
+        "temp_f": 95
       },
       "cost_range": "$0–$45",
       "date": "2026-06-27",
@@ -187,7 +187,7 @@
       "drive_time": "All within ~10 min around Cary/Morrisville",
       "weather": {
         "summary": "Partly sunny, PM storms",
-        "temp_f": 97
+        "temp_f": 95
       },
       "cost_range": "$0–$50",
       "date": "2026-06-27",
@@ -273,7 +273,7 @@
       "drive_time": "Durham → Carrboro → Chapel Hill, ~20 min total hops",
       "weather": {
         "summary": "Mostly sunny, slight PM storms",
-        "temp_f": 96
+        "temp_f": 95
       },
       "cost_range": "Free (pay only for food)",
       "date": "2026-06-28",
@@ -369,8 +369,8 @@
       "anchor_city": "Durham",
       "drive_time": "~10 min between museum and ballpark",
       "weather": {
-        "summary": "Sunny",
-        "temp_f": 101
+        "summary": "Sunny and very hot",
+        "temp_f": 106
       },
       "cost_range": "$23–$60",
       "date": "2026-07-02",
@@ -392,7 +392,7 @@
             "title": "AC break / downtown Durham stroll",
             "location": "American Tobacco Campus, Durham",
             "price": "Free",
-            "notes": "It hits 101°F — retreat to the shaded ATC boardwalk and shops near the ballpark."
+            "notes": "It hits 106°F — retreat to the shaded ATC boardwalk and shops near the ballpark."
           }
         ],
         "evening": [
@@ -439,7 +439,7 @@
         }
       ],
       "practical_notes": [
-        "Hottest day of the window (101°F) — sunscreen, water, and midday shade are essential.",
+        "Hottest day of the window (106°F) — sunscreen, water, and midday shade are essential.",
         "DBAP fireworks nights sell out the berm; buy tickets ahead.",
         "Park in the ATC decks and walk to the gates."
       ],
@@ -456,7 +456,7 @@
       "drive_time": "Downtown Raleigh + 12 min to Walnut Creek",
       "weather": {
         "summary": "Partly sunny, PM storms",
-        "temp_f": 97
+        "temp_f": 95
       },
       "cost_range": "$17–$60",
       "date": "2026-06-27",
@@ -543,6 +543,89 @@
         "2738e2fcf64b",
         "4629a6e1bd2e",
         "62f1e2dd09b2"
+      ]
+    },
+    {
+      "id": "independence-eve-western-wake",
+      "title": "Independence Eve: Cary Fest to Apex Fireworks",
+      "theme": "Free July-3rd family celebrations and a drone-show fireworks finale",
+      "anchor_city": "Apex",
+      "drive_time": "Cary + 15 min to Apex; all in western Wake",
+      "weather": null,
+      "cost_range": "Free (pay only for food)",
+      "date": "2026-07-03",
+      "overview": "Skip the July-4th crowds and celebrate on the 3rd. Start at Downtown Cary Park's free family festival — games, a mist zone, food trucks and an outdoor movie — then drive 15 minutes to Apex's Fireworks Frenzy for a 'Parade of Wheels,' an expanded drone light show, and fireworks after dark. Both are free. It's been a scorching week, so hydrate and save the outdoor legs for the evening cool-down.",
+      "schedule": {
+        "morning": [
+          {
+            "time": "11:00 AM",
+            "title": "Beat-the-heat AC break (self-guided)",
+            "location": "Beaver Creek Commons / Downtown Apex shops, Apex",
+            "price": "Free",
+            "notes": "Daytime highs have been in the 90s–100s — browse the shops, grab an early lunch, and stay cool until the evening events start."
+          }
+        ],
+        "afternoon": [
+          {
+            "time": "4:00 PM",
+            "title": "Cary July 3rd Celebration",
+            "event_id": "d57873740859",
+            "location": "Downtown Cary Park, 327 S Academy St, Cary",
+            "price": "Free",
+            "notes": "Games, a mist zone, arts and crafts, food trucks, a Bark Bar, and an outdoor screening of 'Independence Day.' Great for kids before sunset."
+          }
+        ],
+        "evening": [
+          {
+            "time": "8:00 PM",
+            "title": "Apex Fireworks Frenzy",
+            "event_id": "3d28165c61bb",
+            "location": "Hunter Street Park, 1250 Ambergate Station, Apex",
+            "price": "Free",
+            "notes": "Drone light show, fire-department splashdown, kids' inflatables, and fireworks after dark (~9:15pm). Arrive by 8 for parking and a lawn spot."
+          }
+        ]
+      },
+      "food": [
+        {
+          "slot": "lunch",
+          "place": "Bombay Sandwich Co. / Vibrant Health Cafe",
+          "city": "Cary",
+          "vegan_dish": "Chickpea-and-veg sandwich or a vegan grain bowl",
+          "vegetarian_dish": "Paneer or veggie wrap",
+          "price": "$",
+          "notes": "Cary's Chatham St corridor has several quick vegan/veg spots for an air-conditioned lunch."
+        },
+        {
+          "slot": "dinner",
+          "place": "Food trucks at Downtown Cary Park",
+          "city": "Cary",
+          "vegan_dish": "Ask trucks for a vegan taco/falafel plate",
+          "vegetarian_dish": "Wood-fired veggie pizza or mac & cheese",
+          "price": "$",
+          "notes": "Eat at the Cary festival before heading to Apex; truck lineups vary, so scan for plant-based options."
+        }
+      ],
+      "alternatives": [
+        {
+          "leg": "Evening fireworks choice",
+          "good_weather": "Apex Fireworks Frenzy (drone show + fireworks) is the headline finale",
+          "rain": "If storms threaten Apex, swap to Garner's Lake Benson Park (NC Symphony + fireworks), Wake Forest's Heritage High School show, or ZincHouse Winery in Durham (21+) — all free July-3 fireworks nights."
+        },
+        {
+          "leg": "Daytime",
+          "good_weather": "Splash pads and shaded lawns at Downtown Cary Park",
+          "rain": "Café- and shop-hop along Cary's Academy/Chatham St under cover until the evening events begin"
+        }
+      ],
+      "practical_notes": [
+        "July 3 falls outside the posted 7-day forecast at run time — it has been hot (mid-90s to ~106°F) with brief afternoon storms, so check the forecast and pack water.",
+        "Both events are free; arrive early for parking — Apex's Hunter Street Park fills before the fireworks.",
+        "Other free July-3 fireworks within ~30 min: Garner (Lake Benson Park), Wake Forest (Heritage HS), and ZincHouse Winery in Durham (21+)."
+      ],
+      "event_ids": [
+        "d57873740859",
+        "3d28165c61bb"
       ]
     }
   ]

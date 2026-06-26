@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-06-25T20:30:00-04:00",
+  "generated_at": "2026-06-26T08:30:00-04:00",
   "week": "2026-W26",
   "origin": {
     "name": "Downtown Raleigh, NC",
@@ -8,134 +8,6 @@
     "lon": -78.6382
   },
   "events": [
-    {
-      "name": "Stroll Through History: Free Cemetery Tour",
-      "category": "tours",
-      "tags": [
-        "free",
-        "outdoor",
-        "history",
-        "guided"
-      ],
-      "venue": "Historic Oakwood Cemetery",
-      "address": "701 Oakwood Avenue, Raleigh, NC 27601",
-      "city": "Raleigh",
-      "lat": 35.7869,
-      "lon": -78.6256,
-      "start": "2026-06-25T10:00:00-04:00",
-      "end": "2026-06-25T11:00:00-04:00",
-      "duration_min": 60,
-      "price": "Free",
-      "budget": "$",
-      "indoor_outdoor": "outdoor",
-      "vegan": "unknown",
-      "vegetarian": "unknown",
-      "image_url": "https://triangleonthecheap.com/wordpress/wp-content/uploads/2025/11/historic-oakwood-cemetery-arch-jlm_4425.jpeg",
-      "booking_url": "",
-      "info_url": "https://triangleonthecheap.com/historic-oakwood-cemetery-tours/",
-      "source": "triangleonthecheap.com",
-      "description": "A free guided walking tour exploring a new section of Historic Oakwood Cemetery, with guides sharing fresh research and stories.",
-      "id": "881b3dbf5434",
-      "weather": null,
-      "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
-    },
-    {
-      "name": "Pony Run with Fleet Feet",
-      "category": "classes",
-      "tags": [
-        "free",
-        "run club",
-        "fitness",
-        "outdoor"
-      ],
-      "venue": "Ponysaurus Brewing Co.",
-      "address": "219 Hood St, Durham, NC 27701",
-      "city": "Durham",
-      "lat": 35.9886,
-      "lon": -78.8966,
-      "start": "2026-06-25T18:15:00-04:00",
-      "end": "2026-06-25T20:00:00-04:00",
-      "duration_min": 105,
-      "price": "Free",
-      "budget": "$",
-      "indoor_outdoor": "outdoor",
-      "vegan": "unknown",
-      "vegetarian": "unknown",
-      "image_url": "",
-      "booking_url": "",
-      "info_url": "https://www.ponysaurusbrewing.com/events",
-      "source": "ponysaurusbrewing.com",
-      "description": "Thursday-evening 3-mile or 5-mile group run from Ponysaurus with Fleet Feet, followed by beer back at the taproom.",
-      "id": "984a5fbb34bb",
-      "weather": null,
-      "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
-    },
-    {
-      "name": "Trivia Night at Raleigh Brewing Company",
-      "category": "trivia",
-      "tags": [
-        "trivia",
-        "taproom",
-        "weekly"
-      ],
-      "venue": "Raleigh Brewing Company",
-      "address": "3709 Neil St, Raleigh, NC 27607",
-      "city": "Raleigh",
-      "lat": 35.8045,
-      "lon": -78.6775,
-      "start": "2026-06-25T19:00:00-04:00",
-      "end": "2026-06-25T21:00:00-04:00",
-      "duration_min": 120,
-      "price": "Free",
-      "budget": "$",
-      "indoor_outdoor": "indoor",
-      "vegan": "unknown",
-      "vegetarian": "unknown",
-      "image_url": "",
-      "booking_url": "",
-      "info_url": "https://www.raleighbrewing.com/upcoming-events",
-      "source": "raleighbrewing.com",
-      "description": "Weekly Thursday-night trivia at Raleigh Brewing's Neil Street taproom, 7-9pm.",
-      "id": "7002ceb14f20",
-      "weather": null,
-      "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
-    },
-    {
-      "name": "Pioneer Winter Collective: Apollo",
-      "category": "theater",
-      "tags": [
-        "dance",
-        "dance-theater",
-        "american-dance-festival",
-        "mature-audiences",
-        "indoor"
-      ],
-      "venue": "Carolina Theatre of Durham (Fletcher Hall)",
-      "address": "309 W Morgan St, Durham, NC 27701",
-      "city": "Durham",
-      "lat": 35.9952,
-      "lon": -78.9034,
-      "start": "2026-06-25T19:30:00-04:00",
-      "end": null,
-      "duration_min": 55,
-      "price": "unknown",
-      "budget": "unknown",
-      "indoor_outdoor": "indoor",
-      "vegan": "unknown",
-      "vegetarian": "unknown",
-      "image_url": "https://carolinatheatre.org/wp-content/uploads/2026/03/26_PWC_Apollo_1440x810_Updated-1280x720.png",
-      "booking_url": "",
-      "info_url": "https://carolinatheatre.org/pioneer-winter-collective-apollo/",
-      "source": "carolinatheatre.org",
-      "description": "A dance-theater work co-presented with the American Dance Festival exploring intergenerational queer dynamics, memory, and legacy. ~55 min, no intermission; mature audiences.",
-      "id": "af7a0f1eb39a",
-      "weather": null,
-      "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
-    },
     {
       "name": "House of Ideas (Gregg Museum Collection)",
       "category": "museums",
@@ -166,7 +38,7 @@
       "id": "99a582e7e711",
       "weather": null,
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Tabletop Topiary Therapy: the Gibson Method",
@@ -197,11 +69,11 @@
       "description": "Immersive topiary workshop led by artist Michael P. Gibson, teaching the eight principles of his method for creative, therapeutic pruning.",
       "id": "9d36ceb2f4ea",
       "weather": {
-        "summary": "Mostly sunny, PM storms",
-        "temp_f": 96
+        "summary": "Mostly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 94
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Hillsborough Last Fridays Art Walk",
@@ -233,11 +105,11 @@
       "description": "Free monthly art walk through downtown Hillsborough with galleries, studios, shops open late, a Makers Market, and Live on the Lawn music at the Old Courthouse.",
       "id": "12760b1bae15",
       "weather": {
-        "summary": "Mostly sunny, PM storms",
-        "temp_f": 96
+        "summary": "Mostly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 94
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Out! Raleigh Pride: Friday Night Celebration",
@@ -269,11 +141,11 @@
       "description": "An adults-only (18+) Pride kickoff on Fayetteville Street with entertainment, drinks, and dancing the night before the main festival.",
       "id": "896806000043",
       "weather": {
-        "summary": "Mostly sunny, PM storms",
-        "temp_f": 96
+        "summary": "Mostly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 94
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "An Evening with Goose",
@@ -304,11 +176,11 @@
       "description": "Jam-band favorites Goose play night one of a two-night downtown Raleigh stand at Red Hat Amphitheater.",
       "id": "8dbe066f8fd2",
       "weather": {
-        "summary": "Mostly sunny, PM storms",
-        "temp_f": 96
+        "summary": "Mostly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 94
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Pete Holmes",
@@ -339,7 +211,7 @@
       "id": "7000c39fa2ce",
       "weather": null,
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Dex Fest Night One",
@@ -371,7 +243,7 @@
       "id": "4785228a9d1c",
       "weather": null,
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "One Tribe Drum Circle & Fire Show",
@@ -403,11 +275,11 @@
       "description": "Free, family-friendly drum circle with fire spinning and West African dance in downtown Cary.",
       "id": "792b31661128",
       "weather": {
-        "summary": "Mostly sunny, PM storms",
-        "temp_f": 96
+        "summary": "Mostly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 94
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Discover Dance: AfroBeats Session",
@@ -439,11 +311,11 @@
       "description": "Free outdoor cultural dance program at Downtown Cary Park exploring Pan-African rhythms and Afrobeats, part of Final Friday in Cary.",
       "id": "70922dc65691",
       "weather": {
-        "summary": "Mostly sunny, PM storms",
-        "temp_f": 96
+        "summary": "Mostly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 94
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Classics Under the Stars (NC Symphony Summerfest)",
@@ -475,11 +347,11 @@
       "description": "The North Carolina Symphony performs light classical favorites under the stars at Koka Booth as part of UNC Health Summerfest. Picnics welcome; kids 12 and under free on the lawn.",
       "id": "0537dd51d8d3",
       "weather": {
-        "summary": "Mostly sunny, PM storms",
-        "temp_f": 96
+        "summary": "Mostly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 94
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Carrboro Farmers' Market",
@@ -511,11 +383,11 @@
       "description": "Saturday-morning producer-only market with local farmers, bakers, and makers on the Carrboro Town Commons, 7am-noon.",
       "id": "7d2170e33b75",
       "weather": {
-        "summary": "Partly sunny, PM storms",
-        "temp_f": 97
+        "summary": "Partly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 95
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Durham Craft Market",
@@ -547,11 +419,11 @@
       "description": "A juried, artist-run collective of 50+ local crafters selling handmade goods at Durham Central Park every Saturday morning.",
       "id": "0db625d0b219",
       "weather": {
-        "summary": "Partly sunny, PM storms",
-        "temp_f": 97
+        "summary": "Partly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 95
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Western Wake Farmers' Market",
@@ -583,11 +455,11 @@
       "description": "Saturday-morning Morrisville market with local produce, meats, baked goods, and prepared foods, 8am-noon.",
       "id": "e49b657758a9",
       "weather": {
-        "summary": "Partly sunny, PM storms",
-        "temp_f": 97
+        "summary": "Partly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 95
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "The Raleigh Market",
@@ -619,11 +491,11 @@
       "description": "A sprawling weekend flea and artisan market at the N.C. State Fairgrounds with antiques, crafts, produce, and collectibles. Free admission and parking.",
       "id": "4629a6e1bd2e",
       "weather": {
-        "summary": "Partly sunny, PM storms",
-        "temp_f": 97
+        "summary": "Partly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 95
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Mordecai Historic Park Guided Tour",
@@ -653,11 +525,11 @@
       "description": "One-hour guided tour of Mordecai Historic Park, including the birthplace of President Andrew Johnson. Tours leave the Visitor Center on the hour, 10am-3pm. Adults $7.",
       "id": "4eb31600dbe5",
       "weather": {
-        "summary": "Partly sunny, PM storms",
-        "temp_f": 97
+        "summary": "Partly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 95
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Raleigh City of Oaks Historic Walking Tour",
@@ -688,11 +560,11 @@
       "description": "A 1.5-mile guided walking tour of historic downtown Raleigh by Tobacco Road Tours. Rain or shine; advance registration required.",
       "id": "149237e77878",
       "weather": {
-        "summary": "Partly sunny, PM storms",
-        "temp_f": 97
+        "summary": "Partly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 95
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "America250: Knowing the West Community Day",
@@ -723,11 +595,11 @@
       "description": "Free, family-friendly day celebrating the Knowing the West exhibition and America 250, with hands-on artmaking, live music, performances, and guided tours.",
       "id": "effb3777c218",
       "weather": {
-        "summary": "Partly sunny, PM storms",
-        "temp_f": 97
+        "summary": "Partly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 95
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Dyani White Hawk: LISTEN",
@@ -759,7 +631,7 @@
       "id": "0ace600d5ce1",
       "weather": null,
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Jen Clay: Soft Night, Watching",
@@ -791,7 +663,7 @@
       "id": "14253a061aca",
       "weather": null,
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "NC Museum of Natural Sciences",
@@ -824,7 +696,7 @@
       "id": "ef9388fdefbe",
       "weather": null,
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Museum of Life and Science",
@@ -856,11 +728,11 @@
       "description": "A hands-on science museum with a tropical Butterfly House, Dinosaur Trail, train, and live-animal habitats. Open Tue-Sun 10-5; adult admission $23.",
       "id": "df69aa990356",
       "weather": {
-        "summary": "Partly sunny, PM storms",
-        "temp_f": 97
+        "summary": "Partly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 95
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Marbles Kids Museum + IMAX",
@@ -893,7 +765,7 @@
       "id": "3aa63de8451a",
       "weather": null,
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Historic Raleigh Trolley Tour",
@@ -925,7 +797,7 @@
       "id": "2738e2fcf64b",
       "weather": null,
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Notes on View: Soundwave Supply Co.",
@@ -958,7 +830,7 @@
       "id": "9332829b6589",
       "weather": null,
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Beer, Bacon, and Bluegrass",
@@ -990,11 +862,11 @@
       "description": "An afternoon-into-evening gathering at Oaklyn Springs Brewery with complimentary bacon, cold beer, and three live bluegrass acts.",
       "id": "6ac26bfed4bd",
       "weather": {
-        "summary": "Partly sunny, PM storms",
-        "temp_f": 97
+        "summary": "Partly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 95
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Out! Raleigh Pride Festival",
@@ -1026,11 +898,11 @@
       "description": "A family-friendly Pride festival on Fayetteville Street with ~100 vendors, two entertainment stages, food, a kids zone, and a beer garden.",
       "id": "d0a5994ed10e",
       "weather": {
-        "summary": "Partly sunny, PM storms",
-        "temp_f": 97
+        "summary": "Partly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 95
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "An Afternoon in the Garden",
@@ -1062,11 +934,11 @@
       "description": "A Pollinator Week celebration at the Apex Nature Park pollinator garden with native seed collecting, garden exploration, and community activities.",
       "id": "48995180f77a",
       "weather": {
-        "summary": "Partly sunny, PM storms",
-        "temp_f": 97
+        "summary": "Partly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 95
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Durham Summer Concerts in the Park: Sabrosura",
@@ -1099,11 +971,11 @@
       "description": "A free, family-friendly outdoor concert with Latin band Sabrosura at Forest Hills Park, plus rotating food trucks. Bring a blanket or chair.",
       "id": "9b8bb95e0b7f",
       "weather": {
-        "summary": "Partly sunny, PM storms",
-        "temp_f": 97
+        "summary": "Partly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 95
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Meghan Trainor: The Get In Girl Tour",
@@ -1133,11 +1005,11 @@
       "description": "Pop star Meghan Trainor brings The Get In Girl Tour to Raleigh's outdoor amphitheater, with support from Icona Pop. Tickets start around $41.",
       "id": "62f1e2dd09b2",
       "weather": {
-        "summary": "Partly sunny, PM storms",
-        "temp_f": 97
+        "summary": "Partly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 95
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "An Evening with Goose",
@@ -1168,11 +1040,11 @@
       "description": "Jam-band favorites Goose play night two of their two-night downtown Raleigh stand at Red Hat Amphitheater.",
       "id": "56cda8bf4495",
       "weather": {
-        "summary": "Partly sunny, PM storms",
-        "temp_f": 97
+        "summary": "Partly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 95
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Dex Fest Night Two",
@@ -1204,7 +1076,7 @@
       "id": "3887ce14c235",
       "weather": null,
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "CaryLIVE! Concert Series: Abraham Alexander",
@@ -1236,11 +1108,11 @@
       "description": "A free outdoor concert on the Great Lawn at Downtown Cary Park featuring soul/folk artist Abraham Alexander.",
       "id": "7c144225c7c6",
       "weather": {
-        "summary": "Partly sunny, PM storms",
-        "temp_f": 97
+        "summary": "Partly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 95
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "The Music of Billy Joel with Tony DeSare (NC Symphony Summerfest)",
@@ -1272,11 +1144,11 @@
       "description": "The North Carolina Symphony, with vocalist/pianist Tony DeSare, performs the music of Billy Joel under the stars at Koka Booth's Summerfest series.",
       "id": "7624bda6aa0d",
       "weather": {
-        "summary": "Partly sunny, PM storms",
-        "temp_f": 97
+        "summary": "Partly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 95
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Durham Underground Market",
@@ -1308,11 +1180,11 @@
       "description": "A Sunday market at Durham Central Park with 50+ local vendors, live musicians, workshops, and food trucks.",
       "id": "aab11889600e",
       "weather": {
-        "summary": "Mostly sunny, slight PM storms",
-        "temp_f": 96
+        "summary": "Mostly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 95
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Sunday Brunch Music on the Lawn: Saludos Compay",
@@ -1344,11 +1216,11 @@
       "description": "Free live music on the lawn at Weaver Street Market with Saludos Compay, a relaxed Sunday brunch soundtrack in downtown Carrboro.",
       "id": "0521321b2dd0",
       "weather": {
-        "summary": "Mostly sunny, slight PM storms",
-        "temp_f": 96
+        "summary": "Mostly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 95
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Morgan Street Sessions",
@@ -1381,7 +1253,7 @@
       "id": "51dbe143a0b3",
       "weather": null,
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Black Farmers' Market in Raleigh",
@@ -1413,11 +1285,11 @@
       "description": "A market supporting Black farmers and business owners across the Triangle, with fresh produce, goods, and vendors at Montague Plaza.",
       "id": "3e7ae846a8bd",
       "weather": {
-        "summary": "Mostly sunny, slight PM storms",
-        "temp_f": 96
+        "summary": "Mostly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 95
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "NCMA Public Tour: The People's Collection",
@@ -1449,7 +1321,7 @@
       "id": "e8d4890246ec",
       "weather": null,
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "pARC by The Urban Conga",
@@ -1481,11 +1353,11 @@
       "description": "An interactive outdoor public-art installation by The Urban Conga at the Ackland. Free and accessible during museum hours.",
       "id": "faa11bbef128",
       "weather": {
-        "summary": "Mostly sunny, slight PM storms",
-        "temp_f": 96
+        "summary": "Mostly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 95
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Sundays at Sundown Live Music: Capital Transit",
@@ -1516,11 +1388,11 @@
       "description": "A free outdoor evening concert with Capital Transit on the green at Southern Village in Chapel Hill.",
       "id": "02aab78bf74e",
       "weather": {
-        "summary": "Mostly sunny, slight PM storms",
-        "temp_f": 96
+        "summary": "Mostly sunny, then a chance of showers and thunderstorms",
+        "temp_f": 95
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Gianmarco Soresi: The Downside",
@@ -1552,7 +1424,7 @@
       "id": "7b91fdde2f5c",
       "weather": null,
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Ponysaurus Trivia Night",
@@ -1584,10 +1456,10 @@
       "id": "ee038ae5e606",
       "weather": {
         "summary": "Mostly sunny",
-        "temp_f": 92
+        "temp_f": 94
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Gianmarco Soresi: The Downside",
@@ -1619,7 +1491,7 @@
       "id": "72db9f1a9917",
       "weather": null,
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Bond Brothers Run Club",
@@ -1651,10 +1523,10 @@
       "id": "1562356cfeb5",
       "weather": {
         "summary": "Sunny",
-        "temp_f": 95
+        "temp_f": 97
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Speed Puzzling Night at Raleigh Brewing",
@@ -1685,7 +1557,7 @@
       "id": "0ffd94e39ebf",
       "weather": null,
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Durham Bulls vs. Gwinnett Stripers",
@@ -1717,10 +1589,10 @@
       "id": "56644fdcd1cf",
       "weather": {
         "summary": "Sunny",
-        "temp_f": 95
+        "temp_f": 97
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Gianmarco Soresi: The Downside",
@@ -1752,7 +1624,7 @@
       "id": "10137ba939e2",
       "weather": null,
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Raleigh Brewing Run Club with Fleet Feet",
@@ -1784,10 +1656,10 @@
       "id": "c77d9e6ad184",
       "weather": {
         "summary": "Sunny",
-        "temp_f": 99
+        "temp_f": 104
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Durham Bulls vs. Gwinnett Stripers",
@@ -1819,10 +1691,10 @@
       "id": "c0ea2ab17349",
       "weather": {
         "summary": "Sunny",
-        "temp_f": 99
+        "temp_f": 104
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "NC Team Trivia at Bond Brothers Beer Company",
@@ -1854,10 +1726,10 @@
       "id": "e850ae89e9fa",
       "weather": {
         "summary": "Sunny",
-        "temp_f": 99
+        "temp_f": 104
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Ponysaurus Music Bingo",
@@ -1889,10 +1761,10 @@
       "id": "40bb902420fd",
       "weather": {
         "summary": "Sunny",
-        "temp_f": 99
+        "temp_f": 104
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Todd Rundgren: Damned If I Do Tour",
@@ -1923,7 +1795,7 @@
       "id": "d05262dfe6a9",
       "weather": null,
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Bilingual Story Time | Tiempo de Historias Bilingues",
@@ -1956,7 +1828,7 @@
       "id": "9b7a11244c1e",
       "weather": null,
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Durham Bulls vs. Gwinnett Stripers",
@@ -1989,10 +1861,10 @@
       "id": "70e53ca49f69",
       "weather": {
         "summary": "Sunny",
-        "temp_f": 101
+        "temp_f": 106
       },
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
     },
     {
       "name": "Cliff Cash (Dry Bar Comedy)",
@@ -2024,7 +1896,270 @@
       "id": "144c56211585",
       "weather": null,
       "first_seen": "2026-06-25T20:30:00-04:00",
-      "last_verified": "2026-06-25T20:30:00-04:00"
+      "last_verified": "2026-06-26T08:30:00-04:00"
+    },
+    {
+      "name": "ZincHouse Independence Day Celebration",
+      "category": "breweries/tastings",
+      "tags": [
+        "free",
+        "fireworks",
+        "live-music",
+        "21-plus",
+        "july-4th"
+      ],
+      "venue": "ZincHouse Winery & Brewery",
+      "address": "6225 Wake Forest Hwy, Durham, NC 27703",
+      "city": "Durham",
+      "lat": 35.98266,
+      "lon": -78.7592,
+      "start": "2026-07-03T12:00:00-04:00",
+      "end": "2026-07-03T23:00:00-04:00",
+      "duration_min": 660,
+      "price": "Free",
+      "budget": "$",
+      "indoor_outdoor": "both",
+      "vegan": "unknown",
+      "vegetarian": "unknown",
+      "weather": null,
+      "image_url": "",
+      "booking_url": "",
+      "info_url": "https://www.zinchousewinery.com/the-winery-and-brewery/",
+      "source": "triangleonthecheap.com",
+      "description": "All-day Independence-eve party at ZincHouse Winery & Brewery (21+): live music from The Band Next Door (4-7pm) and Love Tribe (7-10pm), food trucks, drinks for purchase, and fireworks at 9pm.",
+      "id": "1043fb3f7049",
+      "first_seen": "2026-06-26T08:30:00-04:00",
+      "last_verified": "2026-06-26T08:30:00-04:00"
+    },
+    {
+      "name": "Cary July 3rd Celebration",
+      "category": "family/kids",
+      "tags": [
+        "free",
+        "family-friendly",
+        "movie",
+        "food-trucks",
+        "july-4th"
+      ],
+      "venue": "Downtown Cary Park",
+      "address": "327 S Academy St, Cary, NC 27511",
+      "city": "Cary",
+      "lat": 35.7836,
+      "lon": -78.7811,
+      "start": "2026-07-03T16:00:00-04:00",
+      "end": "2026-07-03T22:00:00-04:00",
+      "duration_min": 360,
+      "price": "Free",
+      "budget": "$",
+      "indoor_outdoor": "outdoor",
+      "vegan": "unknown",
+      "vegetarian": "unknown",
+      "weather": null,
+      "image_url": "",
+      "booking_url": "",
+      "info_url": "https://downtowncarypark.com/things-to-do/calendar/w_july-3rd-celebration-3",
+      "source": "downtowncarypark.com",
+      "description": "Free family evening at Downtown Cary Park with games, a mist zone, arts and crafts, food trucks, a Bark Bar, and an outdoor screening of the movie 'Independence Day.'",
+      "id": "d57873740859",
+      "first_seen": "2026-06-26T08:30:00-04:00",
+      "last_verified": "2026-06-26T08:30:00-04:00"
+    },
+    {
+      "name": "Apex Fireworks Frenzy",
+      "category": "family/kids",
+      "tags": [
+        "free",
+        "fireworks",
+        "drone-show",
+        "family-friendly",
+        "july-4th"
+      ],
+      "venue": "Hunter Street Park",
+      "address": "1250 Ambergate Station, Apex, NC 27502",
+      "city": "Apex",
+      "lat": 35.73745,
+      "lon": -78.84793,
+      "start": "2026-07-03T16:30:00-04:00",
+      "end": "2026-07-03T22:00:00-04:00",
+      "duration_min": 330,
+      "price": "Free",
+      "budget": "$",
+      "indoor_outdoor": "outdoor",
+      "vegan": "unknown",
+      "vegetarian": "unknown",
+      "weather": null,
+      "image_url": "",
+      "booking_url": "",
+      "info_url": "https://www.apexnc.org/1808/Fireworks-Frenzy",
+      "source": "triangleonthecheap.com",
+      "description": "Apex's free Independence-eve celebration with a 'Parade of Wheels,' an expanded drone light show, fire-department splashdown, kids' inflatables, food trucks, and fireworks.",
+      "id": "3d28165c61bb",
+      "first_seen": "2026-06-26T08:30:00-04:00",
+      "last_verified": "2026-06-26T08:30:00-04:00"
+    },
+    {
+      "name": "Garner Independence Day Celebration",
+      "category": "festivals",
+      "tags": [
+        "free",
+        "fireworks",
+        "nc-symphony",
+        "family-friendly",
+        "july-4th"
+      ],
+      "venue": "Lake Benson Park",
+      "address": "921 Buffaloe Rd, Garner, NC 27529",
+      "city": "Garner",
+      "lat": 35.67199,
+      "lon": -78.62727,
+      "start": "2026-07-03T17:00:00-04:00",
+      "end": "2026-07-03T22:00:00-04:00",
+      "duration_min": 300,
+      "price": "Free",
+      "budget": "$",
+      "indoor_outdoor": "outdoor",
+      "vegan": "unknown",
+      "vegetarian": "unknown",
+      "weather": null,
+      "image_url": "",
+      "booking_url": "",
+      "info_url": "https://www.garnernc.gov/departments/parks-recreation-and-cultural-resources/events/independence-day",
+      "source": "triangleonthecheap.com",
+      "description": "Garner's free Independence Day celebration at Lake Benson Park: a North Carolina Symphony concert, veterans memorial tours, food vendors, and a kids' zone, with fireworks (~9:30pm).",
+      "id": "54609401ccfe",
+      "first_seen": "2026-06-26T08:30:00-04:00",
+      "last_verified": "2026-06-26T08:30:00-04:00"
+    },
+    {
+      "name": "Wake Forest Fireworks Spectacular",
+      "category": "festivals",
+      "tags": [
+        "free",
+        "fireworks",
+        "live-music",
+        "family-friendly",
+        "july-4th"
+      ],
+      "venue": "Heritage High School",
+      "address": "1150 Forestville Rd, Wake Forest, NC 27587",
+      "city": "Wake Forest",
+      "lat": 35.94064,
+      "lon": -78.51078,
+      "start": "2026-07-03T17:30:00-04:00",
+      "end": "2026-07-03T22:00:00-04:00",
+      "duration_min": 270,
+      "price": "Free",
+      "budget": "$",
+      "indoor_outdoor": "outdoor",
+      "vegan": "unknown",
+      "vegetarian": "unknown",
+      "weather": null,
+      "image_url": "",
+      "booking_url": "",
+      "info_url": "https://www.wakeforestnc.gov/meetings-events/independence-day-celebration/fireworks-spectacular",
+      "source": "triangleonthecheap.com",
+      "description": "Wake Forest's free Fireworks Spectacular at Heritage High School: a concert headlined by The Swingin' Medallions, roaming performers, magic and juggling acts, and food trucks. Gates 5:30pm, fireworks ~9:30pm.",
+      "id": "90fa289075cf",
+      "first_seen": "2026-06-26T08:30:00-04:00",
+      "last_verified": "2026-06-26T08:30:00-04:00"
+    },
+    {
+      "name": "First Friday Raleigh",
+      "category": "galleries",
+      "tags": [
+        "free",
+        "art-walk",
+        "downtown",
+        "family-friendly"
+      ],
+      "venue": "Downtown Raleigh (Gallery District)",
+      "address": "Moore Square & Fayetteville St, Raleigh, NC 27601",
+      "city": "Raleigh",
+      "lat": 35.77749,
+      "lon": -78.6358,
+      "start": "2026-07-03T18:00:00-04:00",
+      "end": "2026-07-03T21:00:00-04:00",
+      "duration_min": 180,
+      "price": "Free",
+      "budget": "$",
+      "indoor_outdoor": "both",
+      "vegan": "unknown",
+      "vegetarian": "unknown",
+      "weather": null,
+      "image_url": "",
+      "booking_url": "",
+      "info_url": "https://downtownraleigh.org/first-friday-raleigh/events",
+      "source": "downtownraleigh.org",
+      "description": "Downtown Raleigh's monthly first-Friday art walk: galleries, studios, and museums stay open late (6-9pm) with exhibits, artist talks, music, and shop specials. Free.",
+      "id": "a2b7a3c053c5",
+      "first_seen": "2026-06-26T08:30:00-04:00",
+      "last_verified": "2026-06-26T08:30:00-04:00"
+    },
+    {
+      "name": "Durham Bulls vs. Gwinnett Stripers",
+      "category": "sports",
+      "tags": [
+        "family-friendly",
+        "baseball",
+        "minor-league",
+        "triple-a",
+        "fireworks",
+        "july-4th"
+      ],
+      "venue": "Durham Bulls Athletic Park",
+      "address": "409 Blackwell St, Durham, NC 27701",
+      "city": "Durham",
+      "lat": 35.9908,
+      "lon": -78.9047,
+      "start": "2026-07-03T18:45:00-04:00",
+      "end": null,
+      "duration_min": 180,
+      "price": "unknown",
+      "budget": "$$",
+      "indoor_outdoor": "outdoor",
+      "vegan": "unknown",
+      "vegetarian": "unknown",
+      "weather": null,
+      "image_url": "",
+      "booking_url": "https://www.milb.com/durham/tickets",
+      "info_url": "https://www.milb.com/durham/schedule",
+      "source": "milb.com",
+      "description": "The Durham Bulls close their July-4th-weekend homestand against the Gwinnett Stripers; the Independence-weekend dates at DBAP feature postgame fireworks.",
+      "id": "8a5fff7c3fbf",
+      "first_seen": "2026-06-26T08:30:00-04:00",
+      "last_verified": "2026-06-26T08:30:00-04:00"
+    },
+    {
+      "name": "Cliff Cash (Dry Bar Comedy)",
+      "category": "comedy",
+      "tags": [
+        "stand-up",
+        "comedy",
+        "18-plus",
+        "indoor"
+      ],
+      "venue": "Goodnights Comedy Club",
+      "address": "401 Woodburn Rd, Raleigh, NC 27605",
+      "city": "Raleigh",
+      "lat": 35.7915,
+      "lon": -78.6595,
+      "start": "2026-07-03T19:00:00-04:00",
+      "end": null,
+      "duration_min": null,
+      "price": "unknown",
+      "budget": "$$",
+      "indoor_outdoor": "indoor",
+      "vegan": "unknown",
+      "vegetarian": "unknown",
+      "weather": null,
+      "image_url": "",
+      "booking_url": "",
+      "info_url": "https://www.goodnightscomedy.com/",
+      "source": "goodnightscomedy.com",
+      "description": "NC stand-up comedian Cliff Cash (Dry Bar Comedy) continues his run at Goodnights with Friday-night shows (7:00 & 9:15pm). 18+.",
+      "id": "11b613a091b7",
+      "first_seen": "2026-06-26T08:30:00-04:00",
+      "last_verified": "2026-06-26T08:30:00-04:00"
     }
   ]
 }
