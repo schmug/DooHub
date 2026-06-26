@@ -1,5 +1,6 @@
 import { lazy, Suspense, useMemo, useState } from "react";
 import type { Origin, TriangleEvent } from "../types";
+import type { Theme } from "../lib/theme";
 import {
   applyFilters,
   emptyFilters,
@@ -21,9 +22,10 @@ const MapView = lazy(() => import("./views/MapView"));
 interface Props {
   events: TriangleEvent[];
   origin: Origin;
+  theme: Theme;
 }
 
-export default function EventsExplorer({ events, origin }: Props) {
+export default function EventsExplorer({ events, origin, theme }: Props) {
   const [filters, setFilters] = useState<FilterState>(emptyFilters);
   const [sort, setSort] = useState<SortKey>("date");
   const [view, setView] = useState<ViewKey>("day");
@@ -92,7 +94,7 @@ export default function EventsExplorer({ events, origin }: Props) {
               </div>
             }
           >
-            <MapView events={visible} origin={origin} />
+            <MapView events={visible} origin={origin} theme={theme} />
           </Suspense>
         ) : (
           <GroupedView events={visible} origin={origin} groupBy={view} />
