@@ -20,8 +20,19 @@
   --line: #e6e7e1;
   --line-soft: #eef0ec;
   --dark-pill: #262a2c; /* active chip / segment */
-  --green: #2f6650; /* primary action green */
-  --green-2: #3f8568;
+  --pill-on: #fff; /* text on the active pill */
+  --green: #2f6650; /* primary action green (paired with white text) */
+  --green-2: #3f8568; /* lighter accent green: borders, hovers, the △ mark */
+  --link: #2f6650; /* body links — decoupled from --green so it can brighten in dark */
+
+  /* Surfaces promoted from hardcoded light values so they flip per theme.
+     Light values reproduce the original "Soft Transit" look exactly. */
+  --toolbar-bg: rgba(247, 247, 243, 0.92); /* sticky toolbar (frosted surface) */
+  --badge-bg: rgba(255, 255, 255, 0.92); /* cat/budget badges over media */
+  --tag-bg: rgba(255, 255, 255, 0.7); /* translucent tag/meta pills */
+  --media-fade: rgba(255, 255, 255, 0.5); /* media fallback gradient highlight */
+  --btn-soft-bg: rgba(255, 255, 255, 0.8); /* soft/outline card buttons */
+  --btn-soft-bg-hover: #fff;
 
   /* Budget scale — softened to the Soft Transit palette (map markers,
      legend). budgetColorVar() resolves to these vars. */
@@ -41,6 +52,51 @@
 
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --mono: "Space Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+/* ============================================================
+   Dark theme — a second set of token values under [data-theme="dark"].
+   Structure mirrors :root; the light look above is untouched. Neutrals are
+   hand-tuned for ~WCAG-AA text contrast on the dark surface; the five category
+   families are re-pitched below so the hues stay distinguishable.
+   ============================================================ */
+[data-theme="dark"] {
+  /* Neutral surface */
+  --surface: #15181a;
+  --card: #1e2225;
+  --track: #262b2e;
+  --ink: #e7eae6;
+  --ink-soft: #c3c8c1;
+  --ink-2: #b0b6ad;
+  --muted: #8b918a;
+  --muted-2: #757b74;
+  --mono-muted: #818880;
+  --line: #2f343a;
+  --line-soft: #262b2e;
+
+  --dark-pill: #e8eae6; /* inverted: a light active pill on the dark track */
+  --pill-on: #15181a; /* dark text on the light active pill */
+  --green: #2f7d5e; /* dark enough that white button text stays AA */
+  --green-2: #5fae8a; /* brighter accent for borders / the △ mark */
+  --link: #6bc49f; /* bright green so body links read on the dark surface */
+
+  --toolbar-bg: rgba(21, 24, 26, 0.92);
+  --badge-bg: rgba(18, 21, 23, 0.85);
+  --tag-bg: rgba(255, 255, 255, 0.08);
+  --media-fade: rgba(255, 255, 255, 0.05);
+  --btn-soft-bg: rgba(255, 255, 255, 0.1);
+  --btn-soft-bg-hover: rgba(255, 255, 255, 0.18);
+
+  /* Budget scale — slightly brightened so the markers/legend pop on dark. */
+  --b-free: #5fae8a;
+  --b-1: #5fae8a;
+  --b-2: #6f9fcb;
+  --b-3: #cf9d5f;
+  --b-4: #d184a0;
+
+  /* Deeper shadows read against the dark surface where soft ones vanish. */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.55);
 }
 
 /* ---------- Category colour families ----------
@@ -98,6 +154,62 @@
   --c-badge-text: #8c4760;
 }
 
+/* Dark category families. Each keeps the same hue identity as its light
+   counterpart but inverts the value relationship: deep low-sat backgrounds
+   with bright accents/heads/data so text clears ~AA on the dark card.
+   --c-strong stays a saturated mid (it backs the white-on-colour "Book"
+   button); --c-accent/--c-head/--c-data are the light-on-dark text roles. */
+[data-theme="dark"] .cat-green {
+  --c-bg: #1b2b24;
+  --c-line: #4f9d7b;
+  --c-accent: #74c7a1;
+  --c-strong: #2a7a5b;
+  --c-head: #8fd9b6;
+  --c-data: #79b89c;
+  --c-datalabel: #6f9d88;
+  --c-badge-text: #74c7a1;
+}
+[data-theme="dark"] .cat-purple {
+  --c-bg: #251f36;
+  --c-line: #9080c0;
+  --c-accent: #b49ce0;
+  --c-strong: #5d469a;
+  --c-head: #c9b6f0;
+  --c-data: #ad97da;
+  --c-datalabel: #9081b5;
+  --c-badge-text: #b49ce0;
+}
+[data-theme="dark"] .cat-clay {
+  --c-bg: #2c2316;
+  --c-line: #c79a63;
+  --c-accent: #d9ac72;
+  --c-strong: #8a5d31;
+  --c-head: #e8c794;
+  --c-data: #cda878;
+  --c-datalabel: #ab8c62;
+  --c-badge-text: #d9ac72;
+}
+[data-theme="dark"] .cat-blue {
+  --c-bg: #18242f;
+  --c-line: #7ba0c4;
+  --c-accent: #82b2dd;
+  --c-strong: #3a6188;
+  --c-head: #a6cdf0;
+  --c-data: #88b2d8;
+  --c-datalabel: #7596b8;
+  --c-badge-text: #82b2dd;
+}
+[data-theme="dark"] .cat-rose {
+  --c-bg: #2c1c23;
+  --c-line: #c98aa3;
+  --c-accent: #de9bb3;
+  --c-strong: #8c4760;
+  --c-head: #efb1c6;
+  --c-data: #d49bb0;
+  --c-datalabel: #ad7d8d;
+  --c-badge-text: #de9bb3;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -118,7 +230,7 @@ body {
 }
 
 a {
-  color: var(--green);
+  color: var(--link);
   text-decoration: none;
 }
 a:hover {
@@ -223,6 +335,36 @@ button {
   background: #28553f;
 }
 
+/* header actions cluster: theme toggle + subscribe pill */
+.head-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  font-size: 15px;
+  line-height: 1;
+  border: 1px solid var(--line);
+  border-radius: var(--pill);
+  background: var(--card);
+  color: var(--ink);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.theme-toggle:hover {
+  border-color: var(--green-2);
+}
+.theme-toggle:focus-visible {
+  outline: none;
+  border-color: var(--green-2);
+  box-shadow: 0 0 0 3px rgba(63, 133, 104, 0.18);
+}
+
 /* ---------- Tabs (underline) ---------- */
 .tabs {
   display: flex;
@@ -255,7 +397,7 @@ button {
   position: sticky;
   top: 0;
   z-index: 30;
-  background: rgba(247, 247, 243, 0.92);
+  background: var(--toolbar-bg);
   backdrop-filter: saturate(140%) blur(8px);
   border-bottom: 1px solid var(--line);
   padding: 18px 0 20px;
@@ -373,7 +515,7 @@ select.control {
 }
 .view-switch button[aria-pressed="true"] {
   background: var(--dark-pill);
-  color: #fff;
+  color: var(--pill-on);
 }
 
 /* chip rows: a mono label + pills */
@@ -414,7 +556,7 @@ select.control {
 .chip[aria-pressed="true"] {
   background: var(--dark-pill);
   border-color: var(--dark-pill);
-  color: #fff;
+  color: var(--pill-on);
 }
 
 /* results bar */
@@ -520,7 +662,7 @@ select.control {
 .event-card .media {
   position: relative;
   height: 150px;
-  background: linear-gradient(135deg, var(--c-bg), rgba(255, 255, 255, 0.5));
+  background: linear-gradient(135deg, var(--c-bg), var(--media-fade));
   overflow: hidden;
 }
 .event-card .media img {
@@ -540,7 +682,7 @@ select.control {
   position: absolute;
   top: 12px;
   left: 12px;
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--badge-bg);
   color: var(--c-badge-text);
   font-size: 11px;
   font-weight: 600;
@@ -555,7 +697,7 @@ select.control {
   position: absolute;
   top: 12px;
   right: 12px;
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--badge-bg);
   color: var(--c-badge-text);
   font-weight: 700;
   font-size: 11px;
@@ -601,7 +743,7 @@ select.control {
   margin-top: 13px;
 }
 .event-card .tagrow .pill {
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--tag-bg);
   color: var(--c-accent);
   border: 0;
   font-size: 11px;
@@ -635,16 +777,16 @@ select.control {
   filter: brightness(0.94);
 }
 .event-card .actions .btn.soft {
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--btn-soft-bg);
   border-color: transparent;
   color: var(--c-strong);
 }
 .event-card .actions .btn.soft:hover {
-  background: #fff;
+  background: var(--btn-soft-bg-hover);
   color: var(--c-strong);
 }
 .event-card .actions .btn.outline {
-  background: #fff;
+  background: var(--btn-soft-bg);
   border-color: color-mix(in srgb, var(--c-line) 55%, transparent);
   color: var(--c-strong);
 }
@@ -654,7 +796,7 @@ select.control {
   font-weight: 500;
   padding: 4px 10px;
   border-radius: var(--pill);
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--tag-bg);
   color: var(--ink-2);
   display: inline-flex;
   align-items: center;
@@ -694,7 +836,7 @@ table.events th {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #8a8e86;
+  color: var(--muted);
   white-space: nowrap;
 }
 table.events th:first-child {
@@ -716,7 +858,7 @@ table.events tbody tr td:first-child {
 }
 table.events td .nm {
   font-weight: 600;
-  color: #1f2b27;
+  color: var(--ink);
   letter-spacing: -0.01em;
 }
 table.events td .venue {
@@ -809,7 +951,7 @@ table.events td.links .ics {
   flex-wrap: wrap;
   font-family: var(--mono);
   font-size: 10px;
-  color: #8a8e86;
+  color: var(--muted);
 }
 .map-legend .keys span {
   display: inline-flex;
@@ -850,7 +992,7 @@ table.events td.links .ics {
   font-family: var(--sans);
   font-size: 14px;
   font-weight: 600;
-  color: #1f2b27;
+  color: var(--ink);
   line-height: 1.3;
 }
 .map-popup p {
@@ -906,7 +1048,7 @@ table.events td.links .ics {
   margin-top: 14px;
 }
 .itin-card .itin-meta span {
-  background: rgba(255, 255, 255, 0.75);
+  background: var(--tag-bg);
   color: var(--c-data);
   font-family: var(--mono);
   font-size: 11px;
@@ -964,7 +1106,7 @@ table.events td.links .ics {
   height: 12px;
   border-radius: 50%;
   background: var(--c-line);
-  border: 2px solid #fff;
+  border: 2px solid var(--card);
 }
 .sched-stop .stop-inner {
   display: flex;
@@ -981,7 +1123,7 @@ table.events td.links .ics {
 .sched-stop .title {
   font-size: 14.5px;
   font-weight: 600;
-  color: #1f2b27;
+  color: var(--ink);
   line-height: 1.35;
 }
 .sched-stop .title .muted {
@@ -1148,8 +1290,72 @@ table.events td.links .ics {
     right: 0;
     bottom: 0;
     width: 40px;
+    /* transparent → card: the start stop is fully transparent, so it works on
+       either surface; only the solid end uses the themed --card. */
     background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--card));
     border-radius: 0 14px 14px 0;
     pointer-events: none;
   }
+}
+
+/* ============================================================
+   Dark theme — targeted overrides for the handful of hardcoded greys/whites
+   that don't flow through a shared token. Light rules above are untouched.
+   ============================================================ */
+
+/* select chevron: redraw with a lighter stroke for the dark control */
+[data-theme="dark"] select.control {
+  background: var(--card)
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' fill='none' stroke='%238b918a' stroke-width='1.5' stroke-linecap='round'/></svg>")
+    no-repeat right 13px center;
+}
+
+/* muted greys that were pinned to light-surface values */
+[data-theme="dark"] .view-switch button {
+  color: var(--ink-2);
+}
+[data-theme="dark"] .chip {
+  color: var(--ink-2);
+}
+[data-theme="dark"] table.events td.when .clock {
+  color: var(--muted);
+}
+[data-theme="dark"] .empty {
+  border-color: var(--line);
+}
+[data-theme="dark"] .empty .empty-mark {
+  color: var(--muted-2);
+}
+
+/* soft/outline card buttons: use the brighter accent for text so it clears the
+   translucent fill on the dark card (--c-strong is too dark for text here). */
+[data-theme="dark"] .event-card .actions .btn.soft,
+[data-theme="dark"] .event-card .actions .btn.outline {
+  color: var(--c-accent);
+}
+
+/* ---------- Leaflet (dark basemap) ---------- */
+[data-theme="dark"] .leaflet-container {
+  background: #10141a; /* matches the dark tiles where they haven't loaded */
+}
+[data-theme="dark"] .leaflet-popup-content-wrapper,
+[data-theme="dark"] .leaflet-popup-tip {
+  background: var(--card);
+  color: var(--ink);
+}
+[data-theme="dark"] .leaflet-popup-close-button {
+  color: var(--muted);
+}
+[data-theme="dark"] .leaflet-bar a,
+[data-theme="dark"] .leaflet-bar a:hover {
+  background: var(--card);
+  color: var(--ink);
+  border-bottom-color: var(--line);
+}
+[data-theme="dark"] .leaflet-control-attribution {
+  background: rgba(18, 21, 23, 0.8);
+  color: var(--muted);
+}
+[data-theme="dark"] .leaflet-control-attribution a {
+  color: var(--link);
 }

@@ -1,6 +1,7 @@
 import { CircleMarker, MapContainer, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import type { Origin, TriangleEvent } from "../../types";
+import type { Theme } from "../../lib/theme";
 import {
   categoryColor,
   categoryFamily,
@@ -12,7 +13,22 @@ import {
 interface Props {
   events: TriangleEvent[];
   origin: Origin;
+  theme: Theme;
 }
+
+// Light OSM raster vs. CARTO's "dark matter" basemap, so the tiles match the
+// surrounding surface instead of glowing bright in dark mode.
+const TILES = {
+  light: {
+    url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  },
+  dark: {
+    url: "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+  },
+} as const;
 
 const LEGEND: { family: CategoryFamily; color: string; label: string }[] = [
   { family: "green", color: "#3f8568", label: "Museums · Parks" },
@@ -22,25 +38,25 @@ const LEGEND: { family: CategoryFamily; color: string; label: string }[] = [
   { family: "rose", color: "#b05f7a", label: "Theater · Comedy" },
 ];
 
-export default function MapView({ events, origin }: Props) {
+export default function MapView({ events, origin, theme }: Props) {
   const located = events.filter((e) => typeof e.lat === "number" && typeof e.lon === "number");
   const missing = events.length - located.length;
   const presentFamilies = new Set(located.map((e) => categoryFamily(e.category)));
+  const tiles = TILES[theme];
 
   return (
     <div>
       <div className="map-wrap">
         <MapContainer center={[origin.lat, origin.lon]} zoom={10} scrollWheelZoom={false}>
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
+          {/* keyed by theme so the basemap swaps cleanly on toggle */}
+          <TileLayer key={theme} attribution={tiles.attribution} url={tiles.url} />
           {located.map((ev) => (
             <CircleMarker
               key={ev.id}
               center={[ev.lat as number, ev.lon as number]}
               radius={9}
               pathOptions={{
+                // a white ring reads against both the light and dark basemaps
                 color: "#fff",
                 weight: 2,
                 fillColor: categoryColor(ev.category),

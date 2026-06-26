@@ -3,6 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Set the theme before first paint so there's no flash of the wrong one.
+         Mirrors resolveInitialTheme(): explicit stored choice wins, else the OS
+         `prefers-color-scheme`. Kept inline + dependency-free on purpose. -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var theme =
+            stored === "light" || stored === "dark"
+              ? stored
+              : window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+          document.documentElement.dataset.theme = theme;
+        } catch (e) {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
     <title>Triangle Weekend — Events in the Raleigh / Triangle Metro</title>
     <meta
       name="description"

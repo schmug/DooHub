@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { loadData, type LoadedData } from "./data/loadData";
+import { useTheme } from "./lib/useTheme";
 import Tabs, { type TabKey } from "./components/Tabs";
+import ThemeToggle from "./components/ThemeToggle";
 import EventsExplorer from "./components/EventsExplorer";
 import ItineraryView from "./components/ItineraryView";
 
@@ -21,6 +23,7 @@ function formatGenerated(iso: string | null): string {
 export default function App() {
   const [data, setData] = useState<LoadedData | null>(null);
   const [tab, setTab] = useState<TabKey>("events");
+  const { theme, toggle } = useTheme();
 
   useEffect(() => {
     loadData().then(setData);
@@ -48,9 +51,12 @@ export default function App() {
                 <span className="head-stamp">Updated {formatGenerated(data.generatedAt)} ET</span>
               )}
               {data?.isSample && <span className="head-stamp">Sample data · pipeline pending</span>}
-              <a className="subscribe-pill" href={ICS_URL}>
-                📅 Subscribe
-              </a>
+              <div className="head-actions">
+                <ThemeToggle theme={theme} onToggle={toggle} />
+                <a className="subscribe-pill" href={ICS_URL}>
+                  📅 Subscribe
+                </a>
+              </div>
             </div>
           </div>
           <Tabs active={tab} onChange={setTab} />
@@ -64,7 +70,7 @@ export default function App() {
           </div>
         </div>
       ) : tab === "events" ? (
-        <EventsExplorer events={data.events} origin={data.origin} />
+        <EventsExplorer events={data.events} origin={data.origin} theme={theme} />
       ) : (
         <ItineraryView itineraries={data.itineraries} events={data.events} />
       )}
