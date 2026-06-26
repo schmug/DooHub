@@ -266,8 +266,13 @@ button {
   gap: 12px;
   align-items: center;
 }
+/* Chip filters collapse behind the "Filters" toggle on every viewport so the
+   toolbar stays compact and events sit right under the search box. */
 .toolbar-filters {
+  display: none;
   margin-top: 16px;
+}
+.toolbar-filters.open {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -319,9 +324,9 @@ select.control {
   -webkit-appearance: none;
 }
 
-/* mobile filters toggle */
+/* filters toggle — shown on every viewport */
 .filters-toggle {
-  display: none;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
@@ -1108,14 +1113,7 @@ table.events td.links .ics {
   .toolbar {
     position: static;
   }
-  .filters-toggle {
-    display: inline-flex;
-  }
-  .toolbar-filters {
-    display: none;
-  }
   .toolbar-filters.open {
-    display: flex;
     max-height: 62vh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;

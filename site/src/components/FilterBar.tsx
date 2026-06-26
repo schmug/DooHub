@@ -47,8 +47,8 @@ function toggle<T>(arr: T[], v: T): T[] {
 export default function FilterBar({ filters, setFilters, sort, setSort, view, setView, days, categories }: Props) {
   const f = filters;
   const set = (patch: Partial<FilterState>) => setFilters({ ...f, ...patch });
-  // Chip filters collapse behind a toggle on mobile so events aren't buried
-  // under a full screen of filters. Desktop ignores this (CSS always shows them).
+  // Chip filters collapse behind the "Filters" toggle on every viewport so the
+  // toolbar stays compact and events sit right under the search box.
   const [open, setOpen] = useState(false);
   const count = activeFilterCount(f);
 
