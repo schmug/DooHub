@@ -1,719 +1,493 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-02T07:20:28-04:00",
-  "week": "2026-W27",
+  "generated_at": "2026-07-09T07:33:47-04:00",
+  "week": "2026-W28",
   "itineraries": [
     {
-      "id": "raleigh-independence-day",
-      "title": "Red, White & Raleigh: A Downtown Fourth",
-      "theme": "A free, all-American downtown day capped by fireworks at Dix Park",
+      "id": "raleigh-art-and-beach-music-thursday",
+      "title": "Art by Day, Beach Music by Night in Raleigh",
+      "theme": "A free-leaning Raleigh Thursday from museum galleries to an outdoor beach-music concert",
       "anchor_city": "Raleigh",
-      "drive_time": "Everything within ~10 min of downtown; free Dix shuttle from Moore Square",
-      "weather": {
-        "summary": "Sunny, very hot",
-        "temp_f": 103
-      },
-      "cost_range": "$0\u2013$40 (all events free; spend is food + parking)",
-      "date": "2026-07-04",
-      "overview": "Raleigh goes all-in on America's 250th: a morning parade, the free Capitol 250 Freedom Fest with historic interpreters and a reading of the Declaration, indoor play at Marbles when the heat peaks, then the city's big fireworks show on the Big Field at Dorothea Dix Park. It's a 103\u00b0F scorcher \u2014 hydrate hard and bank an air-conditioned break midday.",
+      "drive_time": "Everything within ~15 min around Raleigh; NCMA to North Hills is ~12 min",
+      "weather": { "summary": "Mostly Sunny", "temp_f": 96 },
+      "cost_range": "$0–$40 (tour free; concert + dinner are the spend)",
+      "date": "2026-07-09",
+      "overview": "Ease into the week with a free docent tour at the NC Museum of Art, cool off through the afternoon, then catch The Pink Slips at North Hills' Thursday beach-music series. It tops 96°F, so bank the hot midday hours indoors and hydrate before the evening show.",
       "schedule": {
-        "morning": [
-          {
-            "time": "9:30 AM",
-            "title": "First in Freedom July 4th Parade",
-            "event_id": "1809df34eef6",
-            "location": "Downtown Raleigh",
-            "price": "Free",
-            "notes": "Stake out shade on Fayetteville St before the sun climbs."
-          },
-          {
-            "time": "10:00 AM",
-            "title": "Capitol 250: North Carolina Freedom Fest",
-            "event_id": "903f1bc2c636",
-            "location": "North Carolina State Capitol, 1 E Edenton St, Raleigh, NC 27601",
-            "price": "Free",
-            "notes": "Live music, historic interpreters, hands-on activities and a reading of the Declaration of Independence on the Capitol grounds."
-          }
-        ],
+        "morning": [],
         "afternoon": [
           {
             "time": "1:00 PM",
-            "title": "Independence Day Play at Marbles",
-            "event_id": "555d8d7edf98",
-            "location": "Marbles Kids Museum, 201 E Hargett St, Raleigh, NC 27601",
-            "price": "unknown",
-            "notes": "Air-conditioned midday reset for families \u2014 fizzing 'fireworks' and water play. Adults can duck into the NC Museum of Natural Sciences (free) instead."
+            "title": "Public Tour: The People's Collection",
+            "event_id": "5e77d84f3599",
+            "location": "North Carolina Museum of Art, 2110 Blue Ridge Rd, Raleigh",
+            "price": "Free",
+            "notes": "Free 50-minute docent tour; the museum's air conditioning is the best midday move on a 96°F day."
           }
         ],
         "evening": [
           {
             "time": "6:00 PM",
-            "title": "Raleigh Fourth of July Fireworks at Dix Park",
-            "event_id": "7f73387a8c0f",
-            "location": "Dorothea Dix Park, 2105 Umstead Dr, Raleigh, NC 27603",
+            "title": "The Pink Slips — Midtown Beach Music Series",
+            "event_id": "9190fb0ec8df",
+            "location": "Midtown Park at North Hills, 4011 Cardinal at North Hills St, Raleigh",
+            "price": "See ticket link",
+            "notes": "Outdoor shag/beach-music concert 6–9 p.m. Bring a low chair; food and drinks available on-site."
+          },
+          {
+            "time": "8:00 PM",
+            "title": "Room 861 at Goodnights: Bobby Jaycox (optional late laugh)",
+            "event_id": "110f93d78cb6",
+            "location": "Goodnights Comedy Club, 401 Woodburn Rd, Raleigh",
+            "price": "See ticket link",
+            "notes": "If you'd rather end indoors, swap the concert's back half for a stand-up set 10 min away."
+          }
+        ]
+      },
+      "food": [
+        {
+          "slot": "lunch",
+          "place": "Happy + Hale",
+          "city": "Raleigh",
+          "vegan_dish": "The 'Sunny Bowl' with tofu, greens and tahini",
+          "vegetarian_dish": "Avocado-and-egg grain bowl",
+          "price": "$",
+          "notes": "Fast, cold, plant-forward — good fuel before the heat peaks."
+        },
+        {
+          "slot": "dinner",
+          "place": "The Fiction Kitchen",
+          "city": "Raleigh",
+          "vegan_dish": "Vegan Southern fried 'chicken' & waffles",
+          "vegetarian_dish": "Vegetarian Reuben",
+          "price": "$$",
+          "notes": "Fully vegetarian/vegan on W Martin St; reserve ahead, then head to North Hills."
+        }
+      ],
+      "alternatives": [
+        {
+          "leg": "Evening beach-music concert",
+          "good_weather": "Full outdoor set at Midtown Park",
+          "rain": "Pop-up storms are possible late — if it turns, duck into the North Hills shops/restaurants or pivot to the indoor Goodnights show."
+        }
+      ],
+      "practical_notes": [
+        "96°F and humid — carry water and plan the museum for the hottest part of the afternoon.",
+        "North Hills has free garage parking; arrive by 5:30 p.m. for a good lawn spot.",
+        "NCMA is closed Mondays but open Thursday; the tour meets in the main lobby."
+      ],
+      "event_ids": ["5e77d84f3599", "9190fb0ec8df", "110f93d78cb6"]
+    },
+    {
+      "id": "durham-southern-rock-friday",
+      "title": "Bull City Friday: Barbecue & Blackberry Smoke",
+      "theme": "A downtown Durham evening built around a marquee DPAC concert",
+      "anchor_city": "Durham",
+      "drive_time": "All within a 10-min walk/drive of downtown Durham",
+      "weather": { "summary": "Sunny then Chance Showers and Thunderstorms", "temp_f": 97 },
+      "cost_range": "$70–$120 (concert ticket from $65 + dinner)",
+      "date": "2026-07-10",
+      "overview": "Make a night of it in downtown Durham: an early dinner in the American Tobacco district, then Blackberry Smoke's Rattle, Ramble and Roll Tour with special guest Jason Newsted at DPAC. A hot, storm-capable afternoon means everything here is walkable and mostly indoors.",
+      "schedule": {
+        "morning": [],
+        "afternoon": [],
+        "evening": [
+          {
+            "time": "6:30 PM",
+            "title": "Early dinner in the American Tobacco Campus",
+            "location": "American Tobacco Campus, Durham (adjacent to DPAC)",
+            "price": "$$",
+            "notes": "Park once in the ATC decks and walk to the show."
+          },
+          {
+            "time": "8:00 PM",
+            "title": "Blackberry Smoke: Rattle, Ramble and Roll Tour",
+            "event_id": "13f261a2d1c6",
+            "location": "Durham Performing Arts Center, 123 Vivian St, Durham",
+            "price": "From $65",
+            "notes": "Doors 7 p.m., show 8 p.m.; special guest Jason Newsted (ex-Metallica)."
+          }
+        ]
+      },
+      "food": [
+        {
+          "slot": "dinner",
+          "place": "Namu / American Tobacco Campus dining",
+          "city": "Durham",
+          "vegan_dish": "Vegetable bibimbap, no egg (gochujang on the side)",
+          "vegetarian_dish": "Kimchi fried rice with a fried egg",
+          "price": "$$",
+          "notes": "If Namu is full, Tobacco Road Sports Café and Mellow Mushroom (vegan cheese available) are steps away."
+        }
+      ],
+      "alternatives": [
+        {
+          "leg": "Getting to the show",
+          "good_weather": "Stroll the ATC waterway before doors",
+          "rain": "Storms are possible after sunset — the ATC decks connect under cover to DPAC, so you can stay dry."
+        }
+      ],
+      "practical_notes": [
+        "DPAC is all-ages but everyone needs a ticket; children under 6 aren't admitted to this show.",
+        "97°F day — the venue and campus are air-conditioned; dress light.",
+        "Buy parking ahead in an ATC deck on a concert night."
+      ],
+      "event_ids": ["13f261a2d1c6"]
+    },
+    {
+      "id": "chapel-hill-artwalk-indie-friday",
+      "title": "Chapel Hill to Carrboro: ArtWalk & Indie Rock",
+      "theme": "A college-town Friday pairing free gallery hours with a Cat's Cradle Back Room show",
+      "anchor_city": "Chapel Hill",
+      "drive_time": "Ackland to Cat's Cradle is ~8 min; both walkable from Franklin St / downtown Carrboro",
+      "weather": { "summary": "Sunny then Chance Showers and Thunderstorms", "temp_f": 97 },
+      "cost_range": "$15–$45 (ArtWalk free; show + dinner are the spend)",
+      "date": "2026-07-10",
+      "overview": "Start with free extended hours and 2nd Friday ArtWalk at UNC's Ackland Art Museum, graze dinner in Carrboro, then catch a local triple bill in the intimate Cat's Cradle Back Room. Everything is close and mostly indoor-friendly if storms roll through.",
+      "schedule": {
+        "morning": [],
+        "afternoon": [
+          {
+            "time": "5:00 PM",
+            "title": "2nd Friday ArtWalk — Extended Museum Hours",
+            "event_id": "1163f7e7f367",
+            "location": "Ackland Art Museum, 101 S Columbia St, Chapel Hill",
             "price": "Free",
-            "notes": "Gates 6 PM, music and food trucks, fireworks ~9:30 PM. Take the free Moore Square shuttle; no alcohol permitted on the Big Field."
+            "notes": "Galleries stay open 5–9 p.m.; free admission, air-conditioned, family-friendly."
+          }
+        ],
+        "evening": [
+          {
+            "time": "8:00 PM",
+            "title": "Johnny Sunrise and the Clouds, With Love, Nicole Tester",
+            "event_id": "5fe7277bf5b4",
+            "location": "Cat's Cradle Back Room, 300 E Main St, Carrboro",
+            "price": "See ticket link",
+            "notes": "Doors 7 p.m., show 8 p.m. The Back Room is a small, standing-room space."
+          }
+        ]
+      },
+      "food": [
+        {
+          "slot": "dinner",
+          "place": "Weaver Street Market (Carrboro)",
+          "city": "Carrboro",
+          "vegan_dish": "Vegan mac from the hot bar + a kombucha",
+          "vegetarian_dish": "Margherita slice and a big garden salad",
+          "price": "$",
+          "notes": "Co-op grocery + lawn a block from Cat's Cradle; grab-and-go and eat on the Town Commons."
+        }
+      ],
+      "alternatives": [
+        {
+          "leg": "Between museum and show",
+          "good_weather": "Walk Franklin/Main St between Chapel Hill and Carrboro",
+          "rain": "If it pours, both the Ackland and the Back Room are indoors — just drive the 8 minutes between them."
+        }
+      ],
+      "practical_notes": [
+        "Park in the Wallace Deck (Chapel Hill) for the Ackland; street/lot parking in Carrboro for the show.",
+        "The Back Room sells out small shows — buy the etix ticket in advance.",
+        "97°F and humid; the ArtWalk is the cool, free anchor of the evening."
+      ],
+      "event_ids": ["1163f7e7f367", "5fe7277bf5b4"]
+    },
+    {
+      "id": "super-saturday-raleigh",
+      "title": "Super Saturday Raleigh: Market, Museums & a Legend",
+      "theme": "A full Raleigh Saturday from the farmers market to a bucket-list concert, with storm backups",
+      "anchor_city": "Raleigh",
+      "drive_time": "State Farmers Market, NCMA and downtown all within ~15 min",
+      "weather": { "summary": "Partly Sunny then Showers and Thunderstorms Likely", "temp_f": 93 },
+      "cost_range": "$25–$120 (markets/museums free; evening concert is the splurge)",
+      "date": "2026-07-11",
+      "overview": "Beat the heat early at the State Farmers Market, spend the storm-likely afternoon in the free, air-conditioned NC Museum of Art, browse a pop-up market, then choose your big Saturday night — Gladys Knight downtown or Paul Simon at the amphitheater. Afternoon thunderstorms are likely, so the indoor museum block is the weather hedge.",
+      "schedule": {
+        "morning": [
+          {
+            "time": "9:00 AM",
+            "title": "NC State Farmers Market",
+            "event_id": "436fd5ef325d",
+            "location": "State Farmers Market, 1201 Agriculture St, Raleigh",
+            "price": "Free",
+            "notes": "Peak produce and a hot breakfast at the market restaurant before the day heats up."
+          }
+        ],
+        "afternoon": [
+          {
+            "time": "11:00 AM",
+            "title": "The Market at Raleigh Iron Works",
+            "event_id": "c6aa90c22f26",
+            "location": "Raleigh Iron Works, Raleigh",
+            "price": "Free",
+            "notes": "Small-business pop-up, 11 a.m.–4 p.m. — do this before storms build."
+          },
+          {
+            "time": "1:30 PM",
+            "title": "The Altered Environment + Becoming the NCMA (Exhibitions)",
+            "event_id": "193f28758f97",
+            "location": "North Carolina Museum of Art, 2110 Blue Ridge Rd, Raleigh",
+            "price": "Free",
+            "notes": "Two free exhibitions and cool galleries — the ideal place to be when the afternoon storms hit."
+          }
+        ],
+        "evening": [
+          {
+            "time": "8:00 PM",
+            "title": "Gladys Knight",
+            "event_id": "7aa3ab712e49",
+            "location": "Raleigh Memorial Auditorium, 2 E South St, Raleigh",
+            "price": "See ticket link",
+            "notes": "Indoor, downtown, weatherproof. Prefer an amphitheater? Paul Simon plays Coastal Credit Union Music Park the same night (id 3d0ea02dffb1)."
           }
         ]
       },
       "food": [
         {
           "slot": "breakfast",
-          "place": "Morning Times",
+          "place": "NC State Farmers Market Restaurant",
           "city": "Raleigh",
-          "vegan_dish": "Avocado toast (no cheese) with a cold brew",
-          "vegetarian_dish": "Egg & cheese biscuit",
+          "vegan_dish": "Grits, home fries and fruit (ask for no butter on the grits)",
+          "vegetarian_dish": "Farm-egg biscuit with tomato",
           "price": "$",
-          "notes": "Fayetteville St coffeehouse, opens early \u2014 fuel before the parade."
+          "notes": "Classic market breakfast right where you're already shopping."
         },
         {
           "slot": "lunch",
-          "place": "The Fiction Kitchen",
+          "place": "Garland",
           "city": "Raleigh",
-          "vegan_dish": "Vegan Southern fried 'chicken' & waffles",
-          "vegetarian_dish": "The vegetarian Reuben",
+          "vegan_dish": "Chana masala with basmati (vegan)",
+          "vegetarian_dish": "Paneer or saag with roti",
           "price": "$$",
-          "notes": "Fully vegetarian/vegan on W Martin St; reserve ahead on the holiday."
+          "notes": "Spice-forward Indian/Asian on Fayetteville St; strong vegetarian menu."
         },
         {
           "slot": "dinner",
-          "place": "Food trucks at Dix Park",
+          "place": "Bida Manda",
           "city": "Raleigh",
-          "vegan_dish": "Loaded veggie taco or falafel wrap from a lot vendor",
-          "vegetarian_dish": "Wood-fired margherita or grilled cheese",
-          "price": "$$",
-          "notes": "Eat on-site so you don't lose your fireworks spot."
+          "vegan_dish": "Vegetable-and-tofu larb (request vegan)",
+          "vegetarian_dish": "Coconut curry noodle soup",
+          "price": "$$$",
+          "notes": "Laotian downtown, walkable to Raleigh Memorial Auditorium; book ahead on a concert night."
         }
       ],
       "alternatives": [
         {
-          "leg": "Evening fireworks at Dix Park",
-          "good_weather": "Blanket on the Big Field for the full show",
-          "rain": "If afternoon storms roll through, watch for the city's rain call on raleighnc.gov and pivot to an indoor rooftop view downtown."
+          "leg": "Afternoon pop-up market",
+          "good_weather": "Browse Raleigh Iron Works outdoors, then the museum",
+          "rain": "If storms come early, flip the order — go to the NCMA first and shop the market in a dry window."
         },
         {
-          "leg": "Midday outdoor time",
-          "good_weather": "Linger on the Capitol lawn",
-          "rain": "Move the Marbles / Natural Sciences stop earlier and stay indoors."
+          "leg": "Evening concert choice",
+          "good_weather": "Paul Simon under the stars at the amphitheater",
+          "rain": "Storms likely — the indoor Gladys Knight show is the safe pick; amphitheater shows go on rain or shine but bring a poncho."
         }
       ],
       "practical_notes": [
-        "103\u00b0F and full sun \u2014 bring more water than you think, wear a hat, take a midday AC break.",
-        "Park once in a downtown deck (Wilmington/Blount) and use the free Dix shuttle from Moore Square in the evening.",
-        "Dix Park fills early for fireworks; arrive by 7:30 PM for a good lawn spot."
+        "Thunderstorms are likely after midday — keep the indoor museum block flexible.",
+        "Downtown decks (Wilmington/Blount) are easiest for the evening auditorium show.",
+        "93°F with high humidity; the morning market and evening indoor show bracket the worst heat."
       ],
-      "event_ids": [
-        "1809df34eef6",
-        "903f1bc2c636",
-        "555d8d7edf98",
-        "7f73387a8c0f"
-      ]
+      "event_ids": ["436fd5ef325d", "c6aa90c22f26", "193f28758f97", "60c503597f65", "7aa3ab712e49", "3d0ea02dffb1"]
     },
     {
-      "id": "durham-bull-city-fourth",
-      "title": "Bull City Fourth: Market, Parade & Ballpark Fireworks",
-      "theme": "A classic Durham Independence Day from farmers market to a Bulls fireworks night",
-      "anchor_city": "Durham",
-      "drive_time": "All within ~10 min around downtown Durham",
-      "weather": {
-        "summary": "Sunny, very hot",
-        "temp_f": 103
-      },
-      "cost_range": "$0\u2013$60 (market + fest free; Bulls tickets extra)",
-      "date": "2026-07-04",
-      "overview": "Start at the Durham Farmers' Market under the Central Park pavilion, join the kids' bike-and-wagon parade, graze the free BullCity Freedom & Good Food Fest all afternoon, then close the night with Triple-A baseball and a post-game fireworks show as the Durham Bulls host the Gwinnett Stripers. A rooftop party is the grown-up alternative to the ballpark.",
+      "id": "cary-soccer-saturday",
+      "title": "Cary Saturday: Farmers Market to a Courage Kickoff",
+      "theme": "A Western-Wake family Saturday capped by pro women's soccer",
+      "anchor_city": "Cary",
+      "drive_time": "Morrisville market, downtown Cary and WakeMed Soccer Park all within ~15 min",
+      "weather": { "summary": "Partly Sunny then Showers and Thunderstorms Likely", "temp_f": 93 },
+      "cost_range": "$20–$70 (market free; soccer tickets + dinner)",
+      "date": "2026-07-11",
+      "overview": "Do a laid-back west-side Saturday: morning at the Western Wake Farmers Market, an air-conditioned midday break, then an evening NWSL match as the NC Courage host the Washington Spirit at WakeMed Soccer Park. Storms are likely mid-afternoon, so keep the middle of the day indoors.",
       "schedule": {
         "morning": [
           {
             "time": "8:00 AM",
-            "title": "Durham Farmers' Market",
-            "event_id": "23074d11220d",
-            "location": "Pavilion at Durham Central Park, 501 Foster St, Durham, NC 27701",
-            "price": "Free",
-            "notes": "Peaches, pastries and cold brew before the heat; producer-only, 8am\u201312pm."
-          },
-          {
-            "time": "9:30 AM",
-            "title": "Children's Independence Day Parade",
-            "event_id": "38d17f95486e",
-            "location": "Durham Central Park, 501 Foster St, Durham, NC 27701",
-            "price": "Free",
-            "notes": "Decorate a bike or wagon (materials provided); parade steps off ~10:30 AM, then popsicles and fire-truck tours."
-          }
-        ],
-        "afternoon": [
-          {
-            "time": "3:00 PM",
-            "title": "BullCity Freedom and Good Food Fest",
-            "event_id": "a1bc744fc4f8",
-            "location": "Durham Central Park, 501 Foster St, Durham, NC 27701",
-            "price": "Free",
-            "notes": "Live music, DJs, food trucks and kids' activities right in Central Park."
-          }
-        ],
-        "evening": [
-          {
-            "time": "6:45 PM",
-            "title": "Durham Bulls vs. Gwinnett Stripers + Fireworks",
-            "event_id": "d3557a81d283",
-            "location": "Durham Bulls Athletic Park, 409 Blackwell St, Durham, NC 27701",
-            "price": "unknown",
-            "notes": "First pitch 6:45 PM with a July 4th post-game fireworks show. Buy ahead \u2014 holiday games sell out."
-          }
-        ]
-      },
-      "food": [
-        {
-          "slot": "breakfast",
-          "place": "Monuts",
-          "city": "Durham",
-          "vegan_dish": "Vegan glazed donut + tofu scramble biscuit",
-          "vegetarian_dish": "Egg & cheese on a house biscuit",
-          "price": "$",
-          "notes": "A block from Central Park; grab-and-go before the market."
-        },
-        {
-          "slot": "lunch",
-          "place": "Market & food-truck grazing",
-          "city": "Durham",
-          "vegan_dish": "Falafel wrap or veggie arepa from a Central Park truck",
-          "vegetarian_dish": "Wood-fired veggie slice",
-          "price": "$$",
-          "notes": "Build lunch from the market and fest vendors."
-        },
-        {
-          "slot": "dinner",
-          "place": "Pizzeria Toro",
-          "city": "Durham",
-          "vegan_dish": "Marinara pie, hold the cheese, add roasted vegetables",
-          "vegetarian_dish": "Margherita with local tomatoes",
-          "price": "$$$",
-          "notes": "Downtown on Main St, near the ballpark; wood-fired, seasonal. Or eat at the park."
-        }
-      ],
-      "alternatives": [
-        {
-          "leg": "Evening finale",
-          "good_weather": "Ballpark seats for the game + fireworks",
-          "rain": "If the game is delayed, head to The Roof at The Durham Hotel rooftop party for downtown views and a DJ."
-        },
-        {
-          "leg": "Afternoon in Central Park",
-          "good_weather": "Stay for the full fest",
-          "rain": "Shelter under the market pavilion or slip into a Foster St caf\u00e9 until the storm clears."
-        }
-      ],
-      "practical_notes": [
-        "Very hot and sunny (~103\u00b0F) \u2014 shade at Central Park is limited midday; hydrate.",
-        "Downtown decks (Chapel Hill St / Corcoran) put you within a walk of the market, park and ballpark.",
-        "Bulls July 4 fireworks games routinely sell out; secure tickets in advance."
-      ],
-      "event_ids": [
-        "23074d11220d",
-        "38d17f95486e",
-        "a1bc744fc4f8",
-        "d3557a81d283",
-        "af49703c8419"
-      ]
-    },
-    {
-      "id": "chapel-hill-carrboro-fourth",
-      "title": "Carrboro to Chapel Hill: A People's Parade & a Drone Show",
-      "theme": "A community-minded Fourth with a hometown parade and a 300-drone finale",
-      "anchor_city": "Carrboro",
-      "drive_time": "Carrboro and Chapel Hill are ~5\u201310 min apart",
-      "weather": {
-        "summary": "Sunny, very hot",
-        "temp_f": 103
-      },
-      "cost_range": "$0\u2013$40 (events free; food + late show extra)",
-      "date": "2026-07-04",
-      "overview": "Carrboro does the Fourth its own way: morning at the Carrboro Farmers' Market, the beloved People's Parade led by the Bulltown Strutters, and a Town Commons celebration. Cool off in the afternoon, then head to Chapel Hill High for the town's free 300-drone light show (replacing fireworks). Night owls can catch nerdcore rapper MC Chris in the Cat's Cradle Back Room.",
-      "schedule": {
-        "morning": [
-          {
-            "time": "7:30 AM",
-            "title": "Carrboro Farmers' Market",
-            "event_id": "998f574d74bb",
-            "location": "Carrboro Town Commons, 301 W Main St, Carrboro, NC 27510",
-            "price": "Free",
-            "notes": "One of NC's best markets; go early (7am\u201312pm) before the heat."
-          },
-          {
-            "time": "9:30 AM",
-            "title": "Carrboro's People's Parade & Town Commons",
-            "event_id": "3e747a8e741b",
-            "location": "Weaver Street Market / Carrboro Town Hall, 101 E Weaver St, Carrboro, NC 27510",
-            "price": "Free",
-            "notes": "Decorate a bike, march in the 10:50 AM People's Parade, then Town Commons festivities and an afternoon community reading."
-          }
-        ],
-        "afternoon": [
-          {
-            "time": "1:00 PM",
-            "title": "Beat-the-heat break at Weaver Street / Ackland",
-            "event_id": null,
-            "location": "Weaver Street Market lawn or Ackland Art Museum, Chapel Hill",
-            "price": "Free",
-            "notes": "Shade and AC \u2014 the Ackland's galleries are free and open; grab an iced coffee on the Weaver St lawn."
-          }
-        ],
-        "evening": [
-          {
-            "time": "7:00 PM",
-            "title": "Chapel Hill Fourth of July Drone Show",
-            "event_id": "ac2e1aefdc66",
-            "location": "Chapel Hill High School, 9217 Seawell School Road, Chapel Hill, NC 27516",
-            "price": "Free",
-            "notes": "Food vendors from 7 PM, ~300-drone light show around 9:20 PM. Free parking with shuttles."
-          },
-          {
-            "time": "8:00 PM",
-            "title": "MC Chris at Cat's Cradle Back Room (optional)",
-            "event_id": "f60791645412",
-            "location": "Cat's Cradle (Back Room), 300 E Main St, Carrboro, NC 27510",
-            "price": "unknown",
-            "notes": "Nerdcore late-night in Carrboro if you'd rather trade the drone show for a club set."
-          }
-        ]
-      },
-      "food": [
-        {
-          "slot": "breakfast",
-          "place": "Weaver Street Market",
-          "city": "Carrboro",
-          "vegan_dish": "Tofu scramble + vegan pastry from the bakery",
-          "vegetarian_dish": "Breakfast burrito with egg & cheese",
-          "price": "$",
-          "notes": "Co-op market right on the Town Commons \u2014 perfect market-morning fuel."
-        },
-        {
-          "slot": "lunch",
-          "place": "Mediterranean Deli",
-          "city": "Chapel Hill",
-          "vegan_dish": "Falafel plate with hummus, tabbouleh and baba ghanoush",
-          "vegetarian_dish": "Spanakopita with Greek salad",
-          "price": "$$",
-          "notes": "Franklin St institution with a huge veg/vegan hot bar."
-        },
-        {
-          "slot": "dinner",
-          "place": "Vimala's Curryblossom Caf\u00e9",
-          "city": "Chapel Hill",
-          "vegan_dish": "Chana masala with brown rice",
-          "vegetarian_dish": "Saag paneer",
-          "price": "$$",
-          "notes": "Clearly labeled vegan dishes; community-minded spot off Franklin St."
-        }
-      ],
-      "alternatives": [
-        {
-          "leg": "Evening drone show",
-          "good_weather": "Lawn seating at Chapel Hill High",
-          "rain": "Storms can scrub a drone show \u2014 check @chapelhillgov before heading out; fall back to MC Chris indoors at Cat's Cradle."
-        },
-        {
-          "leg": "Midday",
-          "good_weather": "Linger on the Town Commons",
-          "rain": "Ackland Art Museum and Weaver Street's indoor seating stay dry."
-        }
-      ],
-      "practical_notes": [
-        "Hot and sunny (~103\u00b0F); the market and parade are shade-limited \u2014 hydrate and start early.",
-        "Park once in Carrboro and walk to the market/parade; drive to Chapel Hill High for the evening (use the free shuttles).",
-        "The drone show replaces fireworks \u2014 great for noise-sensitive kids and pets."
-      ],
-      "event_ids": [
-        "998f574d74bb",
-        "3e747a8e741b",
-        "ac2e1aefdc66",
-        "f60791645412"
-      ]
-    },
-    {
-      "id": "cary-symphony-fourth",
-      "title": "Cary's Symphony & Sparks at Koka Booth",
-      "theme": "A polished, family-friendly Fourth with the NC Symphony and lakeside fireworks",
-      "anchor_city": "Cary",
-      "drive_time": "Koka Booth is ~20 min from Raleigh; ~10 min around Cary/Morrisville",
-      "weather": {
-        "summary": "Sunny, very hot",
-        "temp_f": 103
-      },
-      "cost_range": "$0\u2013$50 (free lawn; reserved seats + food extra)",
-      "date": "2026-07-04",
-      "overview": "Cary's Independence Day is the Triangle's most polished: a free lawn show at Koka Booth Amphitheatre with the North Carolina Symphony and Cary Town Band, kids' activities, and a fireworks finale over Symphony Lake. Warm up with a morning at the Western Wake Farmers Market and downtown Cary before the gates open at 3:30 PM.",
-      "schedule": {
-        "morning": [
-          {
-            "time": "9:00 AM",
             "title": "Western Wake Farmers Market",
-            "event_id": "92f816e354c3",
-            "location": "Indian Creek Trailhead Park, 101 Town Hall Dr, Morrisville, NC 27560",
+            "event_id": "6a61bb7725a5",
+            "location": "Indian Creek Trailhead Park, 101 Town Hall Dr, Morrisville",
             "price": "Free",
-            "notes": "Producer-focused Morrisville market (8am\u201312pm); grab breakfast and picnic supplies for the lawn."
+            "notes": "Producer-only market, 8 a.m.–noon; go early before the heat."
           }
         ],
         "afternoon": [
           {
-            "time": "3:30 PM",
-            "title": "Cary Independence Day Celebration \u2014 gates open",
-            "event_id": "a55dbcfe947f",
-            "location": "Koka Booth Amphitheatre, 8003 Regency Parkway, Cary, NC 27518",
-            "price": "Free (lawn); reserved seats extra",
-            "notes": "Stake out lawn space early; kids' zone and Cary Town Band in the afternoon."
-          }
-        ],
-        "evening": [
-          {
-            "time": "7:30 PM",
-            "title": "NC Symphony + Fireworks over Symphony Lake",
-            "event_id": "a55dbcfe947f",
-            "location": "Koka Booth Amphitheatre, 8003 Regency Parkway, Cary, NC 27518",
-            "price": "Free (lawn)",
-            "notes": "Patriotic program by the NC Symphony, fireworks finale ~9:25 PM over the lake."
-          }
-        ]
-      },
-      "food": [
-        {
-          "slot": "breakfast",
-          "place": "Once in a Blue Moon Bakery",
-          "city": "Cary",
-          "vegan_dish": "Fruit & a vegan muffin",
-          "vegetarian_dish": "Quiche and a latte",
-          "price": "$",
-          "notes": "Downtown Cary bakery-caf\u00e9 near the market."
-        },
-        {
-          "slot": "lunch",
-          "place": "Pharaoh's Grill / downtown Cary",
-          "city": "Cary",
-          "vegan_dish": "Falafel platter with hummus and tabbouleh",
-          "vegetarian_dish": "Veggie gyro with feta",
-          "price": "$$",
-          "notes": "Quick Mediterranean lunch before heading to Koka Booth."
-        },
-        {
-          "slot": "dinner",
-          "place": "Koka Booth food vendors / picnic",
-          "city": "Cary",
-          "vegan_dish": "Veggie kebab or falafel wrap from a lot vendor",
-          "vegetarian_dish": "Cheese flatbread or pretzel",
-          "price": "$$",
-          "notes": "Outside food/coolers policy varies \u2014 check boothamphitheatre.com before packing a picnic."
-        }
-      ],
-      "alternatives": [
-        {
-          "leg": "Lawn show at Koka Booth",
-          "good_weather": "Blanket + low chairs on the lawn",
-          "rain": "The show runs rain-or-shine for music, but fireworks can be delayed \u2014 watch the Town of Cary channels for updates."
-        },
-        {
-          "leg": "Morning outdoors",
-          "good_weather": "Stroll Downtown Cary Park's splash features",
-          "rain": "Shift the market run earlier and browse downtown Cary shops."
-        }
-      ],
-      "practical_notes": [
-        "Very hot (~103\u00b0F): the lawn bakes in afternoon sun \u2014 bring a canopy or umbrella, sunscreen and water.",
-        "Arrive by mid-afternoon for lawn space and easier parking; expect a slow exit after fireworks.",
-        "Reserved table seats are limited and ticketed; the lawn is free general admission."
-      ],
-      "event_ids": [
-        "92f816e354c3",
-        "a55dbcfe947f"
-      ]
-    },
-    {
-      "id": "fireworks-on-the-third",
-      "title": "Beat the Crowds: Fireworks on the Third",
-      "theme": "Get your fireworks fix a night early across the western suburbs",
-      "anchor_city": "Apex",
-      "drive_time": "Apex, Cary and Garner are all 10\u201320 min apart",
-      "weather": {
-        "summary": "Sunny, very hot",
-        "temp_f": 102
-      },
-      "cost_range": "$0\u2013$30 (celebrations free; food extra)",
-      "date": "2026-07-03",
-      "overview": "Skip the July 4 crush and celebrate on the third: several Triangle towns light up a night early. Apex's Fireworks Frenzy at Hunter Street Park pairs a Parade of Wheels, a drone show and fireworks; Cary, Garner and Wake Forest run their own free celebrations the same evening. Spend the day on Apex's historic Salem Street, then pick your fireworks.",
-      "schedule": {
-        "morning": [
-          {
-            "time": "11:00 AM",
-            "title": "Historic Salem Street, Apex",
-            "event_id": null,
-            "location": "Downtown Salem St, Apex",
-            "price": "Free",
-            "notes": "Browse the shops and caf\u00e9s of one of NC's best-preserved main streets before the heat peaks."
-          }
-        ],
-        "afternoon": [
-          {
-            "time": "4:30 PM",
-            "title": "Apex Fireworks Frenzy \u2014 Parade of Wheels",
-            "event_id": "3d28165c61bb",
-            "location": "Hunter Street Park, 1250 Ambergate Station, Apex, NC 27502",
-            "price": "Free",
-            "notes": "Food, games and a 4:30 PM Parade of Wheels kick off the evening at Hunter Street Park."
-          }
-        ],
-        "evening": [
-          {
-            "time": "8:45 PM",
-            "title": "Apex Drone Show + Fireworks",
-            "event_id": "3d28165c61bb",
-            "location": "Hunter Street Park, 1250 Ambergate Station, Apex, NC 27502",
-            "price": "Free",
-            "notes": "Drone show ~8:45 PM, fireworks ~9:30 PM. Prefer a big-name amphitheater crowd? Garner's Lake Benson Park has the NC Symphony + fireworks the same night."
-          }
-        ]
-      },
-      "food": [
-        {
-          "slot": "breakfast",
-          "place": "Salem Street Coffee / Rooted Grounds",
-          "city": "Apex",
-          "vegan_dish": "Oat-milk latte + vegan muffin",
-          "vegetarian_dish": "Breakfast bagel",
-          "price": "$",
-          "notes": "Fuel on Salem St before the day."
-        },
-        {
-          "slot": "lunch",
-          "place": "Scratch Kitchen & Taproom",
-          "city": "Apex",
-          "vegan_dish": "Ask for the veggie bowl / build a vegan plate",
-          "vegetarian_dish": "Grilled cheese with tomato soup",
-          "price": "$$",
-          "notes": "Casual downtown Apex spot with rotating veg options."
-        },
-        {
-          "slot": "dinner",
-          "place": "Food trucks at Hunter Street Park",
-          "city": "Apex",
-          "vegan_dish": "Veggie taco or falafel from a lot vendor",
-          "vegetarian_dish": "Kettle corn + cheese quesadilla",
-          "price": "$",
-          "notes": "Eat at the celebration to hold your fireworks spot."
-        }
-      ],
-      "alternatives": [
-        {
-          "leg": "Where to watch fireworks on the 3rd",
-          "good_weather": "Apex Hunter Street Park lawn",
-          "rain": "If Apex postpones, Garner (Lake Benson Park) and Wake Forest (Heritage High) run the same night \u2014 check town channels."
-        },
-        {
-          "leg": "Daytime",
-          "good_weather": "Walk Salem Street",
-          "rain": "Duck into Salem St shops and caf\u00e9s between showers (low storm risk on the 3rd)."
-        }
-      ],
-      "practical_notes": [
-        "Hot and sunny (~102\u00b0F) but a lower storm risk than midweek \u2014 still bring water and sun cover.",
-        "Arrive by dusk and park a few blocks out; Hunter Street Park parking fills fast.",
-        "A great pet/kid-friendly option: Apex adds a drone show alongside the fireworks."
-      ],
-      "event_ids": [
-        "3d28165c61bb",
-        "54609401ccfe",
-        "90fa289075cf"
-      ]
-    },
-    {
-      "id": "bull-city-sunday-baseball-ballads",
-      "title": "Bull City Sunday: Baseball, Gardens & Harry Connick Jr.",
-      "theme": "An easygoing post-holiday Sunday of gardens, ballpark fireworks and a jazz icon",
-      "anchor_city": "Durham",
-      "drive_time": "All within ~15 min around Durham",
-      "weather": {
-        "summary": "Sunny, hot",
-        "temp_f": 102
-      },
-      "cost_range": "$0\u2013$120 (gardens free; ballpark + DPAC ticketed)",
-      "date": "2026-07-05",
-      "overview": "Wind down the holiday weekend in Durham: a cool morning stroll through Sarah P. Duke Gardens, an afternoon Durham Bulls game with a Sunday fireworks show, and \u2014 for a dressed-up finish \u2014 an evening with Harry Connick, Jr. at DPAC. Pick the ballpark or the theater; both are a short hop from downtown.",
-      "schedule": {
-        "morning": [
-          {
-            "time": "9:00 AM",
-            "title": "Sarah P. Duke Gardens",
-            "event_id": null,
-            "location": "Sarah P. Duke Gardens, 420 Anderson St, Durham",
-            "price": "Free (parking fee)",
-            "notes": "55 acres of gardens; go early before the midday heat. Free admission."
-          }
-        ],
-        "afternoon": [
-          {
-            "time": "5:05 PM",
-            "title": "Durham Bulls vs. Gwinnett Stripers + Fireworks",
-            "event_id": "7f071ecc4f52",
-            "location": "Durham Bulls Athletic Park, 409 Blackwell St, Durham, NC 27701",
-            "price": "unknown",
-            "notes": "First pitch 5:05 PM with a post-game fireworks show to close the homestand."
-          }
-        ],
-        "evening": [
-          {
-            "time": "7:30 PM",
-            "title": "An Evening with Harry Connick, Jr. (alternative)",
-            "event_id": "a2e6f96aa591",
-            "location": "DPAC (Durham Performing Arts Center), 123 Vivian St, Durham, NC 27701",
-            "price": "unknown",
-            "notes": "Prefer AC and a show? Trade the ballpark for DPAC. Or catch Madison Beer at Red Hat Amphitheater in Raleigh the same night."
-          }
-        ]
-      },
-      "food": [
-        {
-          "slot": "breakfast",
-          "place": "Guglhupf Bakery & Caf\u00e9",
-          "city": "Durham",
-          "vegan_dish": "Vegan pastry + drip coffee",
-          "vegetarian_dish": "German breakfast board with soft pretzel",
-          "price": "$$",
-          "notes": "German-style bakery-caf\u00e9 near the gardens."
-        },
-        {
-          "slot": "lunch",
-          "place": "Toast",
-          "city": "Durham",
-          "vegan_dish": "Marinated tofu & veg panino (ask to hold cheese)",
-          "vegetarian_dish": "Caprese panino",
-          "price": "$$",
-          "notes": "Downtown Italian sandwich shop; quick and reliable."
-        },
-        {
-          "slot": "dinner",
-          "place": "Ballpark eats or Nanas alternative",
-          "city": "Durham",
-          "vegan_dish": "Veggie-loaded nachos at the DBAP",
-          "vegetarian_dish": "Ballpark cheese pizza or pretzel",
-          "price": "$$",
-          "notes": "Eat at the game, or grab a sit-down dinner near DPAC if you swap to the show."
-        }
-      ],
-      "alternatives": [
-        {
-          "leg": "Evening finale",
-          "good_weather": "Ballpark seats + fireworks",
-          "rain": "Slight PM storm chance \u2014 DPAC (indoors) is the dry-weather-proof choice; keep it as your backup."
-        },
-        {
-          "leg": "Morning at the gardens",
-          "good_weather": "Full loop of the gardens",
-          "rain": "The Nasher Museum (free) is a nearby indoor alternative on Duke's campus."
-        }
-      ],
-      "practical_notes": [
-        "Hot (~102\u00b0F) with a slight evening storm chance \u2014 pack a light layer and check the forecast before first pitch.",
-        "Duke Gardens parking is paid; arrive early on a summer weekend.",
-        "Choose one evening anchor (Bulls or DPAC) \u2014 they overlap in time."
-      ],
-      "event_ids": [
-        "7f071ecc4f52",
-        "a2e6f96aa591",
-        "f2fdc672ef73"
-      ]
-    },
-    {
-      "id": "durham-weeknight-arts-ale",
-      "title": "Weeknight Arts & Ale: A Low-Key Monday in Durham",
-      "theme": "Beat the post-holiday lull with gardens, a museum and brewery trivia",
-      "anchor_city": "Durham",
-      "drive_time": "All within ~15 min around Durham",
-      "weather": {
-        "summary": "Hot; PM thunderstorm chance",
-        "temp_f": 102
-      },
-      "cost_range": "$0\u2013$30 (museum free; food + drinks extra)",
-      "date": "2026-07-06",
-      "overview": "A relaxed first-Monday-after-the-Fourth in Durham: free art at the Nasher, a stroll through Duke Gardens when the day cools, and a low-key evening of Geeks Who Drink trivia at Ponysaurus Brewing. Ideal if you want the Triangle without the holiday crowds.",
-      "schedule": {
-        "morning": [
-          {
-            "time": "10:00 AM",
-            "title": "Nasher Museum of Art",
-            "event_id": null,
-            "location": "Nasher Museum of Art, 2001 Campus Dr, Durham",
-            "price": "Free",
-            "notes": "Free admission; the 'Tall Tales and Short Stories' exhibition is on view all summer."
-          }
-        ],
-        "afternoon": [
-          {
-            "time": "5:00 PM",
-            "title": "Sarah P. Duke Gardens (golden hour)",
-            "event_id": null,
-            "location": "Sarah P. Duke Gardens, 420 Anderson St, Durham",
-            "price": "Free (parking fee)",
-            "notes": "Cooler late-afternoon walk once the day's heat breaks."
+            "time": "12:30 PM",
+            "title": "Midday AC break / lunch in downtown Cary",
+            "location": "Downtown Cary",
+            "price": "$$",
+            "notes": "Duck the afternoon storms with a long lunch and browse the shops on Academy St."
           }
         ],
         "evening": [
           {
             "time": "6:30 PM",
-            "title": "Trivia Night at Ponysaurus Brewing",
-            "event_id": "06f211f1ca1f",
-            "location": "Ponysaurus Brewing Co., 219 Hood St, Durham, NC 27701",
-            "price": "Free",
-            "notes": "Geeks Who Drink trivia 6:30\u20138:30 PM with beer prizes; pizza and pints on the patio."
+            "title": "NC Courage vs. Washington Spirit",
+            "event_id": "5baeae84b048",
+            "location": "WakeMed Soccer Park, 201 Soccer Park Dr, Cary",
+            "price": "See ticket link",
+            "notes": "NWSL kickoff 6:30 p.m.; general-admission berms are great for families."
           }
         ]
       },
       "food": [
         {
-          "slot": "breakfast",
-          "place": "Monuts",
-          "city": "Durham",
-          "vegan_dish": "Vegan donut + tofu scramble biscuit",
-          "vegetarian_dish": "Egg & cheese biscuit",
-          "price": "$",
-          "notes": "Durham breakfast staple."
-        },
-        {
           "slot": "lunch",
-          "place": "Namu",
-          "city": "Durham",
-          "vegan_dish": "Vegetable bibimbap (no egg), add tofu",
-          "vegetarian_dish": "Kimchi pancake",
+          "place": "Downtown Cary (South Indian)",
+          "city": "Cary",
+          "vegan_dish": "Masala dosa with sambar (vegan)",
+          "vegetarian_dish": "Idli-vada combo",
           "price": "$$",
-          "notes": "Korean comfort food downtown; easy veg swaps."
+          "notes": "Downtown Cary has strong South Indian vegetarian options — perfect on a hot day."
         },
         {
           "slot": "dinner",
-          "place": "Ponysaurus patio + food truck",
-          "city": "Durham",
-          "vegan_dish": "Vegan slice or falafel from the night's truck",
-          "vegetarian_dish": "Margherita pizza",
+          "place": "Concession stands / food trucks at WakeMed Soccer Park",
+          "city": "Cary",
+          "vegan_dish": "Veggie tacos or a soft pretzel",
+          "vegetarian_dish": "Cheese quesadilla or margherita flatbread",
           "price": "$$",
-          "notes": "Rotating food trucks at the brewery; check ponysaurusbrewing.com for the night's vendor."
+          "notes": "Eat at the match so you don't lose your seat before kickoff."
         }
       ],
       "alternatives": [
         {
-          "leg": "Afternoon at the gardens",
-          "good_weather": "Golden-hour garden walk",
-          "rain": "PM thunderstorms are possible Monday \u2014 swap in more Nasher time or a downtown caf\u00e9."
-        },
-        {
-          "leg": "Evening trivia",
-          "good_weather": "Ponysaurus patio",
-          "rain": "Ponysaurus has indoor seating; trivia runs regardless."
+          "leg": "Evening soccer match",
+          "good_weather": "Berm seating and a full 90 in the open air",
+          "rain": "Storms are likely — check @NCCourage for weather holds; bring a poncho (umbrellas are restricted)."
         }
       ],
       "practical_notes": [
-        "Hot with an afternoon/evening thunderstorm chance (~102\u00b0F high) \u2014 keep a rain plan.",
-        "The Nasher is free; Duke Gardens parking is paid.",
-        "Trivia is walk-in and free \u2014 arrive a little early to grab a table for your team."
+        "93°F and storm-capable; the market is a morning-only window.",
+        "WakeMed Soccer Park parking is on-site; arrive ~45 min before kickoff.",
+        "Berm tickets are the family-friendly, budget pick."
       ],
-      "event_ids": [
-        "06f211f1ca1f"
-      ]
+      "event_ids": ["6a61bb7725a5", "5baeae84b048"]
+    },
+    {
+      "id": "durham-sunday-treasure-and-galleries",
+      "title": "Slow Durham Sunday: Treasure Hunt & Galleries",
+      "theme": "A relaxed, budget Sunday of vintage shopping and free art in Durham",
+      "anchor_city": "Durham",
+      "drive_time": "Durham Central Park to the Nasher is ~10 min",
+      "weather": { "summary": "Chance Showers and Thunderstorms", "temp_f": 88 },
+      "cost_range": "$0–$30 (market + galleries free; spend is brunch)",
+      "date": "2026-07-12",
+      "overview": "Take it easy: hunt for vintage and local goods at Durham Central Park's Bull City Treasure Hunt, brunch downtown, then cool off with free exhibitions at Duke's Nasher Museum. It's cooler (88°F) but scattered storms are possible, so the museum is a nice back-half backup.",
+      "schedule": {
+        "morning": [
+          {
+            "time": "10:00 AM",
+            "title": "Bull City Treasure Hunt",
+            "event_id": "d41b085dee03",
+            "location": "Durham Central Park, 501 Foster St, Durham",
+            "price": "Free",
+            "notes": "40+ vendors and live music; go early for the best finds and cooler temps."
+          }
+        ],
+        "afternoon": [
+          {
+            "time": "1:30 PM",
+            "title": "Tall Tales and Short Stories (Exhibition)",
+            "event_id": "ea883c8871a3",
+            "location": "Nasher Museum of Art at Duke, 2001 Campus Dr, Durham",
+            "price": "Free",
+            "notes": "Free, air-conditioned galleries and a lovely café — ideal if afternoon storms bubble up."
+          }
+        ],
+        "evening": []
+      },
+      "food": [
+        {
+          "slot": "breakfast",
+          "place": "Guglhupf Bakery & Café",
+          "city": "Durham",
+          "vegan_dish": "Avocado toast on house sourdough (no butter)",
+          "vegetarian_dish": "German soft-pretzel + egg breakfast board",
+          "price": "$$",
+          "notes": "Shady biergarten patio on the west side of downtown."
+        },
+        {
+          "slot": "lunch",
+          "place": "The Nasher Café",
+          "city": "Durham",
+          "vegan_dish": "Seasonal grain-and-veg salad",
+          "vegetarian_dish": "Caprese sandwich",
+          "price": "$$",
+          "notes": "Eat at the museum to stay in the AC through the storm window."
+        }
+      ],
+      "alternatives": [
+        {
+          "leg": "Morning outdoor market",
+          "good_weather": "Full lap of the Treasure Hunt + Central Park",
+          "rain": "If it storms early, shift to the Nasher first, then catch the market in a dry window before it closes."
+        }
+      ],
+      "practical_notes": [
+        "88°F with scattered storms — the coolest day of the week, but keep a rain plan.",
+        "Free parking around Durham Central Park on Sundays; the Nasher has a free lot.",
+        "The Nasher is closed Mondays but open Sunday afternoons."
+      ],
+      "event_ids": ["d41b085dee03", "ea883c8871a3", "8c13c038fe97"]
+    },
+    {
+      "id": "raleigh-midweek-comedy-and-brews",
+      "title": "Midweek Raleigh: SNL Stand-Up & Craft Beer",
+      "theme": "A low-key Wednesday of trivia, brews and a big-name comedy set",
+      "anchor_city": "Raleigh",
+      "drive_time": "Downtown Raleigh to Goodnights is ~8 min; Bond Brothers (Cary) is ~20 min",
+      "weather": { "summary": "Sunny", "temp_f": 95 },
+      "cost_range": "$20–$50 (trivia free; comedy ticket + dinner)",
+      "date": "2026-07-15",
+      "overview": "Break up the week with a proper night out: a laid-back brewery-district dinner, then SNL cast member James Austin Johnson doing stand-up at Goodnights. Free trivia and music bingo around town make good warm-ups. It's a hot, dry, sunny day — patios are back in play after a stormy stretch.",
+      "schedule": {
+        "morning": [],
+        "afternoon": [],
+        "evening": [
+          {
+            "time": "7:00 PM",
+            "title": "NC Team Trivia at Bond Brothers (optional warm-up)",
+            "event_id": "676cccbbbffd",
+            "location": "Bond Brothers Beer Company, 202 E Cedar St, Cary",
+            "price": "Free",
+            "notes": "Free weekly trivia at 7 p.m. if you want a pre-show pint; Music Bingo at Ponysaurus in Durham (id 45e515c411bb) is the east-side alternative."
+          },
+          {
+            "time": "7:30 PM",
+            "title": "James Austin Johnson",
+            "event_id": "b23a17457110",
+            "location": "Goodnights Comedy Club, 401 Woodburn Rd, Raleigh",
+            "price": "See ticket link",
+            "notes": "SNL cast member; 18+ with a two-item minimum in the showroom. Buy ahead."
+          }
+        ]
+      },
+      "food": [
+        {
+          "slot": "dinner",
+          "place": "Player's Retreat (Village District)",
+          "city": "Raleigh",
+          "vegan_dish": "Impossible burger with fries (ask for a vegan bun)",
+          "vegetarian_dish": "Pimento-cheese sandwich and a local draft",
+          "price": "$$",
+          "notes": "Historic Raleigh pub minutes from Goodnights; big draft list."
+        }
+      ],
+      "alternatives": [
+        {
+          "leg": "Pre-show plan",
+          "good_weather": "Patio pint at Bond Brothers or a Village District dinner",
+          "rain": "Clear, sunny evening forecast — but Goodnights and the breweries are all indoor if plans change."
+        }
+      ],
+      "practical_notes": [
+        "95°F and sunny — a good patio night after the mid-week storms.",
+        "Goodnights is 18+; arrive 30 min early for the two-item-minimum seating.",
+        "If you skip the Cary trivia, go straight to a Village District dinner near the club."
+      ],
+      "event_ids": ["676cccbbbffd", "b23a17457110", "45e515c411bb"]
     }
   ]
 }
