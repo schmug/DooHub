@@ -1,46 +1,57 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-09T07:33:47-04:00",
-  "week": "2026-W28",
+  "generated_at": "2026-07-16T07:30:00-04:00",
+  "week": "2026-W29",
   "itineraries": [
     {
-      "id": "raleigh-art-and-beach-music-thursday",
-      "title": "Art by Day, Beach Music by Night in Raleigh",
-      "theme": "A free-leaning Raleigh Thursday from museum galleries to an outdoor beach-music concert",
+      "id": "raleigh-cool-galleries-warm-beach-music-thu",
+      "title": "Cool Galleries by Day, Free Music by Night — Raleigh",
+      "theme": "Beat a 99°F Thursday indoors at the art museum, then ease into a free downtown concert after sundown",
       "anchor_city": "Raleigh",
-      "drive_time": "Everything within ~15 min around Raleigh; NCMA to North Hills is ~12 min",
-      "weather": { "summary": "Mostly Sunny", "temp_f": 96 },
-      "cost_range": "$0–$40 (tour free; concert + dinner are the spend)",
-      "date": "2026-07-09",
-      "overview": "Ease into the week with a free docent tour at the NC Museum of Art, cool off through the afternoon, then catch The Pink Slips at North Hills' Thursday beach-music series. It tops 96°F, so bank the hot midday hours indoors and hydrate before the evening show.",
+      "drive_time": "All within ~15 min of downtown Raleigh; NCMA to Moore Square is about 12 min",
+      "date": "2026-07-16",
+      "weather": {
+        "summary": "Sunny",
+        "temp_f": 99
+      },
+      "cost_range": "$0–$45 (tours free; spend is dinner + optional beach-music ticket)",
+      "overview": "It hits 99°F today, so bank the hot hours in the air-conditioned NC Museum of Art — a free docent tour, then the free NCMA After Hours as the galleries stay open late. When the sun drops, head downtown for the free Live After 5 concert at Moore Square, or swap in the North Hills beach-music series if you'd rather dance.",
       "schedule": {
         "morning": [],
         "afternoon": [
           {
             "time": "1:00 PM",
             "title": "Public Tour: The People's Collection",
-            "event_id": "5e77d84f3599",
-            "location": "North Carolina Museum of Art, 2110 Blue Ridge Rd, Raleigh",
+            "event_id": "894d734c7bae",
+            "location": "North Carolina Museum of Art, 2110 Blue Ridge Rd, Raleigh, NC 27607",
             "price": "Free",
-            "notes": "Free 50-minute docent tour; the museum's air conditioning is the best midday move on a 96°F day."
+            "notes": "Free 50-minute docent tour of the People's Collection — the museum's AC is the smartest place to be at 1 p.m. on a 99°F day."
           }
         ],
         "evening": [
           {
-            "time": "6:00 PM",
-            "title": "The Pink Slips — Midtown Beach Music Series",
-            "event_id": "9190fb0ec8df",
-            "location": "Midtown Park at North Hills, 4011 Cardinal at North Hills St, Raleigh",
-            "price": "See ticket link",
-            "notes": "Outdoor shag/beach-music concert 6–9 p.m. Bring a low chair; food and drinks available on-site."
+            "time": "5:30 PM",
+            "title": "NCMA After Hours",
+            "event_id": "bca4d6691b7e",
+            "location": "North Carolina Museum of Art, 2110 Blue Ridge Rd, Raleigh, NC 27607",
+            "price": "Free",
+            "notes": "NCMA After Hours: free general admission, art, and music as the galleries stay open into the evening."
           },
           {
-            "time": "8:00 PM",
-            "title": "Room 861 at Goodnights: Bobby Jaycox (optional late laugh)",
-            "event_id": "110f93d78cb6",
-            "location": "Goodnights Comedy Club, 401 Woodburn Rd, Raleigh",
-            "price": "See ticket link",
-            "notes": "If you'd rather end indoors, swap the concert's back half for a stand-up set 10 min away."
+            "time": "7:00 PM",
+            "title": "Live After 5: River Shook",
+            "event_id": "076d925ee044",
+            "location": "Moore Square, 201 S Blount St, Raleigh, NC 27601",
+            "price": "Free",
+            "notes": "Free Live After 5 concert with River Shook at Moore Square, with food trucks. Bring water."
+          },
+          {
+            "time": "6:00 PM",
+            "title": "Too Much Sylvia — Midtown Beach Music Series",
+            "event_id": "7aa8b210cfdb",
+            "location": "Midtown Park at North Hills, 4011 Cardinal at North Hills St, Raleigh, NC 27609",
+            "price": "unknown",
+            "notes": "Alternative: Too Much Sylvia at the North Hills beach-music series if you'd rather a shag-dancing lawn party (small ticket)."
           }
         ]
       },
@@ -49,8 +60,8 @@
           "slot": "lunch",
           "place": "Happy + Hale",
           "city": "Raleigh",
-          "vegan_dish": "The 'Sunny Bowl' with tofu, greens and tahini",
-          "vegetarian_dish": "Avocado-and-egg grain bowl",
+          "vegan_dish": "Sunny Bowl with tofu, greens, and tahini",
+          "vegetarian_dish": "Avocado + egg grain bowl",
           "price": "$",
           "notes": "Fast, cold, plant-forward — good fuel before the heat peaks."
         },
@@ -58,436 +69,633 @@
           "slot": "dinner",
           "place": "The Fiction Kitchen",
           "city": "Raleigh",
-          "vegan_dish": "Vegan Southern fried 'chicken' & waffles",
+          "vegan_dish": "Vegan Southern fried 'chicken' and waffles",
           "vegetarian_dish": "Vegetarian Reuben",
           "price": "$$",
-          "notes": "Fully vegetarian/vegan on W Martin St; reserve ahead, then head to North Hills."
+          "notes": "Fully vegetarian/vegan on W Martin St; reserve ahead, then walk to Moore Square."
         }
       ],
       "alternatives": [
         {
-          "leg": "Evening beach-music concert",
-          "good_weather": "Full outdoor set at Midtown Park",
-          "rain": "Pop-up storms are possible late — if it turns, duck into the North Hills shops/restaurants or pivot to the indoor Goodnights show."
+          "leg": "Evening concert",
+          "good_weather": "Free Live After 5 at Moore Square, or the open-air beach-music show at North Hills",
+          "rain": "Storms are unlikely tonight (Sunny), but if one pops up, the North Hills shops/restaurants and the museum galleries are steps away."
         }
       ],
       "practical_notes": [
-        "96°F and humid — carry water and plan the museum for the hottest part of the afternoon.",
-        "North Hills has free garage parking; arrive by 5:30 p.m. for a good lawn spot.",
-        "NCMA is closed Mondays but open Thursday; the tour meets in the main lobby."
+        "99°F and humid — carry water and plan the museum for the hottest part of the afternoon.",
+        "NCMA has free parking; Moore Square has paid decks nearby on Blount and Wilmington.",
+        "Live After 5 is free and family-friendly; beer and wine are sold on-site."
       ],
-      "event_ids": ["5e77d84f3599", "9190fb0ec8df", "110f93d78cb6"]
+      "event_ids": [
+        "894d734c7bae",
+        "bca4d6691b7e",
+        "076d925ee044",
+        "7aa8b210cfdb"
+      ]
     },
     {
-      "id": "durham-southern-rock-friday",
-      "title": "Bull City Friday: Barbecue & Blackberry Smoke",
-      "theme": "A downtown Durham evening built around a marquee DPAC concert",
+      "id": "durham-third-friday-winter-in-july-bulls",
+      "title": "Third Friday 'Winter in July' + Bulls Fireworks — Durham",
+      "theme": "Durham's monthly downtown art walk (with a snow machine) paired with a Margaritaville night at the ballpark",
       "anchor_city": "Durham",
-      "drive_time": "All within a 10-min walk/drive of downtown Durham",
-      "weather": { "summary": "Sunny then Chance Showers and Thunderstorms", "temp_f": 97 },
-      "cost_range": "$70–$120 (concert ticket from $65 + dinner)",
-      "date": "2026-07-10",
-      "overview": "Make a night of it in downtown Durham: an early dinner in the American Tobacco district, then Blackberry Smoke's Rattle, Ramble and Roll Tour with special guest Jason Newsted at DPAC. A hot, storm-capable afternoon means everything here is walkable and mostly indoors.",
-      "schedule": {
-        "morning": [],
-        "afternoon": [],
-        "evening": [
-          {
-            "time": "6:30 PM",
-            "title": "Early dinner in the American Tobacco Campus",
-            "location": "American Tobacco Campus, Durham (adjacent to DPAC)",
-            "price": "$$",
-            "notes": "Park once in the ATC decks and walk to the show."
-          },
-          {
-            "time": "8:00 PM",
-            "title": "Blackberry Smoke: Rattle, Ramble and Roll Tour",
-            "event_id": "13f261a2d1c6",
-            "location": "Durham Performing Arts Center, 123 Vivian St, Durham",
-            "price": "From $65",
-            "notes": "Doors 7 p.m., show 8 p.m.; special guest Jason Newsted (ex-Metallica)."
-          }
-        ]
+      "drive_time": "Everything within ~10 min in downtown Durham; DBAP is a short walk from the art-walk district",
+      "date": "2026-07-17",
+      "weather": {
+        "summary": "Sunny",
+        "temp_f": 100
       },
-      "food": [
-        {
-          "slot": "dinner",
-          "place": "Namu / American Tobacco Campus dining",
-          "city": "Durham",
-          "vegan_dish": "Vegetable bibimbap, no egg (gochujang on the side)",
-          "vegetarian_dish": "Kimchi fried rice with a fried egg",
-          "price": "$$",
-          "notes": "If Namu is full, Tobacco Road Sports Café and Mellow Mushroom (vegan cheese available) are steps away."
-        }
-      ],
-      "alternatives": [
-        {
-          "leg": "Getting to the show",
-          "good_weather": "Stroll the ATC waterway before doors",
-          "rain": "Storms are possible after sunset — the ATC decks connect under cover to DPAC, so you can stay dry."
-        }
-      ],
-      "practical_notes": [
-        "DPAC is all-ages but everyone needs a ticket; children under 6 aren't admitted to this show.",
-        "97°F day — the venue and campus are air-conditioned; dress light.",
-        "Buy parking ahead in an ATC deck on a concert night."
-      ],
-      "event_ids": ["13f261a2d1c6"]
-    },
-    {
-      "id": "chapel-hill-artwalk-indie-friday",
-      "title": "Chapel Hill to Carrboro: ArtWalk & Indie Rock",
-      "theme": "A college-town Friday pairing free gallery hours with a Cat's Cradle Back Room show",
-      "anchor_city": "Chapel Hill",
-      "drive_time": "Ackland to Cat's Cradle is ~8 min; both walkable from Franklin St / downtown Carrboro",
-      "weather": { "summary": "Sunny then Chance Showers and Thunderstorms", "temp_f": 97 },
-      "cost_range": "$15–$45 (ArtWalk free; show + dinner are the spend)",
-      "date": "2026-07-10",
-      "overview": "Start with free extended hours and 2nd Friday ArtWalk at UNC's Ackland Art Museum, graze dinner in Carrboro, then catch a local triple bill in the intimate Cat's Cradle Back Room. Everything is close and mostly indoor-friendly if storms roll through.",
+      "cost_range": "$0–$40 (art walk + Foodie Fare free; Bulls ticket is the spend)",
+      "overview": "The hottest day of the week (100°F) is also the most fun after dark in Durham. Graze the Durham Foodie Fare food-truck market at Central Park, then hit the free Third Friday gallery crawl — July's edition is a 'Winter in July' party with a snow machine and a DJ. Cap it with Margaritaville Night and postgame fireworks at the Durham Bulls.",
       "schedule": {
         "morning": [],
         "afternoon": [
           {
-            "time": "5:00 PM",
-            "title": "2nd Friday ArtWalk — Extended Museum Hours",
-            "event_id": "1163f7e7f367",
-            "location": "Ackland Art Museum, 101 S Columbia St, Chapel Hill",
+            "time": "5:30 PM",
+            "title": "Durham Foodie Fare",
+            "event_id": "8d2e01642bb4",
+            "location": "Durham Central Park, 501 Foster St, Durham, NC 27701",
             "price": "Free",
-            "notes": "Galleries stay open 5–9 p.m.; free admission, air-conditioned, family-friendly."
+            "notes": "Durham Foodie Fare food-truck + art market at Durham Central Park — free entry, pay-as-you-go dinner."
           }
         ],
         "evening": [
           {
-            "time": "8:00 PM",
-            "title": "Johnny Sunrise and the Clouds, With Love, Nicole Tester",
-            "event_id": "5fe7277bf5b4",
-            "location": "Cat's Cradle Back Room, 300 E Main St, Carrboro",
-            "price": "See ticket link",
-            "notes": "Doors 7 p.m., show 8 p.m. The Back Room is a small, standing-room space."
-          }
-        ]
-      },
-      "food": [
-        {
-          "slot": "dinner",
-          "place": "Weaver Street Market (Carrboro)",
-          "city": "Carrboro",
-          "vegan_dish": "Vegan mac from the hot bar + a kombucha",
-          "vegetarian_dish": "Margherita slice and a big garden salad",
-          "price": "$",
-          "notes": "Co-op grocery + lawn a block from Cat's Cradle; grab-and-go and eat on the Town Commons."
-        }
-      ],
-      "alternatives": [
-        {
-          "leg": "Between museum and show",
-          "good_weather": "Walk Franklin/Main St between Chapel Hill and Carrboro",
-          "rain": "If it pours, both the Ackland and the Back Room are indoors — just drive the 8 minutes between them."
-        }
-      ],
-      "practical_notes": [
-        "Park in the Wallace Deck (Chapel Hill) for the Ackland; street/lot parking in Carrboro for the show.",
-        "The Back Room sells out small shows — buy the etix ticket in advance.",
-        "97°F and humid; the ArtWalk is the cool, free anchor of the evening."
-      ],
-      "event_ids": ["1163f7e7f367", "5fe7277bf5b4"]
-    },
-    {
-      "id": "super-saturday-raleigh",
-      "title": "Super Saturday Raleigh: Market, Museums & a Legend",
-      "theme": "A full Raleigh Saturday from the farmers market to a bucket-list concert, with storm backups",
-      "anchor_city": "Raleigh",
-      "drive_time": "State Farmers Market, NCMA and downtown all within ~15 min",
-      "weather": { "summary": "Partly Sunny then Showers and Thunderstorms Likely", "temp_f": 93 },
-      "cost_range": "$25–$120 (markets/museums free; evening concert is the splurge)",
-      "date": "2026-07-11",
-      "overview": "Beat the heat early at the State Farmers Market, spend the storm-likely afternoon in the free, air-conditioned NC Museum of Art, browse a pop-up market, then choose your big Saturday night — Gladys Knight downtown or Paul Simon at the amphitheater. Afternoon thunderstorms are likely, so the indoor museum block is the weather hedge.",
-      "schedule": {
-        "morning": [
-          {
-            "time": "9:00 AM",
-            "title": "NC State Farmers Market",
-            "event_id": "436fd5ef325d",
-            "location": "State Farmers Market, 1201 Agriculture St, Raleigh",
+            "time": "6:00 PM",
+            "title": "Third Friday Durham Art Walk & Gallery Crawl",
+            "event_id": "fe62b290afac",
+            "location": "Downtown Durham, Durham",
             "price": "Free",
-            "notes": "Peak produce and a hot breakfast at the market restaurant before the day heats up."
-          }
-        ],
-        "afternoon": [
-          {
-            "time": "11:00 AM",
-            "title": "The Market at Raleigh Iron Works",
-            "event_id": "c6aa90c22f26",
-            "location": "Raleigh Iron Works, Raleigh",
-            "price": "Free",
-            "notes": "Small-business pop-up, 11 a.m.–4 p.m. — do this before storms build."
+            "notes": "Third Friday art walk across ~20 downtown galleries; the 'Winter in July' snow machine is a literal way to cool off."
           },
           {
-            "time": "1:30 PM",
-            "title": "The Altered Environment + Becoming the NCMA (Exhibitions)",
-            "event_id": "193f28758f97",
-            "location": "North Carolina Museum of Art, 2110 Blue Ridge Rd, Raleigh",
-            "price": "Free",
-            "notes": "Two free exhibitions and cool galleries — the ideal place to be when the afternoon storms hit."
-          }
-        ],
-        "evening": [
+            "time": "6:00 PM",
+            "title": "Third Friday Art Walk at Golden Belt",
+            "event_id": "378f20bda961",
+            "location": "Golden Belt Arts, 800 Taylor St, Durham, NC 27701",
+            "price": "unknown",
+            "notes": "Stop into Golden Belt Arts for the studio art show and sale during the crawl."
+          },
           {
-            "time": "8:00 PM",
-            "title": "Gladys Knight",
-            "event_id": "7aa3ab712e49",
-            "location": "Raleigh Memorial Auditorium, 2 E South St, Raleigh",
-            "price": "See ticket link",
-            "notes": "Indoor, downtown, weatherproof. Prefer an amphitheater? Paul Simon plays Coastal Credit Union Music Park the same night (id 3d0ea02dffb1)."
+            "time": "6:45 PM",
+            "title": "Durham Bulls vs. Charlotte Knights — Margaritaville Night & Friday Night Fireworks",
+            "event_id": "9106f9f34570",
+            "location": "Durham Bulls Athletic Park, 409 Blackwell St, Durham, NC 27701",
+            "price": "unknown",
+            "notes": "Alternative evening: skip the crawl and do Margaritaville Night + Friday Night Fireworks at the Durham Bulls."
           }
         ]
       },
       "food": [
         {
-          "slot": "breakfast",
-          "place": "NC State Farmers Market Restaurant",
-          "city": "Raleigh",
-          "vegan_dish": "Grits, home fries and fruit (ask for no butter on the grits)",
-          "vegetarian_dish": "Farm-egg biscuit with tomato",
+          "slot": "dinner",
+          "place": "Durham Foodie Fare food trucks",
+          "city": "Durham",
+          "vegan_dish": "Rotating vegan tacos or falafel from the truck lineup",
+          "vegetarian_dish": "Wood-fired margherita or veggie arepa",
           "price": "$",
-          "notes": "Classic market breakfast right where you're already shopping."
-        },
-        {
-          "slot": "lunch",
-          "place": "Garland",
-          "city": "Raleigh",
-          "vegan_dish": "Chana masala with basmati (vegan)",
-          "vegetarian_dish": "Paneer or saag with roti",
-          "price": "$$",
-          "notes": "Spice-forward Indian/Asian on Fayetteville St; strong vegetarian menu."
+          "notes": "Free-entry market; menus vary by truck, so ask which are plant-based that night."
         },
         {
           "slot": "dinner",
-          "place": "Bida Manda",
-          "city": "Raleigh",
-          "vegan_dish": "Vegetable-and-tofu larb (request vegan)",
-          "vegetarian_dish": "Coconut curry noodle soup",
-          "price": "$$$",
-          "notes": "Laotian downtown, walkable to Raleigh Memorial Auditorium; book ahead on a concert night."
-        }
-      ],
-      "alternatives": [
-        {
-          "leg": "Afternoon pop-up market",
-          "good_weather": "Browse Raleigh Iron Works outdoors, then the museum",
-          "rain": "If storms come early, flip the order — go to the NCMA first and shop the market in a dry window."
-        },
-        {
-          "leg": "Evening concert choice",
-          "good_weather": "Paul Simon under the stars at the amphitheater",
-          "rain": "Storms likely — the indoor Gladys Knight show is the safe pick; amphitheater shows go on rain or shine but bring a poncho."
-        }
-      ],
-      "practical_notes": [
-        "Thunderstorms are likely after midday — keep the indoor museum block flexible.",
-        "Downtown decks (Wilmington/Blount) are easiest for the evening auditorium show.",
-        "93°F with high humidity; the morning market and evening indoor show bracket the worst heat."
-      ],
-      "event_ids": ["436fd5ef325d", "c6aa90c22f26", "193f28758f97", "60c503597f65", "7aa3ab712e49", "3d0ea02dffb1"]
-    },
-    {
-      "id": "cary-soccer-saturday",
-      "title": "Cary Saturday: Farmers Market to a Courage Kickoff",
-      "theme": "A Western-Wake family Saturday capped by pro women's soccer",
-      "anchor_city": "Cary",
-      "drive_time": "Morrisville market, downtown Cary and WakeMed Soccer Park all within ~15 min",
-      "weather": { "summary": "Partly Sunny then Showers and Thunderstorms Likely", "temp_f": 93 },
-      "cost_range": "$20–$70 (market free; soccer tickets + dinner)",
-      "date": "2026-07-11",
-      "overview": "Do a laid-back west-side Saturday: morning at the Western Wake Farmers Market, an air-conditioned midday break, then an evening NWSL match as the NC Courage host the Washington Spirit at WakeMed Soccer Park. Storms are likely mid-afternoon, so keep the middle of the day indoors.",
-      "schedule": {
-        "morning": [
-          {
-            "time": "8:00 AM",
-            "title": "Western Wake Farmers Market",
-            "event_id": "6a61bb7725a5",
-            "location": "Indian Creek Trailhead Park, 101 Town Hall Dr, Morrisville",
-            "price": "Free",
-            "notes": "Producer-only market, 8 a.m.–noon; go early before the heat."
-          }
-        ],
-        "afternoon": [
-          {
-            "time": "12:30 PM",
-            "title": "Midday AC break / lunch in downtown Cary",
-            "location": "Downtown Cary",
-            "price": "$$",
-            "notes": "Duck the afternoon storms with a long lunch and browse the shops on Academy St."
-          }
-        ],
-        "evening": [
-          {
-            "time": "6:30 PM",
-            "title": "NC Courage vs. Washington Spirit",
-            "event_id": "5baeae84b048",
-            "location": "WakeMed Soccer Park, 201 Soccer Park Dr, Cary",
-            "price": "See ticket link",
-            "notes": "NWSL kickoff 6:30 p.m.; general-admission berms are great for families."
-          }
-        ]
-      },
-      "food": [
-        {
-          "slot": "lunch",
-          "place": "Downtown Cary (South Indian)",
-          "city": "Cary",
-          "vegan_dish": "Masala dosa with sambar (vegan)",
-          "vegetarian_dish": "Idli-vada combo",
-          "price": "$$",
-          "notes": "Downtown Cary has strong South Indian vegetarian options — perfect on a hot day."
-        },
-        {
-          "slot": "dinner",
-          "place": "Concession stands / food trucks at WakeMed Soccer Park",
-          "city": "Cary",
-          "vegan_dish": "Veggie tacos or a soft pretzel",
-          "vegetarian_dish": "Cheese quesadilla or margherita flatbread",
-          "price": "$$",
-          "notes": "Eat at the match so you don't lose your seat before kickoff."
-        }
-      ],
-      "alternatives": [
-        {
-          "leg": "Evening soccer match",
-          "good_weather": "Berm seating and a full 90 in the open air",
-          "rain": "Storms are likely — check @NCCourage for weather holds; bring a poncho (umbrellas are restricted)."
-        }
-      ],
-      "practical_notes": [
-        "93°F and storm-capable; the market is a morning-only window.",
-        "WakeMed Soccer Park parking is on-site; arrive ~45 min before kickoff.",
-        "Berm tickets are the family-friendly, budget pick."
-      ],
-      "event_ids": ["6a61bb7725a5", "5baeae84b048"]
-    },
-    {
-      "id": "durham-sunday-treasure-and-galleries",
-      "title": "Slow Durham Sunday: Treasure Hunt & Galleries",
-      "theme": "A relaxed, budget Sunday of vintage shopping and free art in Durham",
-      "anchor_city": "Durham",
-      "drive_time": "Durham Central Park to the Nasher is ~10 min",
-      "weather": { "summary": "Chance Showers and Thunderstorms", "temp_f": 88 },
-      "cost_range": "$0–$30 (market + galleries free; spend is brunch)",
-      "date": "2026-07-12",
-      "overview": "Take it easy: hunt for vintage and local goods at Durham Central Park's Bull City Treasure Hunt, brunch downtown, then cool off with free exhibitions at Duke's Nasher Museum. It's cooler (88°F) but scattered storms are possible, so the museum is a nice back-half backup.",
-      "schedule": {
-        "morning": [
-          {
-            "time": "10:00 AM",
-            "title": "Bull City Treasure Hunt",
-            "event_id": "d41b085dee03",
-            "location": "Durham Central Park, 501 Foster St, Durham",
-            "price": "Free",
-            "notes": "40+ vendors and live music; go early for the best finds and cooler temps."
-          }
-        ],
-        "afternoon": [
-          {
-            "time": "1:30 PM",
-            "title": "Tall Tales and Short Stories (Exhibition)",
-            "event_id": "ea883c8871a3",
-            "location": "Nasher Museum of Art at Duke, 2001 Campus Dr, Durham",
-            "price": "Free",
-            "notes": "Free, air-conditioned galleries and a lovely café — ideal if afternoon storms bubble up."
-          }
-        ],
-        "evening": []
-      },
-      "food": [
-        {
-          "slot": "breakfast",
-          "place": "Guglhupf Bakery & Café",
+          "place": "Pompieri Pizza",
           "city": "Durham",
-          "vegan_dish": "Avocado toast on house sourdough (no butter)",
-          "vegetarian_dish": "German soft-pretzel + egg breakfast board",
+          "vegan_dish": "Marinara pizza (no cheese) with roasted vegetables",
+          "vegetarian_dish": "Margherita pizza",
           "price": "$$",
-          "notes": "Shady biergarten patio on the west side of downtown."
-        },
-        {
-          "slot": "lunch",
-          "place": "The Nasher Café",
-          "city": "Durham",
-          "vegan_dish": "Seasonal grain-and-veg salad",
-          "vegetarian_dish": "Caprese sandwich",
-          "price": "$$",
-          "notes": "Eat at the museum to stay in the AC through the storm window."
+          "notes": "Sit-down alternative a block from the art walk if the trucks are packed."
         }
       ],
       "alternatives": [
         {
-          "leg": "Morning outdoor market",
-          "good_weather": "Full lap of the Treasure Hunt + Central Park",
-          "rain": "If it storms early, shift to the Nasher first, then catch the market in a dry window before it closes."
+          "leg": "Evening plan",
+          "good_weather": "Do both: art walk 6–8, then catch the Bulls fireworks",
+          "rain": "The art walk galleries are indoors and AC'd; the Bulls game may delay for weather, so check the gate before heading over."
         }
       ],
       "practical_notes": [
-        "88°F with scattered storms — the coolest day of the week, but keep a rain plan.",
-        "Free parking around Durham Central Park on Sundays; the Nasher has a free lot.",
-        "The Nasher is closed Mondays but open Sunday afternoons."
+        "100°F — the art-walk galleries and the snow machine are your friends; hydrate.",
+        "Downtown Durham decks (Chapel Hill St, Church St) are the easiest parking for both the crawl and DBAP.",
+        "The art walk is free; Bulls tickets are separate and sell well on fireworks nights."
       ],
-      "event_ids": ["d41b085dee03", "ea883c8871a3", "8c13c038fe97"]
+      "event_ids": [
+        "8d2e01642bb4",
+        "fe62b290afac",
+        "378f20bda961",
+        "9106f9f34570"
+      ]
     },
     {
-      "id": "raleigh-midweek-comedy-and-brews",
-      "title": "Midweek Raleigh: SNL Stand-Up & Craft Beer",
-      "theme": "A low-key Wednesday of trivia, brews and a big-name comedy set",
+      "id": "raleigh-phish-night-walnut-creek",
+      "title": "Phish Night at Walnut Creek — Raleigh",
+      "theme": "A jam-band pilgrimage: amphitheater show plus a late-night afterparty downtown",
       "anchor_city": "Raleigh",
-      "drive_time": "Downtown Raleigh to Goodnights is ~8 min; Bond Brothers (Cary) is ~20 min",
-      "weather": { "summary": "Sunny", "temp_f": 95 },
-      "cost_range": "$20–$50 (trivia free; comedy ticket + dinner)",
-      "date": "2026-07-15",
-      "overview": "Break up the week with a proper night out: a laid-back brewery-district dinner, then SNL cast member James Austin Johnson doing stand-up at Goodnights. Free trivia and music bingo around town make good warm-ups. It's a hot, dry, sunny day — patios are back in play after a stormy stretch.",
+      "drive_time": "Downtown Raleigh to Walnut Creek is ~15 min; afterparties are back downtown (~15 min)",
+      "date": "2026-07-17",
+      "weather": {
+        "summary": "Sunny",
+        "temp_f": 100
+      },
+      "cost_range": "$50–$120 (amphitheater ticket + afterparty cover + dinner)",
+      "overview": "Phish brings summer tour to the Coastal Credit Union Music Park at Walnut Creek. Fuel up with an early downtown dinner, catch the 7 p.m. show, then keep the night going at one of two official afterparties — Keller Williams at Lincoln Theatre or Kendall Street Company at The Pour House. It's a 100°F day, so pre-hydrate before the lawn.",
       "schedule": {
         "morning": [],
         "afternoon": [],
         "evening": [
           {
             "time": "7:00 PM",
-            "title": "NC Team Trivia at Bond Brothers (optional warm-up)",
-            "event_id": "676cccbbbffd",
-            "location": "Bond Brothers Beer Company, 202 E Cedar St, Cary",
-            "price": "Free",
-            "notes": "Free weekly trivia at 7 p.m. if you want a pre-show pint; Music Bingo at Ponysaurus in Durham (id 45e515c411bb) is the east-side alternative."
+            "title": "Phish",
+            "event_id": "dfec7a39b144",
+            "location": "Coastal Credit Union Music Park at Walnut Creek, 3801 Rock Quarry Rd, Raleigh, NC 27610",
+            "price": "unknown",
+            "notes": "Phish at Walnut Creek — doors 5:30, show 7. Lawn seating bakes in the sun early; bring water and sunscreen."
           },
           {
-            "time": "7:30 PM",
-            "title": "James Austin Johnson",
-            "event_id": "b23a17457110",
-            "location": "Goodnights Comedy Club, 401 Woodburn Rd, Raleigh",
-            "price": "See ticket link",
-            "notes": "SNL cast member; 18+ with a two-item minimum in the showroom. Buy ahead."
+            "time": "11:30 PM",
+            "title": "Keller Williams (Phish Afterparty - Late Show)",
+            "event_id": "5ff59627da41",
+            "location": "Lincoln Theatre, 126 E Cabarrus St, Raleigh, NC 27601",
+            "price": "$24.25-$41.25",
+            "notes": "Late show: Keller Williams' Phish afterparty at Lincoln Theatre downtown."
+          },
+          {
+            "time": "11:30 PM",
+            "title": "Phish Afterparty: with Kendall Street Company",
+            "event_id": "e214040b4c3e",
+            "location": "The Pour House Music Hall & Record Shop, 224 S Blount St, Raleigh, NC 27601",
+            "price": "$17.88",
+            "notes": "Alternative afterparty: Kendall Street Company at The Pour House (cheaper cover)."
           }
         ]
       },
       "food": [
         {
           "slot": "dinner",
-          "place": "Player's Retreat (Village District)",
+          "place": "Bida Manda",
           "city": "Raleigh",
-          "vegan_dish": "Impossible burger with fries (ask for a vegan bun)",
-          "vegetarian_dish": "Pimento-cheese sandwich and a local draft",
+          "vegan_dish": "Vegan coconut curry with tofu and vegetables",
+          "vegetarian_dish": "Vegetarian pho / crispy rice salad",
+          "price": "$$$",
+          "notes": "Laotian spot on Blount St; reserve, and eat by 5:30 to make the drive to Walnut Creek."
+        },
+        {
+          "slot": "dinner",
+          "place": "The Fiction Kitchen",
+          "city": "Raleigh",
+          "vegan_dish": "Vegan 'chicken' and waffles",
+          "vegetarian_dish": "Vegetarian Reuben",
           "price": "$$",
-          "notes": "Historic Raleigh pub minutes from Goodnights; big draft list."
+          "notes": "Plant-based comfort food if you want something hearty before a long night."
         }
       ],
       "alternatives": [
         {
-          "leg": "Pre-show plan",
-          "good_weather": "Patio pint at Bond Brothers or a Village District dinner",
-          "rain": "Clear, sunny evening forecast — but Goodnights and the breweries are all indoor if plans change."
+          "leg": "The amphitheater show",
+          "good_weather": "Lawn or reserved seats under open sky at Walnut Creek",
+          "rain": "Forecast is Sunny, but shows go on rain-or-shine; covered seating is limited, so pack a poncho just in case."
         }
       ],
       "practical_notes": [
-        "95°F and sunny — a good patio night after the mid-week storms.",
-        "Goodnights is 18+; arrive 30 min early for the two-item-minimum seating.",
-        "If you skip the Cary trivia, go straight to a Village District dinner near the club."
+        "100°F daytime — the lawn is exposed; hydrate before and during.",
+        "Walnut Creek parking backs up; leave downtown by 5:45 or rideshare.",
+        "Both afterparties start at 11:30 p.m. and run into the early morning — line up rides home."
       ],
-      "event_ids": ["676cccbbbffd", "b23a17457110", "45e515c411bb"]
+      "event_ids": [
+        "dfec7a39b144",
+        "5ff59627da41",
+        "e214040b4c3e"
+      ]
+    },
+    {
+      "id": "raleigh-markets-morning-to-twilight-sat",
+      "title": "Farmers Market Morning to Night Market — Raleigh",
+      "theme": "A Saturday that opens at a morning farmers market and closes at a downtown twilight market, with the museum for the hot midday",
+      "anchor_city": "Raleigh",
+      "drive_time": "North Hills to NCMA ~12 min; NCMA to Smoky Hollow ~12 min",
+      "date": "2026-07-18",
+      "weather": {
+        "summary": "Mostly Sunny then Slight Chance Showers And Thunderstorms",
+        "temp_f": 98
+      },
+      "cost_range": "$0–$40 (markets free to browse; spend is food + optional workshop)",
+      "overview": "Shop the Midtown Farmers' Market early while it's merely warm (it climbs to 98°F with afternoon storm chances), retreat to the NC Museum of Art for a free midday tour, then come back downtown for the free Raleigh Twilight Market at Smoky Hollow with 30+ vendors and a DJ once the heat breaks.",
+      "schedule": {
+        "morning": [
+          {
+            "time": "8:00 AM",
+            "title": "Midtown Farmers' Market",
+            "event_id": "8eb3d7fd6f53",
+            "location": "The Commons at North Hills, 4191 Main at North Hills St, Raleigh, NC 27609",
+            "price": "Free",
+            "notes": "Midtown Farmers' Market at North Hills — 35+ vendors; go early to beat the heat and the crowds."
+          }
+        ],
+        "afternoon": [
+          {
+            "time": "12:00 PM",
+            "title": "Summer Vendor Market at Compass Rose Brewery",
+            "event_id": "d0d34d3f9de9",
+            "location": "Compass Rose Brewery, 3201 Northside Dr, Raleigh, NC 27615",
+            "price": "Free",
+            "notes": "Air-conditioned browsing at the Compass Rose Brewery summer vendor market."
+          },
+          {
+            "time": "1:00 PM",
+            "title": "Public Tour: The People's Collection",
+            "event_id": "406e97f6be8c",
+            "location": "North Carolina Museum of Art, 2110 Blue Ridge Rd, Raleigh, NC 27607",
+            "price": "Free",
+            "notes": "Free docent tour at NCMA — the coolest way to spend the 98°F peak."
+          }
+        ],
+        "evening": [
+          {
+            "time": "5:30 PM",
+            "title": "Raleigh Twilight Market",
+            "event_id": "b5ab090e2db4",
+            "location": "Smoky Hollow, 421 N Harrington St, Raleigh, NC 27603",
+            "price": "Free",
+            "notes": "Raleigh Twilight Market at Smoky Hollow — free evening market with local vendors, a DJ, and food/drinks."
+          }
+        ]
+      },
+      "food": [
+        {
+          "slot": "breakfast",
+          "place": "Market stalls at North Hills",
+          "city": "Raleigh",
+          "vegan_dish": "Fresh fruit + a vegan pastry from a market baker",
+          "vegetarian_dish": "Breakfast empanada or kolache",
+          "price": "$",
+          "notes": "Graze the market for breakfast before the sun is high."
+        },
+        {
+          "slot": "dinner",
+          "place": "Garland",
+          "city": "Raleigh",
+          "vegan_dish": "Vegan chana masala / seasonal vegetable thali",
+          "vegetarian_dish": "Paneer or vegetable curry",
+          "price": "$$",
+          "notes": "Indian-Asian on Martin St, a short walk from Smoky Hollow; strong veg menu."
+        }
+      ],
+      "alternatives": [
+        {
+          "leg": "Midday",
+          "good_weather": "Outdoor markets bookend the day",
+          "rain": "Afternoon thunderstorms are possible — the NCMA galleries and the Compass Rose taproom are both indoor backups."
+        }
+      ],
+      "practical_notes": [
+        "98°F with afternoon storm chances — front-load the outdoor markets and keep the midday indoors.",
+        "North Hills and Smoky Hollow both have free/validated garage parking.",
+        "The Twilight Market is free; bring cash for vendors who don't take cards."
+      ],
+      "event_ids": [
+        "8eb3d7fd6f53",
+        "d0d34d3f9de9",
+        "406e97f6be8c",
+        "b5ab090e2db4"
+      ]
+    },
+    {
+      "id": "cary-western-wake-family-saturday-rugby",
+      "title": "Western Wake Family Saturday + International Rugby — Cary",
+      "theme": "A Cary day from the downtown farmers market to a makers market, capped by USA vs. Spain rugby at WakeMed",
+      "anchor_city": "Cary",
+      "drive_time": "Downtown Cary to Fenton ~8 min; Fenton to WakeMed Soccer Park ~12 min",
+      "date": "2026-07-18",
+      "weather": {
+        "summary": "Mostly Sunny then Slight Chance Showers And Thunderstorms",
+        "temp_f": 98
+      },
+      "cost_range": "$0–$80 (markets + exhibit free; rugby ticket is the spend)",
+      "overview": "Spend a Cary Saturday close to the AC. Start at the Cary Downtown Farmers Market, cool off inside the free America the Revolution Experience exhibit at Downtown Cary Park, browse the Fenton Makers Market, then watch the USA Men's Eagles take on Spain in the World Rugby Nations Cup at WakeMed Soccer Park — the first international rugby there in a decade.",
+      "schedule": {
+        "morning": [
+          {
+            "time": "8:00 AM",
+            "title": "Cary Downtown Farmers Market",
+            "event_id": "14d63cd29808",
+            "location": "Cary Downtown Farmers Market, 160 E Park St, Cary, NC 27511",
+            "price": "Free",
+            "notes": "Cary Downtown Farmers Market — grower-only, open rain or shine; go early before 98°F."
+          }
+        ],
+        "afternoon": [
+          {
+            "time": "11:00 AM",
+            "title": "American Revolution Experience",
+            "event_id": "346d58d57285",
+            "location": "Gathering House at Downtown Cary Park, 327 S Academy St, Cary, NC 27511",
+            "price": "Free",
+            "notes": "Free, indoor America the Revolution Experience pop-up at the Gathering House — an AC break with interactive kiosks for kids."
+          },
+          {
+            "time": "11:00 AM",
+            "title": "Fenton Makers Market",
+            "event_id": "ce4a14e50c8e",
+            "location": "Fenton, Cary",
+            "price": "Free",
+            "notes": "Fenton Makers Market — local makers at Cary's Fenton development, with plenty of indoor shops and restaurants."
+          }
+        ],
+        "evening": [
+          {
+            "time": "7:30 PM",
+            "title": "World Rugby Nations Cup: USA vs. Spain",
+            "event_id": "1d3d3756fedf",
+            "location": "WakeMed Soccer Park, 101 Soccer Park Dr, Cary, NC 27511",
+            "price": "unknown",
+            "notes": "World Rugby Nations Cup: USA vs. Spain at WakeMed Soccer Park — evening kickoff once it's cooled a bit."
+          }
+        ]
+      },
+      "food": [
+        {
+          "slot": "lunch",
+          "place": "Fenton (Cary)",
+          "city": "Cary",
+          "vegan_dish": "Impossible burger or a grain bowl from a Fenton eatery",
+          "vegetarian_dish": "Wood-fired veggie pizza",
+          "price": "$$",
+          "notes": "Fenton has AC and many options — an easy midday reset between markets."
+        },
+        {
+          "slot": "dinner",
+          "place": "Postmaster / downtown Cary",
+          "city": "Cary",
+          "vegan_dish": "Vegan-friendly falafel or veggie plate",
+          "vegetarian_dish": "Caprese or veggie flatbread",
+          "price": "$$",
+          "notes": "Grab an early dinner in downtown Cary before heading to WakeMed."
+        }
+      ],
+      "alternatives": [
+        {
+          "leg": "The rugby match",
+          "good_weather": "Open-air seating at WakeMed Soccer Park",
+          "rain": "Afternoon storms are possible; the match is outdoors, so bring a poncho and check the gate policy."
+        }
+      ],
+      "practical_notes": [
+        "98°F — the indoor Revolution exhibit and Fenton's shops are good midday cool-downs.",
+        "Downtown Cary Park has a deck; WakeMed Soccer Park has on-site lots.",
+        "Rugby tickets vary by tier; buy ahead via the venue's ticketing link."
+      ],
+      "event_ids": [
+        "14d63cd29808",
+        "346d58d57285",
+        "ce4a14e50c8e",
+        "1d3d3756fedf"
+      ]
+    },
+    {
+      "id": "raleigh-family-dino-day-sat",
+      "title": "Family Dino Day + Outdoor Movie — Raleigh & Wake Forest",
+      "theme": "An air-conditioned, kid-first Saturday of dinosaurs and farm fun, ending at a free outdoor movie once it cools",
+      "anchor_city": "Raleigh",
+      "drive_time": "Downtown Raleigh to the Fairgrounds ~12 min; Raleigh to Joyner Park (Wake Forest) ~30 min",
+      "date": "2026-07-18",
+      "weather": {
+        "summary": "Mostly Sunny then Slight Chance Showers And Thunderstorms",
+        "temp_f": 98
+      },
+      "cost_range": "$25–$70 for a family (Dino ticket + Marbles admission; movie is free)",
+      "overview": "A 98°F Saturday is a perfect day to stay indoors with the kids. Start at Marbles Kids Museum's Farm to Fork Kids Fest (seed-to-smoothie activities), roll over to the fully indoor Dinosaur Adventure at the Fairgrounds for animatronic dinos and fossil digs, then drive up to Wake Forest for a free outdoor screening of 'Mufasa: The Lion King' once the sun is down.",
+      "schedule": {
+        "morning": [
+          {
+            "time": "10:00 AM",
+            "title": "Farm to Fork Kids Fest",
+            "event_id": "6b5a2b39d8ce",
+            "location": "Marbles Kids Museum, 201 E Hargett St, Raleigh, NC 27601",
+            "price": "unknown",
+            "notes": "Farm to Fork Kids Fest at Marbles — hands-on agriculture activities; included with admission."
+          }
+        ],
+        "afternoon": [
+          {
+            "time": "12:00 PM",
+            "title": "Dinosaur Adventure",
+            "event_id": "bc6dc3f916ff",
+            "location": "Kerr Scott Building, N.C. State Fairgrounds, 4285 Trinity Rd, Raleigh, NC 27607",
+            "price": "$25-$35",
+            "notes": "Dinosaur Adventure at the Kerr Scott Building — fully indoor and AC'd, with rides, bounce houses, and fossil digs."
+          }
+        ],
+        "evening": [
+          {
+            "time": "8:30 PM",
+            "title": "Family Movie Nights at Joyner Park: Mufasa: The Lion King",
+            "event_id": "2eac7aa70612",
+            "location": "E. Carroll Joyner Park, 701 Harris Rd, Wake Forest, NC 27587",
+            "price": "Free",
+            "notes": "Free Family Movie Night at Joyner Park (Wake Forest): 'Mufasa' on a 32-ft inflatable screen, with a 7:30 pre-show for kids."
+          }
+        ]
+      },
+      "food": [
+        {
+          "slot": "lunch",
+          "place": "Marbles café / downtown Raleigh",
+          "city": "Raleigh",
+          "vegan_dish": "Veggie wrap or hummus plate",
+          "vegetarian_dish": "Grilled cheese + fruit",
+          "price": "$",
+          "notes": "Quick kid-friendly lunch between Marbles and the Fairgrounds."
+        },
+        {
+          "slot": "dinner",
+          "place": "Food trucks at Joyner Park",
+          "city": "Wake Forest",
+          "vegan_dish": "Veggie tacos or fries from an on-site truck",
+          "vegetarian_dish": "Cheese quesadilla or kettle corn",
+          "price": "$",
+          "notes": "Movie-night vendors sell snacks on site; bring a blanket."
+        }
+      ],
+      "alternatives": [
+        {
+          "leg": "Evening movie",
+          "good_weather": "Outdoor screening on the Joyner Park lawn",
+          "rain": "The movie may be canceled for rain — check the Town of Wake Forest page before driving up; the indoor Dino event can fill the afternoon either way."
+        }
+      ],
+      "practical_notes": [
+        "98°F — the museum and Dino exhibit are both indoor; save the outdoor movie for the evening.",
+        "Dinosaur Adventure and Marbles both charge admission; buy Dino tickets online to skip the line.",
+        "Joyner Park movie is free; arrive by 7:30 for the pre-show and a good lawn spot."
+      ],
+      "event_ids": [
+        "6b5a2b39d8ce",
+        "bc6dc3f916ff",
+        "2eac7aa70612"
+      ]
+    },
+    {
+      "id": "durham-lazy-sunday-bulls-finale",
+      "title": "Lazy Sunday: Broadway Matinee + Bulls Finale — Durham",
+      "theme": "A relaxed Durham Sunday from a games-and-beer afternoon to a matinee and the Bulls homestand finale",
+      "anchor_city": "Durham",
+      "drive_time": "Everything within ~10 min in downtown Durham; the taproom, DPAC, and DBAP are all walkable",
+      "date": "2026-07-19",
+      "weather": {
+        "summary": "Chance Showers And Thunderstorms then Slight Chance Showers And Thunderstorms",
+        "temp_f": 94
+      },
+      "cost_range": "$15–$90 (games free; Notebook matinee + Bulls ticket are the spend)",
+      "overview": "Take Sunday slow in downtown Durham. Warm up with Dungeons & Drafts board games at The Glass Jug, catch the matinee of Broadway's 'The Notebook' at DPAC, then finish at the Durham Bulls' Community Hero Game with Kids Run the Bases. Storm chances are up (94°F), so this indoor-leaning plan has a weatherproof spine.",
+      "schedule": {
+        "morning": [],
+        "afternoon": [
+          {
+            "time": "12:00 PM",
+            "title": "Dungeons & Drafts",
+            "event_id": "dcbaf5c5dcfb",
+            "location": "The Glass Jug Beer Lab (Downtown Durham), 545 Foster St Suite 10, Durham, NC 27701",
+            "price": "unknown",
+            "notes": "Dungeons & Drafts tabletop gaming at The Glass Jug (downtown) — a cool, low-key start."
+          },
+          {
+            "time": "1:00 PM",
+            "title": "The Notebook (Matinee)",
+            "event_id": "a4c5262a0b06",
+            "location": "DPAC (Durham Performing Arts Center), 123 Vivian St, Durham, NC 27701",
+            "price": "From $41.50",
+            "notes": "'The Notebook' matinee at DPAC — indoor, AC'd, ~2h13m; a good rain plan."
+          }
+        ],
+        "evening": [
+          {
+            "time": "5:05 PM",
+            "title": "Durham Bulls vs. Charlotte Knights — Community Hero Game & Kids Run the Bases",
+            "event_id": "37dcc3bd9e2d",
+            "location": "Durham Bulls Athletic Park, 409 Blackwell St, Durham, NC 27701",
+            "price": "unknown",
+            "notes": "Durham Bulls homestand finale vs. Charlotte, with Kids Run the Bases afterward."
+          }
+        ]
+      },
+      "food": [
+        {
+          "slot": "lunch",
+          "place": "Luna Rotisserie",
+          "city": "Durham",
+          "vegan_dish": "Vegan empanadas + fried plantains",
+          "vegetarian_dish": "Vegetarian rice bowl with black beans",
+          "price": "$$",
+          "notes": "Latin spot downtown with solid plant-based options, near DPAC."
+        },
+        {
+          "slot": "dinner",
+          "place": "DBAP concessions / American Tobacco Campus",
+          "city": "Durham",
+          "vegan_dish": "Veggie burger or loaded fries",
+          "vegetarian_dish": "Cheese pizza or pretzel",
+          "price": "$$",
+          "notes": "Eat at the ballpark, or hit the adjacent American Tobacco Campus before first pitch."
+        }
+      ],
+      "alternatives": [
+        {
+          "leg": "The Bulls game",
+          "good_weather": "Open-air seats at DBAP for the 5:05 finale",
+          "rain": "Afternoon/evening storms are likely (94°F) — the game may delay; the matinee and taproom keep the day dry regardless."
+        }
+      ],
+      "practical_notes": [
+        "Storm chances today — this plan leans indoor, so it survives a washout.",
+        "Downtown Durham decks serve the taproom, DPAC, and DBAP; it's all walkable once parked.",
+        "The Notebook matinee and Bulls tickets are separate purchases; the game is the last home date until late July."
+      ],
+      "event_ids": [
+        "dcbaf5c5dcfb",
+        "a4c5262a0b06",
+        "37dcc3bd9e2d"
+      ]
+    },
+    {
+      "id": "raleigh-weeknight-death-cab-and-trivia-wed",
+      "title": "Weeknight Out: Trivia, Bingo & Death Cab — Raleigh",
+      "theme": "A low-key Wednesday of brewery games and a marquee amphitheater show",
+      "anchor_city": "Raleigh",
+      "drive_time": "Downtown/North Raleigh breweries ~15 min apart; Walnut Creek is ~15 min from downtown",
+      "date": "2026-07-22",
+      "weather": {
+        "summary": "Slight Chance Rain Showers then Chance Showers And Thunderstorms",
+        "temp_f": 94
+      },
+      "cost_range": "$0–$90 (brewery games free; Death Cab ticket + dinner are the spend)",
+      "overview": "Make a midweek night of it. Grab the Wednesday dinner special at Ponysaurus Raleigh, play free music bingo, or test your team at Compass Rose — then head to Walnut Creek for Death Cab for Cutie's 'I Built You a Tower' tour. It's 94°F with evening storm chances, so keep a poncho handy for the lawn.",
+      "schedule": {
+        "morning": [],
+        "afternoon": [
+          {
+            "time": "5:00 PM",
+            "title": "Wednesday Dinner at Ponysaurus Raleigh",
+            "event_id": "352ab4a9ae08",
+            "location": "Ponysaurus Brewing Co. (Raleigh), 2221 Iron Works Dr, Raleigh, NC 27604",
+            "price": "unknown",
+            "notes": "Wednesday dinner special (vodka chicken parm on house focaccia) at Ponysaurus Raleigh."
+          }
+        ],
+        "evening": [
+          {
+            "time": "7:00 PM",
+            "title": "Music Bingo Tuesdays at Ponysaurus Raleigh",
+            "event_id": "118d5cf69a9e",
+            "location": "Ponysaurus Brewing Co. (Raleigh), 2221 Iron Works Dr, Raleigh, NC 27604",
+            "price": "unknown",
+            "notes": "Free music bingo at Ponysaurus Raleigh if you're skipping the concert."
+          },
+          {
+            "time": "7:30 PM",
+            "title": "Death Cab for Cutie: I Built You A Tower World Tour",
+            "event_id": "e39405684fe0",
+            "location": "Coastal Credit Union Music Park at Walnut Creek, 3801 Rock Quarry Rd, Raleigh, NC 27610",
+            "price": "$74+",
+            "notes": "Death Cab for Cutie at Walnut Creek — the marquee show of the night."
+          }
+        ]
+      },
+      "food": [
+        {
+          "slot": "dinner",
+          "place": "Ponysaurus Brewing (Raleigh)",
+          "city": "Raleigh",
+          "vegan_dish": "Ask for the plant-based special or a side of focaccia + veggies",
+          "vegetarian_dish": "Vodka chicken parm sandwich (vegetarian-friendly cheese)",
+          "price": "$$",
+          "notes": "Wednesday dinner special pairs with the taproom's beer; eat before the drive to Walnut Creek."
+        },
+        {
+          "slot": "dinner",
+          "place": "Whiskey Kitchen",
+          "city": "Raleigh",
+          "vegan_dish": "Vegan black-bean burger",
+          "vegetarian_dish": "Fried green tomato BLT (veg)",
+          "price": "$$",
+          "notes": "Warehouse District alternative if you want a sit-down meal downtown first."
+        }
+      ],
+      "alternatives": [
+        {
+          "leg": "Evening plan",
+          "good_weather": "Death Cab on the amphitheater lawn",
+          "rain": "Evening storms are possible (94°F) — if the show delays or you'd rather stay dry, the free Ponysaurus music bingo is an indoor Plan B."
+        }
+      ],
+      "practical_notes": [
+        "94°F with evening storm chances — pack a poncho for the Walnut Creek lawn.",
+        "Ponysaurus Raleigh (Iron Works Dr) has its own lot; Walnut Creek parking backs up, so leave early.",
+        "Music bingo and trivia are free; the Death Cab ticket is the night's real cost."
+      ],
+      "event_ids": [
+        "352ab4a9ae08",
+        "118d5cf69a9e",
+        "e39405684fe0"
+      ]
     }
   ]
 }
