@@ -8,6 +8,8 @@ interface Props {
   events: TriangleEvent[];
   origin: Origin;
   groupBy: GroupBy;
+  isSelected: (id: string) => boolean;
+  onToggle: (id: string) => void;
 }
 
 function keyOf(ev: TriangleEvent, g: GroupBy): string {
@@ -22,7 +24,7 @@ function headerOf(g: GroupBy, key: string): string {
   return key;
 }
 
-export default function GroupedView({ events, origin, groupBy }: Props) {
+export default function GroupedView({ events, origin, groupBy, isSelected, onToggle }: Props) {
   const groups = new Map<string, TriangleEvent[]>();
   for (const ev of events) {
     const k = keyOf(ev, groupBy);
@@ -47,7 +49,14 @@ export default function GroupedView({ events, origin, groupBy }: Props) {
             </div>
             <div className="event-grid">
               {list.map((ev) => (
-                <EventCard key={ev.id} ev={ev} origin={origin} showDay={groupBy !== "day"} />
+                <EventCard
+                  key={ev.id}
+                  ev={ev}
+                  origin={origin}
+                  showDay={groupBy !== "day"}
+                  selected={isSelected(ev.id)}
+                  onToggle={onToggle}
+                />
               ))}
             </div>
           </section>

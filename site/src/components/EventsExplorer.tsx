@@ -11,6 +11,8 @@ import {
   type SortKey,
 } from "../lib/filters";
 import { downloadIcs } from "../lib/ics";
+import { useSelection } from "../lib/useSelection";
+import SelectionBar from "./SelectionBar";
 import FilterBar, { type ViewKey } from "./FilterBar";
 import GroupedView from "./views/GroupedView";
 import TableView from "./views/TableView";
@@ -29,6 +31,7 @@ export default function EventsExplorer({ events, origin, theme }: Props) {
   const [filters, setFilters] = useState<FilterState>(emptyFilters);
   const [sort, setSort] = useState<SortKey>("date");
   const [view, setView] = useState<ViewKey>("day");
+  const selection = useSelection(events);
 
   const days = useMemo(() => uniqueDays(events), [events]);
   const categories = useMemo(() => uniqueCategories(events), [events]);
@@ -51,7 +54,7 @@ export default function EventsExplorer({ events, origin, theme }: Props) {
         categories={categories}
       />
 
-      <div className="container section-pad">
+      <div className={`container section-pad${selection.count > 0 ? " has-selection-bar" : ""}`}>
         <div className="results-bar">
           <div className="results-count">
             <strong>{visible.length}</strong> of {events.length} events
@@ -97,9 +100,16 @@ export default function EventsExplorer({ events, origin, theme }: Props) {
             <MapView events={visible} origin={origin} theme={theme} />
           </Suspense>
         ) : (
-          <GroupedView events={visible} origin={origin} groupBy={view} />
+          <GroupedView
+            events={visible}
+            origin={origin}
+            groupBy={view}
+            isSelected={selection.isSelected}
+            onToggle={selection.toggle}
+          />
         )}
       </div>
+      <SelectionBar events={events} ids={selection.ids} onClear={selection.clear} />
     </>
   );
 }
