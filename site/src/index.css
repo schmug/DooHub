@@ -1359,3 +1359,77 @@ table.events td.links .ics {
 [data-theme="dark"] .leaflet-control-attribution a {
   color: var(--link);
 }
+
+/* ---------- Hand-picked selection + itinerary export ---------- */
+.event-card .media .pick {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--pill);
+  background: var(--badge-bg);
+  cursor: pointer;
+}
+.event-card .media .pick input {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--green);
+  cursor: pointer;
+  margin: 0;
+}
+.event-card.is-selected {
+  box-shadow: 0 0 0 2px var(--green);
+}
+
+.selection-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 500;
+  background: var(--card);
+  border-top: 1px solid var(--line);
+  box-shadow: var(--shadow-md);
+  padding: 12px 0;
+}
+.selection-bar-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+.selection-count {
+  color: var(--ink-2);
+  font-size: 13.5px;
+}
+.selection-count strong {
+  color: var(--ink);
+}
+.selection-actions {
+  display: flex;
+  gap: 8px;
+}
+/* Keep the fixed bar from covering the last row of results. */
+.has-selection-bar {
+  padding-bottom: 96px;
+}
+.events th.pick-col,
+.events td.pick-col {
+  width: 34px;
+  padding-right: 0;
+  text-align: center;
+}
+.events td.pick-col input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--green);
+  cursor: pointer;
+  margin: 0;
+}
+.events tr.is-selected {
+  background: var(--line-soft);
+}

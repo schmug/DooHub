@@ -17,9 +17,11 @@ interface Props {
   ev: TriangleEvent;
   origin: Origin;
   showDay?: boolean;
+  selected: boolean;
+  onToggle: (id: string) => void;
 }
 
-export default function EventCard({ ev, origin }: Props) {
+export default function EventCard({ ev, origin, selected, onToggle }: Props) {
   const [imgOk, setImgOk] = useState(Boolean(ev.image_url) && ev.image_url !== "unknown");
   const dist = distanceFrom(origin, ev.lat, ev.lon);
   const link = ev.booking_url && ev.booking_url !== "unknown" ? ev.booking_url : "";
@@ -33,7 +35,7 @@ export default function EventCard({ ev, origin }: Props) {
   const hasWeather = Boolean(ev.weather && (ev.weather.summary || typeof ev.weather.temp_f === "number"));
 
   return (
-    <article className={`event-card cat-${fam}`}>
+    <article className={`event-card cat-${fam}${selected ? " is-selected" : ""}`}>
       <div className="media">
         {imgOk ? (
           <img src={ev.image_url} alt="" loading="lazy" onError={() => setImgOk(false)} />
@@ -47,6 +49,14 @@ export default function EventCard({ ev, origin }: Props) {
           {ev.category}
         </span>
         {priceBadge && <span className="budget-badge">{priceBadge}</span>}
+        <label className="pick" title="Add to your itinerary">
+          <input
+            type="checkbox"
+            checked={selected}
+            onChange={() => onToggle(ev.id)}
+            aria-label={`Select ${ev.name}`}
+          />
+        </label>
       </div>
 
       <div className="body">
