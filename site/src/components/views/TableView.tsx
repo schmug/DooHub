@@ -6,9 +6,11 @@ import { downloadIcs } from "../../lib/ics";
 interface Props {
   events: TriangleEvent[];
   origin: Origin;
+  isSelected: (id: string) => boolean;
+  onToggle: (id: string) => void;
 }
 
-export default function TableView({ events, origin }: Props) {
+export default function TableView({ events, origin, isSelected, onToggle }: Props) {
   return (
     <div className="table-scroller">
       <p className="table-hint" aria-hidden="true">
@@ -18,6 +20,9 @@ export default function TableView({ events, origin }: Props) {
         <table className="events">
           <thead>
             <tr>
+              <th className="pick-col">
+                <span className="sr-only">Selected</span>
+              </th>
               <th>Event</th>
               <th>Category</th>
               <th>Stop</th>
@@ -34,7 +39,18 @@ export default function TableView({ events, origin }: Props) {
               const info = ev.info_url && ev.info_url !== "unknown" ? ev.info_url : "";
               const price = ev.price ? (/free/i.test(ev.price) ? "FREE" : ev.price) : "—";
               return (
-                <tr key={ev.id} className={`cat-${categoryFamily(ev.category)}`}>
+                <tr
+                  key={ev.id}
+                  className={`cat-${categoryFamily(ev.category)}${isSelected(ev.id) ? " is-selected" : ""}`}
+                >
+                  <td className="pick-col">
+                    <input
+                      type="checkbox"
+                      checked={isSelected(ev.id)}
+                      onChange={() => onToggle(ev.id)}
+                      aria-label={`Select ${ev.name}`}
+                    />
+                  </td>
                   <td>
                     <div className="nm">{ev.name}</div>
                     <div className="venue">{ev.venue}</div>

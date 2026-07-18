@@ -88,7 +88,12 @@ export default function EventsExplorer({ events, origin, theme }: Props) {
             </button>
           </div>
         ) : view === "table" ? (
-          <TableView events={visible} origin={origin} />
+          <TableView
+            events={visible}
+            origin={origin}
+            isSelected={selection.isSelected}
+            onToggle={selection.toggle}
+          />
         ) : view === "map" ? (
           <Suspense
             fallback={

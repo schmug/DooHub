@@ -1417,3 +1417,19 @@ table.events td.links .ics {
 .has-selection-bar {
   padding-bottom: 96px;
 }
+.events th.pick-col,
+.events td.pick-col {
+  width: 34px;
+  padding-right: 0;
+  text-align: center;
+}
+.events td.pick-col input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--green);
+  cursor: pointer;
+  margin: 0;
+}
+.events tr.is-selected {
+  background: var(--line-soft);
+}
