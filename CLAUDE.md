@@ -11,7 +11,7 @@ Pages, and emits a subscribable `.ics` calendar.
 | Trigger        | Local `cron` invoking Claude Code headless (`claude -p`)          |
 | Hosting        | Cloudflare Pages, served at a path under `cortech.online`         |
 | Calendar       | Public static `events.ics` (subscribe-by-URL, no Google API)      |
-| Data sources   | Claude Code's discretion (web search/scrape, public feeds, APIs)  |
+| Data sources   | `data/sources.json` seed registry swept first, then open discovery |
 | Radius         | Triangle metro only (Raleigh, Durham, Chapel Hill, Cary, + ring)  |
 | Window         | Next 7 days from run date                                         |
 | Persistence    | `data/events.json` committed to git (versioned history)           |
@@ -46,7 +46,11 @@ Pages, and emits a subscribable `.ics` calendar.
    only inside the sandboxed runner, never interactively.
 3. Claude Code:
    - Computes the date window (today → +7 days) from the system clock. Never hardcode dates.
-   - Discovers events across the categories below from sources it judges best.
+   - Discovers events across the categories below in two phases: Phase A sweeps
+     every seed in `data/sources.json`, then Phase B searches openly for what a
+     venue registry can't hold. The registry is a floor, not the search space —
+     Phase B must supply ≥40% of the run's events from ≥8 off-registry domains
+     (see `prompts/weekly.md` step 3).
    - Loads existing `data/events.json`, merges new finds, dedups, enriches.
    - Verifies each event (date in window, venue open, link resolves, price current).
    - Writes `data/events.json` + a `data/archive/<ISO-week>.json` snapshot.
@@ -253,12 +257,15 @@ canonical form so the same place hashes identically:
 | `the carolina theatre`, `carolina theatre of durham`       | `carolina theatre`   |
 | `cam raleigh`, `contemporary art museum raleigh`           | `cam raleigh`        |
 | `quail ridge books`, `quail ridge bookstore`               | `quail ridge books`  |
+| `meymandi`, `meymandi concert hall`                        | `meymandi concert hall` |
 
 **Renamed venues.** Two Triangle venues were renamed recently and sources still
-use both names: PNC Arena → **Lenovo Center** (naming rights expired 2024-08-31)
-and Duke Energy Center for the Performing Arts → **Martin Marietta Center for
-the Performing Arts** (2023). Both pairs are in the alias map, so one show listed
-under either name hashes to a single id.
+use their old names: PNC Arena (and, older still, RBC Center) → **Lenovo Center**
+(naming rights expired 2024-08-31) and Duke Energy Center for the Performing Arts
+→ **Martin Marietta Center for the Performing Arts** (2023). Every variant is in
+the alias map, so one show listed under any of them hashes to a single id. Note
+that `meymandi` (the standard local shorthand) canonicalizes to the **hall**, not
+to the complex — see sub-venues below.
 
 **Sub-venues (`VENUE_PARENTS`).** Some venues are halls inside a larger complex —
 Meymandi Concert Hall, Raleigh Memorial Auditorium, A.J. Fletcher Opera Theater,
@@ -272,7 +279,9 @@ still apply, so sibling halls with different shows stay separate. `normVenue` an
 `computeId` never consult it, so hall-level ids stay stable.
 
 `npm run validate` fails if `data/sources.json` declares a `parent_venue` that
-`VENUE_PARENTS` doesn't know, so the registry and the dedup rules can't drift.
+`VENUE_PARENTS` doesn't know, or a `venue_aliases` entry that `normVenue` doesn't
+canonicalize onto that source's own venue, so the registry and the dedup rules
+can't drift.
 
 ### 2. Collapse cross-source duplicates of the *same* occurrence
 
@@ -280,7 +289,8 @@ Two records describe the same occurrence — even if their computed ids differ
 because of messy titles/venues — when **all three** hold:
 
 1. **Venue match** — `normVenue` equal, OR token-set Jaccard ≥ 0.6 on the venue
-   tokens (handles "Lincoln Theatre" vs "The Lincoln Theatre Raleigh").
+   tokens (handles "Lincoln Theatre" vs "The Lincoln Theatre Raleigh"), OR one
+   venue is the other's registered parent complex (`VENUE_PARENTS`, above).
 2. **Time proximity** — `start` within **±90 minutes**.
 3. **Title match** — title token-set Jaccard ≥ **0.6**, OR one title's token set
    is a subset of the other's (handles "Art in the Evening" ⊆ "NCMA: Art in the
