@@ -27,6 +27,8 @@ Pages, and emits a subscribable `.ics` calendar.
 │   └── weekly.md              # the headless task prompt
 ├── data/
 │   ├── events.json            # canonical store (deduped, enriched, versioned)
+│   ├── sources.json           # seed discovery registry (Phase A floor)
+│   ├── source_coverage.json   # per-run discovery telemetry
 │   └── archive/YYYY-WW.json   # weekly snapshots
 ├── scripts/
 │   ├── build_ics.{ts,py}      # events.json -> public/events.ics
@@ -250,6 +252,27 @@ canonical form so the same place hashes identically:
 | `koka booth`, `koka booth amphitheatre`                    | `koka booth amphitheatre` |
 | `the carolina theatre`, `carolina theatre of durham`       | `carolina theatre`   |
 | `cam raleigh`, `contemporary art museum raleigh`           | `cam raleigh`        |
+| `quail ridge books`, `quail ridge bookstore`               | `quail ridge books`  |
+
+**Renamed venues.** Two Triangle venues were renamed recently and sources still
+use both names: PNC Arena → **Lenovo Center** (naming rights expired 2024-08-31)
+and Duke Energy Center for the Performing Arts → **Martin Marietta Center for
+the Performing Arts** (2023). Both pairs are in the alias map, so one show listed
+under either name hashes to a single id.
+
+**Sub-venues (`VENUE_PARENTS`).** Some venues are halls inside a larger complex —
+Meymandi Concert Hall, Raleigh Memorial Auditorium, A.J. Fletcher Opera Theater,
+and Kennedy Theatre all sit inside the Martin Marietta Center. Sources disagree
+about which to name. These are **not** in the alias map: collapsing a hall into
+its complex would merge distinct shows playing different halls the same night.
+Instead `scripts/lib/dedup.ts` carries a `VENUE_PARENTS` map consulted only by
+`isSameOccurrence` — the venue test also passes when one record names a hall and
+the other names its complex. The ±90-minute and title-Jaccard-≥0.6 conditions
+still apply, so sibling halls with different shows stay separate. `normVenue` and
+`computeId` never consult it, so hall-level ids stay stable.
+
+`npm run validate` fails if `data/sources.json` declares a `parent_venue` that
+`VENUE_PARENTS` doesn't know, so the registry and the dedup rules can't drift.
 
 ### 2. Collapse cross-source duplicates of the *same* occurrence
 

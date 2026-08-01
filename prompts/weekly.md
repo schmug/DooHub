@@ -17,10 +17,33 @@ both in the same commit** — CLAUDE.md wins on any conflict.
    Never hardcode dates. Use `America/New_York`. Get today's date with `date`.
 2. **Load the existing store.** Read `data/events.json`. Keep events still in the
    window; they already have stable `id`s and `first_seen` — preserve those.
-3. **Discover** events across every category in **Coverage** below, from whatever
-   sources you judge best (official venue sites, city/tourism calendars, ticket
-   platforms, brewery/market pages, university arts calendars, etc.). Prefer
-   primary sources for accurate times, prices, and booking links.
+3. **Discover** events across every category in **Coverage** below, in two phases.
+
+   **Phase A — registry sweep (the floor).** Read `data/sources.json` and check
+   every source in it. Record how many events each source contributed, by `id`,
+   for the coverage report in step 7. A source that yields nothing this week is a
+   normal outcome — an arena in the offseason, a seasonal amphitheater in
+   January. Log the zero and move on; never manufacture an event to fill a gap.
+   Sources marked `"fetch_blocked": true` return 403 to a plain fetch — use
+   WebFetch, and fall back to a site-scoped WebSearch if that also fails.
+
+   **Phase B — open discovery (required, not leftover).** Search beyond the
+   registry, exactly as before: official venue sites, city and tourism calendars,
+   ticket platforms, brewery and market pages, university arts calendars,
+   neighborhood and library listings. Lean into what a venue registry
+   structurally cannot hold — pop-up and seasonal markets, one-off festivals and
+   street fairs, town parks & rec programming, trivia and karaoke nights,
+   food-truck rodeos, gallery openings.
+
+   **Phase B has a floor you must clear:** at least **40% of this run's events**
+   and at least **8 distinct sources** must come from outside `data/sources.json`.
+   If you are short of either when you think you're done, keep searching.
+
+   `data/sources.json` is a floor, not a search space. A seed returning nothing
+   is never evidence an event doesn't exist. A satisfying Phase A count is never
+   a reason to shorten Phase B.
+
+   Prefer primary sources for accurate times, prices, and booking links.
 4. **Dedup + merge** new finds into the store using the **Dedup** rules below.
    Re-running the same week must not create duplicates (idempotent).
 5. **Enrich** each event to the **Event schema**. Geocode best-effort for
@@ -37,6 +60,11 @@ both in the same commit** — CLAUDE.md wins on any conflict.
      CLAUDE.md): overview, morning/afternoon/evening schedule, food with specific
      vegan/veg dishes, good-weather vs rain alternatives, practical notes, and the
      `event_ids` each itinerary includes.
+   - `data/source_coverage.json` — this run's discovery telemetry:
+     `{ week, generated_at, per_source: { "<source id>": <count> }, zero_hit: [<ids with 0>],
+     off_registry_sources, off_registry_events, total_events }`. Every key in
+     `per_source` must be an `id` from `data/sources.json`; `npm run validate`
+     enforces that and warns if the off-registry share is under 40%.
 8. **Validate + build (deterministic):**
    ```bash
    npm run validate            # fix every ERROR before continuing
