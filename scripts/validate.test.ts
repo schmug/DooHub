@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { validateEvents, validateSources, type DateWindow } from "./validate.js";
-import type { EventSource, TriangleEvent } from "./lib/types.js";
+import { validateCoverage, validateEvents, validateSources, type DateWindow } from "./validate.js";
+import type { EventSource, SourceCoverage, TriangleEvent } from "./lib/types.js";
 
 function valid(over: Partial<TriangleEvent> = {}): TriangleEvent {
   return {
@@ -153,4 +153,52 @@ test("validateSources accepts a parent_venue dedup.ts does know", () => {
     ],
   });
   assert.deepEqual(errors, []);
+});
+
+function coverage(over: Partial<SourceCoverage> = {}): SourceCoverage {
+  return {
+    week: "2026-W32",
+    generated_at: "2026-08-06T11:14:00-04:00",
+    per_source: { ncma: 5, "lenovo-center": 0 },
+    zero_hit: ["lenovo-center"],
+    off_registry_sources: 11,
+    off_registry_events: 62,
+    total_events: 141,
+    ...over,
+  };
+}
+
+const registryFixture = {
+  schema_version: 1,
+  sources: [src(), src({ id: "lenovo-center", name: "Lenovo Center" })],
+};
+
+test("validateCoverage accepts a well-formed report", () => {
+  const { errors } = validateCoverage(coverage(), registryFixture);
+  assert.deepEqual(errors, []);
+});
+
+test("validateCoverage rejects a per_source id not in the registry", () => {
+  const { errors } = validateCoverage(
+    coverage({ per_source: { "not-a-source": 3 }, zero_hit: [] }),
+    registryFixture,
+  );
+  assert.equal(errors.length, 1);
+  assert.match(errors[0]!, /not-a-source/);
+});
+
+test("validateCoverage rejects a zero_hit entry that reported hits", () => {
+  const { errors } = validateCoverage(coverage({ zero_hit: ["ncma"] }), registryFixture);
+  assert.equal(errors.length, 1);
+  assert.match(errors[0]!, /zero_hit/);
+});
+
+test("validateCoverage warns when off-registry share falls below the 40% quota", () => {
+  const { errors, warnings } = validateCoverage(
+    coverage({ off_registry_events: 10, total_events: 141 }),
+    registryFixture,
+  );
+  assert.deepEqual(errors, []);
+  assert.equal(warnings.length, 1);
+  assert.match(warnings[0]!, /off-registry/);
 });

@@ -165,3 +165,21 @@ export interface SourcesRegistry {
 }
 
 export const SOURCE_KINDS: ReadonlyArray<SourceKind> = ["venue", "hub", "aggregator"];
+
+/**
+ * Per-run discovery telemetry (data/source_coverage.json). Read by a human in
+ * the PR body — nothing consumes it programmatically. Its job is to surface a
+ * seed that has quietly stopped producing, and to show whether open-ended
+ * discovery is still pulling its weight against the registry.
+ */
+export interface SourceCoverage {
+  week: string;
+  generated_at: string;
+  /** source id -> events contributed this run */
+  per_source: Record<string, number>;
+  /** ids from per_source that contributed 0 */
+  zero_hit: string[];
+  off_registry_sources: number;
+  off_registry_events: number;
+  total_events: number;
+}

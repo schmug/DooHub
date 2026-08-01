@@ -17,6 +17,7 @@ import {
   YES_NO_UNKNOWN,
   type EventSource,
   type EventsStore,
+  type SourceCoverage,
   type SourceKind,
   type SourcesRegistry,
   type TriangleEvent,
@@ -26,6 +27,10 @@ import { normVenue, venueParent } from "./lib/dedup.js";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SRC = join(ROOT, "data", "events.json");
 const SOURCES = join(ROOT, "data", "sources.json");
+const COVERAGE = join(ROOT, "data", "source_coverage.json");
+
+/** Fraction of a run's events that must come from outside the registry. */
+const OFF_REGISTRY_QUOTA = 0.4;
 
 export interface DateWindow {
   start: Date; // inclusive (start of today, local)
@@ -209,6 +214,45 @@ export function validateSources(registry: SourcesRegistry): ValidationResult {
   return { errors, warnings };
 }
 
+/**
+ * Pure validator for data/source_coverage.json — no I/O. The quota check is a
+ * WARNING, not an error: a genuinely quiet week shouldn't abort the build, but
+ * a sustained dip means the registry is crowding out open discovery.
+ */
+export function validateCoverage(coverage: SourceCoverage, registry: SourcesRegistry): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const known = new Set((registry.sources ?? []).map((s) => s.id));
+  const perSource = coverage?.per_source ?? {};
+
+  for (const id of Object.keys(perSource)) {
+    if (!known.has(id)) errors.push(`source_coverage.json: per_source id "${id}" is not in sources.json`);
+  }
+
+  for (const id of coverage?.zero_hit ?? []) {
+    const n = perSource[id];
+    if (n === undefined) {
+      errors.push(`source_coverage.json: zero_hit id "${id}" is missing from per_source`);
+    } else if (n !== 0) {
+      errors.push(`source_coverage.json: zero_hit id "${id}" reported ${n} event(s)`);
+    }
+  }
+
+  const total = coverage?.total_events ?? 0;
+  if (total > 0) {
+    const share = (coverage?.off_registry_events ?? 0) / total;
+    if (share < OFF_REGISTRY_QUOTA) {
+      warnings.push(
+        `source_coverage.json: off-registry share ${(share * 100).toFixed(0)}% is below the ` +
+          `${OFF_REGISTRY_QUOTA * 100}% quota — Phase B discovery may be getting crowded out`,
+      );
+    }
+  }
+
+  return { errors, warnings };
+}
+
 function todayWindow(now: Date): DateWindow {
   const start = new Date(now);
   start.setHours(0, 0, 0, 0);
@@ -291,6 +335,19 @@ async function main(): Promise<void> {
   const srcResult = validateSources(registry);
   errors.push(...srcResult.errors);
   warnings.push(...srcResult.warnings);
+
+  try {
+    const rawCoverage = await readFile(COVERAGE, "utf8");
+    const cov = validateCoverage(JSON.parse(rawCoverage) as SourceCoverage, registry);
+    errors.push(...cov.errors);
+    warnings.push(...cov.warnings);
+  } catch (err) {
+    // ENOENT is expected before the first run under the new prompt. Anything
+    // else (malformed JSON, unreadable file) is a real problem — surface it.
+    if ((err as NodeJS.ErrnoException)?.code !== "ENOENT") {
+      errors.push(`source_coverage.json: ${err instanceof Error ? err.message : String(err)}`);
+    }
+  }
 
   for (const w of warnings) console.warn(`  warn: ${w}`);
   for (const e of errors) console.error(`  ERROR: ${e}`);
