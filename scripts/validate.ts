@@ -198,6 +198,12 @@ export function validateSources(registry: SourcesRegistry): ValidationResult {
       }
     }
 
+    if (s?.fetch_blocked !== undefined && typeof s.fetch_blocked !== "boolean") {
+      // A string here is the dangerous case: "false" is truthy, so the link
+      // checker would SKIP the source — the opposite of what the author meant.
+      errors.push(`${label}: fetch_blocked must be a boolean, got ${typeof s.fetch_blocked}`);
+    }
+
     // Anti-drift: dedup.ts must already resolve THIS source's own name to the
     // parent it declares. A parent invented in the registry alone resolves to
     // null here and fails, which is the point.
@@ -207,6 +213,32 @@ export function validateSources(registry: SourcesRegistry): ValidationResult {
           `${label}: parent_venue "${s.parent_venue}" has no matching VENUE_PARENTS entry in ` +
             `scripts/lib/dedup.ts — add it there, or cross-source duplicates for this venue won't merge`,
         );
+      }
+    }
+
+    if (s?.venue_aliases !== undefined) {
+      if (!Array.isArray(s.venue_aliases) || s.venue_aliases.some((a) => typeof a !== "string" || a.trim() === "")) {
+        errors.push(`${label}: venue_aliases must be an array of non-empty strings`);
+      } else {
+        // Symmetric anti-drift: an alias is only useful if dedup.ts canonicalizes
+        // it onto THIS source's own venue. An alias that normalizes to something
+        // else buys nothing (venue Jaccard never reaches 0.6 on a shorthand) and
+        // silently advertises a merge that will not happen. The parent escape
+        // hatch requires a real, shared complex — two nulls are not a match, or
+        // every unknown alias would pass.
+        const canonical = normVenue(s.name ?? "");
+        const parent = venueParent(s.name ?? "");
+        for (const alias of s.venue_aliases) {
+          const aliasParent = venueParent(alias);
+          const ok = normVenue(alias) === canonical || (aliasParent !== null && aliasParent === parent);
+          if (!ok) {
+            errors.push(
+              `${label}: venue_aliases entry "${alias}" normalizes to "${normVenue(alias)}", not ` +
+                `"${canonical}" — add it to VENUE_ALIASES in scripts/lib/dedup.ts or drop it, ` +
+                `otherwise listings under that name won't merge`,
+            );
+          }
+        }
       }
     }
   });

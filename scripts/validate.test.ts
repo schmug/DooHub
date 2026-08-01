@@ -1,7 +1,8 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import { validateCoverage, validateEvents, validateSources, type DateWindow } from "./validate.js";
-import type { EventSource, SourceCoverage, TriangleEvent } from "./lib/types.js";
+import type { EventSource, SourceCoverage, SourcesRegistry, TriangleEvent } from "./lib/types.js";
 
 function valid(over: Partial<TriangleEvent> = {}): TriangleEvent {
   return {
@@ -152,6 +153,61 @@ test("validateSources accepts a parent_venue dedup.ts does know", () => {
       }),
     ],
   });
+  assert.deepEqual(errors, []);
+});
+
+test("validateSources rejects a venue alias that does not resolve to the source's own venue", () => {
+  // The symmetric drift check: an alias only helps if normVenue maps it onto the
+  // source's canonical venue. "RBC Center" without a VENUE_ALIASES entry shares
+  // 1 of 3 tokens with "Lenovo Center" — it would never merge.
+  const { errors } = validateSources({
+    schema_version: 1,
+    sources: [src({ id: "lenovo-center", name: "Lenovo Center", venue_aliases: ["Nowhere Arena"] })],
+  });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0]!, /venue_aliases/);
+  assert.match(errors[0]!, /Nowhere Arena/);
+});
+
+test("validateSources accepts venue aliases dedup.ts canonicalizes onto the source", () => {
+  const { errors } = validateSources({
+    schema_version: 1,
+    sources: [
+      src({ id: "lenovo-center", name: "Lenovo Center", venue_aliases: ["PNC Arena", "RBC Center"] }),
+      src({
+        id: "meymandi-concert-hall",
+        name: "Meymandi Concert Hall",
+        parent_venue: "Martin Marietta Center for the Performing Arts",
+        venue_aliases: ["Meymandi"],
+      }),
+    ],
+  });
+  assert.deepEqual(errors, []);
+});
+
+test("validateSources rejects a venue_aliases value that is not a string array", () => {
+  const { errors } = validateSources({
+    schema_version: 1,
+    sources: [src({ venue_aliases: "NCMA" as never })],
+  });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0]!, /venue_aliases/);
+});
+
+test("validateSources rejects a stringly-typed fetch_blocked", () => {
+  // "false" is truthy, so a string here would silently EXEMPT the source from
+  // link checking — the exact opposite of what the author meant.
+  const { errors } = validateSources({
+    schema_version: 1,
+    sources: [src({ fetch_blocked: "false" as never })],
+  });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0]!, /fetch_blocked/);
+});
+
+test("the shipped registry passes validateSources", async () => {
+  const raw = await readFile(new URL("../data/sources.json", import.meta.url), "utf8");
+  const { errors } = validateSources(JSON.parse(raw) as SourcesRegistry);
   assert.deepEqual(errors, []);
 });
 

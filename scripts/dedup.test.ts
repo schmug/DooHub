@@ -115,6 +115,22 @@ test("normVenue collapses Quail Ridge Books naming variants", () => {
   assert.equal(normVenue("Quail Ridge Books"), "quail ridge books");
 });
 
+test("normVenue resolves the Meymandi shorthand to the full hall name", () => {
+  // "Meymandi" is the standard Triangle shorthand; without the alias it shares
+  // only 1 of 3 venue tokens with "Meymandi Concert Hall" (Jaccard 0.33), so
+  // isSameOccurrence would never merge the two listings.
+  assert.equal(normVenue("Meymandi"), "meymandi concert hall");
+  assert.equal(normVenue("Meymandi Concert Hall"), "meymandi concert hall");
+});
+
+test("the Meymandi shorthand still resolves to its parent complex", () => {
+  assert.equal(venueParent("Meymandi"), "martin marietta center for the performing arts");
+});
+
+test("normVenue collapses the RBC Center -> Lenovo Center rename chain", () => {
+  assert.equal(normVenue("RBC Center"), "lenovo center");
+});
+
 test("computeId matches for one show listed under both arena names", () => {
   const a = ev({ name: "Carolina Hurricanes vs Bruins", venue: "PNC Arena", city: "Raleigh" });
   const b = ev({ name: "Carolina Hurricanes vs Bruins", venue: "Lenovo Center", city: "Raleigh" });

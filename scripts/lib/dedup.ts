@@ -25,13 +25,18 @@ const VENUE_ALIASES: Record<string, string> = {
   "carolina theatre of durham": "carolina theatre",
   "contemporary art museum raleigh": "cam raleigh",
   // Renamed venues — sources still use both names for the same building.
-  // PNC's naming rights expired 2024-08-31; the arena became Lenovo Center.
+  // PNC's naming rights expired 2024-08-31; the arena became Lenovo Center;
+  // before PNC it was the RBC Center, and older listings still say so.
   "pnc arena": "lenovo center",
+  "rbc center": "lenovo center",
   // Duke Energy Center for the Performing Arts was renamed in 2023.
   "duke energy center for the performing arts": "martin marietta center for the performing arts",
   "duke energy center": "martin marietta center for the performing arts",
   // Naming variants (no rename, just inconsistent listings).
   "quail ridge bookstore": "quail ridge books",
+  // Shorthand. Maps onto the HALL, never onto its parent complex — see
+  // VENUE_PARENTS below for why halls must not collapse into the building.
+  "meymandi": "meymandi concert hall",
 };
 
 // Sub-venue -> the complex that contains it. Consulted ONLY by isSameOccurrence's
