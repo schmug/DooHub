@@ -1,7 +1,13 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { validateCoverage, validateEvents, validateSources, type DateWindow } from "./validate.js";
+import {
+  validateCoverage,
+  validateEvents,
+  validateSources,
+  type CoverageRun,
+  type DateWindow,
+} from "./validate.js";
 import type { EventSource, SourceCoverage, SourcesRegistry, TriangleEvent } from "./lib/types.js";
 
 function valid(over: Partial<TriangleEvent> = {}): TriangleEvent {
@@ -211,6 +217,8 @@ test("the shipped registry passes validateSources", async () => {
   assert.deepEqual(errors, []);
 });
 
+// Numbers here have to add up: sum(per_source) + off_registry_events ===
+// total_events === the event count in the store the report describes.
 function coverage(over: Partial<SourceCoverage> = {}): SourceCoverage {
   return {
     week: "2026-W32",
@@ -219,7 +227,7 @@ function coverage(over: Partial<SourceCoverage> = {}): SourceCoverage {
     zero_hit: ["lenovo-center"],
     off_registry_sources: 11,
     off_registry_events: 62,
-    total_events: 141,
+    total_events: 67,
     ...over,
   };
 }
@@ -229,32 +237,97 @@ const registryFixture = {
   sources: [src(), src({ id: "lenovo-center", name: "Lenovo Center" })],
 };
 
+/** The run the fixture report claims to describe. */
+const runFixture: CoverageRun = { week: "2026-W32", eventCount: 67 };
+
 test("validateCoverage accepts a well-formed report", () => {
-  const { errors } = validateCoverage(coverage(), registryFixture);
+  const { errors, warnings } = validateCoverage(coverage(), registryFixture, runFixture);
   assert.deepEqual(errors, []);
+  assert.deepEqual(warnings, []);
 });
 
 test("validateCoverage rejects a per_source id not in the registry", () => {
   const { errors } = validateCoverage(
-    coverage({ per_source: { "not-a-source": 3 }, zero_hit: [] }),
+    coverage({ per_source: { "not-a-source": 67 }, zero_hit: [], off_registry_events: 0 }),
     registryFixture,
+    runFixture,
   );
   assert.equal(errors.length, 1);
   assert.match(errors[0]!, /not-a-source/);
 });
 
 test("validateCoverage rejects a zero_hit entry that reported hits", () => {
-  const { errors } = validateCoverage(coverage({ zero_hit: ["ncma"] }), registryFixture);
+  const { errors } = validateCoverage(coverage({ zero_hit: ["ncma"] }), registryFixture, runFixture);
   assert.equal(errors.length, 1);
   assert.match(errors[0]!, /zero_hit/);
 });
 
 test("validateCoverage warns when off-registry share falls below the 40% quota", () => {
   const { errors, warnings } = validateCoverage(
-    coverage({ off_registry_events: 10, total_events: 141 }),
+    coverage({ per_source: { ncma: 57, "lenovo-center": 0 }, off_registry_events: 10 }),
     registryFixture,
+    runFixture,
   );
   assert.deepEqual(errors, []);
   assert.equal(warnings.length, 1);
-  assert.match(warnings[0]!, /off-registry/);
+  assert.match(warnings[0]!, /off-registry share/);
+});
+
+test("validateCoverage rejects a report whose week is not this run's week", () => {
+  // The stale-file case: the report is committed, so a run that forgot to
+  // rewrite it revalidates last week's telemetry and passes clean.
+  const { errors } = validateCoverage(coverage({ week: "2026-W31" }), registryFixture, runFixture);
+  assert.equal(errors.length, 1);
+  assert.match(errors[0]!, /week/);
+});
+
+test("validateCoverage rejects total_events that disagrees with the store", () => {
+  const { errors } = validateCoverage(coverage(), registryFixture, { week: "2026-W32", eventCount: 141 });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0]!, /total_events/);
+});
+
+test("validateCoverage rejects counts that do not add up to total_events", () => {
+  const { errors } = validateCoverage(coverage({ off_registry_events: 40 }), registryFixture, runFixture);
+  assert.ok(errors.some((e) => /do not add up|per_source/.test(e)), errors.join("; "));
+});
+
+test("validateCoverage rejects a non-numeric per_source count", () => {
+  const { errors } = validateCoverage(
+    coverage({ per_source: { ncma: "5" as never, "lenovo-center": 0 } }),
+    registryFixture,
+    runFixture,
+  );
+  assert.ok(errors.some((e) => /ncma/.test(e)), errors.join("; "));
+});
+
+test("validateCoverage warns — does not error — when a registry id is missing from per_source", () => {
+  const { errors, warnings } = validateCoverage(
+    coverage({ per_source: { ncma: 5 }, zero_hit: [] }),
+    registryFixture,
+    runFixture,
+  );
+  assert.deepEqual(errors, []);
+  assert.equal(warnings.length, 1);
+  assert.match(warnings[0]!, /lenovo-center/);
+});
+
+test("validateCoverage warns when fewer than 8 distinct off-registry sources contributed", () => {
+  const { errors, warnings } = validateCoverage(
+    coverage({ off_registry_sources: 3 }),
+    registryFixture,
+    runFixture,
+  );
+  assert.deepEqual(errors, []);
+  assert.equal(warnings.length, 1);
+  assert.match(warnings[0]!, /off-registry source/);
+});
+
+test("validateCoverage rejects off-registry events attributed to zero sources", () => {
+  const { errors } = validateCoverage(
+    coverage({ off_registry_sources: 0 }),
+    registryFixture,
+    runFixture,
+  );
+  assert.ok(errors.some((e) => /off_registry_sources/.test(e)), errors.join("; "));
 });

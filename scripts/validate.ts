@@ -3,8 +3,10 @@
 // --check-links). Exits non-zero on errors so run.sh can abort before commit.
 //
 // Usage:
-//   npm run validate            # offline: schema, enums, window, dup ids
-//   npm run validate:links      # also HTTP-check booking/info/image urls (2xx)
+//   npm run validate            # offline: schema, enums, window, dup ids,
+//                               #   data/sources.json, data/source_coverage.json
+//   npm run validate:links      # also HTTP-check booking/info/image urls and
+//                               #   every registry source url (2xx)
 
 import { readFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
@@ -31,6 +33,8 @@ const COVERAGE = join(ROOT, "data", "source_coverage.json");
 
 /** Fraction of a run's events that must come from outside the registry. */
 const OFF_REGISTRY_QUOTA = 0.4;
+/** Distinct off-registry domains a run must draw from (prompts/weekly.md § step 3). */
+const OFF_REGISTRY_MIN_SOURCES = 8;
 
 export interface DateWindow {
   start: Date; // inclusive (start of today, local)
@@ -246,20 +250,62 @@ export function validateSources(registry: SourcesRegistry): ValidationResult {
   return { errors, warnings };
 }
 
+/** The run a coverage report claims to describe (from data/events.json). */
+export interface CoverageRun {
+  /** The written store's envelope `week`. Null skips the staleness check. */
+  week: string | null;
+  /** How many events the written store actually contains. */
+  eventCount: number;
+}
+
+function isCount(v: unknown): v is number {
+  return typeof v === "number" && Number.isInteger(v) && v >= 0;
+}
+
 /**
- * Pure validator for data/source_coverage.json — no I/O. The quota check is a
- * WARNING, not an error: a genuinely quiet week shouldn't abort the build, but
- * a sustained dip means the registry is crowding out open discovery.
+ * Pure validator for data/source_coverage.json — no I/O. Posture, per the design
+ * doc: the file is "a signal for a human, not an audit", so quota shortfalls and
+ * un-reported seeds are WARNINGS. What IS an error is a report that does not
+ * describe this run at all — a stale `week`, or counts that contradict the store
+ * it was written beside. Those make every other number meaningless.
  */
-export function validateCoverage(coverage: SourceCoverage, registry: SourcesRegistry): ValidationResult {
+export function validateCoverage(
+  coverage: SourceCoverage,
+  registry: SourcesRegistry,
+  run: CoverageRun,
+): ValidationResult {
   const errors: string[] = [];
   const warnings: string[] = [];
 
-  const known = new Set((registry.sources ?? []).map((s) => s.id));
+  const registrySources = Array.isArray(registry?.sources) ? registry.sources : [];
+  const known = new Set(registrySources.map((s) => s.id));
   const perSource = coverage?.per_source ?? {};
 
-  for (const id of Object.keys(perSource)) {
+  // --- Does this report describe THIS run? ---------------------------------
+  // The file is committed, so without this a run that forgot to rewrite it
+  // revalidates last week's telemetry and passes clean.
+  if (typeof coverage?.week !== "string" || coverage.week.trim() === "") {
+    errors.push('source_coverage.json: missing "week"');
+  } else if (run.week && coverage.week !== run.week) {
+    errors.push(
+      `source_coverage.json: week "${coverage.week}" is not this run's week "${run.week}" — ` +
+        `the report describes an earlier run; rewrite it alongside data/events.json`,
+    );
+  }
+
+  // --- per_source keys and counts ------------------------------------------
+  let perSourceTotal = 0;
+  let countsUsable = true;
+  for (const [id, n] of Object.entries(perSource)) {
     if (!known.has(id)) errors.push(`source_coverage.json: per_source id "${id}" is not in sources.json`);
+    if (!isCount(n)) {
+      errors.push(
+        `source_coverage.json: per_source["${id}"] must be a non-negative integer, got ${JSON.stringify(n)}`,
+      );
+      countsUsable = false;
+    } else {
+      perSourceTotal += n;
+    }
   }
 
   for (const id of coverage?.zero_hit ?? []) {
@@ -271,15 +317,68 @@ export function validateCoverage(coverage: SourceCoverage, registry: SourcesRegi
     }
   }
 
-  const total = coverage?.total_events ?? 0;
+  // A seed absent from per_source was never reported on — the exact silent
+  // failure this file exists to surface. Warning: a run may legitimately skip a
+  // source (fetch down, timed out) and should still publish.
+  const unreported = [...known].filter((id) => !(id in perSource));
+  if (unreported.length > 0) {
+    const shown = unreported.slice(0, 10).join(", ");
+    const more = unreported.length > 10 ? `, +${unreported.length - 10} more` : "";
+    warnings.push(
+      `source_coverage.json: ${unreported.length} registry source(s) missing from per_source ` +
+        `(not swept, or not reported): ${shown}${more}`,
+    );
+  }
+
+  // --- Arithmetic invariants ------------------------------------------------
+  const total = coverage?.total_events;
+  const offEvents = coverage?.off_registry_events;
+  const offSources = coverage?.off_registry_sources;
+
+  for (const [field, v] of [
+    ["total_events", total],
+    ["off_registry_events", offEvents],
+    ["off_registry_sources", offSources],
+  ] as const) {
+    if (!isCount(v)) {
+      errors.push(`source_coverage.json: ${field} must be a non-negative integer, got ${JSON.stringify(v)}`);
+    }
+  }
+  if (!isCount(total) || !isCount(offEvents) || !isCount(offSources)) return { errors, warnings };
+
+  if (total !== run.eventCount) {
+    errors.push(
+      `source_coverage.json: total_events ${total} does not match the ${run.eventCount} event(s) ` +
+        `written to data/events.json`,
+    );
+  }
+  if (countsUsable && perSourceTotal + offEvents !== total) {
+    errors.push(
+      `source_coverage.json: per_source total (${perSourceTotal}) + off_registry_events (${offEvents}) ` +
+        `= ${perSourceTotal + offEvents}, but total_events is ${total} — the counts do not add up`,
+    );
+  }
+  if (offEvents > 0 && offSources === 0) {
+    errors.push(
+      `source_coverage.json: off_registry_sources is 0 but off_registry_events is ${offEvents}`,
+    );
+  }
+
+  // --- Quota (advisory) -----------------------------------------------------
   if (total > 0) {
-    const share = (coverage?.off_registry_events ?? 0) / total;
+    const share = offEvents / total;
     if (share < OFF_REGISTRY_QUOTA) {
       warnings.push(
         `source_coverage.json: off-registry share ${(share * 100).toFixed(0)}% is below the ` +
           `${OFF_REGISTRY_QUOTA * 100}% quota — Phase B discovery may be getting crowded out`,
       );
     }
+  }
+  if (offSources < OFF_REGISTRY_MIN_SOURCES) {
+    warnings.push(
+      `source_coverage.json: ${offSources} distinct off-registry source(s), below the ` +
+        `${OFF_REGISTRY_MIN_SOURCES}-source floor — Phase B discovery may be getting crowded out`,
+    );
   }
 
   return { errors, warnings };
@@ -367,10 +466,16 @@ async function main(): Promise<void> {
   const srcResult = validateSources(registry);
   errors.push(...srcResult.errors);
   warnings.push(...srcResult.warnings);
+  // validateSources already reported a non-array `sources`; don't compound a
+  // clean validation error with a TypeError further down.
+  const registrySources = Array.isArray(registry?.sources) ? registry.sources : [];
 
   try {
     const rawCoverage = await readFile(COVERAGE, "utf8");
-    const cov = validateCoverage(JSON.parse(rawCoverage) as SourceCoverage, registry);
+    const cov = validateCoverage(JSON.parse(rawCoverage) as SourceCoverage, registry, {
+      week: store.week ?? null,
+      eventCount: events.length,
+    });
     errors.push(...cov.errors);
     warnings.push(...cov.warnings);
   } catch (err) {
@@ -387,13 +492,13 @@ async function main(): Promise<void> {
   let linkProblems: string[] = [];
   if (checkLinksFlag) {
     console.log("validate: checking link health (booking/info/image + sources)…");
-    linkProblems = [...(await checkLinks(events)), ...(await checkSourceLinks(registry.sources))];
+    linkProblems = [...(await checkLinks(events)), ...(await checkSourceLinks(registrySources))];
     for (const p of linkProblems) console.error(`  LINK: ${p}`);
   }
 
   const hardErrors = errors.length + linkProblems.length;
   console.log(
-    `validate: ${events.length} event(s), ${registry.sources.length} source(s), ` +
+    `validate: ${events.length} event(s), ${registrySources.length} source(s), ` +
       `${errors.length} error(s), ${warnings.length} warning(s)` +
       (checkLinksFlag ? `, ${linkProblems.length} link issue(s)` : ""),
   );
