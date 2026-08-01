@@ -968,6 +968,36 @@ table.events td.links .ics {
   font-size: 10px;
   color: var(--muted-2);
 }
+.map-legend .notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+}
+
+/* Numbered pin for a picked event. Leaflet's divIcon takes raw markup, so the
+   colour arrives as the --pin custom property set inline by numberedPin(). */
+.map-pin-icon {
+  background: none;
+  border: 0;
+}
+.map-pin {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--pin, var(--green));
+  color: #fff;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  transition: transform 120ms ease;
+}
+.map-pin.is-hovered {
+  transform: scale(1.3);
+}
 /* Leaflet popup → Soft Transit card. The category line lives on the inner
    .map-popup (which carries the cat-* class) because CSS custom properties
    inherit downward — the wrapper, being an ancestor, can't read --c-line. */
@@ -1384,38 +1414,217 @@ table.events td.links .ics {
   box-shadow: 0 0 0 2px var(--green);
 }
 
-.selection-bar {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 500;
+/* ---------- Selection sidebar ----------
+   A docked column beside the results at desktop widths. Under 900px it turns
+   into a fixed bottom sheet whose header alone reproduces the selection bar
+   this replaced, so the compact layout keeps its old footprint. */
+.explorer-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+.explorer-layout.with-sidebar {
+  grid-template-columns: minmax(0, 1fr) 320px;
+}
+/* min-width:0 so the grid/map track can shrink instead of overflowing the row. */
+.explorer-main {
+  min-width: 0;
+}
+
+.selection-sidebar {
+  position: sticky;
+  top: 84px;
   background: var(--card);
-  border-top: 1px solid var(--line);
-  box-shadow: var(--shadow-md);
-  padding: 12px 0;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
 }
-.selection-bar-inner {
+.selection-head {
+  padding: 14px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.selection-handle {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
 }
-.selection-count {
-  color: var(--ink-2);
-  font-size: 13.5px;
-}
-.selection-count strong {
+.selection-title {
+  font-size: 14px;
+  font-weight: 600;
   color: var(--ink);
+}
+.selection-summary {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+}
+.selection-summary strong {
+  color: var(--ink-2);
+}
+.selection-chevron {
+  display: none;
 }
 .selection-actions {
   display: flex;
   gap: 8px;
+  margin-top: 12px;
 }
-/* Keep the fixed bar from covering the last row of results. */
-.has-selection-bar {
-  padding-bottom: 96px;
+.selection-actions .btn {
+  flex: 1;
+  justify-content: center;
+}
+
+.selection-list {
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  max-height: 46vh;
+  overflow-y: auto;
+}
+.selection-row {
+  display: flex;
+  align-items: stretch;
+  border-radius: var(--r-md);
+}
+.selection-row.is-hovered,
+.selection-row.is-focused {
+  background: var(--line-soft);
+}
+.selection-row.is-focused {
+  box-shadow: inset 2px 0 0 var(--green-2);
+}
+.selection-row-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+  padding: 8px;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+/* Mirrors the numbered pin the map draws for this event. */
+.selection-num {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--green);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 10.5px;
+}
+.selection-row-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.selection-name,
+.selection-meta {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.selection-name {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.selection-meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+}
+.selection-remove {
+  flex: none;
+  width: 30px;
+  border: 0;
+  background: none;
+  color: var(--muted-2);
+  font-size: 17px;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: var(--r-md);
+}
+.selection-remove:hover {
+  color: var(--ink);
+  background: var(--track);
+}
+
+@media (max-width: 900px) {
+  .explorer-layout.with-sidebar {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .selection-sidebar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Clear the docked rule's sticky offset — a fixed box with both top and
+       bottom set stretches to fill the viewport instead of hugging its content. */
+    top: auto;
+    z-index: 500;
+    border-radius: 0;
+    border-width: 1px 0 0;
+    box-shadow: var(--shadow-md);
+  }
+  .selection-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border-bottom: 0;
+  }
+  .selection-handle {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 8px;
+    width: auto;
+    cursor: pointer;
+  }
+  .selection-chevron {
+    display: inline;
+    font-size: 11px;
+    color: var(--muted-2);
+  }
+  .selection-actions {
+    margin-top: 0;
+  }
+  .selection-actions .btn {
+    flex: none;
+  }
+  /* Collapsed by default: the header alone is the old bottom bar. */
+  .selection-list {
+    display: none;
+  }
+  .selection-sidebar.is-open .selection-list {
+    display: block;
+    max-height: 45vh;
+    border-top: 1px solid var(--line-soft);
+  }
+  /* Keep the fixed sheet from covering the last row of results. */
+  .has-selection {
+    padding-bottom: 104px;
+  }
 }
 .events th.pick-col,
 .events td.pick-col {
