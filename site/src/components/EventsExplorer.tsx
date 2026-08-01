@@ -1,4 +1,4 @@
-import { lazy, Suspense, useMemo, useState } from "react";
+import { lazy, Suspense, useCallback, useMemo, useState } from "react";
 import type { Origin, TriangleEvent } from "../types";
 import type { Theme } from "../lib/theme";
 import {
@@ -11,8 +11,9 @@ import {
   type SortKey,
 } from "../lib/filters";
 import { downloadIcs } from "../lib/ics";
+import { selectedEvents } from "../lib/selection";
 import { useSelection } from "../lib/useSelection";
-import SelectionBar from "./SelectionBar";
+import SelectionSidebar from "./SelectionSidebar";
 import FilterBar, { type ViewKey } from "./FilterBar";
 import GroupedView from "./views/GroupedView";
 import TableView from "./views/TableView";
@@ -27,10 +28,18 @@ interface Props {
   theme: Theme;
 }
 
+/** A focus request. The counter lets re-clicking the same row re-focus it. */
+interface Focus {
+  id: string;
+  n: number;
+}
+
 export default function EventsExplorer({ events, origin, theme }: Props) {
   const [filters, setFilters] = useState<FilterState>(emptyFilters);
   const [sort, setSort] = useState<SortKey>("date");
   const [view, setView] = useState<ViewKey>("day");
+  const [focus, setFocus] = useState<Focus | null>(null);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
   const selection = useSelection(events);
 
   const days = useMemo(() => uniqueDays(events), [events]);
@@ -40,6 +49,25 @@ export default function EventsExplorer({ events, origin, theme }: Props) {
     const filtered = applyFilters(events, filters, origin);
     return sortEvents(filtered, sort, origin);
   }, [events, filters, sort, origin]);
+
+  // Chronological, and drawn from the full event set rather than `visible` —
+  // the selection is deliberately independent of the active filters.
+  const picked = useMemo(() => selectedEvents(events, selection.ids), [events, selection.ids]);
+  const hasSelection = picked.length > 0;
+
+  const { clear } = selection;
+  const clearSelection = useCallback(() => {
+    clear();
+    setFocus(null);
+    setHoveredId(null);
+  }, [clear]);
+
+  // The row says "show on map", so honor that from any view rather than leaving
+  // a dead affordance when the user is browsing cards.
+  const focusEvent = useCallback((id: string) => {
+    setView("map");
+    setFocus((prev) => ({ id, n: (prev?.n ?? 0) + 1 }));
+  }, []);
 
   return (
     <>
@@ -54,7 +82,7 @@ export default function EventsExplorer({ events, origin, theme }: Props) {
         categories={categories}
       />
 
-      <div className={`container section-pad${selection.count > 0 ? " has-selection-bar" : ""}`}>
+      <div className={`container section-pad${hasSelection ? " has-selection" : ""}`}>
         <div className="results-bar">
           <div className="results-count">
             <strong>{visible.length}</strong> of {events.length} events
@@ -76,45 +104,67 @@ export default function EventsExplorer({ events, origin, theme }: Props) {
           </div>
         </div>
 
-        {visible.length === 0 ? (
-          <div className="empty">
-            <div className="empty-mark" aria-hidden>
-              △
-            </div>
-            <h3>No events match these filters</h3>
-            <p>Try clearing a filter or widening the distance band.</p>
-            <button className="btn btn-primary" onClick={() => setFilters(emptyFilters)}>
-              Clear all filters
-            </button>
-          </div>
-        ) : view === "table" ? (
-          <TableView
-            events={visible}
-            origin={origin}
-            isSelected={selection.isSelected}
-            onToggle={selection.toggle}
-          />
-        ) : view === "map" ? (
-          <Suspense
-            fallback={
+        <div className={`explorer-layout${hasSelection ? " with-sidebar" : ""}`}>
+          <div className="explorer-main">
+            {visible.length === 0 ? (
               <div className="empty">
-                <h3>Loading map…</h3>
+                <div className="empty-mark" aria-hidden>
+                  △
+                </div>
+                <h3>No events match these filters</h3>
+                <p>Try clearing a filter or widening the distance band.</p>
+                <button className="btn btn-primary" onClick={() => setFilters(emptyFilters)}>
+                  Clear all filters
+                </button>
               </div>
-            }
-          >
-            <MapView events={visible} origin={origin} theme={theme} />
-          </Suspense>
-        ) : (
-          <GroupedView
-            events={visible}
-            origin={origin}
-            groupBy={view}
-            isSelected={selection.isSelected}
+            ) : view === "table" ? (
+              <TableView
+                events={visible}
+                origin={origin}
+                isSelected={selection.isSelected}
+                onToggle={selection.toggle}
+              />
+            ) : view === "map" ? (
+              <Suspense
+                fallback={
+                  <div className="empty">
+                    <h3>Loading map…</h3>
+                  </div>
+                }
+              >
+                <MapView
+                  events={visible}
+                  picked={picked}
+                  focusedId={focus?.id ?? null}
+                  focusNonce={focus?.n ?? 0}
+                  hoveredId={hoveredId}
+                  origin={origin}
+                  theme={theme}
+                />
+              </Suspense>
+            ) : (
+              <GroupedView
+                events={visible}
+                origin={origin}
+                groupBy={view}
+                isSelected={selection.isSelected}
+                onToggle={selection.toggle}
+              />
+            )}
+          </div>
+
+          <SelectionSidebar
+            events={events}
+            ids={selection.ids}
+            focusedId={focus?.id ?? null}
+            hoveredId={hoveredId}
             onToggle={selection.toggle}
+            onClear={clearSelection}
+            onFocus={focusEvent}
+            onHover={setHoveredId}
           />
-        )}
+        </div>
       </div>
-      <SelectionBar events={events} ids={selection.ids} onClear={selection.clear} />
     </>
   );
 }

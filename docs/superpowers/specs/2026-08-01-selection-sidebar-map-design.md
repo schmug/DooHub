@@ -97,9 +97,19 @@ Structure:
   matching the map marker, the event name, `formatWeekdayShort` + `formatClock24`,
   the city, and an `×` button calling `onToggle(id)` to unpick.
 - **Interaction** — row `onClick` → `onFocus(id)`; `onMouseEnter`/`onMouseLeave`
-  → `onHover(id | null)`. The `×` stops propagation so removing doesn't also
-  focus a marker that is about to disappear.
+  → `onHover(id | null)`. The `×` is a sibling button, not nested inside the
+  focus button, so removing can't also focus a marker that is about to vanish.
+  Because the row's affordance reads "show on map", `onFocus` **also switches
+  the view to Map** — otherwise clicking a row while browsing cards would do
+  nothing visible.
 - **Visibility** — renders `null` at zero picks, matching the current bar.
+
+Which layout is active is read in React via a new `lib/useMediaQuery.ts`, not
+inferred from CSS alone: only the compact layout's header is an expand control,
+and rendering `aria-expanded` on the docked one would lie to screen readers. The
+hook listens to both the media query's `change` event and `window.resize` — if
+the query event is ever missed, React's idea of the layout desyncs from the
+CSS's and the sheet's header stops being the button that opens it.
 
 Accessibility: the panel keeps the existing `role="region"` /
 `aria-label="Selected events"`. Rows are `<li>` elements whose focus action is a
@@ -140,10 +150,23 @@ New props: `selectedIds: string[]`, `focusedId`, `hoveredId`.
   `openPopup()` on the marker.
 - **Hover.** The hovered marker's radius / icon class is bumped for a pulse.
 - **Container resize.** The sidebar appearing or disappearing changes the map
-  container's width, and Leaflet does not observe that on its own. `MapView`
-  calls `map.invalidateSize()` in an effect when the selection transitions
-  empty ↔ non-empty, otherwise the tiles and marker positions render against the
-  stale width.
+  container's width, and Leaflet does not observe that on its own, so tiles and
+  marker positions would render against the stale width. Handled with a
+  `ResizeObserver` on the map container rather than a selection-transition
+  signal — same intent, but it also covers window resizes and view switches.
+
+Three constraints found while building this; all are load-bearing and commented
+at their call sites:
+
+- `fitBounds` must pass `animate: false`. An animated fit issued on mount is
+  interrupted by the map's own `invalidateSize` and silently leaves the viewport
+  where it was.
+- The fit runs on a `setTimeout(0)` and calls `invalidateSize()` first, so it
+  measures the container *after* the grid has reflowed around the sidebar.
+- `<FocusMarker>` must be the **last** child of `<MapContainer>`. React runs
+  effects in tree order and react-leaflet's `<Popup>` binds itself to its parent
+  layer from its own effect; placed earlier, the first focus (the click that
+  also mounts the map) calls `openPopup()` before any popup exists.
 
 ### 5. Styling
 
