@@ -78,11 +78,20 @@ rewrite.
       "parent_venue": "Martin Marietta Center for the Performing Arts",  // optional
       "venue_aliases": ["Meymandi", "Duke Energy Center for the Performing Arts"],
       "categories": ["concerts", "theater"],
+      "fetch_blocked": false,             // optional, default false — see below
       "notes": "NC Symphony's home; one of four halls in the complex"
     }
   ]
 }
 ```
+
+`fetch_blocked` marks a source whose origin serves `403` to a plain scripted
+`fetch` but is reachable through WebFetch. Quail Ridge Books is the discovered
+case: `https://quailridgebooks.com/events` 403s a bare request and returns its
+real August 2026 author calendar through WebFetch. Without the flag,
+`validate:links` would hard-fail a healthy source and `run.sh` would abort the
+weekly build. Flagged sources are skipped by the link checker and reached in
+Phase A via WebFetch (falling back to a site-scoped WebSearch).
 
 `kind` is descriptive, not behavioral — nothing branches on it. It exists so the
 coverage report can group results, and so a human reading the file can tell a
@@ -106,9 +115,11 @@ single calendar from an institutional hub.
    Nasher and Duke Gardens for Duke (both already present); plus the three
    athletics calendars.
 
-That lands near 35 sources. **Every URL is verified to resolve during
-implementation** — fetched, confirmed 2xx, and the actual calendar path recorded.
-No URL is written from assumption.
+That lands at **48 sources**, every URL verified against the live web while
+planning — fetched, confirmed 2xx, redirects followed to their final path, and
+the eight guessed paths that 404'd or timed out replaced with the real ones. No
+URL in the registry is written from assumption. The exact verified list is in the
+implementation plan.
 
 ### 2. Two-phase discovery in `prompts/weekly.md`
 
@@ -213,7 +224,8 @@ it does not read `sources.json`. The two are tied together by validation instead
   `dedup.ts`'s `VENUE_PARENTS`. This is the anti-drift check: adding a nested
   venue to the registry without teaching dedup about it fails the build.
 - Registry URLs are HTTP-checked only under the existing `--check-links` flag,
-  alongside event links. The default `validate` stays offline and fast.
+  alongside event links, and sources marked `fetch_blocked` are skipped. The
+  default `validate` stays offline and fast.
 
 **Coverage telemetry.** Each run writes `data/source_coverage.json`:
 
@@ -271,8 +283,9 @@ Full gate before PR: `npm test`, `npm run typecheck`, `npm run validate`,
 
 ## Acceptance criteria
 
-1. `data/sources.json` exists with ~35 entries covering all ten requested
-   locations (Wake Forest = the town), every URL verified to return 2xx.
+1. `data/sources.json` exists with 48 entries covering all ten requested
+   locations (Wake Forest = the town), every URL verified to return 2xx (or
+   marked `fetch_blocked` with a WebFetch-confirmed calendar).
 2. `prompts/weekly.md` step 3 is a two-phase discovery step with the off-registry
    quota and the anti-anchoring clause.
 3. The routine `SKILL.md` inline domain list is gone, replaced by a pointer.
@@ -286,7 +299,7 @@ Full gate before PR: `npm test`, `npm run typecheck`, `npm run validate`,
 
 ## Risks and open questions
 
-- **Phase A run cost.** ~35 fetches per run, on top of Phase B. Weekly cadence
+- **Phase A run cost.** 48 fetches per run, on top of Phase B. Weekly cadence
   makes this acceptable, but if the run starts timing out, the mitigation is
   tiering the registry (sweep every source monthly, a core subset weekly) rather
   than deleting seeds.
