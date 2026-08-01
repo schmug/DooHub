@@ -241,9 +241,15 @@ In `scripts/lib/dedup.ts`, add after `VENUE_ALIASES`:
 const VENUE_PARENTS: Record<string, string> = {
   "meymandi concert hall": "martin marietta center for the performing arts",
   "raleigh memorial auditorium": "martin marietta center for the performing arts",
+  // normVenue turns each non-alphanumeric into a SPACE, so "A.J. Fletcher"
+  // becomes "a j fletcher". Both spellings appear in real listings.
+  "a j fletcher opera theater": "martin marietta center for the performing arts",
   "aj fletcher opera theater": "martin marietta center for the performing arts",
   "kennedy theatre": "martin marietta center for the performing arts",
 };
+
+Verify every key against actual `normVenue` output before writing it, and add a
+`venueParent` test for each entry — not just Meymandi.
 
 /** The complex containing this sub-venue, or null if it isn't a known sub-venue. */
 export function venueParent(venue: string): string | null {
