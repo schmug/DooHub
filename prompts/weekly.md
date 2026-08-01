@@ -73,10 +73,13 @@ both in the same commit** — CLAUDE.md wins on any conflict.
      `off_registry_sources` counts **distinct registrable domains** outside the
      registry (not distinct `source` strings), and
      `sum(per_source) + off_registry_events` must equal `total_events`. Give every
-     registry `id` a `per_source` entry, `0` included. `npm run validate` errors if
-     `week` doesn't match the store or the counts don't add up, and warns on a
-     missing seed, an off-registry share under 40%, or fewer than 8 off-registry
-     sources.
+     registry `id` a `per_source` entry, `0` included — and **only** registry ids:
+     every `per_source` key must be an `id` from `data/sources.json`. Off-registry
+     finds are counted in `off_registry_events` / `off_registry_sources`, never as
+     `per_source` keys. `npm run validate` errors if a `per_source` key isn't a
+     known id, if `week` doesn't match the store, or if the counts don't add up,
+     and warns on a missing seed, an off-registry share under 40%, or fewer than 8
+     off-registry sources.
 8. **Validate + build (deterministic):**
    ```bash
    npm run validate            # fix every ERROR before continuing
