@@ -13,13 +13,18 @@ import {
   BUDGETS,
   COVERAGE_CATEGORIES,
   INDOOR_OUTDOOR,
+  SOURCE_KINDS,
   YES_NO_UNKNOWN,
   type EventsStore,
+  type SourceKind,
+  type SourcesRegistry,
   type TriangleEvent,
 } from "./lib/types.js";
+import { normVenue, venueParent } from "./lib/dedup.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SRC = join(ROOT, "data", "events.json");
+const SOURCES = join(ROOT, "data", "sources.json");
 
 export interface DateWindow {
   start: Date; // inclusive (start of today, local)
@@ -138,6 +143,71 @@ export function validateEvents(events: TriangleEvent[], window?: DateWindow): Va
   return { errors, warnings };
 }
 
+/**
+ * Pure validator for data/sources.json — no I/O. The parent_venue check is the
+ * anti-drift guard: dedup.ts owns VENUE_PARENTS and must already know any
+ * complex the registry references, or cross-source duplicates slip through.
+ */
+export function validateSources(registry: SourcesRegistry): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const sources = Array.isArray(registry?.sources) ? registry.sources : null;
+  if (!sources) return { errors: ["sources.json: `sources` is not an array"], warnings };
+  if (sources.length === 0) warnings.push("sources.json has 0 sources (registry is empty)");
+
+  const seen = new Map<string, number>();
+  sources.forEach((s, i) => {
+    const label = `source[${i}] "${s?.name ?? s?.id ?? "?"}"`;
+
+    for (const field of ["id", "name", "url", "city"] as const) {
+      const v = s?.[field];
+      if (typeof v !== "string" || v.trim() === "") {
+        errors.push(`${label}: missing required field "${field}"`);
+      }
+    }
+
+    if (typeof s?.id === "string" && s.id.trim() !== "") {
+      const prev = seen.get(s.id);
+      if (prev !== undefined) errors.push(`${label}: duplicate source id "${s.id}" (also source[${prev}])`);
+      else seen.set(s.id, i);
+      if (!/^[a-z0-9-]+$/.test(s.id)) errors.push(`${label}: id "${s.id}" is not kebab-case`);
+    }
+
+    if (typeof s?.url === "string" && !URL_RE.test(s.url)) {
+      errors.push(`${label}: url is not a valid http(s) url ("${s.url}")`);
+    }
+
+    if (!SOURCE_KINDS.includes(s?.kind as SourceKind)) {
+      errors.push(`${label}: kind "${String(s?.kind)}" is not one of ${SOURCE_KINDS.join(", ")}`);
+    }
+
+    if (!Array.isArray(s?.categories) || s.categories.length === 0) {
+      errors.push(`${label}: categories must be a non-empty array`);
+    } else {
+      for (const c of s.categories) {
+        if (!COVERAGE_CATEGORIES.includes(c as (typeof COVERAGE_CATEGORIES)[number])) {
+          warnings.push(`${label}: category "${c}" is not a CLAUDE.md coverage category`);
+        }
+      }
+    }
+
+    // Anti-drift: dedup.ts must already resolve THIS source's own name to the
+    // parent it declares. A parent invented in the registry alone resolves to
+    // null here and fails, which is the point.
+    if (typeof s?.parent_venue === "string" && s.parent_venue.trim() !== "") {
+      if (venueParent(s.name ?? "") !== normVenue(s.parent_venue)) {
+        errors.push(
+          `${label}: parent_venue "${s.parent_venue}" has no matching VENUE_PARENTS entry in ` +
+            `scripts/lib/dedup.ts — add it there, or cross-source duplicates for this venue won't merge`,
+        );
+      }
+    }
+  });
+
+  return { errors, warnings };
+}
+
 function todayWindow(now: Date): DateWindow {
   const start = new Date(now);
   start.setHours(0, 0, 0, 0);
@@ -188,7 +258,15 @@ async function main(): Promise<void> {
   const store = JSON.parse(raw) as EventsStore;
   const events = Array.isArray(store.events) ? store.events : [];
 
-  const { errors, warnings } = validateEvents(events, todayWindow(new Date()));
+  const eventResult = validateEvents(events, todayWindow(new Date()));
+  const errors = [...eventResult.errors];
+  const warnings = [...eventResult.warnings];
+
+  const rawSources = await readFile(SOURCES, "utf8");
+  const registry = JSON.parse(rawSources) as SourcesRegistry;
+  const srcResult = validateSources(registry);
+  errors.push(...srcResult.errors);
+  warnings.push(...srcResult.warnings);
 
   for (const w of warnings) console.warn(`  warn: ${w}`);
   for (const e of errors) console.error(`  ERROR: ${e}`);
@@ -202,7 +280,8 @@ async function main(): Promise<void> {
 
   const hardErrors = errors.length + linkProblems.length;
   console.log(
-    `validate: ${events.length} event(s), ${errors.length} error(s), ${warnings.length} warning(s)` +
+    `validate: ${events.length} event(s), ${registry.sources.length} source(s), ` +
+      `${errors.length} error(s), ${warnings.length} warning(s)` +
       (checkLinksFlag ? `, ${linkProblems.length} link issue(s)` : ""),
   );
   if (hardErrors > 0) process.exit(1);
