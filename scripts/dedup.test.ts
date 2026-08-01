@@ -93,3 +93,37 @@ test("jaccard basics", () => {
   assert.equal(jaccard(tokenSet("art evening"), tokenSet("art evening")), 1);
   assert.equal(jaccard(tokenSet("foo"), tokenSet("bar")), 0);
 });
+
+test("normVenue collapses the PNC Arena -> Lenovo Center rename", () => {
+  assert.equal(normVenue("PNC Arena"), "lenovo center");
+  assert.equal(normVenue("Lenovo Center"), "lenovo center");
+});
+
+test("normVenue collapses the Duke Energy Center -> Martin Marietta Center rename", () => {
+  assert.equal(
+    normVenue("Duke Energy Center for the Performing Arts"),
+    "martin marietta center for the performing arts",
+  );
+  assert.equal(
+    normVenue("Martin Marietta Center for the Performing Arts"),
+    "martin marietta center for the performing arts",
+  );
+});
+
+test("normVenue collapses Quail Ridge Books naming variants", () => {
+  assert.equal(normVenue("Quail Ridge Bookstore"), "quail ridge books");
+  assert.equal(normVenue("Quail Ridge Books"), "quail ridge books");
+});
+
+test("computeId matches for one show listed under both arena names", () => {
+  const a = ev({ name: "Carolina Hurricanes vs Bruins", venue: "PNC Arena", city: "Raleigh" });
+  const b = ev({ name: "Carolina Hurricanes vs Bruins", venue: "Lenovo Center", city: "Raleigh" });
+  assert.equal(computeId(a), computeId(b));
+});
+
+test("unaliased venue ids are unchanged by the new alias entries", () => {
+  // Regression guard: published .ics UIDs are these ids. A venue the alias table
+  // does not name must hash exactly as it did before this change.
+  const e = ev({ name: "Trivia Night", venue: "Trophy Brewing", city: "Raleigh" });
+  assert.equal(computeId(e), "b9e329f6fecb");
+});

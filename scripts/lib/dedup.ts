@@ -24,6 +24,14 @@ const VENUE_ALIASES: Record<string, string> = {
   "koka booth": "koka booth amphitheatre",
   "carolina theatre of durham": "carolina theatre",
   "contemporary art museum raleigh": "cam raleigh",
+  // Renamed venues — sources still use both names for the same building.
+  // PNC's naming rights expired 2024-08-31; the arena became Lenovo Center.
+  "pnc arena": "lenovo center",
+  // Duke Energy Center for the Performing Arts was renamed in 2023.
+  "duke energy center for the performing arts": "martin marietta center for the performing arts",
+  "duke energy center": "martin marietta center for the performing arts",
+  // Naming variants (no rename, just inconsistent listings).
+  "quail ridge bookstore": "quail ridge books",
 };
 
 /** lowercase, strip punctuation, split, drop stopwords. Returns raw token list. */
