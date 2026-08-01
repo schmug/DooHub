@@ -186,3 +186,28 @@ test("parent matching does not collapse ids", () => {
   const complex = ev({ name: "Recital", venue: "Martin Marietta Center for the Performing Arts" });
   assert.notEqual(computeId(hall), computeId(complex));
 });
+
+test("venueParent regression: all VENUE_PARENTS entries resolve correctly", () => {
+  // Each hall must resolve to its complex. Tests both punctuated and unpunctuated
+  // variants where they occur (A.J. Fletcher has periods in the official name).
+  assert.equal(
+    venueParent("Meymandi Concert Hall"),
+    "martin marietta center for the performing arts",
+  );
+  assert.equal(
+    venueParent("Raleigh Memorial Auditorium"),
+    "martin marietta center for the performing arts",
+  );
+  assert.equal(
+    venueParent("A.J. Fletcher Opera Theater"),
+    "martin marietta center for the performing arts",
+  );
+  assert.equal(
+    venueParent("AJ Fletcher Opera Theater"),
+    "martin marietta center for the performing arts",
+  );
+  assert.equal(
+    venueParent("Kennedy Theatre"),
+    "martin marietta center for the performing arts",
+  );
+});

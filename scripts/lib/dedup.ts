@@ -41,6 +41,7 @@ const VENUE_ALIASES: Record<string, string> = {
 const VENUE_PARENTS: Record<string, string> = {
   "meymandi concert hall": "martin marietta center for the performing arts",
   "raleigh memorial auditorium": "martin marietta center for the performing arts",
+  "a j fletcher opera theater": "martin marietta center for the performing arts",
   "aj fletcher opera theater": "martin marietta center for the performing arts",
   "kennedy theatre": "martin marietta center for the performing arts",
 };
@@ -118,7 +119,7 @@ const NINETY_MIN_MS = 90 * 60 * 1000;
 
 /**
  * True when two records describe the SAME occurrence even if their ids differ:
- * venue match AND start within ±90min AND title match (Jaccard >= 0.6 or subset).
+ * venue match (direct, fuzzy, or parent-child) AND start within ±90min AND title match (Jaccard >= 0.6 or subset).
  */
 export function isSameOccurrence(a: TriangleEvent, b: TriangleEvent): boolean {
   const vA = normVenue(a.venue);
