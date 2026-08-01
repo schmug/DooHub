@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { computeId, normName, normVenue, isSameOccurrence, jaccard, tokenSet } from "./lib/dedup.js";
+import { computeId, normName, normVenue, isSameOccurrence, jaccard, tokenSet, venueParent } from "./lib/dedup.js";
 import type { TriangleEvent } from "./lib/types.js";
 
 function ev(over: Partial<TriangleEvent>): TriangleEvent {
@@ -126,4 +126,63 @@ test("unaliased venue ids are unchanged by the new alias entries", () => {
   // does not name must hash exactly as it did before this change.
   const e = ev({ name: "Trivia Night", venue: "Trophy Brewing", city: "Raleigh" });
   assert.equal(computeId(e), "b9e329f6fecb");
+});
+
+test("venueParent resolves a hall to its complex and returns null otherwise", () => {
+  assert.equal(
+    venueParent("Meymandi Concert Hall"),
+    "martin marietta center for the performing arts",
+  );
+  assert.equal(venueParent("Cat's Cradle"), null);
+});
+
+test("isSameOccurrence merges one concert listed at the hall and at the complex", () => {
+  const hall = ev({
+    name: "NC Symphony: Beethoven's Ninth",
+    venue: "Meymandi Concert Hall",
+    start: "2026-08-14T20:00:00-04:00",
+  });
+  const complex = ev({
+    name: "NC Symphony: Beethoven's Ninth",
+    venue: "Martin Marietta Center for the Performing Arts",
+    start: "2026-08-14T20:00:00-04:00",
+  });
+  assert.equal(isSameOccurrence(hall, complex), true);
+});
+
+test("isSameOccurrence keeps different halls in one complex separate", () => {
+  // The regression an alias-only fix would have introduced: two DIFFERENT shows
+  // in two different halls of the same building on the same night.
+  const meymandi = ev({
+    name: "NC Symphony: Beethoven's Ninth",
+    venue: "Meymandi Concert Hall",
+    start: "2026-08-14T20:00:00-04:00",
+  });
+  const memorial = ev({
+    name: "Hadestown",
+    venue: "Raleigh Memorial Auditorium",
+    start: "2026-08-14T20:00:00-04:00",
+  });
+  assert.equal(isSameOccurrence(meymandi, memorial), false);
+});
+
+test("parent matching still respects the +/-90 minute window", () => {
+  const hall = ev({
+    name: "NC Symphony: Beethoven's Ninth",
+    venue: "Meymandi Concert Hall",
+    start: "2026-08-14T14:00:00-04:00",
+  });
+  const complex = ev({
+    name: "NC Symphony: Beethoven's Ninth",
+    venue: "Martin Marietta Center for the Performing Arts",
+    start: "2026-08-14T20:00:00-04:00",
+  });
+  assert.equal(isSameOccurrence(hall, complex), false);
+});
+
+test("parent matching does not collapse ids", () => {
+  // computeId must stay hall-specific — only isSameOccurrence knows about parents.
+  const hall = ev({ name: "Recital", venue: "Meymandi Concert Hall" });
+  const complex = ev({ name: "Recital", venue: "Martin Marietta Center for the Performing Arts" });
+  assert.notEqual(computeId(hall), computeId(complex));
 });

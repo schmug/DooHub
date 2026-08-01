@@ -34,6 +34,17 @@ const VENUE_ALIASES: Record<string, string> = {
   "quail ridge bookstore": "quail ridge books",
 };
 
+// Sub-venue -> the complex that contains it. Consulted ONLY by isSameOccurrence's
+// venue test, never by normVenue/computeId: collapsing a hall into its parent
+// would merge distinct shows playing different halls the same night. Keys and
+// values are already normVenue-normalized.
+const VENUE_PARENTS: Record<string, string> = {
+  "meymandi concert hall": "martin marietta center for the performing arts",
+  "raleigh memorial auditorium": "martin marietta center for the performing arts",
+  "aj fletcher opera theater": "martin marietta center for the performing arts",
+  "kennedy theatre": "martin marietta center for the performing arts",
+};
+
 /** lowercase, strip punctuation, split, drop stopwords. Returns raw token list. */
 function rawTokens(s: string): string[] {
   return s
@@ -62,6 +73,11 @@ export function normVenue(venue: string): string {
     .trim()
     .replace(/^the\s+/, "");
   return VENUE_ALIASES[base] ?? base;
+}
+
+/** The complex containing this sub-venue, or null if it isn't a known sub-venue. */
+export function venueParent(venue: string): string | null {
+  return VENUE_PARENTS[normVenue(venue)] ?? null;
 }
 
 /** start date (not time) in America/New_York as YYYY-MM-DD. */
@@ -107,7 +123,13 @@ const NINETY_MIN_MS = 90 * 60 * 1000;
 export function isSameOccurrence(a: TriangleEvent, b: TriangleEvent): boolean {
   const vA = normVenue(a.venue);
   const vB = normVenue(b.venue);
-  const venueMatch = vA === vB || jaccard(tokenSet(a.venue), tokenSet(b.venue)) >= 0.6;
+  const venueMatch =
+    vA === vB ||
+    jaccard(tokenSet(a.venue), tokenSet(b.venue)) >= 0.6 ||
+    // One names a hall, the other the complex containing it. Safe because the
+    // +/-90min and title-Jaccard>=0.6 checks below still have to pass.
+    venueParent(a.venue) === vB ||
+    venueParent(b.venue) === vA;
   if (!venueMatch) return false;
 
   const tA = new Date(a.start).getTime();
