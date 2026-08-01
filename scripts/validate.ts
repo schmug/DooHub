@@ -15,6 +15,7 @@ import {
   INDOOR_OUTDOOR,
   SOURCE_KINDS,
   YES_NO_UNKNOWN,
+  type EventSource,
   type EventsStore,
   type SourceKind,
   type SourcesRegistry,
@@ -252,6 +253,29 @@ async function checkLinks(events: TriangleEvent[]): Promise<string[]> {
   return problems;
 }
 
+/**
+ * HTTP-check registry URLs. Sources marked fetch_blocked are skipped: their
+ * origin 403s a scripted fetch but serves fine through WebFetch, and failing
+ * the build on them would abort a healthy weekly run.
+ */
+async function checkSourceLinks(sources: EventSource[]): Promise<string[]> {
+  const problems: string[] = [];
+  const targets = sources.filter((s) => !s.fetch_blocked && URL_RE.test(s.url ?? ""));
+  const skipped = sources.filter((s) => s.fetch_blocked).length;
+  if (skipped > 0) console.log(`validate: skipping ${skipped} fetch_blocked source(s)`);
+
+  const results = await Promise.allSettled(targets.map((t) => checkUrl(t.url)));
+  results.forEach((r, i) => {
+    const t = targets[i]!;
+    if (r.status === "fulfilled" && !r.value.ok) {
+      problems.push(`source "${t.id}": ${r.value.status} (${t.url})`);
+    } else if (r.status === "rejected") {
+      problems.push(`source "${t.id}": fetch error (${t.url})`);
+    }
+  });
+  return problems;
+}
+
 async function main(): Promise<void> {
   const checkLinksFlag = process.argv.includes("--check-links");
   const raw = await readFile(SRC, "utf8");
@@ -273,8 +297,8 @@ async function main(): Promise<void> {
 
   let linkProblems: string[] = [];
   if (checkLinksFlag) {
-    console.log("validate: checking link health (booking/info/image)…");
-    linkProblems = await checkLinks(events);
+    console.log("validate: checking link health (booking/info/image + sources)…");
+    linkProblems = [...(await checkLinks(events)), ...(await checkSourceLinks(registry.sources))];
     for (const p of linkProblems) console.error(`  LINK: ${p}`);
   }
 
