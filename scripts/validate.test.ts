@@ -191,6 +191,44 @@ test("validateSources accepts venue aliases dedup.ts canonicalizes onto the sour
   assert.deepEqual(errors, []);
 });
 
+test("validateSources rejects a sibling-hall venue alias", () => {
+  // Meymandi and Raleigh Memorial Auditorium are different halls inside the same
+  // complex. Accepting this alias would advertise exactly the merge VENUE_PARENTS
+  // exists to prevent: two distinct shows, same night, different rooms, one id.
+  const { errors } = validateSources({
+    schema_version: 1,
+    sources: [
+      src({
+        id: "meymandi-concert-hall",
+        name: "Meymandi Concert Hall",
+        parent_venue: "Martin Marietta Center for the Performing Arts",
+        venue_aliases: ["Raleigh Memorial Auditorium"],
+      }),
+    ],
+  });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0]!, /venue_aliases/);
+  assert.match(errors[0]!, /Raleigh Memorial Auditorium/);
+});
+
+test("validateSources rejects a parent-complex venue alias declared on a hall", () => {
+  // The other direction of the same mistake: collapsing the hall into the whole
+  // building. normVenue must keep halls distinct, so this alias never merges.
+  const { errors } = validateSources({
+    schema_version: 1,
+    sources: [
+      src({
+        id: "meymandi-concert-hall",
+        name: "Meymandi Concert Hall",
+        parent_venue: "Martin Marietta Center for the Performing Arts",
+        venue_aliases: ["Martin Marietta Center for the Performing Arts"],
+      }),
+    ],
+  });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0]!, /venue_aliases/);
+});
+
 test("validateSources rejects a venue_aliases value that is not a string array", () => {
   const { errors } = validateSources({
     schema_version: 1,
