@@ -3,8 +3,10 @@
 // --check-links). Exits non-zero on errors so run.sh can abort before commit.
 //
 // Usage:
-//   npm run validate            # offline: schema, enums, window, dup ids
-//   npm run validate:links      # also HTTP-check booking/info/image urls (2xx)
+//   npm run validate            # offline: schema, enums, window, dup ids,
+//                               #   data/sources.json, data/source_coverage.json
+//   npm run validate:links      # also HTTP-check booking/info/image urls and
+//                               #   every registry source url (2xx)
 
 import { readFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
@@ -13,13 +15,26 @@ import {
   BUDGETS,
   COVERAGE_CATEGORIES,
   INDOOR_OUTDOOR,
+  SOURCE_KINDS,
   YES_NO_UNKNOWN,
+  type EventSource,
   type EventsStore,
+  type SourceCoverage,
+  type SourceKind,
+  type SourcesRegistry,
   type TriangleEvent,
 } from "./lib/types.js";
+import { normVenue, venueParent } from "./lib/dedup.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SRC = join(ROOT, "data", "events.json");
+const SOURCES = join(ROOT, "data", "sources.json");
+const COVERAGE = join(ROOT, "data", "source_coverage.json");
+
+/** Fraction of a run's events that must come from outside the registry. */
+const OFF_REGISTRY_QUOTA = 0.4;
+/** Distinct off-registry domains a run must draw from (prompts/weekly.md § step 3). */
+const OFF_REGISTRY_MIN_SOURCES = 8;
 
 export interface DateWindow {
   start: Date; // inclusive (start of today, local)
@@ -138,6 +153,237 @@ export function validateEvents(events: TriangleEvent[], window?: DateWindow): Va
   return { errors, warnings };
 }
 
+/**
+ * Pure validator for data/sources.json — no I/O. The parent_venue check is the
+ * anti-drift guard: dedup.ts owns VENUE_PARENTS and must already know any
+ * complex the registry references, or cross-source duplicates slip through.
+ */
+export function validateSources(registry: SourcesRegistry): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const sources = Array.isArray(registry?.sources) ? registry.sources : null;
+  if (!sources) return { errors: ["sources.json: `sources` is not an array"], warnings };
+  if (sources.length === 0) warnings.push("sources.json has 0 sources (registry is empty)");
+
+  const seen = new Map<string, number>();
+  sources.forEach((s, i) => {
+    const label = `source[${i}] "${s?.name ?? s?.id ?? "?"}"`;
+
+    for (const field of ["id", "name", "url", "city"] as const) {
+      const v = s?.[field];
+      if (typeof v !== "string" || v.trim() === "") {
+        errors.push(`${label}: missing required field "${field}"`);
+      }
+    }
+
+    if (typeof s?.id === "string" && s.id.trim() !== "") {
+      const prev = seen.get(s.id);
+      if (prev !== undefined) errors.push(`${label}: duplicate source id "${s.id}" (also source[${prev}])`);
+      else seen.set(s.id, i);
+      if (!/^[a-z0-9-]+$/.test(s.id)) errors.push(`${label}: id "${s.id}" is not kebab-case`);
+    }
+
+    if (typeof s?.url === "string" && !URL_RE.test(s.url)) {
+      errors.push(`${label}: url is not a valid http(s) url ("${s.url}")`);
+    }
+
+    if (!SOURCE_KINDS.includes(s?.kind as SourceKind)) {
+      errors.push(`${label}: kind "${String(s?.kind)}" is not one of ${SOURCE_KINDS.join(", ")}`);
+    }
+
+    if (!Array.isArray(s?.categories) || s.categories.length === 0) {
+      errors.push(`${label}: categories must be a non-empty array`);
+    } else {
+      for (const c of s.categories) {
+        if (!COVERAGE_CATEGORIES.includes(c as (typeof COVERAGE_CATEGORIES)[number])) {
+          warnings.push(`${label}: category "${c}" is not a CLAUDE.md coverage category`);
+        }
+      }
+    }
+
+    if (s?.fetch_blocked !== undefined && typeof s.fetch_blocked !== "boolean") {
+      // A string here is the dangerous case: "false" is truthy, so the link
+      // checker would SKIP the source — the opposite of what the author meant.
+      errors.push(`${label}: fetch_blocked must be a boolean, got ${typeof s.fetch_blocked}`);
+    }
+
+    // Anti-drift: dedup.ts must already resolve THIS source's own name to the
+    // parent it declares. A parent invented in the registry alone resolves to
+    // null here and fails, which is the point.
+    if (typeof s?.parent_venue === "string" && s.parent_venue.trim() !== "") {
+      if (venueParent(s.name ?? "") !== normVenue(s.parent_venue)) {
+        errors.push(
+          `${label}: parent_venue "${s.parent_venue}" has no matching VENUE_PARENTS entry in ` +
+            `scripts/lib/dedup.ts — add it there, or cross-source duplicates for this venue won't merge`,
+        );
+      }
+    }
+
+    if (s?.venue_aliases !== undefined) {
+      if (!Array.isArray(s.venue_aliases) || s.venue_aliases.some((a) => typeof a !== "string" || a.trim() === "")) {
+        errors.push(`${label}: venue_aliases must be an array of non-empty strings`);
+      } else {
+        // Symmetric anti-drift: an alias is only useful if dedup.ts canonicalizes
+        // it onto THIS source's own venue. An alias that normalizes to something
+        // else buys nothing (venue Jaccard never reaches 0.6 on a shorthand) and
+        // silently advertises a merge that will not happen. The parent escape
+        // hatch requires a real, shared complex — two nulls are not a match, or
+        // every unknown alias would pass.
+        const canonical = normVenue(s.name ?? "");
+        const parent = venueParent(s.name ?? "");
+        for (const alias of s.venue_aliases) {
+          const aliasParent = venueParent(alias);
+          const ok = normVenue(alias) === canonical || (aliasParent !== null && aliasParent === parent);
+          if (!ok) {
+            errors.push(
+              `${label}: venue_aliases entry "${alias}" normalizes to "${normVenue(alias)}", not ` +
+                `"${canonical}" — add it to VENUE_ALIASES in scripts/lib/dedup.ts or drop it, ` +
+                `otherwise listings under that name won't merge`,
+            );
+          }
+        }
+      }
+    }
+  });
+
+  return { errors, warnings };
+}
+
+/** The run a coverage report claims to describe (from data/events.json). */
+export interface CoverageRun {
+  /** The written store's envelope `week`. Null skips the staleness check. */
+  week: string | null;
+  /** How many events the written store actually contains. */
+  eventCount: number;
+}
+
+function isCount(v: unknown): v is number {
+  return typeof v === "number" && Number.isInteger(v) && v >= 0;
+}
+
+/**
+ * Pure validator for data/source_coverage.json — no I/O. Posture, per the design
+ * doc: the file is "a signal for a human, not an audit", so quota shortfalls and
+ * un-reported seeds are WARNINGS. What IS an error is a report that does not
+ * describe this run at all — a stale `week`, or counts that contradict the store
+ * it was written beside. Those make every other number meaningless.
+ */
+export function validateCoverage(
+  coverage: SourceCoverage,
+  registry: SourcesRegistry,
+  run: CoverageRun,
+): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const registrySources = Array.isArray(registry?.sources) ? registry.sources : [];
+  const known = new Set(registrySources.map((s) => s.id));
+  const perSource = coverage?.per_source ?? {};
+
+  // --- Does this report describe THIS run? ---------------------------------
+  // The file is committed, so without this a run that forgot to rewrite it
+  // revalidates last week's telemetry and passes clean.
+  if (typeof coverage?.week !== "string" || coverage.week.trim() === "") {
+    errors.push('source_coverage.json: missing "week"');
+  } else if (run.week && coverage.week !== run.week) {
+    errors.push(
+      `source_coverage.json: week "${coverage.week}" is not this run's week "${run.week}" — ` +
+        `the report describes an earlier run; rewrite it alongside data/events.json`,
+    );
+  }
+
+  // --- per_source keys and counts ------------------------------------------
+  let perSourceTotal = 0;
+  let countsUsable = true;
+  for (const [id, n] of Object.entries(perSource)) {
+    if (!known.has(id)) errors.push(`source_coverage.json: per_source id "${id}" is not in sources.json`);
+    if (!isCount(n)) {
+      errors.push(
+        `source_coverage.json: per_source["${id}"] must be a non-negative integer, got ${JSON.stringify(n)}`,
+      );
+      countsUsable = false;
+    } else {
+      perSourceTotal += n;
+    }
+  }
+
+  for (const id of coverage?.zero_hit ?? []) {
+    const n = perSource[id];
+    if (n === undefined) {
+      errors.push(`source_coverage.json: zero_hit id "${id}" is missing from per_source`);
+    } else if (n !== 0) {
+      errors.push(`source_coverage.json: zero_hit id "${id}" reported ${n} event(s)`);
+    }
+  }
+
+  // A seed absent from per_source was never reported on — the exact silent
+  // failure this file exists to surface. Warning: a run may legitimately skip a
+  // source (fetch down, timed out) and should still publish.
+  const unreported = [...known].filter((id) => !(id in perSource));
+  if (unreported.length > 0) {
+    const shown = unreported.slice(0, 10).join(", ");
+    const more = unreported.length > 10 ? `, +${unreported.length - 10} more` : "";
+    warnings.push(
+      `source_coverage.json: ${unreported.length} registry source(s) missing from per_source ` +
+        `(not swept, or not reported): ${shown}${more}`,
+    );
+  }
+
+  // --- Arithmetic invariants ------------------------------------------------
+  const total = coverage?.total_events;
+  const offEvents = coverage?.off_registry_events;
+  const offSources = coverage?.off_registry_sources;
+
+  for (const [field, v] of [
+    ["total_events", total],
+    ["off_registry_events", offEvents],
+    ["off_registry_sources", offSources],
+  ] as const) {
+    if (!isCount(v)) {
+      errors.push(`source_coverage.json: ${field} must be a non-negative integer, got ${JSON.stringify(v)}`);
+    }
+  }
+  if (!isCount(total) || !isCount(offEvents) || !isCount(offSources)) return { errors, warnings };
+
+  if (total !== run.eventCount) {
+    errors.push(
+      `source_coverage.json: total_events ${total} does not match the ${run.eventCount} event(s) ` +
+        `written to data/events.json`,
+    );
+  }
+  if (countsUsable && perSourceTotal + offEvents !== total) {
+    errors.push(
+      `source_coverage.json: per_source total (${perSourceTotal}) + off_registry_events (${offEvents}) ` +
+        `= ${perSourceTotal + offEvents}, but total_events is ${total} — the counts do not add up`,
+    );
+  }
+  if (offEvents > 0 && offSources === 0) {
+    errors.push(
+      `source_coverage.json: off_registry_sources is 0 but off_registry_events is ${offEvents}`,
+    );
+  }
+
+  // --- Quota (advisory) -----------------------------------------------------
+  if (total > 0) {
+    const share = offEvents / total;
+    if (share < OFF_REGISTRY_QUOTA) {
+      warnings.push(
+        `source_coverage.json: off-registry share ${(share * 100).toFixed(0)}% is below the ` +
+          `${OFF_REGISTRY_QUOTA * 100}% quota — Phase B discovery may be getting crowded out`,
+      );
+    }
+  }
+  if (offSources < OFF_REGISTRY_MIN_SOURCES) {
+    warnings.push(
+      `source_coverage.json: ${offSources} distinct off-registry source(s), below the ` +
+        `${OFF_REGISTRY_MIN_SOURCES}-source floor — Phase B discovery may be getting crowded out`,
+    );
+  }
+
+  return { errors, warnings };
+}
+
 function todayWindow(now: Date): DateWindow {
   const start = new Date(now);
   start.setHours(0, 0, 0, 0);
@@ -182,27 +428,78 @@ async function checkLinks(events: TriangleEvent[]): Promise<string[]> {
   return problems;
 }
 
+/**
+ * HTTP-check registry URLs. Sources marked fetch_blocked are skipped: their
+ * origin 403s a scripted fetch but serves fine through WebFetch, and failing
+ * the build on them would abort a healthy weekly run.
+ */
+async function checkSourceLinks(sources: EventSource[]): Promise<string[]> {
+  const problems: string[] = [];
+  const targets = sources.filter((s) => !s.fetch_blocked && URL_RE.test(s.url ?? ""));
+  const skipped = sources.filter((s) => s.fetch_blocked).length;
+  if (skipped > 0) console.log(`validate: skipping ${skipped} fetch_blocked source(s)`);
+
+  const results = await Promise.allSettled(targets.map((t) => checkUrl(t.url)));
+  results.forEach((r, i) => {
+    const t = targets[i]!;
+    if (r.status === "fulfilled" && !r.value.ok) {
+      problems.push(`source "${t.id}": ${r.value.status} (${t.url})`);
+    } else if (r.status === "rejected") {
+      problems.push(`source "${t.id}": fetch error (${t.url})`);
+    }
+  });
+  return problems;
+}
+
 async function main(): Promise<void> {
   const checkLinksFlag = process.argv.includes("--check-links");
   const raw = await readFile(SRC, "utf8");
   const store = JSON.parse(raw) as EventsStore;
   const events = Array.isArray(store.events) ? store.events : [];
 
-  const { errors, warnings } = validateEvents(events, todayWindow(new Date()));
+  const eventResult = validateEvents(events, todayWindow(new Date()));
+  const errors = [...eventResult.errors];
+  const warnings = [...eventResult.warnings];
+
+  const rawSources = await readFile(SOURCES, "utf8");
+  const registry = JSON.parse(rawSources) as SourcesRegistry;
+  const srcResult = validateSources(registry);
+  errors.push(...srcResult.errors);
+  warnings.push(...srcResult.warnings);
+  // validateSources already reported a non-array `sources`; don't compound a
+  // clean validation error with a TypeError further down.
+  const registrySources = Array.isArray(registry?.sources) ? registry.sources : [];
+
+  try {
+    const rawCoverage = await readFile(COVERAGE, "utf8");
+    const cov = validateCoverage(JSON.parse(rawCoverage) as SourceCoverage, registry, {
+      week: store.week ?? null,
+      eventCount: events.length,
+    });
+    errors.push(...cov.errors);
+    warnings.push(...cov.warnings);
+  } catch (err) {
+    // ENOENT is expected before the first run under the new prompt. Anything
+    // else (malformed JSON, unreadable file) is a real problem — surface it.
+    if ((err as NodeJS.ErrnoException)?.code !== "ENOENT") {
+      errors.push(`source_coverage.json: ${err instanceof Error ? err.message : String(err)}`);
+    }
+  }
 
   for (const w of warnings) console.warn(`  warn: ${w}`);
   for (const e of errors) console.error(`  ERROR: ${e}`);
 
   let linkProblems: string[] = [];
   if (checkLinksFlag) {
-    console.log("validate: checking link health (booking/info/image)…");
-    linkProblems = await checkLinks(events);
+    console.log("validate: checking link health (booking/info/image + sources)…");
+    linkProblems = [...(await checkLinks(events)), ...(await checkSourceLinks(registrySources))];
     for (const p of linkProblems) console.error(`  LINK: ${p}`);
   }
 
   const hardErrors = errors.length + linkProblems.length;
   console.log(
-    `validate: ${events.length} event(s), ${errors.length} error(s), ${warnings.length} warning(s)` +
+    `validate: ${events.length} event(s), ${registrySources.length} source(s), ` +
+      `${errors.length} error(s), ${warnings.length} warning(s)` +
       (checkLinksFlag ? `, ${linkProblems.length} link issue(s)` : ""),
   );
   if (hardErrors > 0) process.exit(1);

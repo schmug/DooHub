@@ -24,6 +24,31 @@ const VENUE_ALIASES: Record<string, string> = {
   "koka booth": "koka booth amphitheatre",
   "carolina theatre of durham": "carolina theatre",
   "contemporary art museum raleigh": "cam raleigh",
+  // Renamed venues — sources still use both names for the same building.
+  // PNC's naming rights expired 2024-08-31; the arena became Lenovo Center;
+  // before PNC it was the RBC Center, and older listings still say so.
+  "pnc arena": "lenovo center",
+  "rbc center": "lenovo center",
+  // Duke Energy Center for the Performing Arts was renamed in 2023.
+  "duke energy center for the performing arts": "martin marietta center for the performing arts",
+  "duke energy center": "martin marietta center for the performing arts",
+  // Naming variants (no rename, just inconsistent listings).
+  "quail ridge bookstore": "quail ridge books",
+  // Shorthand. Maps onto the HALL, never onto its parent complex — see
+  // VENUE_PARENTS below for why halls must not collapse into the building.
+  "meymandi": "meymandi concert hall",
+};
+
+// Sub-venue -> the complex that contains it. Consulted ONLY by isSameOccurrence's
+// venue test, never by normVenue/computeId: collapsing a hall into its parent
+// would merge distinct shows playing different halls the same night. Keys and
+// values are already normVenue-normalized.
+const VENUE_PARENTS: Record<string, string> = {
+  "meymandi concert hall": "martin marietta center for the performing arts",
+  "raleigh memorial auditorium": "martin marietta center for the performing arts",
+  "a j fletcher opera theater": "martin marietta center for the performing arts",
+  "aj fletcher opera theater": "martin marietta center for the performing arts",
+  "kennedy theatre": "martin marietta center for the performing arts",
 };
 
 /** lowercase, strip punctuation, split, drop stopwords. Returns raw token list. */
@@ -54,6 +79,11 @@ export function normVenue(venue: string): string {
     .trim()
     .replace(/^the\s+/, "");
   return VENUE_ALIASES[base] ?? base;
+}
+
+/** The complex containing this sub-venue, or null if it isn't a known sub-venue. */
+export function venueParent(venue: string): string | null {
+  return VENUE_PARENTS[normVenue(venue)] ?? null;
 }
 
 /** start date (not time) in America/New_York as YYYY-MM-DD. */
@@ -94,12 +124,18 @@ const NINETY_MIN_MS = 90 * 60 * 1000;
 
 /**
  * True when two records describe the SAME occurrence even if their ids differ:
- * venue match AND start within ±90min AND title match (Jaccard >= 0.6 or subset).
+ * venue match (direct, fuzzy, or parent-child) AND start within ±90min AND title match (Jaccard >= 0.6 or subset).
  */
 export function isSameOccurrence(a: TriangleEvent, b: TriangleEvent): boolean {
   const vA = normVenue(a.venue);
   const vB = normVenue(b.venue);
-  const venueMatch = vA === vB || jaccard(tokenSet(a.venue), tokenSet(b.venue)) >= 0.6;
+  const venueMatch =
+    vA === vB ||
+    jaccard(tokenSet(a.venue), tokenSet(b.venue)) >= 0.6 ||
+    // One names a hall, the other the complex containing it. Safe because the
+    // +/-90min and title-Jaccard>=0.6 checks below still have to pass.
+    venueParent(a.venue) === vB ||
+    venueParent(b.venue) === vA;
   if (!venueMatch) return false;
 
   const tA = new Date(a.start).getTime();

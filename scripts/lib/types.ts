@@ -136,3 +136,50 @@ export const COVERAGE_CATEGORIES = [
 export const BUDGETS: ReadonlyArray<Budget | "unknown"> = ["$", "$$", "$$$", "$$$$", "unknown"];
 export const INDOOR_OUTDOOR: ReadonlyArray<IndoorOutdoor> = ["indoor", "outdoor", "both"];
 export const YES_NO_UNKNOWN: ReadonlyArray<YesNoUnknown> = ["yes", "no", "unknown"];
+
+export type SourceKind = "venue" | "hub" | "aggregator";
+
+/**
+ * A seed discovery source (data/sources.json). The registry is a FLOOR for the
+ * weekly run's Phase A sweep, not the search space — see prompts/weekly.md.
+ */
+export interface EventSource {
+  id: string; // unique, kebab-case
+  name: string;
+  kind: SourceKind;
+  url: string;
+  city: string;
+  /** Containing complex, when this source is a hall inside a larger venue. */
+  parent_venue?: string;
+  /** Other names sources use for this venue (renames, acronyms, spellings). */
+  venue_aliases?: string[];
+  categories: string[];
+  /** True when the origin 403s a plain fetch but serves via WebFetch. */
+  fetch_blocked?: boolean;
+  notes?: string;
+}
+
+export interface SourcesRegistry {
+  schema_version: number;
+  sources: EventSource[];
+}
+
+export const SOURCE_KINDS: ReadonlyArray<SourceKind> = ["venue", "hub", "aggregator"];
+
+/**
+ * Per-run discovery telemetry (data/source_coverage.json). Read by a human in
+ * the PR body — nothing consumes it programmatically. Its job is to surface a
+ * seed that has quietly stopped producing, and to show whether open-ended
+ * discovery is still pulling its weight against the registry.
+ */
+export interface SourceCoverage {
+  week: string;
+  generated_at: string;
+  /** source id -> events contributed this run */
+  per_source: Record<string, number>;
+  /** ids from per_source that contributed 0 */
+  zero_hit: string[];
+  off_registry_sources: number;
+  off_registry_events: number;
+  total_events: number;
+}
