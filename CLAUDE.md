@@ -281,7 +281,11 @@ still apply, so sibling halls with different shows stay separate. `normVenue` an
 `npm run validate` fails if `data/sources.json` declares a `parent_venue` that
 `VENUE_PARENTS` doesn't know, or a `venue_aliases` entry that `normVenue` doesn't
 canonicalize onto that source's own venue, so the registry and the dedup rules
-can't drift.
+can't drift. The alias rule has no parent-complex exemption: `normVenue(alias)`
+must equal `normVenue(source.name)`, and nothing else passes. Sharing a complex
+is specifically not enough — an alias naming a *sibling* hall (say "Raleigh
+Memorial Auditorium" on the Meymandi entry) is rejected, because merging two
+halls of one building is the regression `VENUE_PARENTS` exists to prevent.
 
 ### 2. Collapse cross-source duplicates of the *same* occurrence
 

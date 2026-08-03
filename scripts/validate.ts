@@ -227,15 +227,13 @@ export function validateSources(registry: SourcesRegistry): ValidationResult {
         // Symmetric anti-drift: an alias is only useful if dedup.ts canonicalizes
         // it onto THIS source's own venue. An alias that normalizes to something
         // else buys nothing (venue Jaccard never reaches 0.6 on a shorthand) and
-        // silently advertises a merge that will not happen. The parent escape
-        // hatch requires a real, shared complex — two nulls are not a match, or
-        // every unknown alias would pass.
+        // silently advertises a merge that will not happen. Sharing a parent
+        // complex is deliberately NOT an escape hatch: sibling halls of one
+        // building are exactly the pair VENUE_PARENTS keeps apart, so an alias
+        // across them must fail here too.
         const canonical = normVenue(s.name ?? "");
-        const parent = venueParent(s.name ?? "");
         for (const alias of s.venue_aliases) {
-          const aliasParent = venueParent(alias);
-          const ok = normVenue(alias) === canonical || (aliasParent !== null && aliasParent === parent);
-          if (!ok) {
+          if (normVenue(alias) !== canonical) {
             errors.push(
               `${label}: venue_aliases entry "${alias}" normalizes to "${normVenue(alias)}", not ` +
                 `"${canonical}" — add it to VENUE_ALIASES in scripts/lib/dedup.ts or drop it, ` +
