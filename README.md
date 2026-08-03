@@ -21,10 +21,12 @@ publishes an interactive site to **Cloudflare Pages**, and emits a subscribable
 ├── data/
 │   ├── events.json           # canonical store (envelope + events[]) — starts empty
 │   ├── itineraries.json      # curated outings — starts empty
+│   ├── sources.json          # seed discovery registry (the Phase A floor)
+│   ├── source_coverage.json  # per-run discovery telemetry (written each run)
 │   └── archive/              # weekly <ISO-week>.json snapshots
 ├── scripts/
 │   ├── build_ics.ts          # data/events.json → public/events.ics (RFC 5545)
-│   ├── validate.ts           # schema / enum / window / dup-id checks (+ --check-links)
+│   ├── validate.ts           # events + registry + coverage checks (+ --check-links)
 │   ├── publish_data.ts       # copy data/*.json → public/ for the site to fetch
 │   ├── lib/{ics,dedup,types}.ts
 │   └── *.test.ts             # node --test unit tests
@@ -35,6 +37,14 @@ publishes an interactive site to **Cloudflare Pages**, and emits a subscribable
 > **Note on `data/itineraries.json`:** the original target layout only named
 > `events.json`. Output #2 (curated itineraries) needs its own store, so this repo
 > adds `data/itineraries.json` with the same envelope convention.
+
+> **Note on the discovery files:** `data/sources.json` is the seed registry each
+> run sweeps first — a floor for discovery, not its search space — and
+> `data/source_coverage.json` is the telemetry that run writes back (per-seed hits,
+> zero-hit seeds, off-registry share). The coverage file isn't in the repo until a
+> run produces one; `validate` skips it when absent and checks it when present.
+> The two-phase rules live in [`CLAUDE.md`](./CLAUDE.md) § Weekly run flow and
+> `prompts/weekly.md` step 3 — read those rather than a copy here.
 
 ---
 
@@ -53,8 +63,8 @@ Two npm projects: the root (pipeline scripts) and `site/` (the React app).
 ```bash
 # from the repo root
 npm install            # script deps: tsx, typescript
-npm test               # 29 unit tests (ics + validate + dedup)
-npm run validate       # validates data/events.json (empty store → 0 errors)
+npm test               # 65 unit tests (ics + validate + dedup)
+npm run validate       # checks data/events.json + data/sources.json (empty store → 0 errors)
 
 # the site
 npm --prefix site install
@@ -149,13 +159,19 @@ Once Claude Code is authed and (optionally) the Pages project exists:
 # Dry, deterministic pieces first (no model, no network writes):
 npm run validate && npm run build
 
-# Full weekly run (discovers real events, writes data/*.json, builds, commits, pushes):
+# Full weekly run (two-phase discovery, writes data/*.json, builds, commits, pushes):
 ./run.sh
 ```
 
 `run.sh` will: run the headless prompt → `npm run validate` (aborts on errors) →
 `npm run build` → commit `chore(events): weekly refresh <date>` → `git push`.
 Cloudflare Pages picks up the push and deploys.
+
+The headless prompt discovers in two phases — Phase A sweeps every seed in
+`data/sources.json`, then Phase B searches beyond the registry for what a venue
+list structurally can't hold — and writes `data/source_coverage.json` alongside
+the store. `prompts/weekly.md` step 3 has the phase rules and the off-registry
+floor Phase B has to clear.
 
 > **Heads up — direct push by design.** `run.sh` commits and pushes straight to the
 > deploy branch because it's an automated content pipeline. That intentionally
@@ -202,14 +218,18 @@ than duplicates across weeks. The site also offers client-side **"All events"**,
 | Command | What it does |
 |---|---|
 | `npm test` | Unit tests for the ics builder, validator, and dedup helpers |
-| `npm run validate` | Schema/enum/window/dup-id checks on `data/events.json` |
-| `npm run validate:links` | Above **plus** HTTP 2xx checks on booking/info/image URLs |
+| `npm run validate` | Schema/enum/window/dup-id checks on `data/events.json`; also `data/sources.json` (kebab-case ids, URL shape, `parent_venue` / `venue_aliases` anti-drift against `dedup.ts`) and `data/source_coverage.json` when present |
+| `npm run validate:links` | Above **plus** HTTP 2xx checks on booking/info/image URLs and every registry source URL (`fetch_blocked` sources skipped) |
 | `npm run build:ics` | Regenerate `public/events.ics` only |
 | `npm run build` | Full deterministic build (validate → site → data → ics) |
 | `npm run typecheck` | Type-check the scripts (`site` has its own `npm --prefix site run typecheck`) |
 
 - **Empty store:** `data/events.json` ships empty (`{ "events": [] }`). The site
   shows sample data until the first real run publishes a non-empty store.
+- **Empty registry:** `data/sources.json` seeds Phase A (48 sources today). An
+  empty one validates with a warning, not an error — discovery still runs, it just
+  has no floor. A missing `data/source_coverage.json` is fine before the first run
+  under the current prompt; a malformed one is an error.
 - **Dedup:** see `CLAUDE.md` § Dedup; the executable helpers live in
   `scripts/lib/dedup.ts` (`computeId`, `isSameOccurrence`).
 - **Never commit secrets.** `.env*` and `.dev.vars` are gitignored; read any
