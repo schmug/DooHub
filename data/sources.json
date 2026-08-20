@@ -12,11 +12,11 @@
     { "id": "duke-calendar", "name": "Duke University", "kind": "hub", "url": "https://calendar.duke.edu/", "city": "Durham", "categories": ["classes", "concerts", "theater", "galleries", "sports"] },
     { "id": "wake-forest-town", "name": "Town of Wake Forest", "kind": "hub", "url": "https://www.wakeforestnc.gov/events", "city": "Wake Forest", "categories": ["festivals", "markets", "parks", "family/kids", "concerts"], "notes": "The TOWN of Wake Forest, NC. Wake Forest University (Winston-Salem) is out of radius." },
 
-    { "id": "gregg-museum", "name": "Gregg Museum of Art & Design", "kind": "venue", "url": "https://gregg.arts.ncsu.edu/", "city": "Raleigh", "categories": ["museums", "galleries"], "notes": "NC State" },
-    { "id": "nc-state-live", "name": "NC State LIVE", "kind": "venue", "url": "https://live.arts.ncsu.edu/", "city": "Raleigh", "categories": ["theater", "concerts"], "notes": "NC State performing arts, incl. Stewart Theatre" },
+    { "id": "gregg-museum", "name": "Gregg Museum of Art & Design", "kind": "venue", "url": "https://gregg.arts.ncsu.edu/exhibitions/", "city": "Raleigh", "categories": ["museums", "galleries"], "notes": "NC State. Landing page carries no calendar; /exhibitions/ is the listing. Not fetch-blocked — it serves fine, it was just the wrong page." },
+    { "id": "nc-state-live", "name": "NC State LIVE", "kind": "venue", "url": "https://live.arts.ncsu.edu/", "city": "Raleigh", "categories": ["theater", "concerts"], "notes": "NC State performing arts, incl. Stewart Theatre. Serves 200 but the landing page is a season teaser — follow through to the season/ticketing pages for dated listings." },
     { "id": "nc-state-athletics", "name": "NC State Athletics", "kind": "venue", "url": "https://gopack.com/calendar", "city": "Raleigh", "categories": ["sports"] },
     { "id": "ackland-art-museum", "name": "Ackland Art Museum", "kind": "venue", "url": "https://events.ackland.org/events/", "city": "Chapel Hill", "categories": ["museums", "galleries"], "notes": "UNC" },
-    { "id": "carolina-performing-arts", "name": "Carolina Performing Arts", "kind": "venue", "url": "https://carolinaperformingarts.org/current-season/", "city": "Chapel Hill", "categories": ["concerts", "theater"], "notes": "UNC; Memorial Hall" },
+    { "id": "carolina-performing-arts", "name": "Carolina Performing Arts", "kind": "venue", "url": "https://carolinaperformingarts.org/current-season/", "city": "Chapel Hill", "categories": ["concerts", "theater"], "fetch_blocked": true, "notes": "UNC; Memorial Hall. 403s a plain fetch (bot protection); use WebFetch, then a site-scoped WebSearch." },
     { "id": "morehead-planetarium", "name": "Morehead Planetarium and Science Center", "kind": "venue", "url": "https://moreheadplanetarium.org/calendar/", "city": "Chapel Hill", "categories": ["museums", "family/kids", "classes"], "notes": "UNC" },
     { "id": "unc-athletics", "name": "UNC Athletics", "kind": "venue", "url": "https://goheels.com/calendar", "city": "Chapel Hill", "categories": ["sports"] },
     { "id": "nasher-museum", "name": "Nasher Museum of Art", "kind": "venue", "url": "https://nasher.duke.edu/events/", "city": "Durham", "categories": ["museums", "galleries"], "notes": "Duke" },
@@ -49,7 +49,7 @@
     { "id": "theatre-raleigh", "name": "Theatre Raleigh", "kind": "venue", "url": "https://www.theatreraleigh.com/events", "city": "Raleigh", "categories": ["theater"] },
     { "id": "dix-park", "name": "Dorothea Dix Park", "kind": "venue", "url": "https://dixpark.org/events", "city": "Raleigh", "categories": ["parks", "festivals", "family/kids"] },
     { "id": "raleigh-city-events", "name": "City of Raleigh", "kind": "hub", "url": "https://raleighnc.gov/events", "city": "Raleigh", "categories": ["parks", "festivals", "family/kids", "classes"] },
-    { "id": "cary-events", "name": "Town of Cary", "kind": "hub", "url": "https://www.carync.gov/recreation-enjoyment/events", "city": "Cary", "categories": ["parks", "festivals", "family/kids", "classes"] },
+    { "id": "cary-events", "name": "Town of Cary", "kind": "hub", "url": "https://www.carync.gov/recreation-enjoyment/events", "city": "Cary", "categories": ["parks", "festivals", "family/kids", "classes"], "fetch_blocked": true, "notes": "403s a plain fetch (bot protection); use WebFetch, then a site-scoped WebSearch. Zero-hit in 2026-W34 despite Lazy Daze and CaryLIVE! running that week." },
     { "id": "nc-historic-sites", "name": "NC DNCR Events", "kind": "hub", "url": "https://events.dncr.nc.gov/", "city": "Raleigh", "categories": ["historic sites", "museums", "tours"], "notes": "Statewide — filter to Triangle sites (Stagville, Bennett Place, Capitol, Mordecai)" }
   ]
 }
