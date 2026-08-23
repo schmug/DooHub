@@ -15,7 +15,7 @@ publishes an interactive site to **Cloudflare Pages**, and emits a subscribable
 ```
 .
 ├── CLAUDE.md                 # authoritative spec (incl. the Dedup design)
-├── run.sh                    # cron entrypoint: claude -p → validate → build → push
+├── run.sh                    # cron entrypoint: claude -p → validate → build → PR
 ├── crontab.txt               # cron snippet (not auto-installed)
 ├── prompts/weekly.md         # the headless task prompt (mirrors CLAUDE.md sections)
 ├── data/
@@ -159,13 +159,14 @@ Once Claude Code is authed and (optionally) the Pages project exists:
 # Dry, deterministic pieces first (no model, no network writes):
 npm run validate && npm run build
 
-# Full weekly run (two-phase discovery, writes data/*.json, builds, commits, pushes):
+# Full weekly run (two-phase discovery, writes data/*.json, builds, opens a PR):
 ./run.sh
 ```
 
-`run.sh` will: run the headless prompt → `npm run validate` (aborts on errors) →
-`npm run build` → commit `chore(events): weekly refresh <date>` → `git push`.
-Cloudflare Pages picks up the push and deploys.
+`run.sh` will: sync `main` → run the headless prompt → `npm run validate` (aborts
+on errors) → `npm run build` → commit `chore(events): weekly refresh <date>` to a
+per-run `events/weekly-<date>-<epoch>` branch → open a PR → arm auto-merge. The PR
+lands itself once CI is green, and Cloudflare Pages deploys on the resulting push.
 
 The headless prompt discovers in two phases — Phase A sweeps every seed in
 `data/sources.json`, then Phase B searches beyond the registry for what a venue
@@ -173,11 +174,12 @@ list structurally can't hold — and writes `data/source_coverage.json` alongsid
 the store. `prompts/weekly.md` step 3 has the phase rules and the off-registry
 floor Phase B has to clear.
 
-> **Heads up — direct push by design.** `run.sh` commits and pushes straight to the
-> deploy branch because it's an automated content pipeline. That intentionally
-> differs from the usual "open a PR, never push to main" workflow. If you'd rather
-> gate deploys behind review, point `run.sh` at a `content` branch and open PRs, or
-> have Pages deploy from a preview branch.
+> **Heads up — the weekly refresh is gated, not pushed.** `main` carries a ruleset
+> requiring the `pipeline` and `site` checks from `.github/workflows/ci.yml`, so a
+> direct push is rejected. `run.sh` opens a PR and arms auto-merge instead: a green
+> run lands unattended, and a red one leaves the PR open rather than deploying bad
+> data. Nothing merges on red. If CI breaks, the weekly refresh stops landing until
+> it's fixed — check open `events/weekly-*` PRs if the site looks stale.
 
 ---
 
