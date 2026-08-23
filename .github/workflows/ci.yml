@@ -1,0 +1,77 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# A superseded run tells us nothing; let the newest push win.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  pipeline:
+    name: pipeline
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - run: npm ci
+
+      # Schema + registry anti-drift checks over data/. Exits non-zero on
+      # errors only; warnings (missing image_url, unswept sources) are expected
+      # and must not fail the build. Deliberately NOT validate:links — that
+      # makes live network calls and would make CI flaky on third-party outages.
+      - name: validate
+        run: npm run validate
+
+      - name: typecheck
+        run: npm run typecheck
+
+      - name: test
+        run: npm test
+
+      # The generators run every weekly job; a break here breaks the published
+      # calendar and the site's data fetch, so prove they still execute.
+      - name: build data + ics
+        run: |
+          npm run build:data
+          npm run build:ics
+
+  site:
+    name: site
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - run: npm ci
+
+      - name: typecheck
+        run: npm run typecheck
+
+      - name: test
+        run: npm test
+
+      # Cloudflare Pages deploys from this build; catch a break here rather
+      # than after the push has already gone out.
+      - name: build
+        run: npm run build
