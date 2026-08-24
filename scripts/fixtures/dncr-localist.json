@@ -1,0 +1,788 @@
+{
+  "events": [
+    {
+      "event": {
+        "id": 52504709544569,
+        "title": " Spy Training 101: Decode a Secret Message",
+        "url": "https://naturalsciences.org/",
+        "updated_at": "2026-08-23T06:54:04-04:00",
+        "created_at": "2026-04-01T08:08:24-04:00",
+        "facebook_id": null,
+        "first_date": "2026-04-01",
+        "last_date": "2026-09-30",
+        "hashtag": null,
+        "urlname": "spy-training-101-decode-a-secret-message",
+        "user_id": 50594386892614,
+        "directions": null,
+        "allows_reviews": true,
+        "allows_attendance": true,
+        "location": "",
+        "room_number": null,
+        "location_name": "North Carolina Museum of Natural Sciences",
+        "status": "live",
+        "experience": "inperson",
+        "stream_url": null,
+        "stream_info": null,
+        "stream_embed_code": null,
+        "created_by": 50594386892614,
+        "updated_by": 53542316730721,
+        "conference_event_id": null,
+        "kind": "standalone",
+        "city_id": null,
+        "neighborhood_id": null,
+        "school_id": 49862714837005,
+        "campus_id": null,
+        "recurring": true,
+        "free": true,
+        "private": false,
+        "verified": true,
+        "rejected": false,
+        "sponsored": false,
+        "venue_id": 50524033525131,
+        "ticket_url": null,
+        "ticket_cost": "Free",
+        "has_register": false,
+        "keywords": [],
+        "tags": [],
+        "description_text": "Pretend you’ve been recruited as a member of the Culper Spy Ring, and you need to know how to decipher a message written in invisible ink. Supplies include a paint brush, water, drying cloth, vitriol (diluted sulfuric acid), Thomas Jefferson cipher and “furnace box.” Read the clues to find the coin with a hidden message, reveal the message using the brush and vitriol, then use the cipher to decode the message.\n\nContact: Nancy Locquet Absillis, nancy.locquet@naturalsciences.org",
+        "photo_id": 52504721819613,
+        "detail_views": 1532,
+        "event_instances": [
+          {
+            "event_instance": {
+              "id": 52504709739274,
+              "event_id": 52504709544569,
+              "start": "2026-08-23T00:00:00-04:00",
+              "end": null,
+              "ranking": 0.08,
+              "all_day": true,
+              "num_attending": 0
+            }
+          }
+        ],
+        "address": "11 W Jones St, Raleigh , NC 27601",
+        "description": "<p>Pretend you&rsquo;ve been recruited as a member of the Culper Spy Ring, and you need to know how to decipher a message written in invisible ink. Supplies include a paint brush, water, drying cloth, vitriol (diluted sulfuric acid), Thomas Jefferson cipher and &ldquo;furnace box.&rdquo; Read the clues to find the coin with a hidden message, reveal the message using the brush and vitriol, then use the cipher to decode the message.</p>\n\n<p>Contact: Nancy Locquet Absillis,&nbsp;<a href=\"mailto:nancy.locquet@naturalsciences.org\">nancy.locquet@naturalsciences.org</a></p>\n",
+        "featured": false,
+        "geo": {
+          "latitude": "35.782156",
+          "longitude": "-78.639336",
+          "street": "11 West Jones Street",
+          "city": "Raleigh",
+          "state": "NC",
+          "country": "US",
+          "zip": "27601"
+        },
+        "filters": {
+          "event_museums": [
+            {
+              "name": "North Carolina Museum of Natural Sciences",
+              "id": 51437845131882
+            }
+          ],
+          "event_themes": [
+            {
+              "name": "Maritime & Natural Heritage",
+              "id": 50605713702537
+            },
+            {
+              "name": "Science & Discovery",
+              "id": 50605713708684
+            },
+            {
+              "name": "America 250",
+              "id": 51577750840298
+            }
+          ],
+          "event_types": [
+            {
+              "name": "Education Programs",
+              "id": 50605602155497
+            }
+          ]
+        },
+        "custom_fields": {
+          "contact_information": "Nancy Locquet Absillis",
+          "contact_email": "nancy.locquet@naturalsciences.org "
+        },
+        "localist_url": "https://events.dncr.nc.gov/event/spy-training-101-decode-a-secret-message",
+        "localist_ics_url": "https://events.dncr.nc.gov/event/spy-training-101-decode-a-secret-message.ics",
+        "photo_url": "https://localist-images.azureedge.net/photos/52504721819613/huge/63debf785b3a129b4fcce5e08a5139ab6f90866f.jpg",
+        "venue_url": "https://events.dncr.nc.gov/north-carolina-museum-of-natural-sciences",
+        "departments": [
+          {
+            "id": 50461561696861,
+            "name": "North Carolina Museum of Natural Sciences"
+          }
+        ]
+      }
+    },
+    {
+      "event": {
+        "id": 52207082905777,
+        "title": "Staying Alive ",
+        "url": "https://naturalsciences.org/exhibits/special-exhibitions/staying-alive",
+        "updated_at": "2026-08-23T06:50:55-04:00",
+        "created_at": "2026-02-26T15:46:34-05:00",
+        "facebook_id": null,
+        "first_date": "2026-03-14",
+        "last_date": "2026-08-23",
+        "hashtag": null,
+        "urlname": "staying-alive",
+        "user_id": 50029705663607,
+        "directions": null,
+        "allows_reviews": true,
+        "allows_attendance": true,
+        "location": "",
+        "room_number": null,
+        "location_name": "North Carolina Museum of Natural Sciences",
+        "status": "live",
+        "experience": "inperson",
+        "stream_url": null,
+        "stream_info": null,
+        "stream_embed_code": null,
+        "created_by": 50029705663607,
+        "updated_by": 53132887422007,
+        "conference_event_id": null,
+        "kind": "standalone",
+        "city_id": null,
+        "neighborhood_id": null,
+        "school_id": 49862714837005,
+        "campus_id": null,
+        "recurring": true,
+        "free": true,
+        "private": false,
+        "verified": true,
+        "rejected": false,
+        "sponsored": false,
+        "venue_id": 50524033525131,
+        "ticket_url": "https://naturalsciences.ticketapp.org/portal/pages/exhibitions",
+        "ticket_cost": "Museum Members Free, Adult $18, Senior (65+), Student (13+), Military, with ID $16, Child ages 3-12 $14, Child 2 & Younger Free",
+        "has_register": false,
+        "keywords": [],
+        "tags": [],
+        "description_text": "March 14 – August 23, 2026\n\nIn the ultimate battle for survival, every animal has a plan.\n\nExplore the striking ways nature fights back in “Staying Alive,” featuring 17 live animals from around the world with unbelievable self-defense strategies. Come face to face with trippy toads, armored armadillos, a two-toed sloth and more.\n\nDiscover how these defenders deploy an amazing arsenal of high-fashion camouflage and mimicry, specialized armor and advanced chemical warfare – like stink bombs, caboose cannons and smoke screens – to hide in plain sight, stand their ground or even drop a limb and make a run for it. Enjoy live animal encounters, larger-than-life sculptures, 3D tactile experiences and interactive programs.\n\nPerfect for families and animal enthusiasts of all ages. Offered in English & Spanish.",
+        "photo_id": 52207088788795,
+        "detail_views": 504,
+        "event_instances": [
+          {
+            "event_instance": {
+              "id": 52207083064637,
+              "event_id": 52207082905777,
+              "start": "2026-08-23T10:00:00-04:00",
+              "end": "2026-08-23T17:00:00-04:00",
+              "ranking": 0.08,
+              "all_day": false,
+              "num_attending": 0
+            }
+          }
+        ],
+        "address": "11 W Jones St, Raleigh , NC 27601",
+        "description": "<p>March 14 &ndash; August 23, 2026</p>\n\n<p>In the ultimate battle for survival, every animal has a plan.</p>\n\n<p>Explore the striking ways nature fights back in &ldquo;Staying Alive,&rdquo; featuring 17 live animals from around the world with unbelievable self-defense strategies. Come face to face with trippy toads, armored armadillos, a two-toed sloth and more.</p>\n\n<p>Discover how these defenders deploy an amazing arsenal of high-fashion camouflage and mimicry, specialized armor and advanced chemical warfare &ndash; like stink bombs, caboose cannons and smoke screens &ndash; to hide in plain sight, stand their ground or even drop a limb and make a run for it. Enjoy live animal encounters, larger-than-life sculptures, 3D tactile experiences and interactive programs.</p>\n\n<p>Perfect for families and animal enthusiasts of all ages. Offered in English &amp; Spanish.</p>\n",
+        "featured": false,
+        "geo": {
+          "latitude": "35.782156",
+          "longitude": "-78.639336",
+          "street": "11 West Jones Street",
+          "city": "Raleigh",
+          "state": "NC",
+          "country": "US",
+          "zip": "27601"
+        },
+        "filters": {
+          "event_museums": [
+            {
+              "name": "North Carolina Museum of Natural Sciences",
+              "id": 51437845131882
+            }
+          ],
+          "event_themes": [
+            {
+              "name": "Maritime & Natural Heritage",
+              "id": 50605713702537
+            },
+            {
+              "name": "Wildlife & Conservation",
+              "id": 50605713706635
+            },
+            {
+              "name": "Science & Discovery",
+              "id": 50605713708684
+            }
+          ],
+          "event_types": [
+            {
+              "name": "Exhibits & Tours",
+              "id": 50605602183156
+            },
+            {
+              "name": "Exhibitions",
+              "id": 50294238461308
+            }
+          ]
+        },
+        "custom_fields": {},
+        "localist_url": "https://events.dncr.nc.gov/event/staying-alive",
+        "localist_ics_url": "https://events.dncr.nc.gov/event/staying-alive.ics",
+        "photo_url": "https://localist-images.azureedge.net/photos/52207088788795/huge/a3b9ebc2f291c6373a7b04748fce037debafba4d.jpg",
+        "venue_url": "https://events.dncr.nc.gov/north-carolina-museum-of-natural-sciences"
+      }
+    },
+    {
+      "event": {
+        "id": 53498551814602,
+        "title": "Wacky Waterbugs",
+        "url": "https://www.ncparks.gov/state-parks/eno-river-state-park",
+        "updated_at": "2026-08-23T07:08:50-04:00",
+        "created_at": "2026-07-22T16:06:35-04:00",
+        "facebook_id": null,
+        "first_date": "2026-08-24",
+        "last_date": "2026-08-24",
+        "hashtag": "",
+        "urlname": "wacky-waterbugs",
+        "user_id": 52180142081210,
+        "directions": "",
+        "allows_reviews": true,
+        "allows_attendance": true,
+        "location": "",
+        "room_number": "Piper-Cox House Parking Lot (Second Right)",
+        "location_name": "Eno River State Park - Fews Ford Access & Visitor Center",
+        "status": "live",
+        "experience": "inperson",
+        "stream_url": null,
+        "stream_info": null,
+        "stream_embed_code": null,
+        "created_by": 52180142081210,
+        "updated_by": 51622953142791,
+        "conference_event_id": null,
+        "kind": "standalone",
+        "city_id": null,
+        "neighborhood_id": null,
+        "school_id": 49862714837005,
+        "campus_id": null,
+        "recurring": false,
+        "free": true,
+        "private": false,
+        "verified": true,
+        "rejected": false,
+        "sponsored": false,
+        "venue_id": 50524028389526,
+        "ticket_url": "",
+        "ticket_cost": "Free with Registration ",
+        "has_register": false,
+        "keywords": [],
+        "tags": [],
+        "description_text": "Do you know what is hiding under the rocks in the Eno River? Join a Ranger to discover the wacky, wonderful world of waterbugs! \n\nAll children must be accompanied by an adult. Please be sure to dress appropriately for the weather, wear hiking shoes, and bring water!\n\nSpaces are limited, and registration is required. To sign up, call (984) 250-1370 or email eno.river@ncparks.gov. Include the number of guests in your party and a phone number where you can be reached if the event is changed or canceled.",
+        "photo_id": 53498551902675,
+        "detail_views": 57,
+        "event_instances": [
+          {
+            "event_instance": {
+              "id": 53498551814603,
+              "event_id": 53498551814602,
+              "start": "2026-08-24T10:00:00-04:00",
+              "end": "2026-08-24T11:30:00-04:00",
+              "ranking": 0.27,
+              "all_day": false,
+              "num_attending": 0
+            }
+          }
+        ],
+        "address": "6101 Cole Mill Rd. , Durham , NC  27705",
+        "description": "<p><span style=\"font-size:11pt\"><span><span><span>Do you know what is hiding under the rocks in the Eno River? Join a Ranger to discover the wacky, wonderful world of waterbugs! </span></span></span></span></p>\r\n\r\n<p><span style=\"font-size:11pt\"><span><span><span>All children must be accompanied by an adult. Please be sure to dress appropriately for the weather, wear hiking shoes, and bring water!</span></span></span></span></p>\r\n\r\n<p><span style=\"font-size:11.0pt\"><span><span>Spaces are limited, and <b>registration is required</b>. To sign up, call (984) 250-1370 or email </span></span></span><span style=\"font-size:11.0pt\"><span><span><a href=\"mailto:eno.river@ncparks.gov\" style=\"text-decoration:underline\"><span>eno.river@ncparks.gov</span></a></span></span></span><span style=\"font-size:11.0pt\"><span><span>. Include the number of guests in your party and a phone number where you can be reached if the event is changed or canceled.</span></span></span></p>\r\n",
+        "featured": false,
+        "geo": {
+          "latitude": "36.078519",
+          "longitude": "-79.005129",
+          "street": "6101 Cole Mill Road",
+          "city": "Durham",
+          "state": "NC",
+          "country": "US",
+          "zip": "27705"
+        },
+        "filters": {
+          "event_audiences": [
+            {
+              "name": "All Ages / General Public",
+              "id": 50384140635493
+            }
+          ],
+          "event_location": [
+            {
+              "name": "Eno River State Park",
+              "id": 51435198721579
+            }
+          ],
+          "event_regions": [
+            {
+              "name": "Piedmont",
+              "id": 50384128217222
+            }
+          ],
+          "event_themes": [
+            {
+              "name": "Families & Youth",
+              "id": 50605713732247
+            }
+          ],
+          "event_types": [
+            {
+              "name": "Education Programs",
+              "id": 50605602155497
+            }
+          ]
+        },
+        "custom_fields": {
+          "contact_information": "Eno River State Park",
+          "contact_email": "eno.river@ncparks.gov"
+        },
+        "localist_url": "https://events.dncr.nc.gov/event/wacky-waterbugs",
+        "localist_ics_url": "https://events.dncr.nc.gov/event/wacky-waterbugs.ics",
+        "photo_url": "https://localist-images.azureedge.net/photos/53498551902675/huge/7a9d24778a2ac1d213a92437f809a2a4b3bcb01c.jpg",
+        "venue_url": "https://events.dncr.nc.gov/eno-river-state-park-fewsford",
+        "departments": [
+          {
+            "id": 50461561710175,
+            "name": "North Carolina State Parks"
+          }
+        ]
+      }
+    },
+    {
+      "event": {
+        "id": 52374989458021,
+        "title": "Elk Knob State Park: Curious Minds Adventure Scavenger Hunt",
+        "url": "https://ncsciencetrail.org/science-blog/nc-science-trail-partners-with-nc-state-parks-again-to-run-curious-minds-adventures-scavenger-hunts-during-the-2026-nc-science-festival/",
+        "updated_at": "2026-08-23T06:56:50-04:00",
+        "created_at": "2026-03-17T16:15:06-04:00",
+        "facebook_id": null,
+        "first_date": "2026-03-17",
+        "last_date": "2026-09-01",
+        "hashtag": "",
+        "urlname": "elk-knob-state-park-curious-minds-adventure-scavenger-hunt",
+        "user_id": 51384704383716,
+        "directions": "",
+        "allows_reviews": true,
+        "allows_attendance": true,
+        "location": "",
+        "room_number": "",
+        "location_name": "Elk Knob State Park",
+        "status": "live",
+        "experience": "inperson",
+        "stream_url": null,
+        "stream_info": null,
+        "stream_embed_code": null,
+        "created_by": 51384704383716,
+        "updated_by": 53080426948285,
+        "conference_event_id": null,
+        "kind": "standalone",
+        "city_id": null,
+        "neighborhood_id": null,
+        "school_id": 49862714837005,
+        "campus_id": null,
+        "recurring": true,
+        "free": false,
+        "private": false,
+        "verified": true,
+        "rejected": false,
+        "sponsored": false,
+        "venue_id": 50524028262545,
+        "ticket_url": "",
+        "ticket_cost": "",
+        "has_register": false,
+        "keywords": [],
+        "tags": [],
+        "description_text": "Join the Curious Minds Adventure Scavenger Hunt at Elk Knob State Park. Journey through northern hardwood forest, follow winding mountain trails, and explore the unique ecosystems of this high-elevation park. Keep your eyes open—what signs of wildlife or weather-shaped landscapes will you uncover? Look for unique rocks that make Elk Knob a very special clue in North Carolina’s geologic history. Start at the Visitor Center and scan the QR code in your Actionbound app. Flyers with the QR code will be placed in the Park Office and on all park map kiosks. \n\nThe adventures are available on the Actionbound app – a free download to your cellphone through your phone’s app store. There’s no need to create a profile and no personal data is collected with Actionbound. You simply find new hunts by searching for the park name or scanning the associated QR code posted for your park’s adventure.\n\nThis program is made possible through a partnership with the NC Science Trail (ncsciencetrail.org)! Visit their website for more Curious Minds Adventure Scavenger Hunts being held in other NC State Parks and for other programs being offered throughout the state. \n\nThis scavenger hunt is running now through August 31, 2026.",
+        "photo_id": 52374989565606,
+        "detail_views": 1629,
+        "event_instances": [
+          {
+            "event_instance": {
+              "id": 52745325360663,
+              "event_id": 52374989458021,
+              "start": "2026-08-23T07:00:00-04:00",
+              "end": "2026-08-23T20:00:00-04:00",
+              "ranking": 0.08,
+              "all_day": false,
+              "num_attending": 0
+            }
+          }
+        ],
+        "address": "5564 Meat Camp Rd., Todd, NC  28684",
+        "description": "<p>Join the Curious Minds Adventure Scavenger Hunt at Elk Knob State Park. Journey through northern hardwood forest, follow winding mountain trails, and explore the unique ecosystems of this high-elevation park. Keep your eyes open&mdash;what signs of wildlife or weather-shaped landscapes will you uncover? Look for unique rocks that make Elk Knob a very special clue in North Carolina&rsquo;s geologic history. Start at the Visitor Center and scan the QR code in your Actionbound app. <b>Flyers with the QR code will be placed in the Park Office and on all park map kiosks.</b>&nbsp;</p>\r\n\r\n<p>The adventures are available on the Actionbound app &ndash; a free download to your cellphone through your phone&rsquo;s app store. There&rsquo;s no need to create a profile and no personal data is collected with Actionbound. You simply find new hunts by searching for the park name or scanning the associated QR code posted for your park&rsquo;s adventure.</p>\r\n\r\n<p>This program is made possible through a partnership with the NC Science Trail (ncsciencetrail.org)! Visit their website for more Curious Minds Adventure Scavenger Hunts being held in other NC State Parks and for other programs being offered throughout the state.&nbsp;</p>\r\n\r\n<p>This scavenger hunt is running now through August 31, 2026.&nbsp;</p>\r\n",
+        "featured": false,
+        "geo": {
+          "latitude": "36.333462",
+          "longitude": "-81.696432",
+          "street": "5564 Meat Camp Road",
+          "city": "Todd",
+          "state": "NC",
+          "country": "US",
+          "zip": "28684"
+        },
+        "filters": {
+          "event_audiences": [
+            {
+              "name": "All Ages / General Public",
+              "id": 50384140635493
+            }
+          ],
+          "event_location": [
+            {
+              "name": "Elk Knob State Park",
+              "id": 51435198719530
+            }
+          ],
+          "event_regions": [
+            {
+              "name": "Mountains",
+              "id": 50384128219271
+            }
+          ],
+          "event_themes": [
+            {
+              "name": "Maritime & Natural Heritage",
+              "id": 50605713702537
+            },
+            {
+              "name": "Wildlife & Conservation",
+              "id": 50605713706635
+            },
+            {
+              "name": "Science & Discovery",
+              "id": 50605713708684
+            },
+            {
+              "name": "Families & Youth",
+              "id": 50605713732247
+            },
+            {
+              "name": "Family Programs",
+              "id": 50605713734296
+            },
+            {
+              "name": "Youth Learning",
+              "id": 50605713737369
+            }
+          ],
+          "event_types": [
+            {
+              "name": "Education Programs",
+              "id": 50605602155497
+            },
+            {
+              "name": "Homeschool & Education Days",
+              "id": 50605602165741
+            },
+            {
+              "name": "Exhibits & Tours",
+              "id": 50605602183156
+            },
+            {
+              "name": "Special Site Programs",
+              "id": 50605602194424
+            },
+            {
+              "name": "Outdoor & Recreation",
+              "id": 50605602196473
+            },
+            {
+              "name": "Outdoor Recreation (kayak, paddle, hikes)",
+              "id": 50605602199546
+            },
+            {
+              "name": "Nature & Wildlife Programs",
+              "id": 50605602202619
+            },
+            {
+              "name": "Youth & Family Activities",
+              "id": 50605662778636
+            }
+          ]
+        },
+        "custom_fields": {
+          "contact_information": "Marissa Mabe",
+          "contact_email": "marissa.mabe@ncparks.gov"
+        },
+        "localist_url": "https://events.dncr.nc.gov/event/elk-knob-state-park-curious-minds-adventure-scavenger-hunt",
+        "localist_ics_url": "https://events.dncr.nc.gov/event/elk-knob-state-park-curious-minds-adventure-scavenger-hunt.ics",
+        "photo_url": "https://localist-images.azureedge.net/photos/52374989565606/huge/e7733acbf6f96fa40ceb70fb87c6fb514763b4bd.jpg",
+        "venue_url": "https://events.dncr.nc.gov/elk-knob-state-park",
+        "departments": [
+          {
+            "id": 50461561710175,
+            "name": "North Carolina State Parks"
+          }
+        ]
+      }
+    },
+    {
+      "event": {
+        "id": 53240401899631,
+        "title": "Fire on the Mountain",
+        "url": "",
+        "updated_at": "2026-08-23T07:04:22-04:00",
+        "created_at": "2026-06-23T11:49:59-04:00",
+        "facebook_id": null,
+        "first_date": "2026-08-23",
+        "last_date": "2026-08-30",
+        "hashtag": "",
+        "urlname": "fire-on-the-mountain",
+        "user_id": 51452802871594,
+        "directions": "",
+        "allows_reviews": true,
+        "allows_attendance": true,
+        "location": "Cliff Dwellers Shop - Chimney Rock Park Attraction",
+        "room_number": "",
+        "location_name": "Cliff Dwellers Shop - Chimney Rock Park Attraction",
+        "status": "live",
+        "experience": "inperson",
+        "stream_url": null,
+        "stream_info": null,
+        "stream_embed_code": null,
+        "created_by": 51452802871594,
+        "updated_by": 50480768790365,
+        "conference_event_id": null,
+        "kind": "standalone",
+        "city_id": null,
+        "neighborhood_id": null,
+        "school_id": 49862714837005,
+        "campus_id": null,
+        "recurring": false,
+        "free": false,
+        "private": false,
+        "verified": true,
+        "rejected": false,
+        "sponsored": false,
+        "venue_id": null,
+        "ticket_url": "https://www.chimneyrockpark.com/info-and-tickets/",
+        "ticket_cost": "Admission to Chimney Rock Attraction",
+        "has_register": false,
+        "keywords": [],
+        "tags": [],
+        "description_text": "Join a ranger to learn about the fascinating world of wildfires and prescribed burns at Chimney Rock State Park. Rangers will discuss fire behavior, its ecological benefits, and what we do in North Carolina to both fight and promote fires.\n\n**This event is free with paid admission to the Chimney Rock Attraction.**",
+        "photo_id": 53240401943679,
+        "detail_views": 74,
+        "event_instances": [
+          {
+            "event_instance": {
+              "id": 53240401899632,
+              "event_id": 53240401899631,
+              "start": "2026-08-23T10:00:00-04:00",
+              "end": "2026-08-23T11:00:00-04:00",
+              "ranking": 0.28,
+              "all_day": false,
+              "num_attending": 0
+            }
+          }
+        ],
+        "address": "1638 Chimney Rock Park Road, Chimney Rock, NC 28720",
+        "description": "<p>Join a ranger to learn about the fascinating world of wildfires and prescribed burns at Chimney Rock State Park. Rangers will discuss fire behavior, its ecological benefits, and what we do in North Carolina to both fight and promote fires.</p>\r\n\r\n<p>**This event is free with paid admission to the Chimney Rock Attraction.**</p>\r\n",
+        "featured": false,
+        "geo": {
+          "latitude": "35.432293",
+          "longitude": "-82.249698",
+          "street": "1638 Chimney Rock Park Road",
+          "city": "Lake Lure",
+          "state": "NC",
+          "country": "US",
+          "zip": "28746"
+        },
+        "filters": {
+          "event_audiences": [
+            {
+              "name": "All Ages / General Public",
+              "id": 50384140635493
+            }
+          ],
+          "event_location": [
+            {
+              "name": "Chimney Rock State Park",
+              "id": 51435198700067
+            }
+          ],
+          "event_regions": [
+            {
+              "name": "Mountains",
+              "id": 50384128219271
+            }
+          ],
+          "event_themes": [
+            {
+              "name": "Maritime & Natural Heritage",
+              "id": 50605713702537
+            },
+            {
+              "name": "Wildlife & Conservation",
+              "id": 50605713706635
+            },
+            {
+              "name": "Families & Youth",
+              "id": 50605713732247
+            },
+            {
+              "name": "Family Programs",
+              "id": 50605713734296
+            }
+          ],
+          "event_types": [
+            {
+              "name": "Education Programs",
+              "id": 50605602155497
+            },
+            {
+              "name": "Lectures & Talks",
+              "id": 50605602160619
+            },
+            {
+              "name": "Outdoor & Recreation",
+              "id": 50605602196473
+            },
+            {
+              "name": "Nature & Wildlife Programs",
+              "id": 50605602202619
+            }
+          ]
+        },
+        "custom_fields": {
+          "contact_information": "Deb Joslin",
+          "contact_email": "deb.joslin@ncparks.gov"
+        },
+        "localist_url": "https://events.dncr.nc.gov/event/fire-on-the-mountain",
+        "localist_ics_url": "https://events.dncr.nc.gov/event/fire-on-the-mountain.ics",
+        "photo_url": "https://localist-images.azureedge.net/photos/53240401943679/huge/bf243798babd6dc1604b50f0e773569c38c4c15f.jpg",
+        "venue_url": null,
+        "departments": [
+          {
+            "id": 50461561710175,
+            "name": "North Carolina State Parks"
+          }
+        ]
+      }
+    },
+    {
+      "event": {
+        "id": 53496495603543,
+        "title": "History at High Noon: Operation Bumblebee",
+        "url": "https://www.eventbrite.com/e/history-at-high-noon-operation-bumblebee-tickets-1988859951654?aff=oddtdtcreator",
+        "updated_at": "2026-08-23T07:08:46-04:00",
+        "created_at": "2026-07-22T10:31:54-04:00",
+        "facebook_id": null,
+        "first_date": "2026-08-26",
+        "last_date": "2026-08-26",
+        "hashtag": "",
+        "urlname": "history-at-high-noon-operation-bumblebee",
+        "user_id": 51081861954580,
+        "directions": null,
+        "allows_reviews": true,
+        "allows_attendance": true,
+        "location": "",
+        "room_number": null,
+        "location_name": "",
+        "status": "live",
+        "experience": "virtual",
+        "stream_url": "",
+        "stream_info": "",
+        "stream_embed_code": "",
+        "created_by": 51081861954580,
+        "updated_by": 50029705663607,
+        "conference_event_id": null,
+        "kind": "standalone",
+        "city_id": null,
+        "neighborhood_id": null,
+        "school_id": 49862714837005,
+        "campus_id": null,
+        "recurring": false,
+        "free": true,
+        "private": false,
+        "verified": true,
+        "rejected": false,
+        "sponsored": false,
+        "venue_id": null,
+        "ticket_url": "https://www.eventbrite.com/e/history-at-high-noon-operation-bumblebee-tickets-1988859951654?aff=oddtdtcreator",
+        "ticket_cost": "Free",
+        "has_register": false,
+        "keywords": [],
+        "tags": [],
+        "description_text": "History at High Noon is back! Join us as we relaunch this series by examining the incredible story of Operation Bumblebee.\n\nSpeaker: Lorraine Makey, Manager of the Missiles and More Museum on Topsail Island\n\nYour favorite virtual lunchtime lecture series is back! Join us as we kick off the latest installment of History at High Noon by hearing about Operation Bumblebee. On a barrier island off the coast of North Carolina stand seven concrete towers, a lonely testament to a top secret project. In the late 1940s, US Navy secret experiments created a new type of propulsion that revolutionized how we protected our Navy ships. Additionally, these barrier-breaking discoveries enabled jets’ flights into the supersonic reaches of outer space. This is the incredible story of Operation Bumblebee.",
+        "photo_id": 53496495636317,
+        "detail_views": 38,
+        "event_instances": [
+          {
+            "event_instance": {
+              "id": 53496495604568,
+              "event_id": 53496495603543,
+              "start": "2026-08-26T12:00:00-04:00",
+              "end": "2026-08-26T13:00:00-04:00",
+              "ranking": 0.25,
+              "all_day": false,
+              "num_attending": 0
+            }
+          }
+        ],
+        "address": "",
+        "description": "<p>History at High Noon is back! Join us as we relaunch this series by examining the incredible story of Operation Bumblebee.</p>\r\n\r\n<p><b>Speaker:</b>&nbsp;Lorraine Makey, Manager of the Missiles and More Museum on Topsail Island</p>\r\n\r\n<p>Your favorite virtual lunchtime lecture series is back! Join us as we kick off the latest installment of History at High Noon by hearing about Operation Bumblebee. On a barrier island off the coast of North Carolina stand seven concrete towers, a lonely testament to a top secret project. In the late 1940s, US Navy secret experiments created a new type of propulsion that revolutionized how we protected our Navy ships. Additionally, these barrier-breaking discoveries enabled jets&rsquo; flights into the supersonic reaches of outer space. This is the incredible story of Operation Bumblebee.</p>\r\n",
+        "featured": false,
+        "geo": {
+          "latitude": null,
+          "longitude": null,
+          "street": null,
+          "city": null,
+          "state": null,
+          "country": null,
+          "zip": null
+        },
+        "filters": {
+          "event_museums": [
+            {
+              "name": "North Carolina Museum of History",
+              "id": 51437843768487
+            }
+          ],
+          "event_themes": [
+            {
+              "name": "Industry & Trade",
+              "id": 50605713710733
+            },
+            {
+              "name": "Manufacturing & Innovation",
+              "id": 50605713717904
+            }
+          ],
+          "event_types": [
+            {
+              "name": "Education Programs",
+              "id": 50605602155497
+            },
+            {
+              "name": "Lectures & Talks",
+              "id": 50605602160619
+            }
+          ]
+        },
+        "custom_fields": {
+          "contact_information": "Stacey Smith",
+          "contact_email": "Stacey.Smith@dncr.nc.gov"
+        },
+        "localist_url": "https://events.dncr.nc.gov/event/history-at-high-noon-operation-bumblebee",
+        "localist_ics_url": "https://events.dncr.nc.gov/event/history-at-high-noon-operation-bumblebee.ics",
+        "photo_url": "https://localist-images.azureedge.net/photos/53496495636317/huge/191117ffb1b65c291db54025906582a1ffdf0c3b.jpg",
+        "venue_url": null,
+        "departments": [
+          {
+            "id": 50461561691740,
+            "name": "North Carolina Museum of History"
+          }
+        ]
+      }
+    }
+  ],
+  "page": {
+    "current": 1,
+    "size": 100,
+    "total": 2
+  },
+  "date": {
+    "first": "2026-08-23",
+    "last": "2026-08-30"
+  }
+}

@@ -27,6 +27,27 @@ both in the same commit** — CLAUDE.md wins on any conflict.
    Sources marked `"fetch_blocked": true` return 403 to a plain fetch — use
    WebFetch, and fall back to a site-scoped WebSearch if that also fails.
 
+   **Prefer a declared feed.** When a source carries an `ingest` block, fetch
+   `ingest.feed_url` and parse it with `ingestFeed` from `scripts/lib/feeds.ts`
+   instead of reading its HTML page — the feed gives exact start times and stable
+   ids, and the helper already applies the Triangle radius filter, the date
+   window, and `computeId`. Both supported feeds are far wider than the metro
+   (DNCR is statewide; goheels is a full season of away games), and the helper's
+   `dropped` counts tell you why anything vanished. Records it returns are
+   **drafts**: `category`, `indoor_outdoor`, `budget`, `lat`/`lon` and `weather`
+   are placeholders no feed carries, so steps 5 and 6 still apply in full. If the
+   feed fetch fails, or `ingestFeed` returns a non-empty `errors`, fall back to
+   reading the page — and report the source's real count, not a zero.
+
+   **Never treat a bare WordPress `/feed/` as an event source.** Several Triangle
+   venues advertise a working feed via `<link rel="alternate">`, and every one of
+   them is the site's *blog* feed: press releases, cast lists, audition notices,
+   "Job Opening — Marketing Manager". Wiring one in files job postings as events.
+   A feed only counts as an event feed if its items carry event start times — an
+   item without one is dropped, and `npm run validate` rejects a `/feed/` URL
+   declared in the registry. Only `ics` and `localist` are supported `feed_type`s;
+   RSS/Atom is deliberately not.
+
    **Phase B — open discovery (required, not leftover).** Search beyond the
    registry, exactly as before: official venue sites, city and tourism calendars,
    ticket platforms, brewery and market pages, university arts calendars,

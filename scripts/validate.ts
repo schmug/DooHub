@@ -14,12 +14,18 @@ import { fileURLToPath } from "node:url";
 import {
   BUDGETS,
   COVERAGE_CATEGORIES,
+  FEED_SCOPES,
+  FEED_TYPES,
   INDOOR_OUTDOOR,
+  INGEST_MODES,
   SOURCE_KINDS,
   YES_NO_UNKNOWN,
   type EventSource,
   type EventsStore,
+  type FeedScope,
+  type FeedType,
   type SourceCoverage,
+  type SourceIngest,
   type SourceKind,
   type SourcesRegistry,
   type TriangleEvent,
@@ -154,6 +160,60 @@ export function validateEvents(events: TriangleEvent[], window?: DateWindow): Va
 }
 
 /**
+ * True for the endpoint every WordPress site advertises via
+ * `<link rel="alternate">`: `/feed/`, `/events/feed/`, `?feed=rss2`. Those are
+ * blog feeds — press releases, auditions, job openings — never event feeds. See
+ * FEED_TYPES in lib/types.ts.
+ */
+function isWordPressBlogFeed(url: string): boolean {
+  try {
+    const u = new URL(url);
+    const last = u.pathname.replace(/\/+$/, "").split("/").pop()?.toLowerCase();
+    return last === "feed" || u.searchParams.has("feed");
+  } catch {
+    return false;
+  }
+}
+
+/** Errors for one source's `ingest` hint. Empty when it is well-formed or absent. */
+function ingestErrors(ingest: unknown, label: string): string[] {
+  if (typeof ingest !== "object" || ingest === null || Array.isArray(ingest)) {
+    return [`${label}: ingest must be an object, got ${Array.isArray(ingest) ? "array" : typeof ingest}`];
+  }
+  const errors: string[] = [];
+  const hint = ingest as Partial<SourceIngest>;
+
+  if (!INGEST_MODES.includes(hint.mode as (typeof INGEST_MODES)[number])) {
+    // Return early: every field below belongs to the "feed" mode's shape, and a
+    // future mode will carry its own.
+    return [`${label}: ingest.mode "${String(hint.mode)}" is not one of ${INGEST_MODES.join(", ")}`];
+  }
+
+  if (typeof hint.feed_url !== "string" || !URL_RE.test(hint.feed_url)) {
+    errors.push(`${label}: ingest.feed_url must be an http(s) url, got ${JSON.stringify(hint.feed_url)}`);
+  } else if (isWordPressBlogFeed(hint.feed_url)) {
+    errors.push(
+      `${label}: ingest.feed_url "${hint.feed_url}" is a WordPress blog feed, not an event feed — ` +
+        `those carry press releases, auditions and job openings, and none of their items has an ` +
+        `event start time. Drop the declaration and let Phase A read the page instead.`,
+    );
+  }
+
+  if (!FEED_TYPES.includes(hint.feed_type as FeedType)) {
+    errors.push(
+      `${label}: ingest.feed_type "${String(hint.feed_type)}" is not one of ${FEED_TYPES.join(", ")}`,
+    );
+  }
+
+  if (hint.feed_scope !== undefined && !FEED_SCOPES.includes(hint.feed_scope as FeedScope)) {
+    errors.push(
+      `${label}: ingest.feed_scope "${String(hint.feed_scope)}" is not one of ${FEED_SCOPES.join(", ")}`,
+    );
+  }
+  return errors;
+}
+
+/**
  * Pure validator for data/sources.json — no I/O. The parent_venue check is the
  * anti-drift guard: dedup.ts owns VENUE_PARENTS and must already know any
  * complex the registry references, or cross-source duplicates slip through.
@@ -207,6 +267,8 @@ export function validateSources(registry: SourcesRegistry): ValidationResult {
       // checker would SKIP the source — the opposite of what the author meant.
       errors.push(`${label}: fetch_blocked must be a boolean, got ${typeof s.fetch_blocked}`);
     }
+
+    if (s?.ingest !== undefined) errors.push(...ingestErrors(s.ingest, label));
 
     // Anti-drift: dedup.ts must already resolve THIS source's own name to the
     // parent it declares. A parent invented in the registry alone resolves to
@@ -430,10 +492,19 @@ async function checkLinks(events: TriangleEvent[]): Promise<string[]> {
  * HTTP-check registry URLs. Sources marked fetch_blocked are skipped: their
  * origin 403s a scripted fetch but serves fine through WebFetch, and failing
  * the build on them would abort a healthy weekly run.
+ *
+ * A declared `ingest.feed_url` is checked too, and NOT skipped for a
+ * fetch_blocked source: the whole point of a feed endpoint is that a plain
+ * fetch reaches it, so a 403 there is real news.
  */
 async function checkSourceLinks(sources: EventSource[]): Promise<string[]> {
   const problems: string[] = [];
-  const targets = sources.filter((s) => !s.fetch_blocked && URL_RE.test(s.url ?? ""));
+  const targets: Array<{ id: string; field: string; url: string }> = [];
+  for (const s of sources) {
+    if (!s.fetch_blocked && URL_RE.test(s.url ?? "")) targets.push({ id: s.id, field: "url", url: s.url });
+    const feedUrl = s.ingest?.feed_url;
+    if (feedUrl && URL_RE.test(feedUrl)) targets.push({ id: s.id, field: "ingest.feed_url", url: feedUrl });
+  }
   const skipped = sources.filter((s) => s.fetch_blocked).length;
   if (skipped > 0) console.log(`validate: skipping ${skipped} fetch_blocked source(s)`);
 
@@ -441,9 +512,9 @@ async function checkSourceLinks(sources: EventSource[]): Promise<string[]> {
   results.forEach((r, i) => {
     const t = targets[i]!;
     if (r.status === "fulfilled" && !r.value.ok) {
-      problems.push(`source "${t.id}": ${r.value.status} (${t.url})`);
+      problems.push(`source "${t.id}" ${t.field}: ${r.value.status} (${t.url})`);
     } else if (r.status === "rejected") {
-      problems.push(`source "${t.id}": fetch error (${t.url})`);
+      problems.push(`source "${t.id}" ${t.field}: fetch error (${t.url})`);
     }
   });
   return problems;
