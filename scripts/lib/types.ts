@@ -167,8 +167,8 @@ export type FeedScope = (typeof FEED_SCOPES)[number];
 
 /**
  * How to read a source, when a plain fetch of `EventSource.url` is not the way.
- * `mode` is the discriminant so later ingest paths (e.g. a browser-render mode
- * for client-rendered sites) can join as new members without reshaping this.
+ * `mode` is the discriminant so later ingest paths can join as new members
+ * without reshaping this.
  */
 export interface FeedIngestHint {
   mode: "feed";
@@ -179,9 +179,38 @@ export interface FeedIngestHint {
   feed_scope?: FeedScope;
 }
 
-export type SourceIngest = FeedIngestHint;
+/**
+ * How to pull events out of a rendered page. "auto" (the default) reads
+ * schema.org JSON-LD when the DOM has any Event nodes and falls back to the
+ * rendered text when it doesn't; the explicit values pin one strategy, which is
+ * what you want on a source whose surface is known — a page that quietly stops
+ * emitting JSON-LD should report zero loudly, not start guessing at text.
+ */
+export const RENDER_EXTRACTS = ["auto", "json-ld", "text"] as const;
+export type RenderExtract = (typeof RENDER_EXTRACTS)[number];
 
-export const INGEST_MODES = ["feed"] as const;
+/**
+ * Read this source from a rendered DOM (`scripts/render_source.ts`) because a
+ * plain fetch cannot see its listings: they are drawn client-side, or the origin
+ * rejects scripted requests outright.
+ *
+ * Rendering is the expensive path and the LAST one. Declare it only after no URL
+ * on the site serves the listing to a plain fetch — burning-coal-theatre looked
+ * like it needed a browser and only needed the right page.
+ */
+export interface RenderIngestHint {
+  mode: "render";
+  /** Page to render, when it is not the source's own `url`. */
+  url?: string;
+  /** Defaults to "auto". See RENDER_EXTRACTS. */
+  extract?: RenderExtract;
+  /** Evidence: what a plain fetch actually returns, and why a browser is needed. */
+  reason?: string;
+}
+
+export type SourceIngest = FeedIngestHint | RenderIngestHint;
+
+export const INGEST_MODES = ["feed", "render"] as const;
 
 /**
  * A seed discovery source (data/sources.json). The registry is a FLOOR for the
@@ -200,7 +229,7 @@ export interface EventSource {
   categories: string[];
   /** True when the origin 403s a plain fetch but serves via WebFetch. */
   fetch_blocked?: boolean;
-  /** Structured feed to read instead of scraping `url`. See FeedIngestHint. */
+  /** How to read this source when a plain fetch of `url` is not the way. */
   ingest?: SourceIngest;
   notes?: string;
 }

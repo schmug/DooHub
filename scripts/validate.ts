@@ -18,12 +18,16 @@ import {
   FEED_TYPES,
   INDOOR_OUTDOOR,
   INGEST_MODES,
+  RENDER_EXTRACTS,
   SOURCE_KINDS,
   YES_NO_UNKNOWN,
   type EventSource,
   type EventsStore,
+  type FeedIngestHint,
   type FeedScope,
   type FeedType,
+  type RenderExtract,
+  type RenderIngestHint,
   type SourceCoverage,
   type SourceIngest,
   type SourceKind,
@@ -177,6 +181,10 @@ function isWordPressBlogFeed(url: string): boolean {
 
 /** Errors for one source's `ingest` hint. Empty when it is well-formed or absent. */
 function ingestErrors(ingest: unknown, label: string): string[] {
+  // A bare string is the dangerous shape, same hazard as a stringly-typed
+  // fetch_blocked one level up: `"render"` is truthy, so `if (source.ingest)`
+  // passes while `source.ingest.mode` is undefined and the source is silently
+  // read the old way — the exact zero-hit failure these hints exist to fix.
   if (typeof ingest !== "object" || ingest === null || Array.isArray(ingest)) {
     return [`${label}: ingest must be an object, got ${Array.isArray(ingest) ? "array" : typeof ingest}`];
   }
@@ -184,30 +192,47 @@ function ingestErrors(ingest: unknown, label: string): string[] {
   const hint = ingest as Partial<SourceIngest>;
 
   if (!INGEST_MODES.includes(hint.mode as (typeof INGEST_MODES)[number])) {
-    // Return early: every field below belongs to the "feed" mode's shape, and a
-    // future mode will carry its own.
+    // Return early: every field below belongs to one mode's shape, and an
+    // unknown mode has none of them.
     return [`${label}: ingest.mode "${String(hint.mode)}" is not one of ${INGEST_MODES.join(", ")}`];
   }
 
-  if (typeof hint.feed_url !== "string" || !URL_RE.test(hint.feed_url)) {
-    errors.push(`${label}: ingest.feed_url must be an http(s) url, got ${JSON.stringify(hint.feed_url)}`);
-  } else if (isWordPressBlogFeed(hint.feed_url)) {
+  if (hint.mode === "render") {
+    const render = hint as Partial<RenderIngestHint>;
+    if (render.url !== undefined && (typeof render.url !== "string" || !URL_RE.test(render.url))) {
+      errors.push(`${label}: ingest.url must be an http(s) url, got ${JSON.stringify(render.url)}`);
+    }
+    if (render.extract !== undefined && !RENDER_EXTRACTS.includes(render.extract as RenderExtract)) {
+      errors.push(
+        `${label}: ingest.extract "${String(render.extract)}" is not one of ${RENDER_EXTRACTS.join(", ")}`,
+      );
+    }
+    if (render.reason !== undefined && (typeof render.reason !== "string" || render.reason.trim() === "")) {
+      errors.push(`${label}: ingest.reason must be a non-empty string`);
+    }
+    return errors;
+  }
+
+  const feed = hint as Partial<FeedIngestHint>;
+  if (typeof feed.feed_url !== "string" || !URL_RE.test(feed.feed_url)) {
+    errors.push(`${label}: ingest.feed_url must be an http(s) url, got ${JSON.stringify(feed.feed_url)}`);
+  } else if (isWordPressBlogFeed(feed.feed_url)) {
     errors.push(
-      `${label}: ingest.feed_url "${hint.feed_url}" is a WordPress blog feed, not an event feed — ` +
+      `${label}: ingest.feed_url "${feed.feed_url}" is a WordPress blog feed, not an event feed — ` +
         `those carry press releases, auditions and job openings, and none of their items has an ` +
         `event start time. Drop the declaration and let Phase A read the page instead.`,
     );
   }
 
-  if (!FEED_TYPES.includes(hint.feed_type as FeedType)) {
+  if (!FEED_TYPES.includes(feed.feed_type as FeedType)) {
     errors.push(
-      `${label}: ingest.feed_type "${String(hint.feed_type)}" is not one of ${FEED_TYPES.join(", ")}`,
+      `${label}: ingest.feed_type "${String(feed.feed_type)}" is not one of ${FEED_TYPES.join(", ")}`,
     );
   }
 
-  if (hint.feed_scope !== undefined && !FEED_SCOPES.includes(hint.feed_scope as FeedScope)) {
+  if (feed.feed_scope !== undefined && !FEED_SCOPES.includes(feed.feed_scope as FeedScope)) {
     errors.push(
-      `${label}: ingest.feed_scope "${String(hint.feed_scope)}" is not one of ${FEED_SCOPES.join(", ")}`,
+      `${label}: ingest.feed_scope "${String(feed.feed_scope)}" is not one of ${FEED_SCOPES.join(", ")}`,
     );
   }
   return errors;
@@ -489,24 +514,31 @@ async function checkLinks(events: TriangleEvent[]): Promise<string[]> {
 }
 
 /**
- * HTTP-check registry URLs. Sources marked fetch_blocked are skipped: their
- * origin 403s a scripted fetch but serves fine through WebFetch, and failing
- * the build on them would abort a healthy weekly run.
+ * HTTP-check registry URLs. Two kinds of source are skipped, for the same
+ * reason: their origin rejects a scripted fetch while serving a real client
+ * fine, and failing the build on them would abort a healthy weekly run.
+ * fetch_blocked sources 403 a plain fetch but serve through WebFetch;
+ * `ingest.mode: "render"` sources reject every scripted path (Lenovo Center
+ * answers 406 to all of them) and are read from a rendered DOM instead.
  *
  * A declared `ingest.feed_url` is checked too, and NOT skipped for a
  * fetch_blocked source: the whole point of a feed endpoint is that a plain
  * fetch reaches it, so a 403 there is real news.
  */
+function skipsLinkCheck(s: EventSource): boolean {
+  return Boolean(s.fetch_blocked) || s.ingest?.mode === "render";
+}
+
 async function checkSourceLinks(sources: EventSource[]): Promise<string[]> {
   const problems: string[] = [];
   const targets: Array<{ id: string; field: string; url: string }> = [];
   for (const s of sources) {
-    if (!s.fetch_blocked && URL_RE.test(s.url ?? "")) targets.push({ id: s.id, field: "url", url: s.url });
-    const feedUrl = s.ingest?.feed_url;
+    if (!skipsLinkCheck(s) && URL_RE.test(s.url ?? "")) targets.push({ id: s.id, field: "url", url: s.url });
+    const feedUrl = s.ingest?.mode === "feed" ? s.ingest.feed_url : null;
     if (feedUrl && URL_RE.test(feedUrl)) targets.push({ id: s.id, field: "ingest.feed_url", url: feedUrl });
   }
-  const skipped = sources.filter((s) => s.fetch_blocked).length;
-  if (skipped > 0) console.log(`validate: skipping ${skipped} fetch_blocked source(s)`);
+  const skipped = sources.filter(skipsLinkCheck).length;
+  if (skipped > 0) console.log(`validate: skipping ${skipped} fetch_blocked / render source url(s)`);
 
   const results = await Promise.allSettled(targets.map((t) => checkUrl(t.url)));
   results.forEach((r, i) => {
