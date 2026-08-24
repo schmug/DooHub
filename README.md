@@ -174,6 +174,13 @@ list structurally can't hold — and writes `data/source_coverage.json` alongsid
 the store. `prompts/weekly.md` step 3 has the phase rules and the off-registry
 floor Phase B has to clear.
 
+A seed that publishes a machine-readable calendar declares it as an `ingest`
+block, and Phase A reads that instead of scraping the page — `scripts/lib/feeds.ts`
+parses ICS and Localist JSON into draft events, applying the Triangle radius
+filter and `computeId`. RSS/Atom is deliberately unsupported: every Triangle
+venue advertising a `<link rel="alternate">` feed serves its WordPress *blog*,
+so wiring one in would file job postings as events.
+
 > **Heads up — the weekly refresh is gated, not pushed.** `main` carries a ruleset
 > requiring the `pipeline` and `site` checks from `.github/workflows/ci.yml`, so a
 > direct push is rejected. `run.sh` opens a PR and arms auto-merge instead: a green
@@ -219,9 +226,9 @@ than duplicates across weeks. The site also offers client-side **"All events"**,
 
 | Command | What it does |
 |---|---|
-| `npm test` | Unit tests for the ics builder, validator, and dedup helpers |
-| `npm run validate` | Schema/enum/window/dup-id checks on `data/events.json`; also `data/sources.json` (kebab-case ids, URL shape, `parent_venue` / `venue_aliases` anti-drift against `dedup.ts`) and `data/source_coverage.json` when present |
-| `npm run validate:links` | Above **plus** HTTP 2xx checks on booking/info/image URLs and every registry source URL (`fetch_blocked` sources skipped) |
+| `npm test` | Unit tests for the ics builder, validator, dedup helpers, and feed parsers |
+| `npm run validate` | Schema/enum/window/dup-id checks on `data/events.json`; also `data/sources.json` (kebab-case ids, URL shape, `parent_venue` / `venue_aliases` anti-drift against `dedup.ts`, `ingest` feed declarations) and `data/source_coverage.json` when present |
+| `npm run validate:links` | Above **plus** HTTP 2xx checks on booking/info/image URLs, every registry source URL (`fetch_blocked` sources skipped), and every declared `ingest.feed_url` |
 | `npm run build:ics` | Regenerate `public/events.ics` only |
 | `npm run build` | Full deterministic build (validate → site → data → ics) |
 | `npm run typecheck` | Type-check the scripts (`site` has its own `npm --prefix site run typecheck`) |

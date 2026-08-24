@@ -1,0 +1,83 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SIDEARM Sports//NONSGML SIDEARM//EN
+X-WR-CALNAME:North Carolina Athletics
+X-PUBLISHED-TTL:PT120M
+BEGIN:VEVENT
+UID:vcal_26998-admin.goheels.com
+DTSTAMP:20260823T235123Z
+DTSTART:20260823T170000Z
+DTEND:20260823T190000Z
+LOCATION:Chapel Hill\, N.C., Dorrance Field at Play2Dream Legacy Stadium
+SUMMARY:[L] North Carolina Women's Soccer vs Michigan State
+DESCRIPTION:[L] North Carolina Women's Soccer vs Michigan State\nL 2-3\nTV: ACCN\nStreaming Video: https://www.espn.com/watch/player/_/id/656b6eb8-8cdb-41a2-ac63-b1e5ec3524de\nStreaming Audio: https://admin.goheels.com/showcase?Live=5687\n
+URL:https://admin.goheels.com/calendar.aspx?game_id=26998&amp;sport_id=22
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_27062-admin.goheels.com
+DTSTAMP:20260823T235123Z
+DTSTART:20260823T170000Z
+DTEND:20260823T200000Z
+LOCATION:Chapel Hill, Karen Shelton Stadium
+SUMMARY:North Carolina Field Hockey vs Wake Forest (Scrimmage)
+DESCRIPTION:North Carolina Field Hockey vs Wake Forest (Scrimmage)\n
+URL:https://admin.goheels.com/calendar.aspx?game_id=27062&amp;sport_id=2
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_27163-admin.goheels.com
+DTSTAMP:20260823T235123Z
+DTSTART:20260919T130000Z
+DTEND:20260927T130000Z
+LOCATION:Cary\, N.C., Cary Tennis Park
+SUMMARY:North Carolina Women's Tennis at ITA All-American Championships
+DESCRIPTION:North Carolina Women's Tennis at ITA All-American Championships\n
+URL:https://admin.goheels.com/calendar.aspx?game_id=27163&amp;sport_id=24
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_27017-admin.goheels.com
+DTSTAMP:20260823T235123Z
+DTSTART:20260825T000000Z
+DTEND:20260825T020000Z
+LOCATION:Memphis\, Tenn., Track and Soccer Complex
+SUMMARY:North Carolina Men's Soccer at Memphis
+DESCRIPTION:North Carolina Men's Soccer at Memphis\nTV: ESPN+\nStreaming Video: https://www.espn.com/watch/player/_/id/66058278-60a2-4776-a129-13bb7e7ff6c7\n
+URL:https://admin.goheels.com/calendar.aspx?game_id=27017&amp;sport_id=10
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_26876-admin.goheels.com
+DTSTAMP:20260823T235123Z
+DTSTART:20260829T160000Z
+DTEND:20260829T190000Z
+LOCATION:Dublin\, Ireland (Aviva Stadium)
+SUMMARY:North Carolina Football vs TCU
+DESCRIPTION:North Carolina Football vs TCU\nTV: ESPN\nStreaming Video: https://www.espn.com/watch/player/_/id/9a9a97cb-be4c-4b09-a1ea-683424fb4e62\nStreaming Audio: https://thevarsitynetwork.com/audioapplink/source/oas-1323/content/unc:allaccess-Live-5663\n
+URL:https://admin.goheels.com/calendar.aspx?game_id=26876&amp;sport_id=3
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_26997-admin.goheels.com
+DTSTAMP:20260823T235123Z
+DTSTART:20260820T233000Z
+DTEND:20260821T013000Z
+LOCATION:Fayetteville\, Ark., Razorback Field
+SUMMARY:[W] North Carolina Women's Soccer at Arkansas
+DESCRIPTION:[W] North Carolina Women's Soccer at Arkansas\nW 2-0\nTV: ESPNU\nStreaming Video: https://www.espn.com/watch/player/_/id/26be0639-f552-4ac5-8c07-81e153dfb346\n
+URL:https://admin.goheels.com/calendar.aspx?game_id=26997&amp;sport_id=22
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_27039-admin.goheels.com
+DTSTAMP:20260823T235123Z
+DTSTART:20260828T193000Z
+DTEND:20260828T223000Z
+LOCATION:Winston-Salem\, NC
+SUMMARY:North Carolina Field Hockey vs Michigan
+DESCRIPTION:North Carolina Field Hockey vs Michigan\n
+URL:https://admin.goheels.com/calendar.aspx?game_id=27039&amp;sport_id=2
+PRIORITY:3
+END:VEVENT
+END:VCALENDAR

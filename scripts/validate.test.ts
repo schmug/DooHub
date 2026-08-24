@@ -238,6 +238,107 @@ test("validateSources rejects a venue_aliases value that is not a string array",
   assert.match(errors[0]!, /venue_aliases/);
 });
 
+test("validateSources accepts a declared ICS feed", () => {
+  const { errors } = validateSources({
+    schema_version: 1,
+    sources: [
+      src({
+        ingest: { mode: "feed", feed_url: "https://goheels.com/calendar.ashx/calendar.ics", feed_type: "ics" },
+      }),
+    ],
+  });
+  assert.deepEqual(errors, []);
+});
+
+test("validateSources accepts a traveling feed scope", () => {
+  const { errors } = validateSources({
+    schema_version: 1,
+    sources: [
+      src({
+        ingest: {
+          mode: "feed",
+          feed_url: "https://goheels.com/calendar.ashx/calendar.ics",
+          feed_type: "ics",
+          feed_scope: "traveling",
+        },
+      }),
+    ],
+  });
+  assert.deepEqual(errors, []);
+});
+
+test("validateSources rejects an unknown feed_scope", () => {
+  const { errors } = validateSources({
+    schema_version: 1,
+    sources: [
+      src({
+        ingest: { mode: "feed", feed_url: "https://x.test/c.ics", feed_type: "ics", feed_scope: "global" } as never,
+      }),
+    ],
+  });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0]!, /feed_scope/);
+});
+
+test("validateSources rejects an unknown ingest mode", () => {
+  const { errors } = validateSources({
+    schema_version: 1,
+    sources: [src({ ingest: { mode: "scrape", feed_url: "https://x.test/f.ics", feed_type: "ics" } as never })],
+  });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0]!, /ingest\.mode/);
+});
+
+test("validateSources rejects an unknown feed_type", () => {
+  const { errors } = validateSources({
+    schema_version: 1,
+    sources: [src({ ingest: { mode: "feed", feed_url: "https://x.test/events.xml", feed_type: "rss" } as never })],
+  });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0]!, /feed_type/);
+});
+
+test("validateSources rejects a bare WordPress /feed/ endpoint", () => {
+  // The trap this feature exists to avoid: every Triangle venue advertising a
+  // `<link rel="alternate">` feed serves its blog, not its calendar. Declaring
+  // one would file "Job Opening — Marketing Manager" as an event.
+  const { errors } = validateSources({
+    schema_version: 1,
+    sources: [
+      src({ ingest: { mode: "feed", feed_url: "https://raleighlittletheatre.org/feed/", feed_type: "ics" } }),
+    ],
+  });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0]!, /blog feed/i);
+});
+
+test("validateSources rejects a feed_url that is not an http(s) url", () => {
+  const { errors } = validateSources({
+    schema_version: 1,
+    sources: [src({ ingest: { mode: "feed", feed_url: "goheels.com/calendar.ics", feed_type: "ics" } })],
+  });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0]!, /feed_url/);
+});
+
+test("validateSources rejects an ingest value that is not an object", () => {
+  const { errors } = validateSources({
+    schema_version: 1,
+    sources: [src({ ingest: "https://goheels.com/calendar.ics" as never })],
+  });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0]!, /ingest/);
+});
+
+test("validateSources requires a feed_url when a feed is declared", () => {
+  const { errors } = validateSources({
+    schema_version: 1,
+    sources: [src({ ingest: { mode: "feed", feed_type: "ics" } as never })],
+  });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0]!, /feed_url/);
+});
+
 test("validateSources rejects a stringly-typed fetch_blocked", () => {
   // "false" is truthy, so a string here would silently EXEMPT the source from
   // link checking — the exact opposite of what the author meant.

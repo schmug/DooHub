@@ -140,6 +140,50 @@ export const YES_NO_UNKNOWN: ReadonlyArray<YesNoUnknown> = ["yes", "no", "unknow
 export type SourceKind = "venue" | "hub" | "aggregator";
 
 /**
+ * Machine-readable feed formats `scripts/lib/feeds.ts` can parse.
+ *
+ * Deliberately does NOT include RSS/Atom. Four Triangle venues advertise a
+ * working `<link rel="alternate">` feed and all four are the WordPress *blog*
+ * feed — press releases, cast lists, "Job Opening — Marketing Manager". A feed
+ * only counts as an event feed if its items carry event start times, so a bare
+ * `/feed/` is never wired up here. See prompts/weekly.md § Phase A.
+ */
+export const FEED_TYPES = ["ics", "localist"] as const;
+export type FeedType = (typeof FEED_TYPES)[number];
+
+/**
+ * How far a feed's listings range, which decides what an item with no place of
+ * its own means:
+ *
+ * - `local` (default) — the feed only lists what happens at the source itself,
+ *   so a bare "Duke South, Room M224" is the source's own city.
+ * - `traveling` — the feed follows a team or covers a wide region, so an item
+ *   must positively prove it is in the Triangle. Without this, goheels' away
+ *   game at "Dublin, Ireland (Aviva Stadium)" would inherit Chapel Hill: no US
+ *   state token disqualifies it, and enumerating countries is a losing game.
+ */
+export const FEED_SCOPES = ["local", "traveling"] as const;
+export type FeedScope = (typeof FEED_SCOPES)[number];
+
+/**
+ * How to read a source, when a plain fetch of `EventSource.url` is not the way.
+ * `mode` is the discriminant so later ingest paths (e.g. a browser-render mode
+ * for client-rendered sites) can join as new members without reshaping this.
+ */
+export interface FeedIngestHint {
+  mode: "feed";
+  /** The feed endpoint — NOT the human page. */
+  feed_url: string;
+  feed_type: FeedType;
+  /** Defaults to "local". See FEED_SCOPES. */
+  feed_scope?: FeedScope;
+}
+
+export type SourceIngest = FeedIngestHint;
+
+export const INGEST_MODES = ["feed"] as const;
+
+/**
  * A seed discovery source (data/sources.json). The registry is a FLOOR for the
  * weekly run's Phase A sweep, not the search space — see prompts/weekly.md.
  */
@@ -156,6 +200,8 @@ export interface EventSource {
   categories: string[];
   /** True when the origin 403s a plain fetch but serves via WebFetch. */
   fetch_blocked?: boolean;
+  /** Structured feed to read instead of scraping `url`. See FeedIngestHint. */
+  ingest?: SourceIngest;
   notes?: string;
 }
 
