@@ -226,9 +226,10 @@ than duplicates across weeks. The site also offers client-side **"All events"**,
 
 | Command | What it does |
 |---|---|
-| `npm test` | Unit tests for the ics builder, validator, dedup helpers, and feed parsers |
-| `npm run validate` | Schema/enum/window/dup-id checks on `data/events.json`; also `data/sources.json` (kebab-case ids, URL shape, `parent_venue` / `venue_aliases` anti-drift against `dedup.ts`, `ingest` feed declarations) and `data/source_coverage.json` when present |
-| `npm run validate:links` | Above **plus** HTTP 2xx checks on booking/info/image URLs, every registry source URL (`fetch_blocked` sources skipped), and every declared `ingest.feed_url` |
+| `npm test` | Unit tests for the ics builder, validator, dedup helpers, feed parsers, and render extractors |
+| `npm run validate` | Schema/enum/window/dup-id checks on `data/events.json`; also `data/sources.json` (kebab-case ids, URL shape, `parent_venue` / `venue_aliases` anti-drift against `dedup.ts`, `ingest` feed and render declarations) and `data/source_coverage.json` when present |
+| `npm run validate:links` | Above **plus** HTTP 2xx checks on booking/info/image URLs, every registry source URL (`fetch_blocked` and `ingest.mode: "render"` sources skipped — their origins reject scripted fetches), and every declared `ingest.feed_url` |
+| `npx tsx scripts/render_source.ts [id…]` | Read the sources that declare `"ingest": { "mode": "render" }` from a rendered DOM (headless Chrome; JSON-LD, else rendered text) and print draft events as JSON. Discovery-time only — deliberately **not** part of `npm run build`, so a blocked origin can never fail a publish. `--html <file>` extracts from a page you captured yourself |
 | `npm run build:ics` | Regenerate `public/events.ics` only |
 | `npm run build` | Full deterministic build (validate → site → data → ics) |
 | `npm run typecheck` | Type-check the scripts (`site` has its own `npm --prefix site run typecheck`) |

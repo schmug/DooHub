@@ -350,6 +350,62 @@ test("validateSources rejects a stringly-typed fetch_blocked", () => {
   assert.match(errors[0]!, /fetch_blocked/);
 });
 
+test("validateSources accepts a source that declares rendering", () => {
+  const { errors } = validateSources({
+    schema_version: 1,
+    sources: [src({ ingest: { mode: "render", extract: "json-ld", reason: "403s a plain fetch" } })],
+  });
+  assert.deepEqual(errors, []);
+});
+
+test("validateSources accepts a render declaration with no extract or url", () => {
+  const { errors } = validateSources({
+    schema_version: 1,
+    sources: [src({ ingest: { mode: "render" } })],
+  });
+  assert.deepEqual(errors, []);
+});
+
+test("validateSources rejects a stringly-typed ingest", () => {
+  // Same hazard as a stringly-typed fetch_blocked, one level up: `"render"` is
+  // truthy, so a `if (s.ingest)` check passes while `s.ingest.mode` is
+  // undefined — the source is silently read the old way, which is the zero-hit
+  // failure this field exists to fix.
+  const { errors } = validateSources({
+    schema_version: 1,
+    sources: [src({ ingest: "render" as never })],
+  });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0]!, /ingest/);
+});
+
+test("validateSources rejects an unknown ingest mode", () => {
+  const { errors } = validateSources({
+    schema_version: 1,
+    sources: [src({ ingest: { mode: "browser" as never } })],
+  });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0]!, /ingest\.mode/);
+});
+
+test("validateSources rejects an unknown ingest extract strategy", () => {
+  const { errors } = validateSources({
+    schema_version: 1,
+    sources: [src({ ingest: { mode: "render", extract: "microdata" as never } })],
+  });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0]!, /ingest\.extract/);
+});
+
+test("validateSources rejects an ingest url that is not http(s)", () => {
+  const { errors } = validateSources({
+    schema_version: 1,
+    sources: [src({ ingest: { mode: "render", url: "/events" } })],
+  });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0]!, /ingest\.url/);
+});
+
 test("the shipped registry passes validateSources", async () => {
   const raw = await readFile(new URL("../data/sources.json", import.meta.url), "utf8");
   const { errors } = validateSources(JSON.parse(raw) as SourcesRegistry);

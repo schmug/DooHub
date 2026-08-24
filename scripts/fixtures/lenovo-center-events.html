@@ -1,0 +1,125 @@
+<!--
+  FIXTURE — www.lenovocenter.com/events, rendered 2026-08-23.
+
+  Captured with `chrome --headless=new --dump-dom` (a plain scripted fetch gets
+  HTTP 406 from this origin, which is why the source declares ingest.method
+  "render"). This is the RENDERED-TEXT case: the page carries exactly one
+  application/ld+json block and it is an Organization, NOT an Event — so a
+  JSON-LD-only extractor yields zero here and the text fallback has to carry it.
+
+  Trimmed from the real 730 KB dump: the site header/footer/nav, <script> and
+  <style> blocks, and every event past the fourth were dropped, and inline
+  <svg> icon paths were replaced with a comment (they are ~14 KB of <path d>
+  noise). Everything else — markup, whitespace, attributes — is verbatim, so the
+  traps stay real: the date is split across three <span>s, `alt` and `title`
+  attributes repeat the event name (they must NOT become text), an icon <svg>
+  sits between the title and the time, and the "Event Time" label is its own
+  token. Item 1 is a staffing event, kept deliberately: the extractor does not
+  editorialize, the weekly run's coverage check does.
+-->
+<!DOCTYPE html>
+<html lang="en"><head>
+<title>Events | Lenovo Center</title>
+<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.lenovocenter.com/#organization",
+    "name": "Lenovo Center",
+    "url": "https://www.lenovocenter.com/",
+    "logo": "https://www.lenovocenter.com/assets/img/LC-Thumbnail3-2f125c09ee.jpg",
+    "sameAs": [
+        "https://www.twitter.com/LenovoCenter",
+        "https://www.instagram.com/LenovoCenter",
+        "https://www.facebook.com/LenovoCenter"
+    ]
+}</script>
+</head>
+<body>
+<h2 class="events-hidden">Event List</h2>
+<div class="eventList event_list event_list_forceListing is-loaded">
+<div class="eventList__wrapper list" id="list">
+<div class="eventItem entry secondary clearfix">
+			<div class="thumb">
+		<a href="https://www.lenovocenter.com/events/detail/lenovo-center-hiring-event-26" title="More Info for Lenovo Center Hiring Event" tabindex="-1"><img src="https://www.lenovocenter.com/assets/img/864x524-1-dfdc794a6a.jpg" alt="More Info for Lenovo Center Hiring Event"></a>		
+</div>			<div class="info clearfix">
+					<div class="date">
+		<span class="m-date__singleDate"><span class="m-date__month">Aug</span><span class="m-date__day"> 25 </span><span class="m-date__year">/ 2026</span></span>			</div>
+	
+	
+	<h3 class="title title-withTagline ">
+		<a href="https://www.lenovocenter.com/events/detail/lenovo-center-hiring-event-26" title="More Info">Lenovo Center Hiring Event</a>	</h3>
+			<h4 class="tagline">
+            300+ part-time event staff positions available		</h4>
+    	<div class="meta">
+											<h5 class="time">
+									<svg aria-hidden="true"><!-- icon path elided, see header --></svg><span class="startlang">Event Time</span> <span class="start"> 3:00 PM</span>									</h5>
+							</div>
+<div class="buttons">
+	<a href="https://www.lenovocenter.com/events/detail/lenovo-center-hiring-event-26" class="more " title="Lenovo Center Hiring Event More Info"><div class="svg-wrap">
+<svg aria-hidden="true"><!-- icon path elided, see header --></svg>
+</div></a></div>			</div>
+					</div>
+		<div class="eventItem entry alt featured clearfix">
+			<div class="thumb">
+		<a href="https://www.lenovocenter.com/events/detail/rodwave_ral26" title="More Info for Rod Wave" tabindex="-1"><img src="https://www.lenovocenter.com/assets/img/RodWave-DLD-LenovoCenter-WEBSITE-EventListingThumb-864x524-2201f48d16.png" alt="More Info for Rod Wave"></a>		
+</div>			<div class="info clearfix">
+					<div class="date">
+		<span class="m-date__singleDate"><span class="m-date__month">Sep</span><span class="m-date__day"> 15 </span><span class="m-date__year">/ 2026</span></span>			</div>
+	
+	
+	<h3 class="title title-withTagline ">
+		<a href="https://www.lenovocenter.com/events/detail/rodwave_ral26" title="More Info">Rod Wave</a>	</h3>
+			<h4 class="tagline">
+            Don't Look Down Tour with special guest Fridayy		</h4>
+    	<div class="meta">
+											<h5 class="time">
+									<svg aria-hidden="true"><!-- icon path elided, see header --></svg><span class="startlang">Event Time</span> <span class="start"> 8:00 PM</span>									</h5>
+							</div>
+<div class="buttons">
+	<a href="https://www.ticketmaster.com/rod-wave-dont-look-down-tour-raleigh-north-carolina-09-15-2026/event/2D0064D1B0656148?camefrom=CFC_RBC" target="_blank" class="tickets onsalenow " title="Buy Tickets for Rod Wave "><svg aria-hidden="true"><!-- icon path elided, see header --></svg>Buy Tickets</a><a href="https://www.lenovocenter.com/events/detail/rodwave_ral26" class="more buttons-hide" title="Rod Wave More Info"><div class="svg-wrap">
+<svg aria-hidden="true"><!-- icon path elided, see header --></svg>
+</div></a><a href="https://www.parkwhiz.com/lenovo-center-parking/rod-wave-don-t-look-down-tour-1788224/" class="more promotion parking" title="Rod Wave Parking" target="_blank"><div class="svg-wrap"><svg aria-hidden="true"><!-- icon path elided, see header --></svg></div></a></div>			</div>
+					</div>
+		<div class="eventItem entry featured clearfix">
+			<div class="thumb">
+		<a href="https://www.lenovocenter.com/events/detail/cash-money-no-limit-tour" title="More Info for Cash Money + No Limit Tour" tabindex="-1"><img src="https://www.lenovocenter.com/assets/img/cmnl_0919_raleigh_864x524-c77b2707d1.jpg" alt="More Info for Cash Money + No Limit Tour"></a>		
+</div>			<div class="info clearfix">
+					<div class="date">
+		<span class="m-date__singleDate"><span class="m-date__month">Sep</span><span class="m-date__day"> 19 </span><span class="m-date__year">/ 2026</span></span>			</div>
+	
+	
+	<h3 class="title title-withTagline ">
+		<a href="https://www.lenovocenter.com/events/detail/cash-money-no-limit-tour" title="More Info">Cash Money + No Limit Tour</a>	</h3>
+			<h4 class="tagline">
+            Master P, Birdman, Juvenile, and many more...		</h4>
+    	<div class="meta">
+											<h5 class="time">
+									<svg aria-hidden="true"><!-- icon path elided, see header --></svg><span class="startlang">Event Time</span> <span class="start"> 8:00 PM</span>									</h5>
+							</div>
+<div class="buttons">
+	<a href="https://www.ticketmaster.com/cash-money-no-limit-tour-raleigh-north-carolina-09-19-2026/event/2D0064C8876C8F34?camefrom=CFC_RBC" target="_blank" class="tickets onsalenow " title="Buy Tickets for Cash Money + No Limit Tour "><svg aria-hidden="true"><!-- icon path elided, see header --></svg>Buy Tickets</a><a href="https://www.lenovocenter.com/events/detail/cash-money-no-limit-tour" class="more buttons-hide" title="Cash Money + No Limit Tour More Info"><div class="svg-wrap">
+<svg aria-hidden="true"><!-- icon path elided, see header --></svg>
+</div></a><a href="https://www.parkwhiz.com/lenovo-center-parking/cash-money-no-limit-tour-1786928/" class="more promotion parking" title="Cash Money + No Limit Tour Parking" target="_blank"><div class="svg-wrap"><svg aria-hidden="true"><!-- icon path elided, see header --></svg></div></a></div>			</div>
+					</div>
+		<div class="eventItem entry alt team clearfix">
+			<div class="thumb">
+		<a href="https://www.lenovocenter.com/events/detail/florida-panthers-vs-carolina-hurricanes-10" title="More Info for Florida Panthers vs. Carolina Hurricanes" tabindex="-1"><img src="https://www.lenovocenter.com/assets/img/Lenovo-Center-Canes-Game-Thumbnail-327f48bb6a.png" alt="More Info for Florida Panthers vs. Carolina Hurricanes"></a>		
+</div>			<div class="info clearfix">
+					<div class="date">
+		<span class="m-date__singleDate"><span class="m-date__month">Sep</span><span class="m-date__day"> 22 </span><span class="m-date__year">/ 2026</span></span>			</div>
+	
+	
+	<h3 class="title  long_title">
+		<a href="https://www.lenovocenter.com/events/detail/florida-panthers-vs-carolina-hurricanes-10" title="More Info">Florida Panthers vs. Carolina Hurricanes</a>	</h3>
+		<div class="meta">
+											<h5 class="time">
+									<svg aria-hidden="true"><!-- icon path elided, see header --></svg><span class="startlang">Event Time</span> <span class="start"> 7:00 PM</span>									</h5>
+							</div>
+<div class="buttons">
+	<a href="https://www.ticketmaster.com/carolina-hurricanes-vs-florida-panthers-preseason-raleigh-north-carolina-09-22-2026/event/2D0064F4BDA4D297?camefrom=CFC_RBC" target="_blank" class="tickets onsalenow " title="Buy Tickets for Florida Panthers vs. Carolina Hurricanes "><svg aria-hidden="true"><!-- icon path elided, see header --></svg>Buy Tickets</a><a href="https://www.lenovocenter.com/events/detail/florida-panthers-vs-carolina-hurricanes-10" class="more buttons-hide" title="Florida Panthers vs. Carolina Hurricanes More Info"><div class="svg-wrap">
+<svg aria-hidden="true"><!-- icon path elided, see header --></svg>
+</div></a><a href="https://www.parkwhiz.com/lenovo-center-parking/carolina-hurricanes-vs-chicago-blackhawks-1649174/" class="more promotion parking" title="Florida Panthers vs. Carolina Hurricanes Parking" target="_blank"><div class="svg-wrap"><svg aria-hidden="true"><!-- icon path elided, see header --></svg></div></a></div>			</div>
+					</div>
+		</div>
+</div>
+</body></html>
