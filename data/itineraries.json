@@ -1,879 +1,925 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-27T07:30:00-04:00",
-  "week": "2026-W35",
+  "generated_at": "2026-09-03T07:30:00-04:00",
+  "week": "2026-W36",
   "itineraries": [
     {
-      "id": "durham-saturday-market-to-ballpark",
-      "title": "Durham Saturday — Market, Malcolm, Ballpark",
-      "theme": "One walkable downtown, three very different rooms, and a 6:45 first pitch you can stroll to",
-      "anchor_city": "Durham",
-      "date": "2026-08-29",
+      "id": "raleigh-first-friday-heat-dodge",
+      "title": "Raleigh First Friday — Air Conditioning Until Sundown",
+      "theme": "A 100°F Friday spent indoors on purpose, then Moore Square once the sun is off the lawn",
+      "anchor_city": "Raleigh",
+      "date": "2026-09-04",
       "weather": {
-        "summary": "Chance Showers And Thunderstorms",
-        "temp_f": 86
+        "summary": "Sunny",
+        "temp_f": 100
       },
-      "drive_time": "Park once. The market, the ballpark and the tour meeting point are all within a mile of Foster Street; only the Nasher needs a car (8 minutes each way).",
-      "cost_range": "$25–$60 per person. The market and the gallery talk are free; the tour is $15 and Bulls tickets start around $13.",
-      "overview": "86°F with scattered storms in the forecast, so this route keeps a roof within reach all day. The Durham Farmers' Market opens at eight and thins out by ten, the Nasher's Mapping Malcolm talk is free and air-conditioned at noon, and the walking tour lands you back downtown in time to eat before the Bulls.",
+      "drive_time": "Downtown Raleigh, park once. Marbles, the Natural Sciences museum and Moore Square are within four blocks of each other; Raleigh Little Theatre is a 7-minute drive out to Pogue Street.",
+      "cost_range": "$25–$70 per person. Both museums' daily programs are free; Marbles IMAX and Hairspray are the paid legs.",
+      "overview": "The forecast high is 100°F — the hottest day of the window — so this route treats shade as the itinerary and not a detail. Free live-science programming at the Natural Sciences museum fills the middle of the day, IMAX handles the worst of the afternoon, and First Friday's market and movie at Moore Square only starts once the sun is low. If you want a full theatre night instead, Hairspray at Raleigh Little Theatre is the swap.",
       "schedule": {
         "morning": [
           {
-            "time": "8:00 AM",
-            "title": "Durham Farmers’ Market",
-            "event_id": "baee06731145",
-            "location": "501 Foster Street, Durham, NC 27701",
-            "price": "unknown",
-            "notes": "Go early — the good produce and the pastry stalls are gone well before noon. The DCP Pavilion has cover if it is already raining."
+            "time": "10:00 AM",
+            "title": "Twinkle, Twinkle, Little Star",
+            "event_id": "2c4b594767bf",
+            "location": "301 Pogue St, Raleigh, NC 27607",
+            "price": "$5-$10",
+            "notes": "Twenty-five minutes, built for under-fives, and over before the heat arrives. Skip this leg if you have no small children — start at the museum instead."
+          },
+          {
+            "time": "10:45 AM",
+            "title": "Live Animal Feeding — Ocean Habitat",
+            "event_id": "bd39d2becaba",
+            "location": "11 West Jones Street, Raleigh, NC 27601",
+            "price": "Free",
+            "notes": "Fifteen minutes, free, and the museum around it is free all day. This is the cheapest air conditioning downtown."
           }
         ],
         "afternoon": [
           {
-            "time": "12:00 PM",
-            "title": "Gallery Talk: Exploring Mapping Malcolm with Najha Zigbi-Johnson",
-            "event_id": "02052a70a05e",
-            "location": "2001 Campus Drive, Durham, NC 27705",
-            "price": "Free",
-            "notes": "Free, indoors, about an hour. Najha Zigbi-Johnson on the Mapping Malcolm exhibition; the rest of the Nasher is worth the extra half hour afterwards."
+            "time": "12:15 PM",
+            "title": "The Blue Angels 3D",
+            "event_id": "4c14bf96a58a",
+            "location": "201 East Hargett Street, Raleigh, NC 27601",
+            "price": "unknown",
+            "notes": "Marbles IMAX is a five-storey screen and a very cold room. Buy the IMAX ticket separately from museum admission if you only want the film."
           },
           {
-            "time": "4:00 PM",
-            "title": "Downtown Durham African American Historian-Guided Tour",
-            "event_id": "ccfcd4d82215",
-            "location": "201 Corcoran St., Durham, NC 27701",
-            "price": "$15",
-            "notes": "Ninety minutes on foot from CCB Plaza through downtown's Black history. Wear real shoes and bring water — very little of it is shaded."
+            "time": "1:30 PM",
+            "title": "Incredible Science",
+            "event_id": "627f25a697d4",
+            "location": "11 West Jones Street, Raleigh, NC 27601",
+            "price": "Free",
+            "notes": "A thirty-minute live demo in the Daily Planet theater. Free, and the walk back from Marbles is four shaded blocks on Hargett."
           }
         ],
         "evening": [
           {
-            "time": "6:45 PM",
-            "title": "Durham Bulls vs. Norfolk Tides",
-            "event_id": "1552c393149e",
-            "location": "409 Blackwell St, Durham, NC 27701",
+            "time": "5:00 PM",
+            "title": "First Friday Market and Movie: Remember the Titans",
+            "event_id": "7d5b5e51e70a",
+            "location": "201 S. Blount Street, Raleigh, NC 27601",
+            "price": "Free",
+            "notes": "Vendors and food trucks from 5, live music at 5:30, film at 7:15. Bring a blanket; Moore Square's lawn holds heat well into the evening at 100°F, so the shaded north edge under the oaks is the better spot."
+          },
+          {
+            "time": "7:30 PM",
+            "title": "Hairspray (alternative to the movie)",
+            "event_id": "d516e11c04dd",
+            "location": "301 Pogue St, Raleigh, NC 27607",
+            "price": "$30-$36",
+            "notes": "Two and a half hours with an intermission, fully indoors. Take this instead of Moore Square if the heat wins."
+          }
+        ]
+      },
+      "food": [
+        {
+          "slot": "lunch",
+          "place": "Fiction Kitchen",
+          "city": "Raleigh",
+          "vegan_dish": "The vegan 'pulled pork' BBQ plate — jackfruit, slaw, hush puppies",
+          "vegetarian_dish": "Fried 'chicken' and waffles",
+          "price": "$16-$22",
+          "url": "https://www.thefictionkitchen.com/",
+          "notes": "Entirely vegetarian with most of the menu vegan or veganizable. Six blocks from Marbles on Dawson; reservations help on a Friday."
+        },
+        {
+          "slot": "dinner",
+          "place": "Moore Square food trucks",
+          "city": "Raleigh",
+          "vegan_dish": "Varies by truck — the First Friday lineup usually includes at least one all-vegan truck",
+          "vegetarian_dish": "Varies by truck",
+          "price": "$10-$16",
+          "url": "https://raleighnc.gov/parks-and-recreation/events/first-friday-market-and-movie-0",
+          "notes": "Eat on site so you keep your spot on the lawn. If the trucks look thin, Garland on Martin Street is a five-minute walk and its vegetable thali is fully vegan."
+        }
+      ],
+      "alternatives": [
+        {
+          "leg": "First Friday Market and Movie at Moore Square",
+          "good_weather": "Stay for the 7:15 PM film — by then the square is in full shade and the temperature drops fast.",
+          "rain": "Friday night carries a slight chance of showers and thunderstorms. If it breaks, Hairspray at Raleigh Little Theatre (7:30 PM, $30-$36) is the indoor swap, or the 8:00 PM Mostley Crue tribute at Lincoln Theatre two blocks from the square."
+        }
+      ],
+      "practical_notes": [
+        "100°F is a real hazard, not a talking point. Carry water, and plan the 12–4 block indoors as written.",
+        "Park once in the Wilmington Street deck (free on weekends until 5 PM, paid Friday) and walk everything downtown.",
+        "The Natural Sciences museum and Marbles both close at 5 PM; the museum's free programs are the anchor, not the IMAX.",
+        "Moore Square has no reserved seating. Arriving at 6:30 PM is enough for the 7:15 film."
+      ],
+      "event_ids": [
+        "2c4b594767bf",
+        "bd39d2becaba",
+        "4c14bf96a58a",
+        "627f25a697d4",
+        "7d5b5e51e70a",
+        "d516e11c04dd"
+      ]
+    },
+    {
+      "id": "durham-market-to-ballgame-labor-weekend",
+      "title": "Durham Saturday — Market, Walking Tour, Melissa Etheridge",
+      "theme": "One walkable downtown from an 8 AM market to an 8 PM theatre, with storms in the second half",
+      "anchor_city": "Durham",
+      "date": "2026-09-05",
+      "weather": {
+        "summary": "Sunny then Chance Showers And Thunderstorms",
+        "temp_f": 98
+      },
+      "drive_time": "Park once near Foster Street. The market, the gallery, both tour meeting points and the Carolina Theatre are all inside a ten-minute walk.",
+      "cost_range": "$30–$85 per person. The market and the gallery are free; the walking tours are $15 each and Etheridge tickets are the big line item.",
+      "overview": "98°F and sunny early, with a real chance of afternoon thunderstorms — the exact shape of day that rewards starting at eight. The Durham Farmers' Market opens then and thins by ten. The middle of the day is indoors at 5 Points Gallery and Outer Loop Arts, and the historian-guided tour at 2 PM is the one leg genuinely exposed to weather. Melissa Etheridge closes it in Fletcher Hall.",
+      "schedule": {
+        "morning": [
+          {
+            "time": "8:00 AM",
+            "title": "Durham Farmers' Market",
+            "event_id": "bc1402d7134e",
+            "location": "501 Foster Street, Durham, NC 27701",
+            "price": "Free",
+            "notes": "Go at eight, not ten. The DCP Pavilion is covered, which matters more for sun today than for rain."
+          },
+          {
+            "time": "11:15 AM",
+            "title": "Field & Factory: A Look at Tobacco's Laborers",
+            "event_id": "9958c9f4698e",
+            "location": "2828 Duke Homestead Rd, Durham, NC 27705",
+            "price": "Free",
+            "notes": "Free, at Duke Homestead, eight minutes north by car. Skip it if you would rather stay on foot downtown — the 1 PM gallery leg works as a straight substitute."
+          }
+        ],
+        "afternoon": [
+          {
+            "time": "1:00 PM",
+            "title": "THE LONG EXHALE | A GROUP EXHIBITION",
+            "event_id": "f61f22e4d5c1",
+            "location": "Durham, NC",
+            "price": "Free",
+            "notes": "Free, air-conditioned, and about half an hour unless you linger. 5 Points Gallery is a two-minute walk from the Lucky Strike Tower tour start."
+          },
+          {
+            "time": "2:00 PM",
+            "title": "Downtown Durham Historian-Guided Tour",
+            "event_id": "26255f2417d3",
+            "location": "Durham, NC",
+            "price": "$15",
+            "notes": "Ninety minutes on foot with very little shade at 98°F. Bring water. This is the leg to drop if the storms arrive early — the 4 PM African American history tour is the same price and the same length."
+          }
+        ],
+        "evening": [
+          {
+            "time": "8:00 PM",
+            "title": "Melissa Etheridge: RISE",
+            "event_id": "b1a7062bd148",
+            "location": "309 W Morgan St, Durham, NC 27701",
             "price": "unknown",
-            "notes": "Norfolk Tides in town for a four-game set. The Blue Monster side gets the late sun; the third-base concourse is the shadier half."
+            "notes": "Fletcher Hall at the Carolina Theatre, indoors and a five-minute walk from dinner on Parrish Street."
+          },
+          {
+            "time": "8:30 PM",
+            "title": "BLAT / Homeostasis / The Band \"&\" (alternative)",
+            "event_id": "34d0256b3cbb",
+            "location": "117 W Main St, Durham, NC 27701",
+            "price": "unknown",
+            "notes": "Latin post-punk and darkwave at The Pinhook, 18+. The cheaper, louder version of the same night."
           }
         ]
       },
       "food": [
         {
           "slot": "breakfast",
-          "place": "Durham Farmers' Market prepared-food stalls",
+          "place": "Rise Biscuits & Donuts",
           "city": "Durham",
-          "vegan_dish": "Ask the bakery stalls which loaves and hand pies are made without butter or egg — several are, and they will tell you straight",
-          "vegetarian_dish": "A breakfast pastry and coffee from the market vendors",
-          "price": "$",
-          "notes": "501 Foster St. Eat at the pavilion tables so you are not carrying a plate around the stalls."
+          "vegan_dish": "Vegan glazed donut",
+          "vegetarian_dish": "Fried green tomato biscuit",
+          "price": "$5-$10",
+          "url": "https://risebiscuitsdonuts.com/",
+          "notes": "Eat before the market or graze the market's own pastry stalls, which are gone by nine."
         },
         {
           "slot": "lunch",
-          "place": "Durham Food Hall",
+          "place": "Namu",
           "city": "Durham",
-          "vegan_dish": "At least one counter usually plates a fully plant-based bowl — ask each kitchen directly, the lineup rotates",
-          "vegetarian_dish": "Pizza or a vegetable-forward plate from whichever kitchen is open",
-          "price": "$$",
-          "notes": "530 Foster St, two minutes from the market. Air conditioning and several kitchens under one roof, no reservation."
+          "vegan_dish": "Vegan bibimbap with tofu, no egg",
+          "vegetarian_dish": "Kimchi pancake",
+          "price": "$14-$20",
+          "url": "https://www.namu-durham.com/",
+          "notes": "On Parrish Street, indoors, and quick enough to make the 2 PM tour start."
         },
         {
           "slot": "dinner",
-          "place": "Ballpark concessions or Jack Tar on Parrish",
+          "place": "Dashi",
           "city": "Durham",
-          "vegan_dish": "The DBAP has a veggie-dog stand; Jack Tar can build a plate without dairy if you ask",
-          "vegetarian_dish": "Ballpark pretzels and fries, or a diner grilled cheese before the game",
-          "price": "$$",
-          "notes": "Eat before you go in if you want a real meal — concession lines are worst in the half hour before first pitch."
+          "vegan_dish": "Vegan shoyu ramen — kombu-shiitake broth, no chashu, no egg",
+          "vegetarian_dish": "Miso ramen with corn and butter",
+          "price": "$16-$24",
+          "url": "https://dashiramen.com/",
+          "notes": "Ask for the vegan broth specifically; the default shoyu is pork-based. Two blocks from the Carolina Theatre."
         }
       ],
       "alternatives": [
         {
-          "leg": "Downtown Durham African American Historian-Guided Tour (4 PM, entirely outdoors)",
-          "good_weather": "Do the full ninety minutes on foot and finish at CCB Plaza.",
-          "rain": "Storms are a real possibility. Swap in the Nasher's own galleries, which you are already at, or the free Museum of Durham History on Main Street."
+          "leg": "Downtown Durham Historian-Guided Tour (2 PM, outdoors)",
+          "good_weather": "Take the 2 PM tour as written and follow it with the 4 PM African American history tour from CCB Plaza if you still have legs.",
+          "rain": "Saturday afternoon carries a chance of showers and thunderstorms. Swap to Encaustic Painting at Outer Loop Arts (1 PM, $25) or Paint Pouring (3 PM, $25) — both indoors, both two hours."
         },
         {
-          "leg": "Durham Bulls vs. Norfolk Tides (6:45 PM, open-air ballpark)",
-          "good_weather": "Sit down the third-base line for shade and the tobacco-warehouse backdrop.",
-          "rain": "If the game goes to a delay, Ira Glass is at DPAC the same evening at 7:30 (event 952eb56a19ec) — five minutes' walk from the ballpark."
+          "leg": "Getting between legs",
+          "good_weather": "Walk. Everything but Duke Homestead is inside ten minutes on foot.",
+          "rain": "The American Tobacco tunnel and the Chapel Hill Street awnings keep you dry between the gallery and the theatre."
         }
       ],
       "practical_notes": [
-        "86°F and scattered storms. Every outdoor leg here has an indoor pivot within a few blocks, which is the point of anchoring the day downtown.",
-        "The Durham Farmers' Market runs 8 AM–noon at 501 Foster Street; the Wednesday market is a separate, smaller thing.",
-        "Nasher admission is free on this talk; parking in the Nasher lot is free too.",
-        "Bulls parking decks fill from about an hour before first pitch — the Chapel Hill Street decks are the reliable fallback."
+        "98°F with storms building: the market at 8 AM and the theatre at 8 PM are the fixed points, and the middle is negotiable.",
+        "Both walking tours are $15 and start from the Lucky Strike Tower or CCB Plaza — confirm the meeting point when you book.",
+        "Durham Central Park's Movies in the Park (7:30 PM, free) is the free alternative to Etheridge if the sky clears.",
+        "Street parking downtown is free on Saturdays."
       ],
       "event_ids": [
-        "baee06731145",
-        "02052a70a05e",
-        "ccfcd4d82215",
-        "1552c393149e",
-        "952eb56a19ec"
+        "bc1402d7134e",
+        "9958c9f4698e",
+        "f61f22e4d5c1",
+        "26255f2417d3",
+        "24ed85735f77",
+        "b1a7062bd148",
+        "34d0256b3cbb"
       ]
     },
     {
-      "id": "chapel-hill-planetarium-to-puppets",
-      "title": "Chapel Hill — Planetarium Day into Giant Puppets",
-      "theme": "Air-conditioned dome shows through the hottest hours, then an outdoor amphitheatre at dusk",
+      "id": "chapel-hill-carrboro-cookout-puppets",
+      "title": "Chapel Hill & Carrboro — Cookout Market to Giant Puppets",
+      "theme": "Labor Day weekend on the west side: a meat-forward market, a planetarium dome, and Paperhand under the trees",
       "anchor_city": "Chapel Hill",
-      "date": "2026-08-29",
+      "date": "2026-09-05",
       "weather": {
-        "summary": "Chance Showers And Thunderstorms",
-        "temp_f": 86
+        "summary": "Sunny then Chance Showers And Thunderstorms",
+        "temp_f": 98
       },
-      "drive_time": "About 15 minutes of driving total. Morehead and the Forest Theatre are a mile apart on the same side of campus; Cat's Cradle is 8 minutes further into Carrboro.",
-      "cost_range": "$35–$70 per person, most of it the planetarium tickets and the Paperhand donation.",
-      "overview": "This is the shape a 86°F day with afternoon storms wants: spend the middle of the day inside a dome, come out when the light goes long, and end at the Forest Theatre, which is outdoors but wooded and cool. If the sky holds, Cat's Cradle picks up the night.",
+      "drive_time": "About 30 minutes from Raleigh. Carrboro to Franklin Street is 5 minutes; Forest Theatre is a 10-minute drive or a long walk from downtown Chapel Hill.",
+      "cost_range": "$20–$55 per person. The market and the nature walk are free; the planetarium and Paperhand are the paid legs.",
+      "overview": "The Carrboro Farmers Market runs its Labor Day weekend Cookout on Saturday, putting local chicken, duck, pork, beef, lamb and bison farmers front and centre — worth the drive on its own. The 98°F afternoon goes into Morehead's planetarium dome, and the day ends at Forest Theatre, where Paperhand Puppet Intervention's giant-puppet show plays outdoors with a 6:20 PM opener.",
       "schedule": {
         "morning": [
           {
-            "time": "11:00 AM",
-            "title": "Saturday Science Sparks: Warmer Climates with the Data-Driven EnviroLab",
-            "event_id": "2d23381d25d2",
-            "location": "222 E. Franklin Street, Chapel Hill, NC, Chapel Hill, NC",
-            "price": "unknown",
-            "notes": "Hands-on climate science for kids and adults at Morehead, free with the day's programming. A good warm-up before the ticketed dome shows."
+            "time": "9:00 AM",
+            "title": "Carrboro Farmers Market: Carrboro Cookout",
+            "event_id": "d3fedc2a9106",
+            "location": "301 W Main St, Carrboro, NC 27510",
+            "price": "Free",
+            "notes": "The Cookout is the market's meat showcase — six species, all local. Vegetarians are still well served by the produce and prepared-food stalls, which are the majority of the market."
+          },
+          {
+            "time": "10:00 AM",
+            "title": "Family Nature Walks",
+            "event_id": "dc8f21621091",
+            "location": "Chapel Hill, NC",
+            "price": "Free",
+            "notes": "Free, ninety minutes, run by Chapel Hill Public Library. Outdoors — go at ten or not at all today."
           }
         ],
         "afternoon": [
           {
             "time": "1:30 PM",
             "title": "We Are Stars",
-            "event_id": "ac2b5802ec59",
-            "location": "250 E Franklin St, Chapel Hill, NC 27514",
+            "event_id": "0eb33de648e3",
+            "location": "250 E Franklin St, Chapel Hill, NC 27599",
             "price": "unknown",
-            "notes": "Half an hour under the dome, narrated by Andy Serkis. Book ahead on a Saturday — the early-afternoon shows sell out first."
+            "notes": "Morehead's fulldome show, about 25 minutes, and the coldest dark room in Chapel Hill."
           },
           {
             "time": "3:00 PM",
             "title": "From Earth to the Universe",
-            "event_id": "8209439bb6f2",
-            "location": "250 E Franklin St, Chapel Hill, NC 27514",
+            "event_id": "c287d121e061",
+            "location": "250 E Franklin St, Chapel Hill, NC 27599",
             "price": "unknown",
-            "notes": "A full-dome tour of the sky. Between the two shows there is time for coffee on Franklin Street without moving the car."
-          }
-        ],
-        "evening": [
-          {
-            "time": "6:20 PM",
-            "title": "Paperhand Puppet Intervention: The Wild Wisdom of the World",
-            "event_id": "0f78c34b857d",
-            "location": "123 S Boundary St, Chapel Hill, NC 27514",
-            "price": "$15-$25",
-            "notes": "Openers at 6:20, Paperhand at 7:00. Arrive well before the opener — seating is grass and stone, and the good spots go early. Bring a cushion."
-          },
-          {
-            "time": "8:00 PM",
-            "title": "Sincere Engineer: The Probable Claws Tour Stay Inside, Smug LLC",
-            "event_id": "b195c25ef11f",
-            "location": "300 E Main St, Carrboro, NC 27510",
-            "price": "unknown",
-            "notes": "If you skip the puppets or want a second act, Sincere Engineer's Probable Claws tour is in the Back Room, eight minutes away in Carrboro."
-          }
-        ]
-      },
-      "food": [
-        {
-          "slot": "breakfast",
-          "place": "Med Deli, Franklin Street",
-          "city": "Chapel Hill",
-          "vegan_dish": "Falafel plate or the hummus-and-pita breakfast, both dairy-free as served",
-          "vegetarian_dish": "Spanakopita or a feta-and-egg pita",
-          "price": "$",
-          "notes": "410 W Franklin St. Quick counter service, five minutes from Morehead."
-        },
-        {
-          "slot": "lunch",
-          "place": "Vimala's Curryblossom Café",
-          "city": "Chapel Hill",
-          "vegan_dish": "Chana masala or the daily vegan thali — the kitchen labels vegan dishes on the board",
-          "vegetarian_dish": "Saag paneer or the vegetarian thali",
-          "price": "$$",
-          "notes": "431 W Franklin St, in Courtyard. Genuinely good for both diets and used to being asked."
-        },
-        {
-          "slot": "dinner",
-          "place": "Al's Burger Shack or Neal's Deli in Carrboro",
-          "city": "Chapel Hill",
-          "vegan_dish": "Al's will build the veggie burger without cheese or mayo; Neal's does a plant-forward sandwich most days",
-          "vegetarian_dish": "Veggie burger, or Neal's pimento cheese biscuit",
-          "price": "$$",
-          "notes": "Eat before the Forest Theatre — there is no food at the amphitheatre and nothing near it."
-        }
-      ],
-      "alternatives": [
-        {
-          "leg": "Paperhand Puppet Intervention at the Forest Theatre (6:20 PM, open-air)",
-          "good_weather": "Get there by 5:30, spread a blanket high on the stone terraces and watch the light drop through the trees.",
-          "rain": "The Forest Theatre has no cover at all. If storms roll through, the 4:30 PM Carolina Skies show at Morehead is the same evening's sky indoors, and Cat's Cradle's 8 PM show is unaffected."
-        },
-        {
-          "leg": "Morehead dome shows (1:30 and 3:00 PM, indoors)",
-          "good_weather": "Still worth it — this is the coolest room in Chapel Hill on an 86°F afternoon.",
-          "rain": "No change. This is already the rain plan."
-        }
-      ],
-      "practical_notes": [
-        "Morehead's shows are ticketed separately from the free hands-on programming; buy dome tickets online before you drive over.",
-        "Forest Theatre parking is street-only on Country Club Road and fills fast — arriving 90 minutes early is normal for Paperhand.",
-        "Paperhand seating is grass and stone terraces. Bring a blanket or a low chair, and bug spray.",
-        "Cat's Cradle's Back Room is a separate, smaller room from the main hall — check which door your ticket names."
-      ],
-      "event_ids": [
-        "2d23381d25d2",
-        "ac2b5802ec59",
-        "8209439bb6f2",
-        "0f78c34b857d",
-        "b195c25ef11f"
-      ]
-    },
-    {
-      "id": "raleigh-saturday-mostly-free",
-      "title": "Raleigh Saturday — Almost All of It Free",
-      "theme": "A market, two free museum tours and one $10 walk, with an optional amphitheatre night at the end",
-      "anchor_city": "Raleigh",
-      "date": "2026-08-29",
-      "weather": {
-        "summary": "Chance Showers And Thunderstorms",
-        "temp_f": 86
-      },
-      "drive_time": "About 20 minutes of driving. North Hills to downtown is 12 minutes; everything after that is within four blocks of Bicentennial Plaza.",
-      "cost_range": "$10–$25 per person for the day, or add a Chance the Rapper ticket if you want the evening.",
-      "overview": "Three of the four daytime stops cost nothing. The Museum of Natural Sciences has free general admission and runs two guided tours on Saturdays, and the Black History walking tour from the Pope House is $10 and the best-value hour downtown. Storms are possible, and almost all of this is indoors.",
-      "schedule": {
-        "morning": [
-          {
-            "time": "8:00 AM",
-            "title": "Midtown Farmers' Market",
-            "event_id": "be952d39dcd6",
-            "location": "4111 Main at North Hills St, Raleigh, NC 27609",
-            "price": "Free",
-            "notes": "Producers' market on The Commons at North Hills, 8 to noon. Cooking demos most Saturdays; free parking in the decks."
-          },
-          {
-            "time": "10:00 AM",
-            "title": "Downtown Raleigh Black History Tour",
-            "event_id": "c2896d4e913d",
-            "location": "511 S. Wilmington Street Raleigh, NC 27601",
-            "price": "$10",
-            "notes": "Starts at the Dr. M.T. Pope House Museum on South Wilmington. $10, roughly 90 minutes, entirely on foot."
-          }
-        ],
-        "afternoon": [
-          {
-            "time": "11:00 AM",
-            "title": "The ICONS Tour",
-            "event_id": "257b66ff837b",
-            "location": "11 W Jones St, Raleigh, NC 27601",
-            "price": "Free",
-            "notes": "Free hour-long tour of the museum's signature specimens. Immediately after the walking tour and four blocks north."
-          },
-          {
-            "time": "2:00 PM",
-            "title": "Museum Untold Tour",
-            "event_id": "f26db7451a83",
-            "location": "11 W Jones St, Raleigh, NC 27601",
-            "price": "Free",
-            "notes": "Two hours behind the scenes at the Museum of Natural Sciences. Free but popular — sign up at the desk when you arrive in the morning."
+            "notes": "A second dome show if you are waiting out the worst of the heat. Carolina Skies at 4:30 PM is the live-narrated option."
           }
         ],
         "evening": [
           {
             "time": "7:00 PM",
-            "title": "Chance the Rapper: Coloring Book 10 Year Anniversary Tour",
-            "event_id": "4ead9dc834ad",
-            "location": "500 S McDowell St, Raleigh, NC 27601",
+            "title": "Paperhand Puppet Intervention: Wild Wisdom",
+            "event_id": "5b8a8e55e831",
+            "location": "Chapel Hill, NC",
             "price": "unknown",
-            "notes": "Coloring Book turns ten and the tour is at Red Hat, a ten-minute walk from the museum. Skip it and the day costs $10 total."
+            "notes": "Forest Theatre is an outdoor stone amphitheatre. Opener at 6:20, show at 7. Bring a cushion — the seats are stone — and bug spray."
           }
         ]
       },
       "food": [
         {
           "slot": "breakfast",
-          "place": "Midtown Farmers' Market vendors",
-          "city": "Raleigh",
-          "vegan_dish": "Several bakery and prepared-food stalls run plant-based items — ask, the roster changes weekly",
-          "vegetarian_dish": "Pastry and coffee from the market stalls",
-          "price": "$",
-          "notes": "The Commons at North Hills. Eat there rather than carrying food downtown."
+          "place": "Neal's Deli",
+          "city": "Carrboro",
+          "vegan_dish": "Not the place for it — go to Weaver Street Market's hot bar next door instead",
+          "vegetarian_dish": "Pimento cheese biscuit",
+          "price": "$6-$12",
+          "url": "https://nealsdeli.com/",
+          "notes": "A hundred metres from the market. Weaver Street Market, in the same block, has a fully vegan section on its hot bar and outdoor lawn seating."
         },
         {
           "slot": "lunch",
-          "place": "Transfer Co. Food Hall",
-          "city": "Raleigh",
-          "vegan_dish": "Ask each counter directly — at least one kitchen usually has a fully plant-based bowl",
-          "vegetarian_dish": "Pizza, or a vegetable plate from whichever kitchen is open",
-          "price": "$$",
-          "notes": "500 E Davie St, eight minutes from the museum. Air conditioning and no reservation needed."
+          "place": "Vimala's Curryblossom Cafe",
+          "city": "Chapel Hill",
+          "vegan_dish": "Chana masala with coconut rice, no ghee — ask and they will make it vegan",
+          "vegetarian_dish": "Palak paneer thali",
+          "price": "$13-$19",
+          "url": "https://curryblossom.com/",
+          "notes": "In Courtyard off Franklin Street, five minutes from Morehead. They label vegan dishes on the menu."
         },
         {
           "slot": "dinner",
-          "place": "Vita Vite Midtown or the Red Hat food trucks",
-          "city": "Raleigh",
-          "vegan_dish": "Vita Vite plates a vegan board on request; the amphitheatre trucks usually include one plant-based option",
-          "vegetarian_dish": "Cheese board, flatbread, or truck fries and arepas",
-          "price": "$$",
-          "notes": "If you are going to Red Hat, eat downtown first — inside prices are what you would expect."
+          "place": "Al's Burger Shack",
+          "city": "Chapel Hill",
+          "vegan_dish": "Black bean burger, no cheese, on a vegan bun",
+          "vegetarian_dish": "Black bean burger with pimento cheese",
+          "price": "$10-$16",
+          "url": "https://alsburgershack.com/",
+          "notes": "Fast enough to eat before the 6:20 PM opener at Forest Theatre, which is a seven-minute drive away."
         }
       ],
       "alternatives": [
         {
-          "leg": "Downtown Raleigh Black History Tour (10 AM, entirely on foot)",
-          "good_weather": "Do the whole route; the Pope House itself is worth the extra fifteen minutes afterwards.",
-          "rain": "Storms are in the forecast. The Museum of Natural Sciences is free, four blocks away and open 10–5 — the ICONS Tour at 11 works as a straight substitute."
+          "leg": "Paperhand Puppet Intervention at Forest Theatre (outdoors)",
+          "good_weather": "Arrive by 6:15 for the opener and a decent seat — the stone amphitheatre fills up.",
+          "rain": "Saturday evening turns to showers and thunderstorms likely. Paperhand cancels for weather rather than moving indoors, so check their site the afternoon of. The indoor swap is Schur with Fai Laci at Cat's Cradle Back Room (8 PM) — six minutes from Carrboro."
         },
         {
-          "leg": "Chance the Rapper at Red Hat Amphitheater (7 PM, open-air)",
-          "good_weather": "Walk down from the museum and eat on Fayetteville Street on the way.",
-          "rain": "Red Hat is uncovered. ComedyWorx runs a family-friendly stand-up show at 7 PM on West Morgan Street if the evening washes out."
+          "leg": "Family Nature Walks (10 AM, outdoors)",
+          "good_weather": "Fine at ten; it will already be in the high 80s.",
+          "rain": "Move it indoors to Morehead early — the 10:30 AM Magic Tree House Space Mission is aimed at the same age group."
         }
       ],
       "practical_notes": [
-        "The Museum of Natural Sciences has free general admission every day — only some programmes are ticketed.",
-        "Museum Untold Tour spots are limited and go at the front desk; ask when you arrive for the ICONS Tour.",
-        "Red Hat has a clear-bag policy and the gates open about an hour before the show.",
-        "Downtown parking decks are free on Saturdays; street meters are not enforced."
+        "The Carrboro market is cash-and-card, but several farmers are cash-preferred — bring some.",
+        "Forest Theatre has no parking lot of its own; use the Country Club Road spaces and walk in.",
+        "98°F with evening storms: the outdoor legs are bookends, and the middle of the day is deliberately in a dome.",
+        "Morehead sells dome shows individually; you do not need the exhibit ticket."
       ],
       "event_ids": [
-        "be952d39dcd6",
-        "c2896d4e913d",
-        "257b66ff837b",
-        "f26db7451a83",
-        "4ead9dc834ad"
+        "d3fedc2a9106",
+        "dc8f21621091",
+        "0eb33de648e3",
+        "c287d121e061",
+        "5b8a8e55e831"
       ]
     },
     {
-      "id": "pittsboro-chatham-day-trip",
-      "title": "Pittsboro — Sculpture Farm, Tigers, Piano",
-      "theme": "A 40-minute drive out of Raleigh into Chatham County for a free sculpture show on a working farm",
-      "anchor_city": "Pittsboro",
-      "date": "2026-08-29",
+      "id": "labor-day-durham-bulls",
+      "title": "Labor Day in Durham — Playground Pints and a 5:05 First Pitch",
+      "theme": "The one genuinely comfortable day of the week, spent mostly outside",
+      "anchor_city": "Durham",
+      "date": "2026-09-07",
       "weather": {
-        "summary": "Chance Showers And Thunderstorms",
-        "temp_f": 86
+        "summary": "Mostly Sunny",
+        "temp_f": 85
       },
-      "drive_time": "40 minutes from Raleigh, 25 from Chapel Hill. Once you are in Chatham the legs are 10–15 minutes apart; JimGin Farm is on a gravel road southwest of town.",
-      "cost_range": "$0–$45 per person. The market and the sculpture show are free; the tiger rescue tour is ticketed.",
-      "overview": "Come Out and Play is in its 23rd year — more than 50 artists showing sculpture across a 17-acre homestead, free food, live music, noon until dark. It is the reason to make the drive. Build the rest of the day around it: the Chatham Mills market first, Carolina Tiger Rescue's twilight tour after, and piano at The Sycamore to finish.",
+      "drive_time": "Everything is downtown Durham. The Glass Jug to the ballpark is a 12-minute walk; park once at American Tobacco.",
+      "cost_range": "$20–$50 per person. The playground afternoon is free; Bulls tickets start low and the Pinhook show is the optional add-on.",
+      "overview": "85°F and mostly sunny — after three days at 98–100°F this is the day to be outdoors, and the schedule leans into it. Pints at the Playground runs free all afternoon at the Glass Jug downtown, the Bulls play Nashville at 5:05 in the last home stand of the season, and if you still have a night in you, The Pinhook has an all-ages electronic bill at 7:30.",
+      "schedule": {
+        "morning": [
+          {
+            "time": "10:45 AM",
+            "title": "Live Animal Feeding — Ocean Habitat",
+            "event_id": "c9ba36b8818c",
+            "location": "11 West Jones Street, Raleigh, NC 27601",
+            "price": "Free",
+            "notes": "Only if you are starting from Raleigh — it is a 30-minute drive to Durham afterwards. Otherwise sleep in; the day does not really begin until two."
+          }
+        ],
+        "afternoon": [
+          {
+            "time": "2:00 PM",
+            "title": "Pints at the Playground",
+            "event_id": "4fe4fe0cb745",
+            "location": "Durham, NC",
+            "price": "Free",
+            "notes": "Free, outdoors, four hours, and explicitly built for adults with small children. The Glass Jug downtown is a 12-minute walk from the ballpark, so you can leave straight for first pitch."
+          }
+        ],
+        "evening": [
+          {
+            "time": "5:05 PM",
+            "title": "Durham Bulls vs. Nashville Sounds",
+            "event_id": "c6d9628f8287",
+            "location": "409 Blackwell St, Durham, NC 27701",
+            "price": "unknown",
+            "notes": "A Labor Day afternoon start. At 85°F the third-base concourse holds the shade; the Blue Monster side bakes until about seven."
+          },
+          {
+            "time": "7:30 PM",
+            "title": "Spike Hellis / NUXX / Corpse Dust",
+            "event_id": "6c6e6c87c77e",
+            "location": "117 W Main St, Durham, NC 27701",
+            "price": "unknown",
+            "notes": "All ages, at The Pinhook, four blocks from the ballpark. Only worth it if you leave the game around the seventh."
+          }
+        ]
+      },
+      "food": [
+        {
+          "slot": "lunch",
+          "place": "Durham Food Hall",
+          "city": "Durham",
+          "vegan_dish": "Jamaican jerk jackfruit bowl from the Caribbean stall",
+          "vegetarian_dish": "Margherita from the wood-fired pizza counter",
+          "price": "$12-$18",
+          "url": "https://durhamfoodhall.com/",
+          "notes": "Several counters under one roof, so a mixed group can sort itself out. Air-conditioned, and eight minutes from the Glass Jug."
+        },
+        {
+          "slot": "dinner",
+          "place": "DBAP concessions",
+          "city": "Durham",
+          "vegan_dish": "The ballpark's veggie dog, ordered plain",
+          "vegetarian_dish": "Loaded nachos, no chili",
+          "price": "$8-$16",
+          "url": "https://www.milb.com/durham/ballpark",
+          "notes": "Thin pickings for vegans. If that matters, eat at the food hall first and treat the game as dessert."
+        }
+      ],
+      "alternatives": [
+        {
+          "leg": "Durham Bulls vs. Nashville Sounds (outdoors, 5:05 PM)",
+          "good_weather": "Mostly sunny at 85°F — the best baseball weather of the week. Sit on the third-base side.",
+          "rain": "No rain in the Labor Day forecast, but if a cell moves through, Line Dancing at Motorco (7 PM, free) and Trivia Night Mondays at Ponysaurus (6:30 PM) are both indoors and both within a mile."
+        },
+        {
+          "leg": "Pints at the Playground (outdoors, 2 PM)",
+          "good_weather": "Four hours in the open. Sunscreen; there is limited shade.",
+          "rain": "Move it to Outer Loop Arts — Paint Pouring or the Printmaking Workshop, both 6 PM and $25."
+        }
+      ],
+      "practical_notes": [
+        "This is the last Bulls home stand of the season — Nashville is in town Monday, Wednesday and Thursday.",
+        "85°F and mostly sunny is the mildest day in the window; the two days either side are near 90°F and the three before it are near 100°F.",
+        "American Tobacco parking decks are the easy option and put you between the Glass Jug, the ballpark and dinner.",
+        "Marbles Kids Museum is closed Monday through Friday this week; do not plan a Durham-plus-Marbles day."
+      ],
+      "event_ids": [
+        "c9ba36b8818c",
+        "4fe4fe0cb745",
+        "c6d9628f8287",
+        "6c6e6c87c77e"
+      ]
+    },
+    {
+      "id": "hopscotch-opening-night-raleigh",
+      "title": "Hopscotch Opening Night — Free Day Parties, Then the Real Thing",
+      "theme": "Downtown Raleigh on the first day of Hopscotch, starting with the shows that cost nothing",
+      "anchor_city": "Raleigh",
+      "date": "2026-09-10",
+      "weather": null,
+      "drive_time": "All downtown Raleigh and all walkable. Slim's, Kings, the Pour House, Lincoln Theatre and City Plaza sit within three blocks of each other.",
+      "cost_range": "$0–$180 per person. The day parties are free; a 3-day GA pass is $179 and VIP is $399.",
+      "overview": "Hopscotch runs September 10–12 across City Plaza, Moore Square and a ring of downtown clubs. Thursday is opening day, and it starts with free, unbadged day parties: the Wake Forest Listening Room takes Slim's from noon, and Hopscotch Goes Hardcore runs free at the Pour House from 12:30. Dexter and The Moonrocks close the City Plaza stage that night. You can do the whole afternoon for nothing and decide about a pass afterwards.",
+      "schedule": {
+        "morning": [
+          {
+            "time": "10:00 AM",
+            "title": "Public Library Pop-Up",
+            "event_id": "41119255a22f",
+            "location": "Raleigh, NC",
+            "price": "Free",
+            "notes": "Free, two hours, at Gipson Play Plaza in Dix Park. A quiet start before downtown fills up — and a ten-minute drive from the day parties."
+          }
+        ],
+        "afternoon": [
+          {
+            "time": "12:00 PM",
+            "title": "The Wake Forest Listening Room Presents",
+            "event_id": "ae5008e5d40c",
+            "location": "227 S Wilmington St, Raleigh, NC 27601",
+            "price": "Free",
+            "notes": "Free show, doors at noon, five hours of it at Slim's. No festival pass needed."
+          },
+          {
+            "time": "12:30 PM",
+            "title": "(DAY) Hopscotch Goes Hardcore",
+            "event_id": "9f0651ba769c",
+            "location": "224 S Blount St, Raleigh, NC 27601",
+            "price": "Free",
+            "notes": "Commitment, Muscle, Mean Habit and more, free at the Pour House. Doors noon. Two blocks from Slim's, so you can move between them."
+          }
+        ],
+        "evening": [
+          {
+            "time": "5:00 PM",
+            "title": "Hopscotch Music Festival 2026",
+            "event_id": "de22c69aacf2",
+            "location": "Raleigh, NC",
+            "price": "$179 3-day GA / $399 VIP",
+            "notes": "City Plaza is the outdoor main stage. Dexter and The Moonrocks close Thursday, with Momma and Liz Cooper also on the day's bill."
+          },
+          {
+            "time": "8:00 PM",
+            "title": "Hopscotch Music Festival — Night 1 (Lincoln Theatre)",
+            "event_id": "ae0506421d52",
+            "location": "126 E Cabarrus St, Raleigh, NC 27601",
+            "price": "$179 3-day pass",
+            "notes": "Club shows run in parallel with the plaza — Lincoln Theatre and Kings (from 9 PM) are both official venues, and a GA pass covers them."
+          }
+        ]
+      },
+      "food": [
+        {
+          "slot": "lunch",
+          "place": "Bida Manda",
+          "city": "Raleigh",
+          "vegan_dish": "Vegan pho with tofu and mushroom broth",
+          "vegetarian_dish": "Crispy rice salad",
+          "price": "$16-$26",
+          "url": "https://bidamanda.com/",
+          "notes": "Laotian, on Blount Street between Slim's and the Pour House. Ask for the vegetarian broth — the default is bone-based."
+        },
+        {
+          "slot": "dinner",
+          "place": "Garland",
+          "city": "Raleigh",
+          "vegan_dish": "The vegetable thali, ordered vegan — most of the components already are",
+          "vegetarian_dish": "Chana masala with roti",
+          "price": "$18-$28",
+          "url": "https://garlandraleigh.com/",
+          "notes": "Same block as Bida Manda, and it stays open late enough to eat between the plaza and the club shows."
+        }
+      ],
+      "alternatives": [
+        {
+          "leg": "Hopscotch City Plaza main stage (outdoors)",
+          "good_weather": "September 10 is at the edge of the National Weather Service forecast horizon, so there is no verified forecast for it yet — check before you go.",
+          "rain": "The club shows are the built-in rain plan: Lincoln Theatre, Kings, Nash Hall, Neptunes, Slim's and the Pour House are all indoors and all covered by the same pass."
+        },
+        {
+          "leg": "The whole day",
+          "good_weather": "The free day parties make this work with no pass at all.",
+          "rain": "Both day parties are indoors already."
+        }
+      ],
+      "practical_notes": [
+        "The noon and 12:30 day parties are free and do not require a festival pass — that is the cheap way into opening day.",
+        "A 3-day GA pass is $179 and VIP is $399; single-day passes exist but were not priced on the passes page.",
+        "Official venues this year: City Plaza, Moore Square, King's, Lincoln Theatre, Nash Hall, Neptunes, Slims and The Pour House.",
+        "Downtown parking decks fill early on a festival Thursday — the Wilmington Street deck is the closest to the cluster."
+      ],
+      "event_ids": [
+        "41119255a22f",
+        "ae5008e5d40c",
+        "9f0651ba769c",
+        "de22c69aacf2",
+        "ae0506421d52",
+        "e5a8ff8a4212"
+      ]
+    },
+    {
+      "id": "pittsboro-chatham-slow-saturday",
+      "title": "Pittsboro & Chatham County — Markets, Tigers, Sculpture",
+      "theme": "The slow-lane version of Saturday, 45 minutes west of Raleigh",
+      "anchor_city": "Pittsboro",
+      "date": "2026-09-05",
+      "weather": {
+        "summary": "Sunny then Chance Showers And Thunderstorms",
+        "temp_f": 98
+      },
+      "drive_time": "About 45 minutes from Raleigh to Pittsboro. Chatham Mills to Fearrington is 8 minutes; Carolina Tiger Rescue is 15 minutes south.",
+      "cost_range": "$15–$50 per person. The market and the wine tasting are free; the tiger tour is the paid centrepiece.",
+      "overview": "Chatham County runs on a different clock, which suits a 98°F Saturday. The Chatham Mills market opens at eight, the Belted Goat pours free wine at one, and the day builds to Twilight Tours at Carolina Tiger Rescue at five — deliberately timed for when the big cats actually move. Old-Fashioned Farmers' Days at Silk Hope is the bigger-festival alternative if you want a full day outdoors.",
       "schedule": {
         "morning": [
           {
             "time": "8:00 AM",
             "title": "Chatham Mills Farmers Market",
-            "event_id": "ec5e0c3c4734",
-            "location": "480 Hillsboro Street, Pittsboro, NC 27312",
+            "event_id": "1fe7b73bdaa4",
+            "location": "480 Hillsboro St, Pittsboro, NC 27312",
+            "price": "Free",
+            "notes": "Eight to noon, and worth being early for at 98°F. The mill building behind it has shade and a coffee counter."
+          },
+          {
+            "time": "9:00 AM",
+            "title": "Old-Fashioned Farmers' Days (alternative)",
+            "event_id": "44e0773acb32",
+            "location": "Siler City, NC",
             "price": "unknown",
-            "notes": "Saturday market at Chatham Mills, on the way in from Chapel Hill. Small, good, and done by noon."
+            "notes": "A two-day heritage festival at Silk Hope Farm Heritage Park — antique tractors, crafts, demonstrations. About 50 minutes from Raleigh and almost entirely outdoors, so it is the good-weather-only option today."
           }
         ],
         "afternoon": [
           {
             "time": "12:00 PM",
             "title": "Come Out and Play Sculpture Show",
-            "event_id": "e96b7ce15c28",
-            "location": "150 Wild Horse Run, Pittsboro, NC 27312",
+            "event_id": "769b2c8e9736",
+            "location": "Pittsboro, NC",
+            "price": "unknown",
+            "notes": "An outdoor sculpture show across a 17-acre homestead, open until eight. Walkable in an hour; there is tree cover across much of it."
+          },
+          {
+            "time": "1:00 PM",
+            "title": "Free Wine Tastings at The Belted Goat",
+            "event_id": "42ce6a9cb027",
+            "location": "Pittsboro, NC",
             "price": "Free",
-            "notes": "150 Wild Horse Run. Free, runs noon until dark, and the hosts feed you. Wear shoes you do not mind getting dusty — it is a farm, not a gallery."
+            "notes": "Free, indoors, two hours, in Fearrington Village. The right place to sit out the hottest part of the day."
           }
         ],
         "evening": [
           {
             "time": "5:00 PM",
             "title": "Twilight Tours at Carolina Tiger Rescue",
-            "event_id": "4058d3255426",
-            "location": "1940 Hanks Chapel Road, Pittsboro, NC 27312",
+            "event_id": "fabea404d8c1",
+            "location": "Pittsboro, NC",
             "price": "unknown",
-            "notes": "Carolina Tiger Rescue's twilight tour is when the cats are actually awake. Book ahead; walk-ups are not guaranteed."
+            "notes": "Guided, outdoors, and timed for when tigers, lions and caracals get active. Book ahead — twilight tours sell out. Closed shoes required."
           },
-          {
-            "time": "6:00 PM",
-            "title": "Live Piano Music at The Sycamore",
-            "event_id": "15dcfd42990c",
-            "location": "480 Hillsboro Street, Suite 500, Pittsboro, NC 27312",
-            "price": "unknown",
-            "notes": "The Sycamore at Chatham Mills, back in town. Quiet end to the day, no cover."
-          }
-        ]
-      },
-      "food": [
-        {
-          "slot": "breakfast",
-          "place": "79° West",
-          "city": "Pittsboro",
-          "vegan_dish": "Oat-milk coffee and the avocado toast without the feta — the counter is used to the ask",
-          "vegetarian_dish": "Egg-and-cheese biscuit or a pastry",
-          "price": "$",
-          "notes": "Downtown Pittsboro, opens early. Fuel before the market."
-        },
-        {
-          "slot": "lunch",
-          "place": "Come Out and Play's own tables",
-          "city": "Pittsboro",
-          "vegan_dish": "The hosts put out free food each day and it is usually vegetable-heavy — ask what is dairy-free before you plate up",
-          "vegetarian_dish": "Whatever is on the farm tables; there is normally a meatless spread",
-          "price": "$",
-          "notes": "Free food is part of the show's whole idea. Bring water anyway — it is a farm in August."
-        },
-        {
-          "slot": "dinner",
-          "place": "The Modern Life Deli & Drinks",
-          "city": "Pittsboro",
-          "vegan_dish": "Ask for a build-your-own sandwich with hummus and vegetables, no cheese or aioli",
-          "vegetarian_dish": "Grilled cheese or the veggie sandwich",
-          "price": "$$",
-          "notes": "On Hillsboro Street in town. Simple, reliable, and open late enough after the tiger tour."
-        }
-      ],
-      "alternatives": [
-        {
-          "leg": "Come Out and Play Sculpture Show (noon until dark, entirely outdoors on a farm)",
-          "good_weather": "Walk the whole 17 acres and stay for the live music as the light goes.",
-          "rain": "Scattered storms are forecast and there is almost no cover on the farm. The Chatham Mills buildings in town stay open, and the Carolina Tiger Rescue tour runs rain or shine."
-        },
-        {
-          "leg": "Twilight Tours at Carolina Tiger Rescue (5 PM, outdoors on gravel paths)",
-          "good_weather": "The 5 PM slot is when the cats move; go then rather than earlier.",
-          "rain": "Tours run in light rain — check the rescue's own page before driving out, and keep The Sycamore's piano set as the fallback."
-        }
-      ],
-      "practical_notes": [
-        "Pittsboro is inside the Triangle ring but it is still a 40-minute drive from Raleigh — this is a whole-day trip, not an add-on.",
-        "JimGin Farm is at 150 Wild Horse Run, down a gravel road. Phone signal is patchy; screenshot the directions.",
-        "Carolina Tiger Rescue tours must be booked in advance and are not suitable for very young children.",
-        "The sculpture show repeats every Saturday through September 26 if this weekend does not work."
-      ],
-      "event_ids": [
-        "ec5e0c3c4734",
-        "e96b7ce15c28",
-        "4058d3255426",
-        "15dcfd42990c"
-      ]
-    },
-    {
-      "id": "hillsborough-last-friday",
-      "title": "Hillsborough — Last Fridays Art Walk",
-      "theme": "Nineteen galleries open late on one small-town main street, free, with a telescope at the end",
-      "anchor_city": "Hillsborough",
-      "date": "2026-08-28",
-      "weather": {
-        "summary": "Showers And Thunderstorms Likely",
-        "temp_f": 87
-      },
-      "drive_time": "35 minutes from Raleigh, 20 from Chapel Hill or Durham. Once you are on Churton Street everything is on foot.",
-      "cost_range": "$0–$35 per person. The art walk and the star party are free; the money goes on dinner.",
-      "overview": "Last Fridays is the best free night out in Orange County and it runs 5:30 to 9. Nineteen venues open with artist receptions, demonstrations and live music, the Makers Market sets up on the Old Courthouse lawn, and the Live on the Lawn series covers everything from drums to puppets. The Burwell School's star party at 7:30 gives the evening a second act.",
-      "schedule": {
-        "morning": [],
-        "afternoon": [
-          {
-            "time": "6:00 PM",
-            "title": "Musical Notes at Margaret Lane Gallery",
-            "event_id": "655ee2f16644",
-            "location": "121 West Margaret Lane, Hillsborough, NC 27278",
-            "price": "unknown",
-            "notes": "Margaret Lane Gallery's curated group show — one of the receptions that opens with the art walk. Start here and work north up Churton."
-          }
-        ],
-        "evening": [
-          {
-            "time": "5:30 PM",
-            "title": "Last Fridays & the Art Walk",
-            "event_id": "9b70fb705025",
-            "location": "144 E King St, Hillsborough, NC 27278",
-            "price": "Free",
-            "notes": "Free, and free parking, which is not nothing in a town this size. Start at the Old Courthouse lawn and let the Makers Market point you at the rest."
-          },
-          {
-            "time": "7:30 PM",
-            "title": "Star Party!",
-            "event_id": "4d9f8bb5de53",
-            "location": "319 North Churton Street, Hillsborough, NC 27278",
-            "price": "unknown",
-            "notes": "Telescopes on the Burwell School lawn. Clear sky is not guaranteed tonight, so treat it as a bonus rather than the plan."
-          }
-        ]
-      },
-      "food": [
-        {
-          "slot": "breakfast",
-          "place": "Cup A Joe Hillsborough",
-          "city": "Hillsborough",
-          "vegan_dish": "Oat-milk coffee and a plain bagel with jam",
-          "vegetarian_dish": "Bagel and cream cheese",
-          "price": "$",
-          "notes": "If you are making a full day of it, start here before the shops open."
-        },
-        {
-          "slot": "lunch",
-          "place": "Hillsborough BBQ Company",
-          "city": "Hillsborough",
-          "vegan_dish": "Ask which sides are cooked without pork fat — the slaw and the hush puppies vary by day, and they will tell you",
-          "vegetarian_dish": "A plate of sides: mac and cheese, slaw, hush puppies",
-          "price": "$$",
-          "notes": "236 S Nash St. Not a vegan destination, but honest about what is in the pot."
-        },
-        {
-          "slot": "dinner",
-          "place": "Yonder: Southern Cocktails & Brew",
-          "city": "Hillsborough",
-          "vegan_dish": "Ask the kitchen for the vegetable plate built without butter; the bar menu changes often",
-          "vegetarian_dish": "Pimento cheese and a vegetable plate",
-          "price": "$$",
-          "notes": "On Churton Street, inside the art-walk footprint. Live music most weekends."
-        }
-      ],
-      "alternatives": [
-        {
-          "leg": "Last Fridays & the Art Walk (5:30–9 PM, street-level, mostly outdoors between venues)",
-          "good_weather": "Walk the whole of Churton Street and stay for Live on the Lawn.",
-          "rain": "Showers and thunderstorms are likely tonight. The nineteen venues are all indoors — the art walk survives rain, the Makers Market and the lawn performances do not."
-        },
-        {
-          "leg": "Star Party at the Burwell School Historic Site (7:30 PM, open lawn)",
-          "good_weather": "Stay past dark; the sky over Hillsborough is genuinely better than the Triangle's.",
-          "rain": "Cancelled by cloud, not just rain. Fright Night at Eagle Lodge is the same evening and indoors."
-        }
-      ],
-      "practical_notes": [
-        "5:30 to 9 PM, free, and parking downtown is free too.",
-        "Details for each month firm up the week before — the Hillsborough Arts Council page is the one to check on the day.",
-        "Showers and thunderstorms are likely: the gallery receptions are indoors, the lawn programming is not.",
-        "Hillsborough is inside the Triangle ring but it is a 35-minute drive from Raleigh — plan the evening around one trip, not two."
-      ],
-      "event_ids": [
-        "9b70fb705025",
-        "655ee2f16644",
-        "4d9f8bb5de53"
-      ]
-    },
-    {
-      "id": "cary-friday-night-market",
-      "title": "Cary Friday — Night Market, Drums, Nineties Rock",
-      "theme": "Three free things in one downtown park, then a 10-minute drive to a lakeside amphitheatre",
-      "anchor_city": "Cary",
-      "date": "2026-08-28",
-      "weather": {
-        "summary": "Showers And Thunderstorms Likely",
-        "temp_f": 87
-      },
-      "drive_time": "Everything downtown is one walk from the Academy Street decks. Koka Booth is 10 minutes south, and it has its own paid lots.",
-      "cost_range": "$0 for the downtown half; add a Koka Booth ticket if you want the concert.",
-      "overview": "Downtown Cary Park stacks three free events into one Friday evening — the Night Market at five, a West African drum and fire show at seven, and a swing dance with lessons at half past. If you would rather end the night with Blues Traveler, Gin Blossoms and Spin Doctors, Koka Booth is ten minutes away and starts at seven.",
-      "schedule": {
-        "morning": [],
-        "afternoon": [
           {
             "time": "5:00 PM",
-            "title": "Cary Night Market",
-            "event_id": "4155a33ed14d",
-            "location": "327 S Academy St, Cary, NC 27511",
-            "price": "Free",
-            "notes": "Triangle artisans, food and drink in the park until nine. Go early if you actually want to buy something."
-          }
-        ],
-        "evening": [
-          {
-            "time": "7:00 PM",
-            "title": "One Tribe Drum Circle and Fire Show",
-            "event_id": "9ff6d5474b8d",
-            "location": "327 S Academy St, Cary, NC 27511",
-            "price": "Free",
-            "notes": "Caroleeena & Friends on the Old Library site next to the Ivey-Ellington House — drumming, dancing and a fire show. Free."
-          },
-          {
-            "time": "7:30 PM",
-            "title": "Discover Dance: Swing Session",
-            "event_id": "638d9453a2c6",
-            "location": "327 S Academy St, Cary, NC 27511",
-            "price": "Free",
-            "notes": "Charleston and swing with lessons throughout, so turning up alone and knowing nothing is the expected case."
-          },
-          {
-            "time": "7:00 PM",
-            "title": "Blues Traveler & Gin Blossoms with Spin Doctors",
-            "event_id": "0aac49670cb1",
-            "location": "8003 Regency Pkwy, Cary, NC 27518",
+            "title": "Live Music at Galloway's",
+            "event_id": "234ddc8e9ff5",
+            "location": "Pittsboro, NC",
             "price": "unknown",
-            "notes": "The alternative ending: Blues Traveler and Gin Blossoms with Spin Doctors on the lawn at Koka Booth. Pick this or the park, not both."
+            "notes": "The alternative evening if you skip the tigers — two hours of live music back in Fearrington Village."
           }
         ]
       },
       "food": [
         {
           "slot": "breakfast",
-          "place": "Chanticleer Cafe & Bakery",
-          "city": "Cary",
-          "vegan_dish": "Ask which of the morning pastries are made without butter — usually at least one is",
-          "vegetarian_dish": "Quiche or a breakfast pastry",
-          "price": "$",
-          "notes": "6490 Tryon Rd. Worth the detour if you are starting the day in Cary."
+          "place": "Chatham Mills market stalls",
+          "city": "Pittsboro",
+          "vegan_dish": "Whatever the bakery stall has without butter — ask; several Chatham bakers do vegan runs",
+          "vegetarian_dish": "Egg-and-cheese biscuit from the prepared-food vendors",
+          "price": "$5-$12",
+          "url": "https://visitpittsboro.com/event/chatham-mills-farmers-market/2026-09-05/",
+          "notes": "Eat at the market rather than hunting for a cafe — Pittsboro is small and Saturday mornings are busy."
         },
         {
           "slot": "lunch",
-          "place": "Pharmacy Bottle + Beverage",
-          "city": "Cary",
-          "vegan_dish": "Ask the kitchen to build the veg sandwich without aioli or cheese",
-          "vegetarian_dish": "Grilled cheese or the vegetable sandwich",
-          "price": "$$",
-          "notes": "Academy Street, two minutes from the park."
+          "place": "The Modern Life Deli & Drinks",
+          "city": "Pittsboro",
+          "vegan_dish": "Hummus and roasted vegetable sandwich, no aioli",
+          "vegetarian_dish": "Grilled cheese with tomato jam",
+          "price": "$10-$16",
+          "url": "https://themodernlifedeli.com/",
+          "notes": "On the Pittsboro circle, air-conditioned, and quick. Locally known as The MOD."
         },
         {
           "slot": "dinner",
-          "place": "Cary Night Market food vendors",
-          "city": "Cary",
-          "vegan_dish": "Vendors rotate weekly; ask before you queue, several trucks run plant-based menus",
-          "vegetarian_dish": "Arepas, pizza or noodles from the market trucks",
-          "price": "$",
-          "notes": "Eat in the park. If you are going to Koka Booth instead, eat before you drive — lawn concessions are slow."
+          "place": "The Sycamore at Chatham Mills",
+          "city": "Pittsboro",
+          "vegan_dish": "Ask for the vegetable plate built vegan — the kitchen does it on request",
+          "vegetarian_dish": "Seasonal vegetable pasta",
+          "price": "$18-$30",
+          "url": "https://www.thesycamoreatchathammills.com/",
+          "notes": "Back at Chatham Mills, so you end where you started. Live piano on Tuesdays and Thursdays, not Saturdays."
         }
       ],
       "alternatives": [
         {
-          "leg": "Cary Night Market and the park programming (5–9 PM, all outdoors)",
-          "good_weather": "Do the whole run: market, drums, then the swing session on the plaza.",
-          "rain": "Showers and thunderstorms are likely tonight. The Cary Theater is a two-minute walk and has a comedy show at 8 PM; the park events are the ones that cancel."
+          "leg": "Twilight Tours at Carolina Tiger Rescue (outdoors, 5 PM)",
+          "good_weather": "Go as written — five to eight is exactly when the cats are worth watching.",
+          "rain": "Saturday evening turns to thunderstorms likely. The rescue cancels tours in lightning, so call ahead. The indoor swap is Live Music at Galloway's in Fearrington (5 PM) or a drive back to Cat's Cradle in Carrboro (8 PM)."
         },
         {
-          "leg": "Blues Traveler & Gin Blossoms at Koka Booth (7 PM, lawn and covered seating)",
-          "good_weather": "Lawn tickets and a blanket by the lake is the way to see this one.",
-          "rain": "The reserved section is covered; the lawn is not. Buy reserved if the radar looks bad, or stay downtown and take the indoor comedy show."
+          "leg": "Come Out and Play Sculpture Show (outdoors, midday)",
+          "good_weather": "Fine, but go for the tree-covered sections at 98°F.",
+          "rain": "Swap to the free Belted Goat tasting earlier and stay indoors in Fearrington."
         }
       ],
       "practical_notes": [
-        "All three downtown events are free and within one block of each other in and around Downtown Cary Park.",
-        "The Academy Street and Walker Street decks are free and the closest parking to the park.",
-        "Koka Booth is 10 minutes south at 8003 Regency Parkway with its own paid lots; leaving after an encore takes a while.",
-        "87°F and storms likely — this is the evening where checking radar at 4 PM actually changes your plan."
+        "Carolina Tiger Rescue requires closed-toe shoes and advance booking; it is a sanctuary, not a zoo, and tours run rain-or-shine except in lightning.",
+        "Chatham County is 40-50 minutes from Raleigh — comfortably a same-day trip, but do not plan to bounce back and forth.",
+        "98°F with evening storms: the free indoor tasting at 1 PM is the deliberate heat break.",
+        "Several Chatham market vendors are cash-preferred."
       ],
       "event_ids": [
-        "4155a33ed14d",
-        "9ff6d5474b8d",
-        "638d9453a2c6",
-        "0aac49670cb1"
+        "1fe7b73bdaa4",
+        "44e0773acb32",
+        "769b2c8e9736",
+        "42ce6a9cb027",
+        "fabea404d8c1",
+        "234ddc8e9ff5"
       ]
     },
     {
-      "id": "durham-sunday-chapel-to-soccer",
-      "title": "Durham Sunday — Chapel, Day Game, Chamber Music",
-      "theme": "The one properly sunny day of the week, spent on Duke's campus and at a 1:05 first pitch",
-      "anchor_city": "Durham",
-      "date": "2026-08-30",
-      "weather": {
-        "summary": "Mostly Sunny then Slight Chance Showers And Thunderstorms",
-        "temp_f": 89
-      },
-      "drive_time": "Duke's campus to the ballpark is 10 minutes; Koskinen Stadium is 5 minutes back onto West Campus. Roughly 30 minutes of driving all day.",
-      "cost_range": "$25–$70 per person depending on how many ticketed legs you take. The chapel tour is free.",
-      "overview": "89°F and mostly sunny — the first day this week without storms in the forecast, so this is the one to spend outside. A print workshop and a free chapel tour fill the morning, the Bulls play a 1:05 matinee, and the evening splits between chamber music indoors and Duke men's soccer under lights.",
-      "schedule": {
-        "morning": [
-          {
-            "time": "11:00 AM",
-            "title": "Printmaking workshop",
-            "event_id": "e778e5a768df",
-            "location": "803 Ramseur St., Durham, NC 27701",
-            "price": "$25",
-            "notes": "Outer Loop Arts, $25, two hours and you leave with prints. Book ahead — these fill."
-          },
-          {
-            "time": "12:15 PM",
-            "title": "Public Tour of Duke Chapel",
-            "event_id": "011217a5deaa",
-            "location": "401 Chapel Dr, Durham, NC 27708",
-            "price": "Free",
-            "notes": "Free 45-minute tour of Duke Chapel. Cool stone in the middle of an 89°F day, which is the real argument for it."
-          }
-        ],
-        "afternoon": [
-          {
-            "time": "1:05 PM",
-            "title": "Durham Bulls vs. Norfolk Tides",
-            "event_id": "9979416edb57",
-            "location": "409 Blackwell St, Durham, NC 27701",
-            "price": "unknown",
-            "notes": "Sunday matinee against Norfolk. Full sun for most of it — the third-base side gets shade first."
-          }
-        ],
-        "evening": [
-          {
-            "time": "3:00 PM",
-            "title": "MALLARMÉ — Where Cultures Meet: Chamber Music by American Women",
-            "event_id": "d04bd5ea4d3c",
-            "location": "Fullsteam ATC",
-            "price": "unknown",
-            "notes": "Mallarmé Music playing chamber works by American women. Two hours, indoors, and it overlaps the back end of the ballgame — pick one."
-          },
-          {
-            "time": "6:00 PM",
-            "title": "Duke Men's Soccer vs Georgetown",
-            "event_id": "656d8790e6c7",
-            "location": "306 Towerview Rd, Durham, NC 27708",
-            "price": "unknown",
-            "notes": "Duke against Georgetown at Koskinen. Free for the general public most nights; the 6 PM start means the worst of the heat has gone."
-          }
-        ]
-      },
-      "food": [
-        {
-          "slot": "breakfast",
-          "place": "Monuts",
-          "city": "Durham",
-          "vegan_dish": "Monuts keeps vegan doughnuts on the rack most mornings and marks them",
-          "vegetarian_dish": "Egg-and-cheese biscuit or a cake doughnut",
-          "price": "$",
-          "notes": "1002 9th St. Queue moves fast; go before 10 on a Sunday."
-        },
-        {
-          "slot": "lunch",
-          "place": "Ballpark concessions or Pie Pushers",
-          "city": "Durham",
-          "vegan_dish": "Pie Pushers will build a pizza without cheese; the DBAP has a veggie dog",
-          "vegetarian_dish": "Cheese pizza, ballpark pretzel, fries",
-          "price": "$$",
-          "notes": "Eat before the gates if you want anything better than concession food."
-        },
-        {
-          "slot": "dinner",
-          "place": "Guasaca or Nanataco on 9th Street",
-          "city": "Durham",
-          "vegan_dish": "Guasaca's black-bean arepa without cheese; Nanataco does a mushroom taco with no dairy",
-          "vegetarian_dish": "Cheese arepa, or the veggie taco plate",
-          "price": "$",
-          "notes": "Both are quick and a few minutes from Koskinen — useful either side of the soccer."
-        }
-      ],
-      "alternatives": [
-        {
-          "leg": "Durham Bulls matinee (1:05 PM, open-air, full sun)",
-          "good_weather": "89°F and mostly sunny. Sunscreen, and sit on the third-base side for the first shade.",
-          "rain": "Only a slight chance today. If it does turn, the Mallarmé chamber concert at 3 PM (event d04bd5ea4d3c) is indoors and the same afternoon."
-        },
-        {
-          "leg": "Duke Men's Soccer vs Georgetown (6 PM, Koskinen Stadium)",
-          "good_weather": "Best leg of the day — the heat is off by six and the stadium is small enough to see everything.",
-          "rain": "Slight chance of evening storms. Duke Chapel and the Nasher both stay open late enough to be a fallback on campus."
-        }
-      ],
-      "practical_notes": [
-        "89°F and mostly sunny — the only day this week without storms in the daytime forecast.",
-        "The Bulls matinee at 1:05 and the Mallarmé concert at 3:00 overlap. Take one; the itinerary lists both so you can choose.",
-        "Duke Chapel tours are free and start inside the chapel; no booking needed.",
-        "Duke's Koskinen Stadium parking is free on Sundays in the Blue Zone lots."
-      ],
-      "event_ids": [
-        "e778e5a768df",
-        "011217a5deaa",
-        "9979416edb57",
-        "d04bd5ea4d3c",
-        "656d8790e6c7"
-      ]
-    },
-    {
-      "id": "tuesday-96-degrees-indoors",
-      "title": "Tuesday at 96°F — Stay Inside Until Dark",
-      "theme": "The hottest day of the week, planned entirely around air conditioning and two free science talks after sundown",
+      "id": "raleigh-free-thursday-museums",
+      "title": "A Free Raleigh Thursday — Museums, Trivia, Zero Cover",
+      "theme": "How far a Thursday goes on nothing but free admission",
       "anchor_city": "Raleigh",
-      "date": "2026-09-01",
+      "date": "2026-09-03",
       "weather": {
         "summary": "Sunny",
-        "temp_f": 96
+        "temp_f": 98
       },
-      "drive_time": "Downtown Raleigh in the day, then 25 minutes to Carrboro or 25 to Durham for the evening — pick one, they run at the same time.",
-      "cost_range": "$10–$30 per person. Both evening talks are free; the IMAX ticket is the only fixed cost.",
-      "overview": "96°F and sunny is not a day for a farmers market. Marbles' IMAX runs films from 10:15, the Museum of Natural Sciences has free admission and a midday Science TODAY talk, and after dark the Triangle's two free science-in-a-bar nights both land: Carolina Science Cafe in Carrboro and Astronomy on Tap in Durham.",
+      "drive_time": "Downtown Raleigh, walkable end to end. The Gregg Museum is a 10-minute drive out to Hillsborough Street.",
+      "cost_range": "$0–$25 per person. Every scheduled leg here is free; you only pay for food and drinks.",
+      "overview": "98°F and sunny, and this route never charges admission. The Gregg Museum's Black heritage exhibition and the Natural Sciences museum are both free and both cold, Science Trivia at seven is free, and Compass Rose runs free trivia the same night if you would rather have a beer in your hand. It is the cheapest good day in the window.",
       "schedule": {
         "morning": [
           {
-            "time": "10:15 AM",
-            "title": "Animal Kingdom 3D",
-            "event_id": "5c1401ad1193",
-            "location": "201 E Hargett St, Raleigh, NC 27601",
-            "price": "unknown",
-            "notes": "Marbles IMAX, first film of the day. The five-storey screen and the coldest room downtown."
+            "time": "10:00 AM",
+            "title": "Community Stories: Sustaining North Carolina's Black Heritage",
+            "event_id": "70f7927ac2c7",
+            "location": "Raleigh, NC",
+            "price": "Free",
+            "notes": "At the Gregg Museum of Art & Design on the NC State campus. Free, indoors, and rarely crowded on a weekday morning."
           }
         ],
         "afternoon": [
           {
-            "time": "11:30 AM",
-            "title": "Science TODAY: When Wild Animals Meet People",
-            "event_id": "160ff498388f",
-            "location": "121 W Jones St, Raleigh, NC 27603",
-            "price": "Free",
-            "notes": "Free talk at the Nature Research Center on wildlife and people. Museum admission is free too, and it is a four-minute walk from Marbles."
+            "time": "1:00 PM",
+            "title": "Public Tour",
+            "event_id": "11ca1eee088e",
+            "location": "2110 Blue Ridge Road, Raleigh, NC 27607",
+            "price": "unknown",
+            "notes": "The NCMA's free daily tour of the West Building. The museum's collection galleries are free every day; only special exhibitions charge."
+          },
+          {
+            "time": "5:00 PM",
+            "title": "Adaptive Tai Chi in the Park",
+            "event_id": "a43969b1efbe",
+            "location": "2110 Blue Ridge Road, Raleigh, NC 27607",
+            "price": "unknown",
+            "notes": "In the NCMA Museum Park at the Welcome Center. Outdoors at 98°F, so this is the leg to skip if the heat has already won."
           }
         ],
         "evening": [
           {
-            "time": "6:00 PM",
-            "title": "Carolina Science Cafe: NC’s Changing Climate",
-            "event_id": "e1a399419955",
-            "location": "300 E Main St C, Carrboro, NC 27510",
+            "time": "7:00 PM",
+            "title": "Science Trivia",
+            "event_id": "7be337841929",
+            "location": "11 West Jones Street, Raleigh, NC 27601",
             "price": "Free",
-            "notes": "Carolina Science Cafe on North Carolina's changing climate, free, at Haw River Tap & Table in Carrboro."
+            "notes": "Free, an hour, at the Natural Sciences museum. Teams form on the night; you do not need to bring one."
           },
           {
             "time": "7:00 PM",
-            "title": "Astronomy On Tap – Science Talk & Trivia",
-            "event_id": "e669c59908ac",
-            "location": "320 Blackwell St #101, Durham, NC 27701",
+            "title": "Trivia Night at Compass Rose (alternative)",
+            "event_id": "75de10934004",
+            "location": "Raleigh, NC",
             "price": "Free",
-            "notes": "Or Astronomy on Tap in Durham — short pub-friendly talks and trivia, also free. Same evening, opposite ends of the Triangle."
+            "notes": "No entry fee, and there is beer. The version of the same evening for people who do not want to do trivia sober."
+          }
+        ]
+      },
+      "food": [
+        {
+          "slot": "lunch",
+          "place": "Iyla's Southern Kitchen",
+          "city": "Raleigh",
+          "vegan_dish": "Collards cooked without meat plus black-eyed peas and rice — ask, they do it",
+          "vegetarian_dish": "Mac and cheese with two vegetable sides",
+          "price": "$12-$18",
+          "url": "https://iylas.com/",
+          "notes": "Meat-and-three format, so the vegetable plate is a genuine meal rather than a consolation."
+        },
+        {
+          "slot": "dinner",
+          "place": "Iris at the NCMA",
+          "city": "Raleigh",
+          "vegan_dish": "Seasonal vegetable plate, built vegan on request",
+          "vegetarian_dish": "Wood-fired vegetable flatbread",
+          "price": "$18-$32",
+          "url": "https://ncartmuseum.org/visit/dine/",
+          "notes": "In the museum itself, so it slots between the tour and tai chi without moving the car."
+        }
+      ],
+      "alternatives": [
+        {
+          "leg": "Adaptive Tai Chi in the Park (outdoors, 5 PM)",
+          "good_weather": "Sunny at 98°F — go only if you tolerate heat well, and hydrate first.",
+          "rain": "Thursday is clear, so heat rather than rain is the risk. The indoor swap is staying in the NCMA galleries until the museum closes."
+        }
+      ],
+      "practical_notes": [
+        "The NCMA collection galleries, the Natural Sciences museum and the Gregg Museum are all free every day — this itinerary costs nothing but food.",
+        "98°F: the outdoor tai chi leg is genuinely optional, and the rest of the day is air-conditioned.",
+        "NCMA parking is free. Downtown at the Natural Sciences museum, the Wilmington Street deck is the closest.",
+        "Science Trivia fills up; get there by 6:45."
+      ],
+      "event_ids": [
+        "70f7927ac2c7",
+        "11ca1eee088e",
+        "a43969b1efbe",
+        "7be337841929",
+        "75de10934004"
+      ]
+    },
+    {
+      "id": "cary-apex-family-saturday",
+      "title": "Cary & Apex — Market, Film Screen, Free Outdoor Movie",
+      "theme": "A western-Wake family Saturday that ends on a lawn",
+      "anchor_city": "Cary",
+      "date": "2026-09-05",
+      "weather": {
+        "summary": "Sunny then Chance Showers And Thunderstorms",
+        "temp_f": 98
+      },
+      "drive_time": "20 minutes from Raleigh to Cary. Downtown Cary Park to the Cary Theater is a two-minute walk; Apex is 12 minutes further southwest.",
+      "cost_range": "$15–$45 per person. The market and Friday's movie are free; the Cary Theater screenings and the Halle programme are the paid legs.",
+      "overview": "Downtown Cary has quietly become the easiest family Saturday in the Triangle: the farmers market runs 8 to noon in the park, the Cary Theater screens all afternoon two minutes away, and Apex's Halle Cultural Arts Center adds a kids' morning. At 98°F the theatre is the point — it is the only cold room in downtown Cary that holds a crowd.",
+      "schedule": {
+        "morning": [
+          {
+            "time": "8:00 AM",
+            "title": "Cary Farmers Market",
+            "event_id": "08cf081fe4cc",
+            "location": "327 S Academy Street, Cary, NC 27511",
+            "price": "Free",
+            "notes": "Eight to noon at Downtown Cary Park. The park's splash area is the reason to bring children early on a 98°F day."
+          },
+          {
+            "time": "10:30 AM",
+            "title": "SuperFun Saturday",
+            "event_id": "8bc93a4fbbbb",
+            "location": "237 N. Salem Street, Apex, NC",
+            "price": "unknown",
+            "notes": "Two hours of activities at the Halle Cultural Arts Center in downtown Apex, 12 minutes from Cary. Indoors."
+          }
+        ],
+        "afternoon": [
+          {
+            "time": "2:00 PM",
+            "title": "Cookie Queens",
+            "event_id": "1ac340116052",
+            "location": "122 E Chatham St, Cary, NC 27511",
+            "price": "unknown",
+            "notes": "At the Cary Theater, a restored single-screen on Chatham Street. Cold, dark, and two minutes from the park."
+          },
+          {
+            "time": "5:00 PM",
+            "title": "The Sun Never Sets",
+            "event_id": "dc897bd8348a",
+            "location": "122 E Chatham St, Cary, NC 27511",
+            "price": "unknown",
+            "notes": "The second screening if you are waiting out the heat — or skip it and head to Durham for Movies in the Park."
+          }
+        ],
+        "evening": [
+          {
+            "time": "7:30 PM",
+            "title": "Movies in the Park: DPR's Fall Film Series",
+            "event_id": "171eb2ff6a51",
+            "location": "501 Foster Street, Durham, NC 27701",
+            "price": "Free",
+            "notes": "Free and outdoors in Durham Central Park, 25 minutes away. The Cary equivalent, Movie Night: Hamilton, ran the night before on Friday."
           }
         ]
       },
       "food": [
         {
           "slot": "breakfast",
-          "place": "Jubala Coffee",
-          "city": "Raleigh",
-          "vegan_dish": "Oat-milk latte and the vegan biscuit when it is on",
-          "vegetarian_dish": "Biscuit with jam, or granola",
-          "price": "$",
-          "notes": "Downtown location is a few minutes from Marbles."
+          "place": "Cary Farmers Market prepared-food stalls",
+          "city": "Cary",
+          "vegan_dish": "Ask the bakery vendors — several bring vegan pastries",
+          "vegetarian_dish": "Breakfast empanada",
+          "price": "$5-$12",
+          "url": "https://downtowncarync.org/event/cary-farmers-market-113/",
+          "notes": "Eat in the park before it gets hot; there is shade on the eastern edge."
         },
         {
           "slot": "lunch",
-          "place": "Morgan Street Food Hall",
-          "city": "Raleigh",
-          "vegan_dish": "Ask each stall — at least one usually has a fully plant-based bowl or a falafel plate",
-          "vegetarian_dish": "Pizza, poke without fish, or a noodle bowl",
-          "price": "$$",
-          "notes": "411 W Morgan St. Indoors, cold, and ten minutes' walk from the museum."
+          "place": "Pharaoh's Village",
+          "city": "Cary",
+          "vegan_dish": "Falafel plate with hummus, tabbouleh and no yoghurt sauce",
+          "vegetarian_dish": "Halloumi wrap",
+          "price": "$12-$18",
+          "url": "https://pharaohsvillagenc.com/",
+          "notes": "On Chatham Street, a block from the theatre, and reliably quick before a 2 PM screening."
         },
         {
           "slot": "dinner",
-          "place": "Haw River Tap & Table (Carrboro) or a Durham taproom",
-          "city": "Carrboro",
-          "vegan_dish": "Both venues do fries and a vegetable-forward plate; ask about butter on the vegetables",
-          "vegetarian_dish": "Flatbread, pretzel, or a grain bowl",
-          "price": "$$",
-          "notes": "Eat where the talk is — both are bar venues that serve food, and you want the table before it fills."
+          "place": "Pizzeria Faulisi",
+          "city": "Cary",
+          "vegan_dish": "Marinara pie, no cheese — the crust and sauce are both vegan",
+          "vegetarian_dish": "Margherita",
+          "price": "$16-$24",
+          "url": "https://www.pizzeriafaulisi.com/",
+          "notes": "Neapolitan, small room, worth booking. Eat here and skip the drive to Durham if the evening film is not worth 25 minutes each way."
         }
       ],
       "alternatives": [
         {
-          "leg": "Everything before 6 PM",
-          "good_weather": "96°F and sunny is the reason this itinerary has no outdoor daytime leg at all.",
-          "rain": "No rain expected. The plan is already the heat plan."
+          "leg": "Movies in the Park in Durham (outdoors, 7:30 PM)",
+          "good_weather": "Free and on the grass — bring a blanket and get there by seven.",
+          "rain": "Showers and thunderstorms are likely Saturday evening. The indoor swap is a third Cary Theater screening, or Trivia Night at Downtown Cary Park the following Thursday if you would rather stay local."
         },
         {
-          "leg": "Carolina Science Cafe (6 PM, Carrboro) vs Astronomy on Tap (7 PM, Durham)",
-          "good_weather": "Both are free and both are indoors. Pick by which end of the Triangle you are on — they are 25 minutes apart and overlap.",
-          "rain": "Neither is affected."
+          "leg": "Cary Farmers Market (outdoors, 8 AM)",
+          "good_weather": "Sunny and already warm by nine — go at eight.",
+          "rain": "The market runs rain or shine; the park's covered structures handle a passing shower."
         }
       ],
       "practical_notes": [
-        "96°F and sunny. Nothing in this itinerary asks you to stand in it.",
-        "Museum of Natural Sciences admission is free; Marbles IMAX is ticketed separately from museum entry.",
-        "The two evening talks overlap and are 25 minutes apart — this is a choose-one, not a do-both.",
-        "Both science nights are free and neither requires registration, but seating at the Carrboro one goes early."
+        "Downtown Cary Park has free parking decks on Academy Street and a splash pad that matters at 98°F.",
+        "The Cary Theater sells tickets through Etix; prices are not shown on the listing page.",
+        "BEYOND: The Cary Film Festival opens at the same theatre on September 10 — worth knowing if this Saturday works out.",
+        "Apex's Halle Cultural Arts Center is on Salem Street with street parking around the block."
       ],
       "event_ids": [
-        "5c1401ad1193",
-        "160ff498388f",
-        "e1a399419955",
-        "e669c59908ac"
+        "08cf081fe4cc",
+        "8bc93a4fbbbb",
+        "1ac340116052",
+        "dc897bd8348a",
+        "171eb2ff6a51"
       ]
     }
   ]
