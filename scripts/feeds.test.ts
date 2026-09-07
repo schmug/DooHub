@@ -66,6 +66,26 @@ const DUKE = source({
   ingest: { mode: "feed", feed_url: "https://calendar.duke.edu/index.ics", feed_type: "ics" },
 });
 
+// calendar.unc.edu is Localist, and its 7-day window is small enough to ingest
+// whole rather than through Localist's "Arts and Culture" topic filter — that
+// filter misses the campus galleries and mis-tags a farm workshop as arts.
+// Captured 2026-09-07, so this fixture gets its own anchor.
+const UNC = source({
+  id: "unc-calendar",
+  name: "UNC Chapel Hill",
+  kind: "hub",
+  url: "https://calendar.unc.edu/",
+  city: "Chapel Hill",
+  categories: ["classes", "concerts", "theater", "galleries"],
+  ingest: {
+    mode: "feed",
+    feed_url: "https://calendar.unc.edu/api/2/events?days=7&pp=100",
+    feed_type: "localist",
+  },
+});
+const UNC_NOW = "2026-09-07T06:00:00-04:00";
+const UNC_WINDOW = { start: "2026-09-07T00:00:00-04:00", end: "2026-09-14T23:59:59-04:00" };
+
 // --- ICS reader ------------------------------------------------------------
 
 test("unfoldIcsLines rejoins RFC 5545 continuation lines", () => {
@@ -369,6 +389,32 @@ test("ingestFeed drops the non-Triangle DNCR sites", async () => {
   assert.equal(names.some((n) => n.includes("Elk Knob")), false); // Todd, NC
   assert.equal(names.some((n) => n === "Fire on the Mountain"), false); // Chimney Rock
   assert.equal(res.dropped.out_of_metro, 2);
+});
+
+test("ingestFeed reads the UNC Localist feed, incl. the Ackland events", async () => {
+  const res = ingestFeed(UNC, await fixture("unc-localist.json"), { now: UNC_NOW, window: UNC_WINDOW });
+  assert.deepEqual(res.errors, []);
+
+  // The reason this source is wired to a feed at all: ackland-art-museum logged
+  // zero in 2026-W36 because events.ackland.org has no feed of its own, but the
+  // Ackland's events are in UNC's calendar.
+  const ackland = res.events.filter((e) => e.venue === "Ackland Art Museum");
+  assert.equal(ackland.length, 2);
+  const reception = ackland.find((e) => e.name.startsWith("Welcome Back to Campus"))!;
+  assert.equal(reception.city, "Chapel Hill");
+  assert.equal(reception.start, "2026-09-10T17:00:00-04:00");
+  assert.equal(reception.lat, 35.912593);
+  assert.equal(
+    reception.info_url,
+    "https://events.ackland.org/event/welcome-back-to-campus-reception-for-against-nature/",
+  );
+
+  // A Localist item with no place of its own inherits the source's city, because
+  // the feed is campus-local (feed_scope defaults to "local"). Oedipus is the
+  // PlayMakers production, which the UNC calendar lists without a location.
+  const oedipus = res.events.find((e) => e.name === "Oedipus: King/Colonus")!;
+  assert.equal(oedipus.city, "Chapel Hill");
+  assert.equal(res.dropped.out_of_metro, 0);
 });
 
 test("ingestFeed keeps a Duke event whose location names no city", async () => {

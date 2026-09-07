@@ -1,0 +1,508 @@
+{
+  "events": [
+    {
+      "event": {
+        "id": 53698069059605,
+        "title": "Welcome Back to Campus: Reception for “Against Nature\"",
+        "url": "https://events.ackland.org/event/welcome-back-to-campus-reception-for-against-nature/",
+        "updated_at": "2026-09-07T04:32:35-04:00",
+        "created_at": "2026-08-14T05:20:05-04:00",
+        "facebook_id": null,
+        "first_date": "2026-09-10",
+        "last_date": "2026-09-10",
+        "hashtag": null,
+        "urlname": "welcome-back-to-campus-reception-for-against-nature",
+        "user_id": null,
+        "directions": "",
+        "allows_reviews": true,
+        "allows_attendance": true,
+        "location": "Ackland Art Museum",
+        "room_number": null,
+        "location_name": "Ackland Art Museum",
+        "status": "live",
+        "experience": "inperson",
+        "stream_url": null,
+        "stream_info": null,
+        "stream_embed_code": null,
+        "created_by": null,
+        "updated_by": null,
+        "conference_event_id": null,
+        "kind": "standalone",
+        "address": "101 S Columbia Street, Chapel Hill, NC",
+        "city_id": null,
+        "neighborhood_id": null,
+        "school_id": 42906085835906,
+        "campus_id": null,
+        "recurring": false,
+        "free": false,
+        "private": false,
+        "verified": true,
+        "rejected": false,
+        "sponsored": false,
+        "venue_id": 43085352250733,
+        "ticket_url": null,
+        "ticket_cost": null,
+        "has_register": false,
+        "keywords": [],
+        "tags": [],
+        "description": "The Ackland welcomes back faculty, students, and staff to campus with a celebration for its newest installation in the ART& space, Phaan Howng: Against Nature.  \nIn Against Nature, artist Phaan Howng positions an ornate botanical composition above wainscotting that suggests the architecture of a late nineteenth-century study or parlor. The paneling’s mint green tint evokes the green interior paints used in that period, achieved through harmful additions of arsenic. Above the wainscotting, painted vinyl banners depict a jungle of barely contained foliage with spikes and fronds of neon reds, electric oranges, cerulean blues, and bruised purples. \nDuring the evening, we will be celebrating with non-alcoholic drinks and snacks. Phaan will be present during the evening to mingle with attendees. Around 6:15 PM, she will briefly introduce the artwork and answer any questions. \nJoin us for an evening honoring Phaan and welcoming the installation to our community, as well as starting off the semester in a fun way! \nWe ask for folks to RSVP to give us a headcount for the event. No ticket purchase is required.",
+        "description_text": "The Ackland welcomes back faculty, students, and staff to campus with a celebration for its newest installation in the ART& space, Phaan Howng: Against Nature.  \nIn Against Nature, artist Phaan Howng positions an ornate botanical composition above wainscotting that suggests the architecture of a late nineteenth-century study or parlor. The paneling’s mint green tint evokes the green interior paints used in that period, achieved through harmful additions of arsenic. Above the wainscotting, painted vinyl banners depict a jungle of barely contained foliage with spikes and fronds of neon reds, electric oranges, cerulean blues, and bruised purples. \nDuring the evening, we will be celebrating with non-alcoholic drinks and snacks. Phaan will be present during the evening to mingle with attendees. Around 6:15 PM, she will briefly introduce the artwork and answer any questions. \nJoin us for an evening honoring Phaan and welcoming the installation to our community, as well as starting off the semester in a fun way! \nWe ask for folks to RSVP to give us a headcount for the event. No ticket purchase is required.",
+        "photo_id": null,
+        "detail_views": 251,
+        "featured": false,
+        "publish_status": "published",
+        "geo": {
+          "latitude": "35.912593",
+          "longitude": "-79.054867",
+          "street": "101 South Columbia Street",
+          "city": "Chapel Hill",
+          "state": "NC",
+          "country": "US",
+          "zip": "27599"
+        },
+        "filters": {
+          "event_topic": [
+            {
+              "name": "Arts and Culture",
+              "id": 43092631608229
+            }
+          ],
+          "event_types": [
+            {
+              "name": "Exhibits",
+              "id": 43092653139607
+            }
+          ]
+        },
+        "custom_fields": {},
+        "event_instances": [
+          {
+            "event_instance": {
+              "id": 53698069060630,
+              "event_id": 53698069059605,
+              "start": "2026-09-10T17:00:00-04:00",
+              "end": "2026-09-10T19:30:00-04:00",
+              "ranking": 0.25,
+              "all_day": false,
+              "num_attending": 0
+            }
+          }
+        ],
+        "localist_url": "https://calendar.unc.edu/event/welcome-back-to-campus-reception-for-against-nature",
+        "localist_ics_url": "https://calendar.unc.edu/event/welcome-back-to-campus-reception-for-against-nature.ics",
+        "photo_url": "https://localist-images.azureedge.net/photos/52179883853209/huge/b8c6d01f83d93a3d5d42d640223db392fc32a3b4.jpg",
+        "venue_url": "https://calendar.unc.edu/ackland_art_museum_166"
+      }
+    },
+    {
+      "event": {
+        "id": 53055342951523,
+        "title": "John and June Allcott Gallery: Michelle Inez Hinojosa and Barbara Pearsall",
+        "url": "https://go.unc.edu/flickering",
+        "updated_at": "2026-09-07T09:21:30-04:00",
+        "created_at": "2026-06-02T13:49:43-04:00",
+        "facebook_id": null,
+        "first_date": "2026-08-20",
+        "last_date": "2026-10-15",
+        "hashtag": "artsatunc",
+        "urlname": "john-and-june-allcott-gallery-michelle-inez-hinojosa-and-barbara-pearsall",
+        "user_id": 44029727256253,
+        "directions": "",
+        "allows_reviews": false,
+        "allows_attendance": false,
+        "location": "",
+        "room_number": "John and June Allcott Gallery",
+        "location_name": "Hanes Art Center",
+        "status": "live",
+        "experience": "inperson",
+        "stream_url": null,
+        "stream_info": null,
+        "stream_embed_code": null,
+        "created_by": 44029727256253,
+        "updated_by": 46809070247265,
+        "conference_event_id": null,
+        "kind": "standalone",
+        "address": "121 E. Cameron Avenue, Chapel Hill, NC",
+        "city_id": null,
+        "neighborhood_id": null,
+        "school_id": 42906085835906,
+        "campus_id": null,
+        "recurring": true,
+        "free": false,
+        "private": false,
+        "verified": true,
+        "rejected": false,
+        "sponsored": false,
+        "venue_id": 43085348305674,
+        "ticket_url": null,
+        "ticket_cost": null,
+        "has_register": false,
+        "keywords": [],
+        "tags": [],
+        "description": "<p>Art and Art History</p>\r\n\r\n<p><span style=\"font-size:11pt\"><span><b><i><span style=\"font-size:18.0pt\"><span>Under the Tent: Whirling &amp; Flickering</span></span></i></b></span></span></p>\r\n\r\n<p><span style=\"font-size:11pt\"><span><b><span>August 20-October 15, 2026</span></b></span></span></p>\r\n\r\n<p><span style=\"font-size:11pt\"><span><b><span>Reception: August 20, 5-7 pm</span></b></span></span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"font-size:12pt\"><span><span style=\"font-size:11.0pt\"><span>Drawn together in graduate school by their mutual love of experimentation and play, Michelle Inez Hinojosa and Barbara Pearsall have built a collaborative practice around analogue animation and vibrant abstraction. Together, their work explores optical toys, immersive installations, and movement. <i>Under the Tent: Whirling &amp; Flickering</i> features kaleidoscopic imagery, flickering abstractions, projection mapping, a hidden trapdoor, and hand-cranked wheels that transform what viewers see. After searching for the perfect venue, they are thrilled to bring their collaborative installation to UNC. Their first public artwork, <i>Turnabout Folly</i>, will debut in Lansing, Michigan in Fall 2026.</span></span></span></span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"font-size:12pt\"><span><span style=\"font-size:11.0pt\"><span>Michelle Hinojosa works at the intersection of painting, poetry, and fiber art, where she considers memory, intergenerational trauma, and migration. Born in central Texas, by way of the fields of California and Northern Mexico, Michelle uplifts traditions of making that have provided much-needed stability to a family displaced. Michelle Hinojosa is an Assistant Professor of Art at Pennsylvania State University.</span></span></span></span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"font-size:12pt\"><span><span style=\"font-size:11.0pt\"><span>Barbara Pearsall is an artist and educator based in Michigan. Her art practice is attentive to how deviation from material conventions can subvert or metamorphose the role of institutions, where her philosophical and political concerns manifest through material explorations of the built environment. Her pieces seek to create illusory and unusual architectural conditions as a form of resistance, interrupting real-world functionality to allow for alternative systems of order. She is an Assistant Professor of Foundations &amp; Sculpture at Michigan State University.</span></span></span></span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"font-size:12pt\"><span><span style=\"font-size:11.0pt\"><span>Admission: Free</span></span></span></span></p>\r\n\r\n<p><span style=\"font-size:12pt\"><span><span style=\"font-size:11.0pt\"><span>Gallery Hours: Monday-Friday, 8 am-5 pm</span></span></span></span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"font-size:12pt\"><span><span style=\"font-size:11.0pt\"><span>A weeknight or daytime permit is now required after 5:00 pm on weekdays. No permit is required from 5:00 pm Friday through 7:30 am Monday. A $1.00 one-night pass is available in selected lots. More information can be found </span></span><a href=\"https://move.unc.edu/parking/weeknight-parking/\" style=\"text-decoration:underline\"><span style=\"font-size:11.0pt\"><span>HERE</span></span></a><span style=\"font-size:11.0pt\"><span>.</span></span></span></span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"font-size:11pt\"><span><span>For more information, please contact: Annette Lawrence, <a href=\"mailto:annettel@unc.edu\" style=\"text-decoration:underline\">annettel@unc.edu</a> </span></span></span></p>\r\n\r\n<p>&nbsp;</p>\r\n",
+        "description_text": "Art and Art History\n\nUnder the Tent: Whirling & Flickering\n\nAugust 20-October 15, 2026\n\nReception: August 20, 5-7 pm\n\n \n\nDrawn together in graduate school by their mutual love of experimentation and play, Michelle Inez Hinojosa and Barbara Pearsall have built a collaborative practice around analogue animation and vibrant abstraction. Together, their work explores optical toys, immersive installations, and movement. Under the Tent: Whirling & Flickering features kaleidoscopic imagery, flickering abstractions, projection mapping, a hidden trapdoor, and hand-cranked wheels that transform what viewers see. After searching for the perfect venue, they are thrilled to bring their collaborative installation to UNC. Their first public artwork, Turnabout Folly, will debut in Lansing, Michigan in Fall 2026.\n\n \n\nMichelle Hinojosa works at the intersection of painting, poetry, and fiber art, where she considers memory, intergenerational trauma, and migration. Born in central Texas, by way of the fields of California and Northern Mexico, Michelle uplifts traditions of making that have provided much-needed stability to a family displaced. Michelle Hinojosa is an Assistant Professor of Art at Pennsylvania State University.\n\n \n\nBarbara Pearsall is an artist and educator based in Michigan. Her art practice is attentive to how deviation from material conventions can subvert or metamorphose the role of institutions, where her philosophical and political concerns manifest through material explorations of the built environment. Her pieces seek to create illusory and unusual architectural conditions as a form of resistance, interrupting real-world functionality to allow for alternative systems of order. She is an Assistant Professor of Foundations & Sculpture at Michigan State University.\n\n \n\nAdmission: Free\n\nGallery Hours: Monday-Friday, 8 am-5 pm\n\n \n\nA weeknight or daytime permit is now required after 5:00 pm on weekdays. No permit is required from 5:00 pm Friday through 7:30 am Monday. A $1.00 one-night pass is available in selected lots. More information can be found HERE.\n\n \n\nFor more information, please contact: Annette Lawrence, annettel@unc.edu",
+        "photo_id": 53055343096983,
+        "detail_views": 1517,
+        "featured": false,
+        "publish_status": "published",
+        "geo": {
+          "latitude": "35.912392",
+          "longitude": "-79.054366",
+          "street": "115 South Columbia Street",
+          "city": "Chapel Hill",
+          "state": "NC",
+          "country": "US",
+          "zip": "27514"
+        },
+        "departments": [
+          {
+            "id": 43332369351310,
+            "name": "College of Arts and Sciences "
+          }
+        ],
+        "filters": {
+          "event_target_audience": [
+            {
+              "name": "Students",
+              "id": 43092638675717
+            },
+            {
+              "name": "Faculty",
+              "id": 43092638678790
+            },
+            {
+              "name": "Staff",
+              "id": 43092638680839
+            },
+            {
+              "name": "General Public",
+              "id": 43092638684936
+            },
+            {
+              "name": "Alumni",
+              "id": 43092638688009
+            },
+            {
+              "name": "Open to all",
+              "id": 49057291376839
+            }
+          ],
+          "event_topic": [
+            {
+              "name": "Arts and Culture",
+              "id": 43092631608229
+            }
+          ],
+          "event_types": [
+            {
+              "name": "Exhibits",
+              "id": 43092653139607
+            }
+          ]
+        },
+        "custom_fields": {},
+        "event_instances": [
+          {
+            "event_instance": {
+              "id": 53055342966896,
+              "event_id": 53055342951523,
+              "start": "2026-09-07T08:00:00-04:00",
+              "end": "2026-09-07T17:00:00-04:00",
+              "ranking": 0.08,
+              "all_day": false,
+              "num_attending": 0
+            }
+          }
+        ],
+        "localist_url": "https://calendar.unc.edu/event/john-and-june-allcott-gallery-michelle-inez-hinojosa-and-barbara-pearsall",
+        "localist_ics_url": "https://calendar.unc.edu/event/john-and-june-allcott-gallery-michelle-inez-hinojosa-and-barbara-pearsall.ics",
+        "photo_url": "https://localist-images.azureedge.net/photos/53055343096983/huge/977c06185835a6e1db59610d99b0b19dc0f4831e.jpg",
+        "venue_url": "https://calendar.unc.edu/hanes_art_center"
+      }
+    },
+    {
+      "event": {
+        "id": 53867805039789,
+        "title": "Oedipus: King/Colonus",
+        "url": "https://playmakersrep.org/?show=oedipus-king-colonus",
+        "updated_at": "2026-09-07T10:48:53-04:00",
+        "created_at": "2026-09-02T09:46:23-04:00",
+        "facebook_id": null,
+        "first_date": "2026-09-09",
+        "last_date": "2026-09-27",
+        "hashtag": null,
+        "urlname": "oedipus-kingcolonus",
+        "user_id": 44393725115477,
+        "directions": null,
+        "allows_reviews": false,
+        "allows_attendance": false,
+        "location": "",
+        "room_number": null,
+        "location_name": "",
+        "status": "live",
+        "experience": "inperson",
+        "stream_url": null,
+        "stream_info": null,
+        "stream_embed_code": null,
+        "created_by": 44393725115477,
+        "updated_by": 44393725115477,
+        "conference_event_id": null,
+        "kind": "standalone",
+        "address": "",
+        "city_id": null,
+        "neighborhood_id": null,
+        "school_id": 42906085835906,
+        "campus_id": null,
+        "recurring": true,
+        "free": false,
+        "private": false,
+        "verified": true,
+        "rejected": false,
+        "sponsored": false,
+        "venue_id": null,
+        "ticket_url": null,
+        "ticket_cost": null,
+        "has_register": true,
+        "keywords": [],
+        "tags": [],
+        "description": "<p>Experience Sophocles&rsquo; epic trilogy brought to life in a sweeping tale of fate, prophecy and reckoning. This fresh adaptation breathes life into the ancient tale of a king&rsquo;s search for truth&mdash;and the devastating consequences of what he finds.</p>\n\n<p>Book tickets:&nbsp;<a href=\"https://tickets.playmakersrep.org/overview/15088\">https://tickets.playmakersrep.org/overview/15088</a></p>\n",
+        "description_text": "Experience Sophocles’ epic trilogy brought to life in a sweeping tale of fate, prophecy and reckoning. This fresh adaptation breathes life into the ancient tale of a king’s search for truth—and the devastating consequences of what he finds.\n\nBook tickets: https://tickets.playmakersrep.org/overview/15088",
+        "photo_id": 53867813096521,
+        "detail_views": 157,
+        "featured": false,
+        "publish_status": "published",
+        "geo": {
+          "latitude": null,
+          "longitude": null,
+          "street": null,
+          "city": null,
+          "state": null,
+          "country": null,
+          "zip": null
+        },
+        "filters": {
+          "event_types": [
+            {
+              "name": "Performances",
+              "id": 43092653136534
+            }
+          ]
+        },
+        "custom_fields": {},
+        "event_instances": [
+          {
+            "event_instance": {
+              "id": 53867805039790,
+              "event_id": 53867805039789,
+              "start": "2026-09-09T19:30:00-04:00",
+              "end": null,
+              "ranking": 0.06,
+              "all_day": false,
+              "num_attending": 0
+            }
+          }
+        ],
+        "localist_url": "https://calendar.unc.edu/event/oedipus-kingcolonus",
+        "localist_ics_url": "https://calendar.unc.edu/event/oedipus-kingcolonus.ics",
+        "photo_url": "https://localist-images.azureedge.net/photos/53867813096521/huge/f096954e29c53a3376fa9e003fb6a8394bb337a8.jpg"
+      }
+    },
+    {
+      "event": {
+        "id": 53370202784246,
+        "title": "2nd Friday ArtWalk: Extended Museum Hours",
+        "url": "https://events.ackland.org/event/2nd-friday-artwalk-extended-museum-hours/2026-09-11/",
+        "updated_at": "2026-09-07T04:32:35-04:00",
+        "created_at": "2026-07-08T03:56:26-04:00",
+        "facebook_id": null,
+        "first_date": "2026-09-11",
+        "last_date": "2026-09-11",
+        "hashtag": null,
+        "urlname": "2nd-friday-artwalk-extended-museum-hours-4148",
+        "user_id": null,
+        "directions": "",
+        "allows_reviews": true,
+        "allows_attendance": true,
+        "location": "Ackland Art Museum",
+        "room_number": null,
+        "location_name": "Ackland Art Museum",
+        "status": "live",
+        "experience": "inperson",
+        "stream_url": null,
+        "stream_info": null,
+        "stream_embed_code": null,
+        "created_by": null,
+        "updated_by": null,
+        "conference_event_id": null,
+        "kind": "standalone",
+        "address": "101 S Columbia Street, Chapel Hill, NC",
+        "city_id": null,
+        "neighborhood_id": null,
+        "school_id": 42906085835906,
+        "campus_id": null,
+        "recurring": false,
+        "free": false,
+        "private": false,
+        "verified": true,
+        "rejected": false,
+        "sponsored": false,
+        "venue_id": 43085352250733,
+        "ticket_url": null,
+        "ticket_cost": null,
+        "has_register": false,
+        "keywords": [],
+        "tags": [],
+        "description": "Join us for extended hours at the Ackland Art Museum during the Carrboro-Chapel Hill 2nd Friday ArtWalk! Each month, we stay open from 5:00 – 9:00 p.m. to give visitors more time to explore. \nStroll through our galleries featuring highlights from a collection of over 21,000 works of art and sketch in the galleries using art supplies from our lobby’s art cart. \nAdmission to the Ackland is always free; no prior registration needed. Whether you’re stopping by solo or bringing friends, come be inspired during our extended open hours!",
+        "description_text": "Join us for extended hours at the Ackland Art Museum during the Carrboro-Chapel Hill 2nd Friday ArtWalk! Each month, we stay open from 5:00 – 9:00 p.m. to give visitors more time to explore. \nStroll through our galleries featuring highlights from a collection of over 21,000 works of art and sketch in the galleries using art supplies from our lobby’s art cart. \nAdmission to the Ackland is always free; no prior registration needed. Whether you’re stopping by solo or bringing friends, come be inspired during our extended open hours!",
+        "photo_id": null,
+        "detail_views": 166,
+        "featured": false,
+        "publish_status": "published",
+        "geo": {
+          "latitude": "35.912593",
+          "longitude": "-79.054867",
+          "street": "101 South Columbia Street",
+          "city": "Chapel Hill",
+          "state": "NC",
+          "country": "US",
+          "zip": "27599"
+        },
+        "filters": {
+          "event_topic": [
+            {
+              "name": "Arts and Culture",
+              "id": 43092631608229
+            }
+          ],
+          "event_types": [
+            {
+              "name": "Exhibits",
+              "id": 43092653139607
+            }
+          ]
+        },
+        "custom_fields": {},
+        "event_instances": [
+          {
+            "event_instance": {
+              "id": 53370202785271,
+              "event_id": 53370202784246,
+              "start": "2026-09-11T17:00:00-04:00",
+              "end": "2026-09-11T21:00:00-04:00",
+              "ranking": 0.24,
+              "all_day": false,
+              "num_attending": 0
+            }
+          }
+        ],
+        "localist_url": "https://calendar.unc.edu/event/2nd-friday-artwalk-extended-museum-hours-4148",
+        "localist_ics_url": "https://calendar.unc.edu/event/2nd-friday-artwalk-extended-museum-hours-4148.ics",
+        "photo_url": "https://localist-images.azureedge.net/photos/52179883853209/huge/b8c6d01f83d93a3d5d42d640223db392fc32a3b4.jpg",
+        "venue_url": "https://calendar.unc.edu/ackland_art_museum_166"
+      }
+    },
+    {
+      "event": {
+        "id": 52638987481884,
+        "title": "Introduction to Multilevel Modeling ",
+        "url": "https://go.unc.edu/t7A3L",
+        "updated_at": "2026-09-07T08:53:58-04:00",
+        "created_at": "2026-04-16T12:23:32-04:00",
+        "facebook_id": null,
+        "first_date": "2026-09-09",
+        "last_date": "2026-09-11",
+        "hashtag": "MultilevelModeling #DataStructures",
+        "urlname": "introduction-to-multilevel-modeling-6356",
+        "user_id": 50894499013206,
+        "directions": null,
+        "allows_reviews": false,
+        "allows_attendance": false,
+        "location": "",
+        "room_number": null,
+        "location_name": "",
+        "status": "live",
+        "experience": "virtual",
+        "stream_url": "",
+        "stream_info": "",
+        "stream_embed_code": "",
+        "created_by": 50894499013206,
+        "updated_by": 46809070247265,
+        "conference_event_id": null,
+        "kind": "standalone",
+        "address": "",
+        "city_id": null,
+        "neighborhood_id": null,
+        "school_id": 42906085835906,
+        "campus_id": null,
+        "recurring": false,
+        "free": false,
+        "private": false,
+        "verified": true,
+        "rejected": false,
+        "sponsored": false,
+        "venue_id": null,
+        "ticket_url": null,
+        "ticket_cost": null,
+        "has_register": false,
+        "keywords": [],
+        "tags": [],
+        "description": "<p>This course will take place over two days<b>&nbsp;(9/9/2026 and 9/11/2026)</b>&nbsp;and will be offered via Zoom. Attendance is required as the course will not be recorded.</p>\r\n\r\n<p>Nesting can arise from hierarchical data structures (e.g., siblings nested within family; patients nested within therapist), longitudinal data structures (repeated measures nested within individual), or both (repeated measures nested within patient and patient nested within therapist).</p>\r\n\r\n<p>It is well known that the analysis of nested data structures using traditional general linear models (e.g., ANOVA or regression) is flawed, oftentimes substantially so: Tests of significance are likely biased and within- and between-group effects are confounded with one another. All of these limitations can be addressed within the multilevel model.</p>\r\n\r\n<p>In this workshop, we provide an introduction to the application of multilevel models with nested data, including software implementation in SAS, SPSS and Stata.</p>\r\n\r\n<p>Registration and fee required for Zoom link access.</p>\r\n",
+        "description_text": "This course will take place over two days (9/9/2026 and 9/11/2026) and will be offered via Zoom. Attendance is required as the course will not be recorded.\n\nNesting can arise from hierarchical data structures (e.g., siblings nested within family; patients nested within therapist), longitudinal data structures (repeated measures nested within individual), or both (repeated measures nested within patient and patient nested within therapist).\n\nIt is well known that the analysis of nested data structures using traditional general linear models (e.g., ANOVA or regression) is flawed, oftentimes substantially so: Tests of significance are likely biased and within- and between-group effects are confounded with one another. All of these limitations can be addressed within the multilevel model.\n\nIn this workshop, we provide an introduction to the application of multilevel models with nested data, including software implementation in SAS, SPSS and Stata.\n\nRegistration and fee required for Zoom link access.",
+        "photo_id": 52638987518757,
+        "detail_views": 190,
+        "featured": false,
+        "publish_status": "published",
+        "geo": {
+          "latitude": null,
+          "longitude": null,
+          "street": null,
+          "city": null,
+          "state": null,
+          "country": null,
+          "zip": null
+        },
+        "filters": {
+          "event_target_audience": [
+            {
+              "name": "Open to all",
+              "id": 49057291376839
+            }
+          ],
+          "event_topic": [
+            {
+              "name": "Career Development",
+              "id": 43092631620521
+            },
+            {
+              "name": "Research",
+              "id": 43092631626667
+            }
+          ],
+          "event_types": [
+            {
+              "name": "Workshops and Classes",
+              "id": 43092653132437
+            }
+          ]
+        },
+        "custom_fields": {},
+        "event_instances": [
+          {
+            "event_instance": {
+              "id": 52638987481885,
+              "event_id": 52638987481884,
+              "start": "2026-09-09T09:00:00-04:00",
+              "end": "2026-09-09T15:00:00-04:00",
+              "ranking": 0.26,
+              "all_day": false,
+              "num_attending": 0
+            }
+          }
+        ],
+        "localist_url": "https://calendar.unc.edu/event/introduction-to-multilevel-modeling-6356",
+        "localist_ics_url": "https://calendar.unc.edu/event/introduction-to-multilevel-modeling-6356.ics",
+        "photo_url": "https://localist-images.azureedge.net/photos/52638987518757/huge/0525998b531f2d62247d4ce2ba8976a4d46a0ee0.jpg"
+      }
+    }
+  ]
+}
