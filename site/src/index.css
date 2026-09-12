@@ -1365,8 +1365,23 @@ table.events td.links .ics {
 }
 
 /* ---------- Leaflet (dark basemap) ---------- */
+/* The dark basemap is the light OSM raster, darkened here. CARTO's hosted dark
+   tiles now come back watermarked without an API key, so MapView points both
+   themes at the same OSM source and this filter does the theming.
+   invert() flips the beige/white land to near-black and the black labels to
+   white; hue-rotate(180deg) undoes invert's hue flip so water reads blue and
+   parks green again instead of brown. saturate() then pulls most of that colour
+   back out: an inverted OSM keeps its road casings at full strength, which come
+   through as pink, and a near-neutral canvas is what this map wants anyway — the
+   only colour that should carry meaning here is the category palette on the
+   markers. brightness()/contrast() take the edge off raw invert(1), which is
+   harsher than the surrounding surface. Scoped to the tile pane so markers, pins
+   and popups (separate Leaflet panes) keep their real colours. */
+[data-theme="dark"] .leaflet-tile-pane {
+  filter: invert(1) hue-rotate(180deg) brightness(0.88) contrast(0.92) saturate(0.22);
+}
 [data-theme="dark"] .leaflet-container {
-  background: #10141a; /* matches the dark tiles where they haven't loaded */
+  background: #10141a; /* matches the darkened tiles where they haven't loaded */
 }
 [data-theme="dark"] .leaflet-popup-content-wrapper,
 [data-theme="dark"] .leaflet-popup-tip {
