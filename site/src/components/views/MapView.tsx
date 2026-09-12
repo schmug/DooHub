@@ -28,18 +28,32 @@ interface Props {
 
 type MarkerLayer = L.CircleMarker | L.Marker;
 
-// Light OSM raster vs. CARTO's "dark matter" basemap, so the tiles match the
-// surrounding surface instead of glowing bright in dark mode.
+// One OSM raster source for both themes. Dark mode darkens it in CSS rather
+// than swapping in a second tile provider — see the `.leaflet-tile-pane` filter
+// under `[data-theme="dark"]` in index.css. The point of the dark treatment is
+// unchanged: the tiles should match the surrounding surface instead of glowing
+// bright. What changed is how we get there.
+//
+// This used to be CARTO's "dark matter" basemap
+// (`{s}.basemaps.cartocdn.com/dark_all/...`). CARTO now returns a 200 with an
+// "API KEY REQUIRED" watermark stamped across every unauthenticated tile, which
+// made the whole Map view unreadable in dark mode. Filtering the tiles we
+// already load keeps the dark basemap keyless: no new provider, no new terms,
+// no build-time secret, and identical zoom coverage and attribution to light.
+// The bare host, not the `{s}.tile.openstreetmap.org` subdomain form this used
+// to use: the OSM tile policy says to "use exactly" this URL and warns that
+// "other subdomains or hostnames may be slower or withdrawn without notice" —
+// the same withdrawal risk that just took out the CARTO basemap, and now the
+// only tile source the app has.
+// https://operations.osmfoundation.org/policies/tiles/
+const OSM = {
+  url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+} as const;
+
 const TILES = {
-  light: {
-    url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  },
-  dark: {
-    url: "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-  },
+  light: OSM,
+  dark: OSM,
 } as const;
 
 const LEGEND: { family: CategoryFamily; color: string; label: string }[] = [
