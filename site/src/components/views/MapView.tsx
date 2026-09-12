@@ -40,8 +40,14 @@ type MarkerLayer = L.CircleMarker | L.Marker;
 // made the whole Map view unreadable in dark mode. Filtering the tiles we
 // already load keeps the dark basemap keyless: no new provider, no new terms,
 // no build-time secret, and identical zoom coverage and attribution to light.
+// The bare host, not the `{s}.tile.openstreetmap.org` subdomain form this used
+// to use: the OSM tile policy says to "use exactly" this URL and warns that
+// "other subdomains or hostnames may be slower or withdrawn without notice" —
+// the same withdrawal risk that just took out the CARTO basemap, and now the
+// only tile source the app has.
+// https://operations.osmfoundation.org/policies/tiles/
 const OSM = {
-  url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+  url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 } as const;
 
