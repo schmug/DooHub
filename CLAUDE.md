@@ -251,7 +251,7 @@ canonical form so the same place hashes identically:
 | Variants                                                   | Canonical            |
 |------------------------------------------------------------|----------------------|
 | `ncma`, `north carolina museum of art`, `nc art museum`    | `nc museum of art`   |
-| `dpac`, `durham performing arts center`                    | `dpac`               |
+| `dpac`, `durham performing arts center`, `dpac presented by first horizon` | `dpac`   |
 | `red hat amphitheater`, `red hat amp`                      | `red hat amphitheater` |
 | `koka booth`, `koka booth amphitheatre`                    | `koka booth amphitheatre` |
 | `the carolina theatre`, `carolina theatre of durham`       | `carolina theatre`   |

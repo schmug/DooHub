@@ -20,6 +20,8 @@ const VENUE_ALIASES: Record<string, string> = {
   "nc art museum": "nc museum of art",
   "dpac": "dpac",
   "durham performing arts center": "dpac",
+  // Sponsor-name variant: Downtown Durham Inc lists the venue this way.
+  "dpac presented by first horizon": "dpac",
   "red hat amp": "red hat amphitheater",
   "koka booth": "koka booth amphitheatre",
   "carolina theatre of durham": "carolina theatre",
