@@ -1,9 +1,10 @@
 # Ingest fixtures
 
-Verbatim excerpts of live responses, captured **2026-08-23**, used by
-`scripts/feeds.test.ts` and `scripts/render.test.ts` to test the two Phase A
-ingest paths (`scripts/lib/feeds.ts`, `scripts/lib/render.ts`) without network
-access.
+Verbatim excerpts of live responses, captured **2026-08-23** (feeds, rendered
+pages) and **2026-09-19** (lead lists), used by `scripts/feeds.test.ts`,
+`scripts/render.test.ts` and `scripts/leads.test.ts` to test the three Phase A
+ingest paths (`scripts/lib/feeds.ts`, `scripts/lib/render.ts`,
+`scripts/lib/leads.ts`) without network access.
 
 ## Feeds
 
@@ -13,6 +14,12 @@ access.
 | `duke-calendar.ics` | `https://calendar.duke.edu/index.ics` | 4 of 40 VEVENTs, with the full VTIMEZONE prologue. Bedework style: folded `LOCATION`, `DURATION` instead of `DTEND`, `DTSTART;VALUE=DATE`, and the literal string `None` where there is no location. |
 | `dncr-localist.json` | `https://events.dncr.nc.gov/api/2/events?days=7&pp=100` | 6 of 100 events. An all-day instance, a timed one, a long `ticket_cost` string that contradicts `free: true`, two statewide entries the radius filter must drop (Elk Knob in Todd, Chimney Rock in Lake Lure), and one with no `geo` and no `location_name`. |
 | `wordpress-blog.rss` | `https://raleighlittletheatre.org/feed/` | The trap. A venue's advertised `<link rel="alternate">` feed, which turns out to be its blog: auditions, a cast list, and "Job Opening – Marketing Manager". It must yield **zero** events. |
+
+## Lead lists
+
+| File | Source | Why it's here |
+|---|---|---|
+| `thingstodo919-submitted.atom` | `https://www.reddit.com/user/Thingstodo919/submitted.rss` | Captured **2026-09-19**: the feed envelope plus the two newest of 25 `<entry>` records, whole — the 2026-09-18 and 2026-09-11 "Things to do this weekend!" posts, ~200 and ~140 linked items. The body is HTML escaped inside `<content>`, so the parser has to decode entities twice (once for the XML, once for `&amp;#39;` inside links). Keeps the traps: a venue with a trailing space, an `href` the author pasted with a venue name after a space, a lone "Carrboro" after the link with no venue, one Cedar Grove listing outside the metro ring, and the footer's newsletter and Reddit links, which must yield **zero** leads. Used by `scripts/leads.test.ts`. |
 
 ## Rendered pages
 

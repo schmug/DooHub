@@ -416,6 +416,37 @@
       ]
     },
     {
+      "id": "thingstodo919",
+      "name": "Things To Do In Raleigh (u/Thingstodo919 weekly post)",
+      "kind": "aggregator",
+      "url": "https://www.reddit.com/user/Thingstodo919/submitted",
+      "city": "Raleigh",
+      "categories": [
+        "festivals",
+        "concerts",
+        "theater",
+        "markets",
+        "sports",
+        "galleries",
+        "museums",
+        "tours",
+        "classes",
+        "breweries/tastings",
+        "trivia",
+        "parks",
+        "family/kids",
+        "food events",
+        "comedy",
+        "nightlife"
+      ],
+      "ingest": {
+        "mode": "leads",
+        "feed_url": "https://www.reddit.com/user/Thingstodo919/submitted.rss",
+        "title_match": "Things to do this weekend"
+      },
+      "notes": "A curated Fri/Sat/Sun list of 100-200 Triangle events, posted to r/raleigh every Thursday or Friday, each linked to its primary page. Read with `npx tsx scripts/leads_source.ts`; build every event from the linked page, never from the post. Used on a non-commercial basis (Reddit's Public Content Policy: learning and community). Reddit allows one unauthenticated feed fetch per ~45s and Claude Code's WebFetch refuses reddit.com, so fetch once per run via the CLI or curl with a UA."
+    },
+    {
       "id": "dpac",
       "name": "Durham Performing Arts Center",
       "kind": "venue",
