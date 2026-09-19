@@ -208,9 +208,29 @@ export interface RenderIngestHint {
   reason?: string;
 }
 
-export type SourceIngest = FeedIngestHint | RenderIngestHint;
+/**
+ * Read this source as a LEAD LIST: a curated, human-written post that names
+ * events and links each one to its primary page, but carries no start times,
+ * prices or images. `scripts/lib/leads.ts` turns the post into leads; the run
+ * then opens every lead's link and builds the event from that page, never from
+ * the post. A lead with no primary page is not an event.
+ *
+ * The only source today is u/Thingstodo919's weekly "Things to do this
+ * weekend!" post on r/raleigh, read through Reddit's per-user Atom feed. It is
+ * deliberately not a `feed`: FEED_TYPES excludes RSS/Atom because no Atom item
+ * carries an event start, and that stays true here — the post is one item.
+ */
+export interface LeadsIngestHint {
+  mode: "leads";
+  /** The Atom endpoint listing the author's posts — NOT the human page. */
+  feed_url: string;
+  /** Case-insensitive substring a post's title must contain to be the weekly list. */
+  title_match: string;
+}
 
-export const INGEST_MODES = ["feed", "render"] as const;
+export type SourceIngest = FeedIngestHint | RenderIngestHint | LeadsIngestHint;
+
+export const INGEST_MODES = ["feed", "render", "leads"] as const;
 
 /**
  * A seed discovery source (data/sources.json). The registry is a FLOOR for the

@@ -26,6 +26,7 @@ import {
   type FeedIngestHint,
   type FeedScope,
   type FeedType,
+  type LeadsIngestHint,
   type RenderExtract,
   type RenderIngestHint,
   type SourceCoverage,
@@ -209,6 +210,17 @@ function ingestErrors(ingest: unknown, label: string): string[] {
     }
     if (render.reason !== undefined && (typeof render.reason !== "string" || render.reason.trim() === "")) {
       errors.push(`${label}: ingest.reason must be a non-empty string`);
+    }
+    return errors;
+  }
+
+  if (hint.mode === "leads") {
+    const leads = hint as Partial<LeadsIngestHint>;
+    if (typeof leads.feed_url !== "string" || !URL_RE.test(leads.feed_url)) {
+      errors.push(`${label}: ingest.feed_url must be an http(s) url, got ${JSON.stringify(leads.feed_url)}`);
+    }
+    if (typeof leads.title_match !== "string" || leads.title_match.trim() === "") {
+      errors.push(`${label}: ingest.title_match must be a non-empty string (the weekly post's title)`);
     }
     return errors;
   }
@@ -514,19 +526,30 @@ async function checkLinks(events: TriangleEvent[]): Promise<string[]> {
 }
 
 /**
- * HTTP-check registry URLs. Two kinds of source are skipped, for the same
+ * HTTP-check registry URLs. Three kinds of source are skipped, for the same
  * reason: their origin rejects a scripted fetch while serving a real client
  * fine, and failing the build on them would abort a healthy weekly run.
  * fetch_blocked sources 403 a plain fetch but serve through WebFetch;
  * `ingest.mode: "render"` sources reject every scripted path (Lenovo Center
- * answers 406 to all of them) and are read from a rendered DOM instead.
+ * answers 406 to all of them) and are read from a rendered DOM instead;
+ * `ingest.mode: "leads"` sources sit on Reddit, which 403s HTML pages and
+ * rate-limits its feed to one fetch per ~45s (see skipsLinkCheck).
  *
  * A declared `ingest.feed_url` is checked too, and NOT skipped for a
  * fetch_blocked source: the whole point of a feed endpoint is that a plain
  * fetch reaches it, so a 403 there is real news.
  */
 function skipsLinkCheck(s: EventSource): boolean {
-  return Boolean(s.fetch_blocked) || s.ingest?.mode === "render";
+  // `leads` joins the skip list for the same reason: Reddit answers a scripted
+  // request for an HTML page with 403, and its feed with 200 once per ~45s and
+  // 429 after that, so a check right after the run's own fetch reports a healthy
+  // source as broken. The weekly run's own fetch is the check that matters.
+  return Boolean(s.fetch_blocked) || s.ingest?.mode === "render" || s.ingest?.mode === "leads";
+}
+
+/** The feed endpoint to HTTP-check, if this source has one that tolerates it. */
+function checkableFeedUrl(s: EventSource): string | null {
+  return s.ingest?.mode === "feed" ? s.ingest.feed_url : null;
 }
 
 async function checkSourceLinks(sources: EventSource[]): Promise<string[]> {
@@ -534,11 +557,11 @@ async function checkSourceLinks(sources: EventSource[]): Promise<string[]> {
   const targets: Array<{ id: string; field: string; url: string }> = [];
   for (const s of sources) {
     if (!skipsLinkCheck(s) && URL_RE.test(s.url ?? "")) targets.push({ id: s.id, field: "url", url: s.url });
-    const feedUrl = s.ingest?.mode === "feed" ? s.ingest.feed_url : null;
+    const feedUrl = checkableFeedUrl(s);
     if (feedUrl && URL_RE.test(feedUrl)) targets.push({ id: s.id, field: "ingest.feed_url", url: feedUrl });
   }
   const skipped = sources.filter(skipsLinkCheck).length;
-  if (skipped > 0) console.log(`validate: skipping ${skipped} fetch_blocked / render source url(s)`);
+  if (skipped > 0) console.log(`validate: skipping ${skipped} fetch_blocked / render / leads source url(s)`);
 
   const results = await Promise.allSettled(targets.map((t) => checkUrl(t.url)));
   results.forEach((r, i) => {

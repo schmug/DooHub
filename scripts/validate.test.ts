@@ -526,3 +526,39 @@ test("validateCoverage rejects off-registry events attributed to zero sources", 
   );
   assert.ok(errors.some((e) => /off_registry_sources/.test(e)), errors.join("; "));
 });
+
+test("validateSources accepts a leads ingest hint", () => {
+  const registry: SourcesRegistry = {
+    schema_version: 1,
+    sources: [
+      src({
+        ingest: {
+          mode: "leads",
+          feed_url: "https://www.reddit.com/user/Thingstodo919/submitted.rss",
+          title_match: "Things to do this weekend",
+        },
+      }),
+    ],
+  };
+  assert.deepEqual(validateSources(registry).errors, []);
+});
+
+test("validateSources rejects a leads hint with no title_match", () => {
+  const registry: SourcesRegistry = {
+    schema_version: 1,
+    sources: [src({ ingest: { mode: "leads", feed_url: "https://x.test/submitted.rss" } as never })],
+  };
+  const { errors } = validateSources(registry);
+  assert.equal(errors.length, 1);
+  assert.match(errors[0]!, /title_match/);
+});
+
+test("validateSources rejects a leads hint whose feed_url is not http(s)", () => {
+  const registry: SourcesRegistry = {
+    schema_version: 1,
+    sources: [src({ ingest: { mode: "leads", feed_url: "reddit.com/x.rss", title_match: "Things" } })],
+  };
+  const { errors } = validateSources(registry);
+  assert.equal(errors.length, 1);
+  assert.match(errors[0]!, /feed_url/);
+});
