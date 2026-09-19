@@ -686,6 +686,385 @@
       ]
     },
     {
+      "id": "slims-dive-bar",
+      "name": "Slim's Dive Bar",
+      "kind": "venue",
+      "url": "https://slimsdivebar.com/music-and-events/",
+      "city": "Raleigh",
+      "categories": [
+        "concerts",
+        "nightlife"
+      ],
+      "notes": "Listed in 24 of the last 25 u/Thingstodo919 weekly posts; nightly shows."
+    },
+    {
+      "id": "raleigh-improv",
+      "name": "Raleigh Improv",
+      "kind": "venue",
+      "url": "https://improv.com/raleigh/",
+      "city": "Cary",
+      "categories": [
+        "comedy"
+      ],
+      "notes": "The Improv chain's Raleigh club is in Cary (Arboretum). Listed in 23 of 25 weekly posts."
+    },
+    {
+      "id": "bitter-social",
+      "name": "Bitter Social",
+      "kind": "venue",
+      "url": "https://www.bittersocialraleigh.com/",
+      "city": "Raleigh",
+      "categories": [
+        "nightlife",
+        "concerts"
+      ],
+      "notes": "Cocktail bar with DJ and live nights; the posts link its homepage, which carries the calendar. Listed in 22 of 25 weekly posts."
+    },
+    {
+      "id": "ritz-raleigh",
+      "name": "The Ritz",
+      "kind": "venue",
+      "url": "https://www.ritzraleigh.com/events",
+      "city": "Raleigh",
+      "categories": [
+        "concerts",
+        "nightlife"
+      ],
+      "notes": "Live Nation room. Listed in 20 of 25 weekly posts."
+    },
+    {
+      "id": "stanczyks",
+      "name": "Stanczyks",
+      "kind": "venue",
+      "url": "https://www.andmoreagainpresents.com/calendar",
+      "city": "Durham",
+      "categories": [
+        "concerts"
+      ],
+      "notes": "The room has no site of its own; its listings live on the promoter's calendar (andmoreagain presents), which also books other Durham rooms — keep the venue field from the listing. Listed in 19 of 25 weekly posts."
+    },
+    {
+      "id": "cary-theater",
+      "name": "The Cary Theater",
+      "kind": "venue",
+      "url": "https://thecarytheater.com/events/",
+      "city": "Cary",
+      "categories": [
+        "theater",
+        "concerts",
+        "comedy",
+        "family/kids"
+      ],
+      "notes": "Town-run film and live venue downtown. Answers 403 to a UA that carries a non-browser token but 200 to a plain curl, so not fetch_blocked. Listed in 18 of 25 weekly posts."
+    },
+    {
+      "id": "cannonball-music-hall",
+      "name": "Cannonball Music Hall",
+      "kind": "venue",
+      "url": "https://www.cannonballmusichall.com/",
+      "city": "Raleigh",
+      "categories": [
+        "concerts"
+      ],
+      "notes": "Tickets sell through humanitix; the posts link there. Listed in 17 of 25 weekly posts."
+    },
+    {
+      "id": "durham-central-park",
+      "name": "Durham Central Park",
+      "kind": "venue",
+      "url": "https://durhamcentralpark.org/events/",
+      "city": "Durham",
+      "categories": [
+        "markets",
+        "festivals",
+        "parks",
+        "family/kids"
+      ],
+      "notes": "Home of the Durham Farmers' Market and Food Truck Rodeo. Listed in 17 of 25 weekly posts."
+    },
+    {
+      "id": "wake-county-speedway",
+      "name": "Wake County Speedway",
+      "kind": "venue",
+      "url": "https://www.wcspeedway.com/schedule",
+      "city": "Raleigh",
+      "categories": [
+        "sports"
+      ],
+      "notes": "Quarter-mile oval, Friday-night racing in season. Listed in 16 of 25 weekly posts."
+    },
+    {
+      "id": "downtown-cary-park",
+      "name": "Downtown Cary Park",
+      "kind": "venue",
+      "url": "https://downtowncarypark.com/events/",
+      "city": "Cary",
+      "categories": [
+        "parks",
+        "markets",
+        "concerts",
+        "family/kids",
+        "trivia"
+      ],
+      "notes": "The posts also name its stages — DCP Great Lawn Pavilion, DCP Academy Pavilion — as venues. Listed in 15 of 25 weekly posts."
+    },
+    {
+      "id": "artscenter-carrboro",
+      "name": "The ArtsCenter",
+      "kind": "venue",
+      "url": "https://artscenterlive.org/performances-events/",
+      "city": "Carrboro",
+      "categories": [
+        "theater",
+        "concerts",
+        "comedy",
+        "classes"
+      ],
+      "notes": "Listed in 14 of 25 weekly posts."
+    },
+    {
+      "id": "wake-forest-listening-room",
+      "name": "Wake Forest Listening Room",
+      "kind": "venue",
+      "url": "https://wakeforestlisteningroom.com/",
+      "city": "Wake Forest",
+      "categories": [
+        "concerts"
+      ],
+      "notes": "Use the bare domain: the www host does not answer. Listed in 14 of 25 weekly posts."
+    },
+    {
+      "id": "motorco",
+      "name": "Motorco Music Hall",
+      "kind": "venue",
+      "url": "https://motorcomusic.com/calendar/",
+      "city": "Durham",
+      "categories": [
+        "concerts",
+        "comedy",
+        "nightlife"
+      ],
+      "notes": "Listed in 13 of 25 weekly posts (as both 'Motorco' and 'Motorco Music Hall')."
+    },
+    {
+      "id": "wakemed-soccer-park",
+      "name": "WakeMed Soccer Park",
+      "kind": "venue",
+      "url": "https://www.nccourage.com/schedule",
+      "city": "Cary",
+      "categories": [
+        "sports"
+      ],
+      "notes": "NC Courage home matches; the schedule also lists away matches, so apply the Triangle filter. Listed in 13 of 25 weekly posts."
+    },
+    {
+      "id": "coastal-credit-union-music-park",
+      "name": "Coastal Credit Union Music Park at Walnut Creek",
+      "kind": "venue",
+      "url": "https://www.coastalcreditunionmusicpark.com/events",
+      "city": "Raleigh",
+      "categories": [
+        "concerts"
+      ],
+      "notes": "Live Nation amphitheater; the posts link Ticketmaster, the venue site carries the schedule. Listed in 12 of 25 weekly posts."
+    },
+    {
+      "id": "five-county-stadium",
+      "name": "Five County Stadium",
+      "kind": "venue",
+      "url": "https://zebulondevildogz.com/schedule/",
+      "city": "Zebulon",
+      "categories": [
+        "sports"
+      ],
+      "notes": "Zebulon Devil Dogz baseball. Listed in 11 of 25 weekly posts."
+    },
+    {
+      "id": "rialto-theatre",
+      "name": "The Rialto Theatre",
+      "kind": "venue",
+      "url": "https://therialto.com/events/",
+      "city": "Raleigh",
+      "categories": [
+        "theater",
+        "concerts",
+        "comedy"
+      ],
+      "notes": "Film, Candlelight concerts and comedy; the posts link Fever for the concerts. Answers 403 to a UA with a non-browser token, 200 to a plain curl. Listed in 11 of 25 weekly posts (as 'Rialto' and 'Rialto Theatre')."
+    },
+    {
+      "id": "the-fruit",
+      "name": "The Fruit",
+      "kind": "venue",
+      "url": "https://www.durhamfruit.com/schedule",
+      "city": "Durham",
+      "categories": [
+        "concerts",
+        "galleries",
+        "nightlife"
+      ],
+      "notes": "Art and concert venue on S Dillard St. Listed in 11 of 25 weekly posts."
+    },
+    {
+      "id": "neptunes",
+      "name": "Neptunes Parlour",
+      "kind": "venue",
+      "url": "https://www.neptunesraleigh.com/events",
+      "city": "Raleigh",
+      "categories": [
+        "nightlife",
+        "concerts"
+      ],
+      "notes": "Listed in 11 of 25 weekly posts (as 'Neptunes' and 'Neptunes Parlour')."
+    },
+    {
+      "id": "north-main-athletic-complex",
+      "name": "North Main Athletic Complex",
+      "kind": "venue",
+      "url": "https://salamandersbaseball.com/schedule/",
+      "city": "Holly Springs",
+      "categories": [
+        "sports"
+      ],
+      "notes": "Holly Springs Salamanders baseball. Listed in 10 of 25 weekly posts."
+    },
+    {
+      "id": "boxyard-rtp",
+      "name": "Boxyard RTP",
+      "kind": "venue",
+      "url": "https://boxyard.rtp.org/calendar/",
+      "city": "Durham",
+      "categories": [
+        "markets",
+        "food events",
+        "family/kids",
+        "nightlife"
+      ],
+      "notes": "Listed in 10 of 25 weekly posts."
+    },
+    {
+      "id": "raleigh-convention-center",
+      "name": "Raleigh Convention Center",
+      "kind": "venue",
+      "url": "https://www.atlanticunionbankconventioncenter.com/events",
+      "city": "Raleigh",
+      "categories": [
+        "festivals",
+        "shopping",
+        "markets"
+      ],
+      "notes": "Renamed Atlantic Union Bank Convention Center in 2026; raleighconvention.com redirects there. Expos, cons and collector shows. Listed in 9 of 25 weekly posts."
+    },
+    {
+      "id": "mettlesome",
+      "name": "Mettlesome",
+      "kind": "venue",
+      "url": "https://thisismettlesome.com/",
+      "city": "Durham",
+      "categories": [
+        "comedy"
+      ],
+      "notes": "Improv theater; shows live at /live/YYYY/M/D/slug and the homepage lists what is upcoming (no /shows or /events page). Listed in 9 of 25 weekly posts (as 'Mettlesome Theater' and 'Mettlesome Comedy Theater')."
+    },
+    {
+      "id": "the-durham-hotel",
+      "name": "The Durham Hotel",
+      "kind": "venue",
+      "url": "https://www.thedurham.com/events/",
+      "city": "Durham",
+      "categories": [
+        "nightlife",
+        "food events"
+      ],
+      "notes": "Rooftop DJ sets and dinners; the posts list it as 'The Durham'. Listed in 9 of 25 weekly posts."
+    },
+    {
+      "id": "marbles-kids-museum",
+      "name": "Marbles Kids Museum",
+      "kind": "venue",
+      "url": "https://marbleskidsmuseum.org/events/",
+      "city": "Raleigh",
+      "categories": [
+        "family/kids",
+        "museums"
+      ],
+      "notes": "403s a plain fetch, 200 to a browser UA — use WebFetch. Already the store's third-largest source via Phase B; registering it makes the sweep deterministic. Listed in 9 of 25 weekly posts.",
+      "fetch_blocked": true
+    },
+    {
+      "id": "botanical-lounge",
+      "name": "Botanical Lounge",
+      "kind": "venue",
+      "url": "https://botanicalraleigh.com/events/",
+      "city": "Raleigh",
+      "categories": [
+        "nightlife",
+        "concerts"
+      ],
+      "notes": "Rooftop bar with live music. Listed in 9 of 25 weekly posts."
+    },
+    {
+      "id": "bike-library",
+      "name": "The Bike Library",
+      "kind": "venue",
+      "url": "https://thebikelibrary.com/events",
+      "city": "Raleigh",
+      "categories": [
+        "nightlife",
+        "classes"
+      ],
+      "notes": "Bike shop and bar with a weekly events page. Listed in 9 of 25 weekly posts."
+    },
+    {
+      "id": "portal-hq",
+      "name": "The Portal HQ",
+      "kind": "venue",
+      "url": "https://theportalhq.com/calendar",
+      "city": "Raleigh",
+      "categories": [
+        "nightlife",
+        "classes"
+      ],
+      "notes": "Creative hub with a game calendar. Listed in 9 of 25 weekly posts."
+    },
+    {
+      "id": "rebus-works",
+      "name": "Rebus Works",
+      "kind": "venue",
+      "url": "https://www.rebusworks.us/calendar",
+      "city": "Raleigh",
+      "categories": [
+        "markets",
+        "galleries",
+        "nightlife"
+      ],
+      "notes": "Gallery and event space; Sunday markets. Listed in 8 of 25 weekly posts."
+    },
+    {
+      "id": "mystic-farm-distillery",
+      "name": "Mystic Farm & Distillery",
+      "kind": "venue",
+      "url": "https://www.whatismystic.com/events-2",
+      "city": "Durham",
+      "categories": [
+        "breweries/tastings",
+        "trivia",
+        "food events"
+      ],
+      "notes": "Listed in 8 of 25 weekly posts."
+    },
+    {
+      "id": "velvet-hippo",
+      "name": "The Velvet Hippo",
+      "kind": "venue",
+      "url": "https://www.velvethippodurham.com/calendar",
+      "city": "Durham",
+      "categories": [
+        "nightlife"
+      ],
+      "notes": "Rooftop bar; /events is private bookings, /calendar is the listing. Listed in 8 of 25 weekly posts."
+    },
+    {
       "id": "raleigh-city-events",
       "name": "City of Raleigh",
       "kind": "hub",
@@ -730,6 +1109,75 @@
         "feed_type": "localist"
       },
       "notes": "Statewide — filter to Triangle sites (Stagville, Bennett Place, Capitol, Mordecai). Localist ignores server-side geo narrowing (&distance=25&near=Raleigh,NC returns 0), so the radius filter runs after the fetch. Most entries carry geo lat/lon, which decides; the handful without any place at all are centrally-run Raleigh programs, so the default local scope is right."
+    },
+    {
+      "id": "downtown-raleigh-alliance",
+      "name": "Downtown Raleigh Alliance",
+      "kind": "hub",
+      "url": "https://downtownraleigh.org/events/calendar",
+      "city": "Raleigh",
+      "categories": [
+        "festivals",
+        "markets",
+        "food events",
+        "nightlife"
+      ],
+      "notes": "403s a plain fetch, 200 to a browser UA — use WebFetch. First Friday, Restaurant Week and downtown street events; the posts list these as 'Downtown, Raleigh'. Listed in 16 of 25 weekly posts.",
+      "fetch_blocked": true
+    },
+    {
+      "id": "raleigh-parks",
+      "name": "Raleigh Parks (Get 2 Know Raleigh)",
+      "kind": "hub",
+      "url": "https://www.get2knowraleigh.com/events",
+      "city": "Raleigh",
+      "categories": [
+        "parks",
+        "family/kids",
+        "festivals",
+        "markets"
+      ],
+      "notes": "Raleigh Parks' own events site — Moore Square markets and movie nights — distinct from the city's raleighnc.gov calendar (raleigh-city-events). Listed in 15 of 25 weekly posts."
+    },
+    {
+      "id": "knightdale-town",
+      "name": "Town of Knightdale",
+      "kind": "hub",
+      "url": "https://www.knightdalenc.gov/calendar",
+      "city": "Knightdale",
+      "categories": [
+        "parks",
+        "festivals",
+        "family/kids",
+        "markets"
+      ],
+      "notes": "Knightdale Station Park programming. Listed in 9 of 25 weekly posts."
+    },
+    {
+      "id": "chapel-hill-public-library",
+      "name": "Chapel Hill Public Library",
+      "kind": "hub",
+      "url": "https://www.chapelhillpubliclibrary.org/events/month",
+      "city": "Chapel Hill",
+      "categories": [
+        "classes",
+        "family/kids"
+      ],
+      "notes": "Listed in 8 of 25 weekly posts."
+    },
+    {
+      "id": "carrboro-town",
+      "name": "Town of Carrboro",
+      "kind": "hub",
+      "url": "https://townofcarrboro.org/calendar.aspx",
+      "city": "Carrboro",
+      "categories": [
+        "festivals",
+        "markets",
+        "parks",
+        "galleries"
+      ],
+      "notes": "2nd Friday Art Walk and town festivals; the posts list these at 'Carrboro Town Hall'. Listed in 8 of 25 weekly posts."
     }
   ]
 }
