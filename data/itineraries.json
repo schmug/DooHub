@@ -1,536 +1,26 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-19T12:00:00-04:00",
-  "week": "2026-W38",
+  "generated_at": "2026-09-24T08:28:36-04:00",
+  "week": "2026-W39",
   "itineraries": [
     {
-      "id": "2026-W38-bugfest-downtown-raleigh",
-      "title": "BugFest, Middle-earth and a Cemetery Play",
-      "theme": "Two free festivals downtown, then theatre after dark",
-      "anchor_city": "Raleigh",
-      "drive_time": "Downtown Raleigh — park once and walk; Oakwood Cemetery is a 5-minute drive east",
-      "weather": {
-        "summary": "Partly sunny, high near 86",
-        "temp_f": 86
-      },
-      "cost_range": "Free to about $45 per person depending on the evening",
-      "date": "2026-09-19",
-      "overview": "Saturday stacks the two biggest free days of the week four blocks apart: BugFest fills the NC Museum of Natural Sciences until 7 pm, and Hobbit Fest runs all three extended-edition films in Moore Square. Park in a downtown deck, walk between them, then pick an evening — Burning Coal's short plays among the headstones at Historic Oakwood, or the symphony opening its season at Meymandi.",
-      "schedule": {
-        "morning": [
-          {
-            "time": "10:00 AM",
-            "title": "BugFest 2026",
-            "event_id": "9c0d1e5f9a9a",
-            "location": "NC Museum of Natural Sciences, 11 West Jones Street, Raleigh, NC, 27601",
-            "price": "Free",
-            "notes": "Get there at opening. By noon the Café Insecta line is the longest thing downtown."
-          },
-          {
-            "time": "10:00 AM",
-            "title": "Hobbit Fest: One Festival. Three Epic Films. One Journey to Middle-earth",
-            "event_id": "4ed8d7f1c968",
-            "location": "Moore Square, 200 S Blount St, Raleigh, NC 27601",
-            "price": "Free",
-            "notes": "About a 12-minute walk east from the museum; the films run all day so you can dip in and out."
-          }
-        ],
-        "afternoon": [
-          {
-            "time": "12:30 PM",
-            "title": "Incredible Science",
-            "event_id": "be5453fb67f8",
-            "location": "NC Museum of Natural Sciences, 11 W Jones St, Raleigh, NC 27601",
-            "price": "Free",
-            "notes": "A 30-minute live demo and a cool, air-conditioned reset between the two festivals."
-          },
-          {
-            "time": "11:00 AM",
-            "title": "Music at the Market",
-            "event_id": "b7c37231ce67",
-            "location": "Dorothea Dix Park, 2105 Umstead Dr, Raleigh, NC 27603",
-            "price": "Free",
-            "notes": "Live music at the House of Many Porches Market at Dix Park — a 7-minute drive south-west if you want open sky."
-          },
-          {
-            "time": "5:30 PM",
-            "title": "Raleigh Twilight Market at Smoky Hollow",
-            "event_id": "4a7bd1cdf71b",
-            "location": "Smoky Hollow, 615 Peace St, Raleigh, NC 27605",
-            "price": "Free",
-            "notes": "MAKRS Society's evening market at Smoky Hollow with DJ Rhymic; free to browse."
-          }
-        ],
-        "evening": [
-          {
-            "time": "6:30 PM",
-            "title": "Oakwood Series 2026: From the Ground Up",
-            "event_id": "8d70d172ea84",
-            "location": "Historic Oakwood Cemetery, 701 Oakwood Avenue, Raleigh, NC, 27604",
-            "price": "$20",
-            "notes": "Outdoor short plays in Historic Oakwood Cemetery. Bring a folding chair; about 90 minutes."
-          },
-          {
-            "time": "8:00 PM",
-            "title": "Rachmaninoff Piano Concerto No. 3",
-            "event_id": "920306f6603d",
-            "location": "Meymandi Concert Hall, 2 East South Street, Raleigh, NC 27601",
-            "price": "unknown",
-            "notes": "Alternative: the NC Symphony opens its season with Boris Giltburg on Rachmaninoff's Third."
-          }
-        ]
-      },
-      "food": [
-        {
-          "slot": "breakfast",
-          "place": "Jubala Coffee (Person Street)",
-          "city": "Raleigh",
-          "vegan_dish": "Oat-milk latte with the vegan banana bread",
-          "vegetarian_dish": "Egg and cheddar biscuit",
-          "price": "$6-$12",
-          "notes": "Ten minutes from the museum and open at 7 am."
-        },
-        {
-          "slot": "lunch",
-          "place": "Café Insecta at BugFest",
-          "city": "Raleigh",
-          "vegan_dish": "Cricket-free option: ask for the veggie tacos on the savoury line",
-          "vegetarian_dish": "Mealworm-free chilli is marked at the tent",
-          "price": "$5-$10",
-          "notes": "Insect-forward by design; there are always non-insect plates, and the queue is shortest before 11:30."
-        },
-        {
-          "slot": "dinner",
-          "place": "Tazza Kitchen Raleigh",
-          "city": "Raleigh",
-          "vegan_dish": "Wood-fired cauliflower with romesco (ask for no crema)",
-          "vegetarian_dish": "Margherita pizza from the wood oven",
-          "price": "$15-$28",
-          "notes": "Five minutes from Oakwood Cemetery; book ahead on a festival Saturday."
-        }
-      ],
-      "alternatives": [
-        {
-          "leg": "BugFest and Hobbit Fest",
-          "good_weather": "Do the outdoor Bicentennial Plaza tents and Moore Square lawn first.",
-          "rain": "BugFest's museum floors are all indoors; Hobbit Fest moves under the Moore Square shelter — check @raleighparks before you leave."
-        },
-        {
-          "leg": "Oakwood Series",
-          "good_weather": "Outdoor seating among the headstones, sunset around 7:20 pm.",
-          "rain": "Swap to the symphony at Meymandi, or the Milk Carton Kids at Cat's Cradle."
-        }
-      ],
-      "practical_notes": [
-        "City decks downtown are free on Saturdays; the Wilmington and Cabarrus deck is closest to Moore Square.",
-        "BugFest is free and needs no ticket; Oakwood Series tickets are $20 ($10 students) and sell out on clear nights.",
-        "Leave Raleigh by 9:30 am to be at BugFest for the 10 am opening."
-      ],
-      "event_ids": [
-        "9c0d1e5f9a9a",
-        "4ed8d7f1c968",
-        "be5453fb67f8",
-        "b7c37231ce67",
-        "4a7bd1cdf71b",
-        "8d70d172ea84",
-        "920306f6603d"
-      ]
-    },
-    {
-      "id": "2026-W38-centerfest-durham",
-      "title": "CenterFest Saturday in Durham",
-      "theme": "A fine-arts festival, two history walks and Oktoberfest's first night",
-      "anchor_city": "Durham",
-      "drive_time": "25 minutes from Raleigh on I-40; everything here is walkable from the Five Points core",
-      "weather": {
-        "summary": "Partly sunny, high near 86",
-        "temp_f": 86
-      },
-      "cost_range": "Free to about $50 per person",
-      "date": "2026-09-19",
-      "overview": "Durham Arts Council's CenterFest takes over Five Points and CCB Plaza with juried artists and three stages from 10 to 6. Between sets, take one of the historian-led walking tours that leave from Blackwell Street, drop into Boardinghouse Arts' new studio building, and end the night at Ponysaurus, where Oktoberfest opens with Tokyo chef Satoshi Katakura cooking Japanese-style hot dogs.",
-      "schedule": {
-        "morning": [
-          {
-            "time": "10:00 AM",
-            "title": "CenterFest",
-            "event_id": "f9e42a2b7da9",
-            "location": "Downtown Durham, Durham, NC, 27701",
-            "price": "Free",
-            "notes": "Start at Five Points and work north; the artist booths thin out after 2 pm."
-          }
-        ],
-        "afternoon": [
-          {
-            "time": "2:00 PM",
-            "title": "Downtown Durham Historian-Guided Tour",
-            "event_id": "b478854b598d",
-            "location": "Lucky Strike Tower, 334 Blackwell St, Durham, NC 27701, Durham, NC 27703-7825",
-            "price": "$15",
-            "notes": "An hour on foot through downtown's tobacco-era buildings, leaving from Lucky Strike Tower."
-          },
-          {
-            "time": "4:00 PM",
-            "title": "Downtown Durham African American Historian-Guided Tour",
-            "event_id": "a7987eee80c4",
-            "location": "CCB Plaza, 201 Corcoran St., Durham, NC 27701",
-            "price": "$15",
-            "notes": "A second, different route at 4 pm covering Durham's Black Wall Street."
-          },
-          {
-            "time": "4:00 PM",
-            "title": "Boardinghouse Arts Open House in Downtown Durham",
-            "event_id": "c95f2a57adda",
-            "location": "Boardinghouse Arts, 703 W. Trinity Ave., Durham, NC, 27701",
-            "price": "Free",
-            "notes": "Free open house at the new artist studio building on West Trinity — 4 to 7 pm."
-          }
-        ],
-        "evening": [
-          {
-            "time": "5:00 PM",
-            "title": "Oktoberfest Kickoff & Satoshi Welcome Party",
-            "event_id": "f54fa845409a",
-            "location": "Ponysaurus Brewing, 219 Hood St, Durham, NC 27701",
-            "price": "Free",
-            "notes": "Oktoberfest opens with Japanese-style hot dogs 5-8 pm, then DanceGruv DJs until midnight. Free entry."
-          },
-          {
-            "time": "5:30 PM",
-            "title": "Zoomies: Stories & Sketch Comedy About People and their Pets",
-            "event_id": "edd5d0686e8a",
-            "location": "Mettlesome, 800 Taylor St., Durham, NC, 27701",
-            "price": "$18.00",
-            "notes": "Alternative early show: an hour of pet comedy benefiting the Urban Tails Compassion Fund. The 7 pm slot is sold out."
-          },
-          {
-            "time": "8:00 PM",
-            "title": "Durham Ghost Walk",
-            "event_id": "e63fc6fa6547",
-            "location": "Fate & Folklore, 123 Market Street, Durham, NC",
-            "price": "$15",
-            "notes": "Alternative late: a one-hour walk through Durham's haunted corners from Fate & Folklore."
-          }
-        ]
-      },
-      "food": [
-        {
-          "slot": "breakfast",
-          "place": "Guglhupf Bakery & Café",
-          "city": "Durham",
-          "vegan_dish": "Avocado toast on the seeded rye (hold the egg)",
-          "vegetarian_dish": "Bauernfrühstück with the farm egg",
-          "price": "$8-$16",
-          "notes": "Also running its own Oktoberfest this weekend."
-        },
-        {
-          "slot": "lunch",
-          "place": "CenterFest food vendors, Five Points",
-          "city": "Durham",
-          "vegan_dish": "Look for the falafel and arepa trucks on Morris Street",
-          "vegetarian_dish": "Wood-fired margherita from the pizza trailer",
-          "price": "$8-$15",
-          "notes": "Cash and card both work; the Morris Street row is shadier than Main."
-        },
-        {
-          "slot": "dinner",
-          "place": "Dashi Ramen",
-          "city": "Durham",
-          "vegan_dish": "Vegan shoyu ramen with charred corn",
-          "vegetarian_dish": "Miso ramen (ask for the vegetable broth)",
-          "price": "$16-$24",
-          "notes": "Chef Satoshi's omakase upstairs is Monday-Thursday; the downstairs ramen bar is walk-in."
-        }
-      ],
-      "alternatives": [
-        {
-          "leg": "CenterFest",
-          "good_weather": "The whole festival is open-air between Five Points and CCB Plaza.",
-          "rain": "Duck into the Durham Arts Council building — the YPPC family improv show is indoors at 1 pm in the WTVD Theatre."
-        },
-        {
-          "leg": "Walking tours",
-          "good_weather": "Both leave rain or shine; the 2 pm route has more shade.",
-          "rain": "Swap for the Nasher Museum or the 5 Points Gallery show, both indoors and a short drive."
-        }
-      ],
-      "practical_notes": [
-        "Street parking around Five Points is metered until 7 pm on Saturday; the Corcoran deck is the easy fallback.",
-        "CenterFest is free; the walking tours are $15 and cap at about 20 people, so book ahead.",
-        "Leave Raleigh by 9:15 am for the 10 am festival opening."
-      ],
-      "event_ids": [
-        "f9e42a2b7da9",
-        "b478854b598d",
-        "a7987eee80c4",
-        "c95f2a57adda",
-        "f54fa845409a",
-        "edd5d0686e8a",
-        "e63fc6fa6547"
-      ]
-    },
-    {
-      "id": "2026-W38-fiesta-del-pueblo",
-      "title": "La Fiesta del Pueblo and a Warehouse District Sunday",
-      "theme": "The Triangle's biggest Latin American festival, plus the block around it",
-      "anchor_city": "Raleigh",
-      "drive_time": "Downtown Raleigh; Fayetteville Street closes to traffic, so park in the Moore Square or Charter Square decks",
-      "weather": {
-        "summary": "Mostly sunny, high near 88",
-        "temp_f": 88
-      },
-      "cost_range": "Free to about $35 per person",
-      "date": "2026-09-20",
-      "overview": "El Pueblo closes Fayetteville Street from noon to 6 for its 30-plus-year festival: live music and dance on multiple stages, a Unity Walk with flags, artisan vendors and a long row of food. Warm up with DJs and a market on the Videri patio in the Warehouse District, and finish with chamber guitar at the NC Museum of Art or free emo karaoke back downtown.",
-      "schedule": {
-        "morning": [
-          {
-            "time": "12:00 AM",
-            "title": "Rise N' Grind: Thirsty Pigeon Records x Disco Kitchen",
-            "event_id": "990056c17343",
-            "location": "Videri Chocolate Factory, 327 W Davie St, Raleigh, NC 27601",
-            "price": "Free",
-            "notes": "Four hours of DJs plus a patio market at the chocolate factory; mimosas at the counter."
-          }
-        ],
-        "afternoon": [
-          {
-            "time": "12:00 PM",
-            "title": "La Fiesta Del Pueblo",
-            "event_id": "57cb29937d1e",
-            "location": "Fayetteville Street, Fayetteville St, Raleigh, NC 27601",
-            "price": "Free",
-            "notes": "Six blocks of Fayetteville Street. The Unity Walk with Flags is the set piece — ask a volunteer for the start time on the day."
-          },
-          {
-            "time": "12:00 PM",
-            "title": "Sproktoberfest at Crank Arm Brewing",
-            "event_id": "9fed5c793550",
-            "location": "Crank Arm Brewing, 319 W Davie St, Raleigh, NC 27601",
-            "price": "unknown",
-            "notes": "Pretzels and Oktoberfest beer at Crank Arm, a five-minute walk west of the festival."
-          }
-        ],
-        "evening": [
-          {
-            "time": "2:00 PM",
-            "title": "Texas Guitar Quartet",
-            "event_id": "6980b5b0eecf",
-            "location": "NC Museum of Art, Raleigh, NC",
-            "price": "unknown",
-            "notes": "Chamber Music Raleigh's Sights & Sounds on Sundays at the NCMA's SECU Auditorium; a 7 pm repeat is also scheduled."
-          },
-          {
-            "time": "8:00 PM",
-            "title": "Emo Karaoke! Get Sad Y'all",
-            "event_id": "0665bb923d88",
-            "location": "Neptunes Parlour, 14 W Martin St, Raleigh, NC 27601",
-            "price": "Free",
-            "notes": "Alternative: free emo karaoke at Neptunes. Sign-ups 8 pm, singing 9 pm."
-          }
-        ]
-      },
-      "food": [
-        {
-          "slot": "breakfast",
-          "place": "Jubala Coffee (Warehouse District)",
-          "city": "Raleigh",
-          "vegan_dish": "Oat cortado and the vegan pastry of the day",
-          "vegetarian_dish": "Ricotta toast with honey",
-          "price": "$5-$12",
-          "notes": "Two minutes from Videri."
-        },
-        {
-          "slot": "lunch",
-          "place": "La Fiesta del Pueblo food row",
-          "city": "Raleigh",
-          "vegan_dish": "Pupusas de frijol con queso — ask for sin queso; the yuca fries are vegan",
-          "vegetarian_dish": "Elote, cheese pupusas and quesadillas throughout the row",
-          "price": "$6-$15",
-          "notes": "Bring cash; several stands are cash-preferred and the ATM line gets long."
-        },
-        {
-          "slot": "dinner",
-          "place": "Gallo Pelón Mezcalería",
-          "city": "Raleigh",
-          "vegan_dish": "Tacos de hongos with salsa macha",
-          "vegetarian_dish": "Queso fundido with rajas",
-          "price": "$12-$26",
-          "notes": "Small room on Person Street; go early or plan to wait."
-        }
-      ],
-      "alternatives": [
-        {
-          "leg": "La Fiesta del Pueblo",
-          "good_weather": "The whole street is open-air with limited shade — hats and water.",
-          "rain": "The festival runs rain or shine, but the NCMA galleries and Marbles are both good indoor pivots."
-        },
-        {
-          "leg": "Evening",
-          "good_weather": "Walk from the festival to Neptunes; it is three blocks.",
-          "rain": "Drive to the NCMA instead — parking is free and the auditorium is indoors."
-        }
-      ],
-      "practical_notes": [
-        "Fayetteville Street is closed to cars; the Moore Square deck is the closest paid parking.",
-        "The festival is free to enter. Chamber Music Raleigh tickets are sold through the NCMA box office.",
-        "Sunday parking is free at most Raleigh meters."
-      ],
-      "event_ids": [
-        "57cb29937d1e",
-        "990056c17343",
-        "9fed5c793550",
-        "6980b5b0eecf",
-        "0665bb923d88"
-      ]
-    },
-    {
-      "id": "2026-W38-raleigh-oktoberfest-saturday",
-      "title": "Food Truck Rodeo into NC Oktoberfest",
-      "theme": "One street, two festivals, then Gov't Mule",
-      "anchor_city": "Raleigh",
-      "drive_time": "Downtown Raleigh — Fayetteville Street and Red Hat Amphitheater are four blocks apart",
-      "weather": null,
-      "cost_range": "Free to about $90 per person depending on the concert",
+      "id": "2026-W39-outlandish-hillsborough",
       "date": "2026-09-26",
-      "overview": "Shop Local Raleigh's Food Truck Rodeo fills Fayetteville Street from noon, and NC Oktoberfest's 'Prost Y'all' street festival overlaps it from 1 pm with North Carolina craft beer, vendors and live music. Stay downtown for Gov't Mule and Ziggy Marley at Red Hat, or drive north for Compass Rose's own Oktoberfest with a giant-pretzel eating contest at 12:30 and stein holding at 2.",
-      "schedule": {
-        "morning": [
-          {
-            "time": "10:00 AM",
-            "title": "Coffee and a walk through Moore Square",
-            "location": "Moore Square, 200 S Blount St, Raleigh",
-            "price": "Free",
-            "notes": "Get downtown before the street closures at 11 and park once."
-          }
-        ],
-        "afternoon": [
-          {
-            "time": "12:00 PM",
-            "title": "Raleigh Food Truck Rodeo",
-            "event_id": "a3b4017274d5",
-            "location": "Fayetteville Street, Fayetteville St, Raleigh, NC 27601",
-            "price": "Free",
-            "notes": "Dozens of trucks down Fayetteville Street, noon to 6. Free to walk; you pay per truck."
-          },
-          {
-            "time": "1:00 PM",
-            "title": "NC Oktoberfest: Prost Y'all",
-            "event_id": "76868a75003a",
-            "location": "Downtown Raleigh, Downtown Raleigh, NC 27601",
-            "price": "unknown",
-            "notes": "Overlaps the rodeo from 1 pm with NC craft beer, a stein-holding stage and live music."
-          },
-          {
-            "time": "12:00 PM",
-            "title": "Oktoberfest at Compass Rose",
-            "event_id": "0a07c9a7097a",
-            "location": "Compass Rose Brewery, 3201 Northside Dr, Raleigh, NC 27615",
-            "price": "Free",
-            "notes": "Alternative if you would rather sit down: Compass Rose's Oktoberfest in North Raleigh, 15 minutes up Six Forks."
-          }
-        ],
-        "evening": [
-          {
-            "time": "7:00 PM",
-            "title": "Gov't Mule & Ziggy Marley: Dreaming the Same Dream Tour",
-            "event_id": "3cfdb19c61bf",
-            "location": "Red Hat Amphitheater, 500 S McDowell St, Raleigh, NC 27601",
-            "price": "unknown",
-            "notes": "Gov't Mule and Ziggy Marley co-headline the Dreaming the Same Dream Tour at Red Hat, four blocks from the rodeo."
-          },
-          {
-            "time": "6:00 PM",
-            "title": "The Jazz Room: A Journey to the Heart of New Orleans",
-            "event_id": "816155793a34",
-            "location": "Lincoln Theatre, 126 E Cabarrus St, Raleigh, NC 27601",
-            "price": "$32-$64",
-            "notes": "Alternative: a New Orleans-themed Jazz Room at Lincoln Theatre, doors 5 pm."
-          },
-          {
-            "time": "10:30 PM",
-            "title": "Late Night Gov't Mule Afterparty with Jerry Garcia Band Cover Band",
-            "event_id": "64bbc1e28616",
-            "location": "Kings, 14 W Martin St, Raleigh, NC 27601",
-            "price": "$17.25-$20.25",
-            "notes": "Late option: the Jerry Garcia Band cover band runs the Gov't Mule afterparty at King's from 10:30."
-          }
-        ]
-      },
-      "food": [
-        {
-          "slot": "breakfast",
-          "place": "Sir Walter Coffee",
-          "city": "Raleigh",
-          "vegan_dish": "Oat-milk cold brew and the vegan breakfast burrito",
-          "vegetarian_dish": "Egg and pimento cheese biscuit",
-          "price": "$5-$13",
-          "notes": "On Fayetteville Street, so you can leave the car parked."
-        },
-        {
-          "slot": "lunch",
-          "place": "Food Truck Rodeo, Fayetteville Street",
-          "city": "Raleigh",
-          "vegan_dish": "Several trucks run a vegan jackfruit or mushroom taco; look for the Cousins Maine-style line to avoid",
-          "vegetarian_dish": "Arepas, wood-fired pizza and mac-and-cheese trucks are always in the lineup",
-          "price": "$8-$16",
-          "notes": "Plates run $8-$14 each; three people can graze four trucks for about $50."
-        },
-        {
-          "slot": "dinner",
-          "place": "Wye Hill Kitchen & Brewing",
-          "city": "Raleigh",
-          "vegan_dish": "Crispy tofu bowl with chilli crunch",
-          "vegetarian_dish": "Pimento grilled cheese",
-          "price": "$14-$26",
-          "notes": "The Witch, Please! Halloween cocktail pop-up is running there through 1 November."
-        }
-      ],
-      "alternatives": [
-        {
-          "leg": "Fayetteville Street festivals",
-          "good_weather": "Both are street festivals with little shade; go early or after 4 pm.",
-          "rain": "NC Oktoberfest runs rain or shine, but Compass Rose's indoor taproom is the dry version of the same day."
-        },
-        {
-          "leg": "Red Hat Amphitheater",
-          "good_weather": "Open-air amphitheatre, gates about an hour before.",
-          "rain": "Shows go ahead in rain; if you would rather be indoors, the Lincoln Theatre Jazz Room starts at 6."
-        }
-      ],
-      "practical_notes": [
-        "Fayetteville Street closes to traffic; use the Charter Square or Wilmington Street decks.",
-        "No NWS point forecast covers 26 September yet — check before you commit to the outdoor legs.",
-        "NC State plays Appalachian State at Carter-Finley at 7:30, so westbound Hillsborough Street traffic is bad from 5 pm."
-      ],
-      "event_ids": [
-        "a3b4017274d5",
-        "76868a75003a",
-        "0a07c9a7097a",
-        "3cfdb19c61bf",
-        "816155793a34",
-        "64bbc1e28616"
-      ]
-    },
-    {
-      "id": "2026-W38-outlandish-hillsborough",
-      "title": "Outlandish Hillsborough: a Scottish Saturday",
-      "theme": "Highland games, an Outlander costume exhibit and a ceilidh town",
       "anchor_city": "Hillsborough",
-      "drive_time": "45 minutes from Raleigh on I-85; 20 from Durham. Park once on Churton Street.",
-      "weather": null,
-      "cost_range": "About $25-$60 per person",
-      "date": "2026-09-26",
-      "overview": "Hillsborough turns Scottish for the day. The Outlandish festival takes over Ayr Mount Historic Site from 10 to 4 with dance, history and family games; Saltire Gallerie has the Outlander costume exhibit open all day and hosts an evening cultural gathering; and the Visitors Center runs both its standard history walk and an Outlander-themed one.",
+      "title": "Outlandish Hillsborough: Highland Games Day",
+      "theme": "Scottish festival, walking tours and an after-dark ghost tour in one walkable town",
+      "drive_time": "About 35 min west of Raleigh via I-40/I-85; 20 min from Durham",
+      "cost_range": "About $35–$75 per person (festival $25, exhibit $10, meals)",
+      "overview": "Hillsborough goes Scottish for its Outlandish weekend. Start at the Saturday farmers market by the river, spend the middle of the day at the Scottish Festival on the grounds of Ayr Mount, walk the town with a guided tour, then finish at the Outlander exhibit and a lantern-lit ghost tour.",
       "schedule": {
         "morning": [
           {
-            "time": "10:30 AM",
-            "title": "Historic Hillsborough Guided Tours 2026",
-            "event_id": "d468f0c510b9",
-            "location": "Hillsborough Visitors Center, 150 E King Street, Hillsborough, NC, 27278",
-            "price": "unknown",
-            "notes": "A two-hour guided walk through one of North Carolina's oldest towns, leaving from the Visitors Center."
+            "time": "8:00 AM",
+            "title": "Eno River Farmers Market",
+            "event_id": "bb55ca23a816",
+            "location": "River Park Farmers Market Pavilion, 144 E Margaret Ln, Hillsborough, NC 27278",
+            "price": "Free",
+            "notes": "Riverside market on Margaret Ln, a short walk from the Visitors Center."
           },
           {
             "time": "10:00 AM",
@@ -538,7 +28,7 @@
             "event_id": "1a3cc779b9bf",
             "location": "Ayr Mount Historic Site, 376 St. Mary's Rd, Hillsborough, NC, 27278",
             "price": "$25",
-            "notes": "Ayr Mount from 10 am: Scottish games, dance and craft. Tickets are $25 and sell out most years."
+            "notes": "Runs 10 AM–4 PM on the Ayr Mount grounds, about a 5-minute drive east of downtown. Tickets on the festival page."
           }
         ],
         "afternoon": [
@@ -548,333 +38,838 @@
             "event_id": "fd179a8d2507",
             "location": "Hillsborough Visitors Center, 150 E King Street, Hillsborough, NC, 27278",
             "price": "unknown",
-            "notes": "The Outlander-themed route through town, 1 to 3 pm."
+            "notes": "Guided walk from the Visitors Center on King St."
           },
           {
-            "time": "4:30 AM",
-            "title": "Outlander Costume Exhibit",
-            "event_id": "6e80713b9221",
-            "location": "Saltire Gallerie, 209 Burnside Dr, Hillsborough, NC, 27278",
-            "price": "unknown",
-            "notes": "Costumes from the series on show at Saltire Gallerie on Burnside Drive."
+            "time": "4:30 PM",
+            "title": "The Outlander Exhibit",
+            "event_id": "7534156eb748",
+            "location": "Saltire Gallerie, 209 burnside drive, Hillsborough, NC, 27278",
+            "price": "$10",
+            "notes": "Indoor gallery show — the rain-proof stop of the day."
           }
         ],
         "evening": [
           {
-            "time": "4:30 PM",
-            "title": "An Evening at the Hogg House: Scottish Cultural Event",
-            "event_id": "42fc5236614e",
-            "location": "Saltire Gallerie, 209 Burnside Dr, Hillsborough, NC, 27278",
-            "price": "$10",
-            "notes": "A 245th-anniversary Scottish gathering with games, dance, art and food, 4:30 to 7:30. $10."
+            "time": "7:00 PM",
+            "title": "Original Historic Ghost Tour",
+            "event_id": "eedadc1d7a03",
+            "location": "Nash and Kollock St., Nash St & Kollock St, Hillsborough, NC",
+            "price": "unknown",
+            "notes": "Starts at Nash & Kollock St after dinner; wear shoes for uneven sidewalks."
           }
         ]
       },
       "food": [
         {
           "slot": "breakfast",
-          "place": "Cup A Joe Hillsborough",
+          "place": "Antonia's",
           "city": "Hillsborough",
-          "vegan_dish": "Oat latte and a vegan muffin",
-          "vegetarian_dish": "Bagel with cream cheese",
-          "price": "$4-$10",
-          "notes": "On Churton Street, two minutes from the Visitors Center."
+          "price": "$10-$20",
+          "url": "https://antoniashillsborough.com/hillsborough-antonia-s-restaurant-food-menu",
+          "notes": "No vegan dish could be verified on the menu — ask the kitchen. Site banner: from Sep 1, breakfast opens 8:00 AM Fri/Sat/Sun. The food-menu page says breakfast runs 8-11 AM. Open Sat Sep 26.",
+          "vegetarian_dish": "Florentine Benedict (poached eggs, spinach, mushrooms, garlic, hollandaise) - $15"
         },
         {
           "slot": "lunch",
-          "place": "Matthew's Chocolates / Hillsborough BBQ Company",
+          "place": "Weaver Street Market Hillsborough (hot bar / food bar)",
           "city": "Hillsborough",
-          "vegan_dish": "Hillsborough BBQ's smoked portobello sandwich (hold the slaw dressing)",
-          "vegetarian_dish": "Mac and cheese plus fried okra plate",
-          "price": "$10-$18",
-          "notes": "Both are a short walk from the courthouse lawn."
+          "price": "$10-$15",
+          "url": "https://www.weaverstreetmarket.coop/food/food-bar-specials/",
+          "notes": "No vegan dish could be verified on the menu — ask the kitchen. Store open daily 7 AM-9 PM. Hillsborough weekend food bar: breakfast 7 AM-12 PM, lunch/dinner 12-7:30 PM.",
+          "vegetarian_dish": "Pepperjack Mac 'n' Cheese (on this week's hot bar list; may rotate off by Sep 26)"
         },
         {
           "slot": "dinner",
-          "place": "Yonder: Southern Cocktails & Brew",
+          "place": "Nomad",
           "city": "Hillsborough",
-          "vegan_dish": "Hummus board and marinated olives",
-          "vegetarian_dish": "Pimento cheese and pickled vegetables",
-          "price": "$10-$22",
-          "notes": "Live jazz on Thursdays; Saturday is a quieter room."
+          "price": "$20-$30",
+          "url": "https://thenomadnc.com/menu",
+          "notes": "Sat 4-10 PM (closed Sun).",
+          "vegan_dish": "Wild Mushroom Ramen (VG) with tofu - ramen noodles, wild mushrooms, snap peas, bok choy, carrots, vegan oyster sauce - $22",
+          "vegetarian_dish": "Royal Butter Masala with paneer (vegetarian leaf icon) - $20"
         }
       ],
       "alternatives": [
         {
-          "leg": "Outlandish festival at Ayr Mount",
-          "good_weather": "The whole site is lawns and outbuildings — good shoes.",
-          "rain": "Saltire Gallerie's costume exhibit and the Hogg House evening are both indoors, and the Orange County Historical Museum is on Churton Street."
+          "leg": "Scottish Festival",
+          "good_weather": "Sunny, near 78°F — stay for the afternoon events on the lawn.",
+          "rain": "Swap for the AORTIA art-relaxation session at Eno Arts Mill (10 AM–1 PM) and the Outlander exhibit indoors."
         },
         {
-          "leg": "Walking tours",
-          "good_weather": "Both routes are flat and shaded by the old oaks.",
-          "rain": "The Visitors Center runs them in light rain; call ahead in heavy weather."
+          "leg": "Ghost tour",
+          "good_weather": "Clear and cool evening, low near 51°F — bring a layer.",
+          "rain": "Stay in for Karaoke Night with Orange Community Players at Eno River Brewing."
         }
       ],
       "practical_notes": [
-        "Hillsborough is about 33 miles from downtown Raleigh — comfortably a same-day trip, but budget an hour each way with I-85 weekend traffic.",
-        "Buy Outlandish tickets in advance; the Hogg House evening is separately ticketed at $10.",
-        "No NWS point forecast covers 26 September yet."
+        "Check the festival page for Ayr Mount parking and shuttle details before you go.",
+        "Buy festival tickets on the event page ahead of time.",
+        "Leave Raleigh by about 7:15 AM to reach the market near its 8 AM opening."
       ],
+      "weather": {
+        "summary": "Sunny, high near 78",
+        "temp_f": 78
+      },
       "event_ids": [
+        "bb55ca23a816",
         "1a3cc779b9bf",
         "fd179a8d2507",
-        "42fc5236614e",
-        "d468f0c510b9",
-        "6e80713b9221"
+        "7534156eb748",
+        "eedadc1d7a03",
+        "54acee226c90"
       ]
     },
     {
-      "id": "2026-W38-durham-friday-night",
-      "title": "A Free Friday Night in Durham",
-      "theme": "Dolly on the lawn, a night market and Pride at the Pinhook",
+      "id": "2026-W39-durham-oktoberfest",
+      "date": "2026-09-26",
       "anchor_city": "Durham",
-      "drive_time": "25 minutes from Raleigh; American Tobacco, Bull City Ciderworks and the Pinhook are within a mile of each other",
-      "weather": {
-        "summary": "Partly sunny, high near 75",
-        "temp_f": 75
-      },
-      "cost_range": "Free to about $25 per person",
-      "date": "2026-09-25",
-      "overview": "Friday in Durham costs almost nothing. American Tobacco's lawn series puts on a Dolly Parton celebration with Heather Rogers and Meltdown Rodeo, Bull City Ciderworks runs its third-Friday night market, and the Pinhook hosts a Durham Pride drag show. If you would rather be in the woods, Durham Parks leads a moonlight hike at West Point on the Eno.",
+      "title": "Durham Market-to-Oktoberfest Saturday",
+      "theme": "Farmers market, history walks and a free Oktoberfest in Durham Central Park",
+      "drive_time": "About 30 min from Raleigh via I-40/NC-147; park downtown and walk",
+      "cost_range": "About $30–$70 per person (two $15 walking tours, meals, beer)",
+      "overview": "Durham Central Park does double duty: the Saturday farmers market in the morning, then Durham Oktoberfest from 3 PM. In between, take a historian-led walk through the tobacco-era downtown, and close the night with a ghost walk.",
       "schedule": {
         "morning": [
           {
-            "time": "Afternoon start",
-            "title": "Arrive after work",
-            "location": "American Tobacco Campus, 318 Blackwell St, Durham",
+            "time": "8:00 AM",
+            "title": "Durham Farmers' Market",
+            "event_id": "ded407772362",
+            "location": "Durham Central Park, 501 Foster St, Durham, NC 27701",
             "price": "Free",
-            "notes": "This is an evening itinerary — the campus decks are cheapest after 5 pm."
+            "notes": "Durham Farmers' Market under the pavilion; arrive early for the best produce."
           }
         ],
         "afternoon": [
           {
-            "time": "5:00 PM",
-            "title": "Food Truck Friday",
-            "event_id": "3f524ab633ab",
-            "location": "The Glass Jug Beer Lab – RTP, 5410 NC Hwy 55, Suite V, Durham, NC, 27713",
-            "price": "Free",
-            "notes": "Campbell's Cafe serves Jamaican food in the Glass Jug Beer Lab garden out in RTP, 5 to 8."
+            "time": "2:00 PM",
+            "title": "Downtown Durham Historian-Guided Tour",
+            "event_id": "0241055b5aae",
+            "location": "Lucky Strike Tower, 334 Blackwell St, Durham, NC 27701, Durham, NC, 27703-7825",
+            "price": "$15",
+            "notes": "One-hour walk from Lucky Strike Tower at American Tobacco Campus."
           },
           {
-            "time": "5:00 PM",
-            "title": "Night Market at Bull City Ciderworks",
-            "event_id": "cd7e5175def8",
-            "location": "Bull City Ciderworks, 305 S Roxboro St, Durham, NC 27701",
+            "time": "4:00 PM",
+            "title": "Downtown Durham African American Historian-Guided Tour",
+            "event_id": "628a2b8f5a30",
+            "location": "CCB Plaza, 201 Corcoran St., Durham, NC, 27701",
+            "price": "$15",
+            "notes": "Or take the African American history walk from CCB Plaza at 4 PM."
+          },
+          {
+            "time": "3:00 PM",
+            "title": "Durham Oktoberfest",
+            "event_id": "69cfb53ac01d",
+            "location": "Durham Central Park, 501 Foster St, Durham, NC, 27701",
             "price": "Free",
-            "notes": "Vendors, cider and food at Bull City Ciderworks from 5 pm."
+            "notes": "Free entry; runs 3–10 PM at Durham Central Park."
           }
         ],
         "evening": [
           {
             "time": "6:00 PM",
-            "title": "Live Music @ATC: Special Dolly Celebration",
-            "event_id": "54ab20c728e8",
-            "location": "Lawn at American Tobacco Campus, 318 Blackwell St, Durham, NC 27701",
-            "price": "Free",
-            "notes": "Free live music by the water tower, 6 to 9. Bring a blanket."
+            "title": "Downtown Durham True Crime Walking Tour",
+            "event_id": "d1bde691f749",
+            "location": "Lucky Strike Tower, 334 Blackwell St, Durham, NC 27701, Durham, NC, 27703-7825",
+            "price": "$15",
+            "notes": "True-crime walk from Lucky Strike Tower at 6 PM."
           },
           {
             "time": "8:00 PM",
-            "title": "PRIDE Event: Le Cirque du Moulin Rouge Drag Show",
-            "event_id": "08fd960ee6eb",
-            "location": "The Pinhook, 117 W Main St, Durham, NC 27701",
-            "price": "unknown",
-            "notes": "Stormie Daie's Durham Pride drag show at the Pinhook, 18 and over."
-          },
-          {
-            "time": "7:00 PM",
-            "title": "Upon Your Dead Body",
-            "event_id": "f58ad11f4b0a",
-            "location": "Stanczyks, 1007 W Main St, Durham 27701",
-            "price": "unknown",
-            "notes": "Alternative: heavier night at Stanczyks with Upon Your Dead Body."
-          },
-          {
-            "time": "7:30 PM",
-            "title": "Moonlight Hike",
-            "event_id": "b9ed76965e3a",
-            "location": "West Point on the Eno, 5253 N Roxboro St, Durham, NC 27712",
-            "price": "unknown",
-            "notes": "Alternative: a guided moonlight hike along the Eno, 7:30 to 8:30."
+            "title": "Durham Ghost Walk",
+            "event_id": "9f4495d8e68a",
+            "location": "Fate & Folklore, 123 Market Street, Durham, NC",
+            "price": "$15",
+            "notes": "8 PM ghost walk from Fate & Folklore on Market St."
           }
         ]
       },
       "food": [
         {
           "slot": "breakfast",
-          "place": "Monuts",
+          "place": "Parker & Otis",
           "city": "Durham",
-          "vegan_dish": "Vegan cake doughnut and a cold brew",
-          "vegetarian_dish": "Breakfast biscuit with the fried egg",
-          "price": "$4-$12",
-          "notes": "Nine Street location opens at 7 am."
+          "price": "$9-$15",
+          "url": "https://www.parkerandotis.com/menu",
+          "notes": "Made-to-order menu Tue-Sat 8 AM-4 PM; grab-and-go 4-6 PM. Open Sat.",
+          "vegan_dish": "No. 14: white bean spread, avocado, cucumber and sprouts with shredded carrots, red onion, tomato on toasted wheat - $11.99 (no animal products per listed ingredients; bread recipe not listed)",
+          "vegetarian_dish": "No. 1: two corn tortillas with scrambled eggs, queso fresco, salsa, sour cream, avocado - $8.99"
         },
         {
           "slot": "lunch",
-          "place": "Durham Food Hall",
+          "place": "Neomonde Mediterranean (Durham)",
           "city": "Durham",
-          "vegan_dish": "Namu's vegan bibimbap bowl",
-          "vegetarian_dish": "Cheese-and-herb arepa from the Venezuelan stall",
-          "price": "$10-$18",
-          "notes": "Across from the ciderworks; the chess club takes over Wednesdays, so Friday is calmer."
+          "price": "$6-$17",
+          "url": "https://www.neomonde.com/menu",
+          "notes": "Durham location page lists 11 AM-9 PM (days not stated; appears daily).",
+          "vegan_dish": "Falafel pita pocket (V) - chickpeas, onions, garlic, herbs, diced tomato, turnips, lemon tahini - $6",
+          "vegetarian_dish": "Neomonde Mezza (VGT) - tabouli, hummus, baba ghanouj, grape leaves, labneh, olives - $13"
         },
         {
           "slot": "dinner",
-          "place": "Dashi Ramen",
+          "place": "Luna Rotisserie & Empanadas",
           "city": "Durham",
-          "vegan_dish": "Vegan shoyu ramen",
-          "vegetarian_dish": "Miso ramen with the vegetable broth",
-          "price": "$16-$24",
-          "notes": "Ten-minute walk from American Tobacco."
+          "price": "$11-$20",
+          "url": "https://www.lunarotisserie.com/s/Durham-Food-Spring-2026-4.pdf",
+          "notes": "Open 7 days, 11 AM-9 PM.",
+          "vegan_dish": "Chili Braised Jack Fruit (GF, V+) rotisserie plate with two sides - $16",
+          "vegetarian_dish": "Chili-lime Glazed Cauliflower (V) - $11"
         }
       ],
       "alternatives": [
         {
-          "leg": "Live Music @ATC",
-          "good_weather": "Lawn seating by the water tower; bring a blanket.",
-          "rain": "Move indoors to the Pinhook's drag show or Motorco's room a mile north."
-        },
-        {
-          "leg": "Moonlight Hike",
-          "good_weather": "Leaves from the Environmental Education Pavilion at 7:30.",
-          "rain": "Durham Parks cancels in storms — check the day-of listing before driving out to Roxboro Street."
+          "leg": "Oktoberfest",
+          "good_weather": "Sunny, high near 78°F — grab lawn space early.",
+          "rain": "Head to Ponysaurus Brewing's Oktoberfest a few blocks east, or the indoor bar at Motorco."
         }
       ],
       "practical_notes": [
-        "American Tobacco decks are $5 flat after 5 pm on Fridays.",
-        "The lawn show and the night market are both free; the Pinhook show is ticketed and 18+.",
-        "Buena Vista Social Club is at DPAC the same night if you want a sit-down evening instead."
+        "Park once downtown; the market, Oktoberfest and tour start points are all walkable.",
+        "Book walking tours ahead on their event pages.",
+        "Leave Raleigh by 7:30 AM for the market."
       ],
+      "weather": {
+        "summary": "Sunny, high near 78",
+        "temp_f": 78
+      },
       "event_ids": [
-        "54ab20c728e8",
-        "3f524ab633ab",
-        "cd7e5175def8",
-        "b9ed76965e3a",
-        "08fd960ee6eb",
-        "f58ad11f4b0a"
+        "ded407772362",
+        "0241055b5aae",
+        "628a2b8f5a30",
+        "69cfb53ac01d",
+        "d1bde691f749",
+        "9f4495d8e68a"
       ]
     },
     {
-      "id": "2026-W38-rainy-wednesday-indoors",
-      "title": "The Rainy Wednesday Plan",
-      "theme": "Thunderstorms forecast — everything here has a roof",
+      "id": "2026-W39-raleigh-oktoberfest-red-hat",
+      "date": "2026-09-26",
       "anchor_city": "Raleigh",
-      "drive_time": "Raleigh and Durham legs; 25 minutes between them on I-40",
-      "weather": {
-        "summary": "Chance of showers and thunderstorms, high near 71",
-        "temp_f": 71
-      },
-      "cost_range": "Free to about $60 per person",
-      "date": "2026-09-23",
-      "overview": "Wednesday is the wettest day of the week — showers and thunderstorms with a high near 71. Spend it inside: a John Coltrane documentary in the NCMA's auditorium, Broadway's Buena Vista Social Club at DPAC, or Katie Pruitt at Lincoln Theatre. Free trivia at the Glass Jug Beer Lab is the low-commitment version.",
+      "title": "Downtown Raleigh: Oktoberfest and Gov't Mule at Red Hat",
+      "theme": "Black history walk, street Oktoberfest, then a big outdoor show",
+      "drive_time": "Downtown Raleigh — park once and walk",
+      "cost_range": "Free to roughly $100+ per person (concert tickets not listed; see Red Hat)",
+      "overview": "Walk the Black history of downtown Raleigh from the Pope House Museum, then join NC Oktoberfest on Fayetteville Street for the afternoon. The night belongs to Gov't Mule and Ziggy Marley at Red Hat Amphitheater, with a late Jerry Garcia–themed afterparty at Kings for anyone still standing.",
       "schedule": {
         "morning": [
           {
             "time": "10:00 AM",
-            "title": "NCMA galleries (free)",
-            "location": "NC Museum of Art, 2110 Blue Ridge Rd, Raleigh",
-            "price": "Free",
-            "notes": "The People's Collection is free and open 10-5; a good place to wait out a morning band of rain."
+            "title": "Downtown Raleigh Black History Tour",
+            "event_id": "7563773b3f09",
+            "location": "Dr. M.T. Pope House Museum, 511 S Wilmington St, Raleigh, NC, NC, 27601",
+            "price": "$6 – $17",
+            "notes": "90-minute walking tour from the Pope House Museum."
           }
         ],
         "afternoon": [
           {
-            "time": "6:30 PM",
-            "title": "Ken Pomeroy | Duke Arts at American Tobacco",
-            "event_id": "32ce446e48a1",
-            "location": "American Tobacco Campus, 300 Blackwell Street, Durham, NC 27701, NC",
+            "time": "1:00 PM",
+            "title": "NC Oktoberfest - Prost Y'all",
+            "event_id": "76868a75003a",
+            "location": "Fayetteville Street, 0-500 Fayetteville St, Raleigh, NC",
             "price": "Free",
-            "notes": "Duke Arts' free lawn show at American Tobacco — the one outdoor leg, and the one to drop if the radar looks bad."
+            "notes": "Free street festival on Fayetteville St, 1–8 PM."
           }
         ],
         "evening": [
           {
             "time": "7:00 PM",
-            "title": "Chasing Trane: The John Coltrane Documentary",
-            "event_id": "f0af8ab5ebec",
-            "location": "NC Museum of Art, Raleigh, NC",
+            "title": "Gov't Mule & Ziggy Marley: Dreaming the Same Dream Tour",
+            "event_id": "3cfdb19c61bf",
+            "location": "Red Hat Amphitheater, 500 S McDowell St., Raleigh, NC 27601",
             "price": "unknown",
-            "notes": "Chasing Trane in the SECU Auditorium, 7 to 9."
+            "notes": "A short walk from Fayetteville St; ticket price is not listed on the venue page."
           },
           {
-            "time": "7:30 PM",
-            "title": "Buena Vista Social Club",
-            "event_id": "8388c982d890",
-            "location": "DPAC Presented by First Horizon, 123 Vivian St / William V. \"Bill\" Bell Way, Durham, NC, 27701",
-            "price": "From $55",
-            "notes": "Alternative: the Broadway staging of the Cuban ensemble's songbook at DPAC."
+            "time": "6:00 PM",
+            "title": "The Jazz Room: A Journey to the Heart of New Orleans",
+            "event_id": "816155793a34",
+            "location": "Lincoln Theatre, 126 E. Cabarrus Street, Raleigh, NC 27601",
+            "price": "$32-$64",
+            "notes": "Indoor alternative: New Orleans jazz revue at Lincoln Theatre, 6 PM."
           },
           {
-            "time": "8:00 PM",
-            "title": "Katie Pruitt — Fools For The Fleeting Tour",
-            "event_id": "5da62c70f409",
-            "location": "Lincoln Theatre, 126 E Cabarrus St, Raleigh, NC 27601",
-            "price": "$29.55-$197.95",
-            "notes": "Alternative: Katie Pruitt's Fools For The Fleeting Tour at Lincoln Theatre, doors 7."
-          },
-          {
-            "time": "7:00 PM",
-            "title": "Trivia Night with Neon Fox",
-            "event_id": "864af6dc9c5f",
-            "location": "The Glass Jug Beer Lab – RTP, 5410 NC Hwy 55, Suite V, Durham, NC, 27713",
-            "price": "Free",
-            "notes": "Low-key alternative: free weekly trivia at the Glass Jug Beer Lab in RTP."
+            "time": "11:15 PM",
+            "title": "Late Night Gov't Mule Afterparty with Jerry Garcia Band Cover Band",
+            "event_id": "64bbc1e28616",
+            "location": "Kings, 14 W. Martin St., Raleigh, NC 27601",
+            "price": "$17.25-$20.25",
+            "notes": "Late set at Kings on Martin St."
           }
         ]
       },
       "food": [
         {
           "slot": "breakfast",
-          "place": "Bittersweet",
+          "place": "The Morning Times",
           "city": "Raleigh",
-          "vegan_dish": "Oat cappuccino and toast with jam",
-          "vegetarian_dish": "Quiche of the day",
-          "price": "$5-$14",
-          "notes": "Opens at 10 on weekdays."
+          "price": "$5-$15",
+          "url": "https://www.morningtimes-raleigh.com/menus",
+          "notes": "Open daily 7 AM-6 PM; kitchen 7 AM-3 PM.",
+          "vegan_dish": "Oatmeal - oats, brown sugar, pecans, raisins, cranberries - $5 (no animal products per listed ingredients)",
+          "vegetarian_dish": "Breakfast Burrito - scrambled eggs, cotija, black beans, roasted jalapeno, salsa, sour cream - $11"
         },
         {
           "slot": "lunch",
-          "place": "Iris at the NCMA",
+          "place": "Sitti",
           "city": "Raleigh",
-          "vegan_dish": "Roasted vegetable grain bowl (ask for no feta)",
-          "vegetarian_dish": "Squash and ricotta flatbread",
-          "price": "$14-$26",
-          "notes": "Inside the museum, so you never leave the building."
+          "price": "$10-$25",
+          "url": "https://www.sitti-raleigh.com/menu/lunch",
+          "notes": "Fri-Sat 11 AM-10 PM.",
+          "vegan_dish": "Falafel with Vegetables (labeled vegan, GF) - $13.95",
+          "vegetarian_dish": "Eggplant Kabobs (labeled vegetarian) - eggplant, squash, zucchini over moujedra and kale - $14.95"
         },
         {
           "slot": "dinner",
-          "place": "Dashi or Alley Twenty Six",
-          "city": "Durham",
-          "vegan_dish": "Dashi's vegan shoyu ramen",
-          "vegetarian_dish": "Alley Twenty Six's mushroom toast",
-          "price": "$14-$28",
-          "notes": "Both are a short walk from DPAC."
+          "place": "Bida Manda",
+          "city": "Raleigh",
+          "price": "$20-$35",
+          "url": "https://www.bidamanda.com/menu",
+          "notes": "Mon-Sat 5-10 PM. Book a 5 PM table to make the 7 PM show.",
+          "vegan_dish": "Manda's Herb Salad with fried tofu (tofu marked vegan) - $26.90",
+          "vegetarian_dish": "Crispy Rice Lettuce Wraps (GF/V; contains egg) - $17.90"
         }
       ],
       "alternatives": [
         {
-          "leg": "Ken Pomeroy on the ATC lawn",
-          "good_weather": "Free outdoor show, 6:30 to 8.",
-          "rain": "Skip it and go straight to dinner near DPAC — the show is the only uncovered leg in this plan."
+          "leg": "Oktoberfest",
+          "good_weather": "Sunny, near 78°F.",
+          "rain": "The Raleigh Market at the State Fairgrounds is in buildings — 15 min west."
         },
         {
-          "leg": "Evening",
-          "good_weather": "Any of the three indoor shows work.",
-          "rain": "Same — all three are indoors."
+          "leg": "Red Hat concert",
+          "good_weather": "Clear, low near 51°F by night — bring a jacket.",
+          "rain": "Check Red Hat's weather policy on the venue page; the Lincoln Theatre jazz show is indoors."
         }
       ],
       "practical_notes": [
-        "NCMA general admission and parking are free; only the ticketed film needs a booking.",
-        "DPAC's Buena Vista Social Club runs Tuesday through Sunday this week if Wednesday does not suit.",
-        "Storms are forecast most of the day; allow extra time on I-40."
+        "Check Red Hat's bag policy on the venue page before you go.",
+        "Oktoberfest and Red Hat are a 10-minute walk apart."
       ],
+      "weather": {
+        "summary": "Sunny, high near 78",
+        "temp_f": 78
+      },
       "event_ids": [
-        "f0af8ab5ebec",
-        "8388c982d890",
-        "32ce446e48a1",
-        "5da62c70f409",
-        "864af6dc9c5f"
+        "7563773b3f09",
+        "76868a75003a",
+        "3cfdb19c61bf",
+        "816155793a34",
+        "64bbc1e28616"
+      ]
+    },
+    {
+      "id": "2026-W39-raleigh-sunday-food-fest",
+      "date": "2026-09-27",
+      "anchor_city": "Raleigh",
+      "title": "Raleigh Sunday: Market, Food Fest and Studio Tour",
+      "theme": "Brunch, the fairgrounds market, a free food festival and open artist studios",
+      "drive_time": "Raleigh — short drives between the fairgrounds, downtown and Boylan Heights",
+      "cost_range": "Free to about $60 per person (plus food)",
+      "overview": "A slow Sunday: vegan-friendly brunch near NC State, a browse through The Raleigh Market at the fairgrounds, then the Carolina Culture Food Festival in Moore Square and the Boylan Arts District studio tour a few minutes away.",
+      "schedule": {
+        "morning": [
+          {
+            "time": "9:00 AM",
+            "title": "The Raleigh Market",
+            "event_id": "2417c251bd31",
+            "location": "Raleigh Market (at N.C. State Fairgrounds), 4285 Trinity Rd, Raleigh, NC, 27607",
+            "price": "Free",
+            "notes": "Flea and antiques market, 9 AM–5 PM; free entry."
+          }
+        ],
+        "afternoon": [
+          {
+            "time": "12:00 PM",
+            "title": "Carolina Culture Food Festival",
+            "event_id": "d6cf4bb53753",
+            "location": "Moore Square, 200 S Blount St, Raleigh, NC",
+            "price": "Free",
+            "notes": "Free food festival in Moore Square, 12–6 PM."
+          },
+          {
+            "time": "2:00 PM",
+            "title": "Boylan Arts District Studio Tour",
+            "event_id": "68ab60eac567",
+            "location": "Historic Boylan Heights, Raleigh, NC 27603",
+            "price": "Free",
+            "notes": "Open studios across Boylan Heights, 2–5 PM."
+          }
+        ],
+        "evening": [
+          {
+            "time": "7:30 PM",
+            "title": "Curtain Call From Beyond: Theatre Haunts & History Tours",
+            "event_id": "4ea8b9c05c41",
+            "location": "Raleigh Memorial Auditorium, 2 East South Street, Raleigh, NC 27601",
+            "price": "$35",
+            "notes": "Guided haunted-history tour of Raleigh Memorial Auditorium; tickets on the venue page."
+          }
+        ]
+      },
+      "food": [
+        {
+          "slot": "breakfast",
+          "place": "Irregardless (weekend brunch)",
+          "city": "Raleigh",
+          "price": "$15-$25",
+          "url": "https://www.irregardless.com/menu",
+          "notes": "Weekend brunch Sat + Sun 10 AM-2:30 PM.",
+          "vegan_dish": "Tofu Chorizo Scramble (VG, GF) - tofu, housemade vegan chorizo, spinach, pico, vegan mozzarella, home fries - $17",
+          "vegetarian_dish": "Goat Cheese Omelette (VEG, GF) - $18"
+        },
+        {
+          "slot": "lunch",
+          "place": "Neomonde Mediterranean (Raleigh)",
+          "city": "Raleigh",
+          "price": "$6-$17",
+          "url": "https://www.neomonde.com/menu",
+          "notes": "Raleigh location page: daily 10:30 AM-9 PM (open Sun).",
+          "vegan_dish": "Falafel pita pocket (V) - $6; or Pick 3 Platter with Mjadarah (GF)(V), Ratatouille (GF)(V), Green Beans (GF)(V) - $11",
+          "vegetarian_dish": "Grilled Veggies pita pocket (VGT) - grilled eggplant, zucchini, squash, onions, peppers, feta - $6"
+        },
+        {
+          "slot": "dinner",
+          "place": "Brewery Bhavana",
+          "city": "Raleigh",
+          "price": "$12-$25",
+          "url": "https://brewerybhavana.com/food-menu/",
+          "notes": "218 Blount St: Sun 11:30 AM-9 PM.",
+          "vegan_dish": "Edamame Ginger Dumplings (Vegan) - $15.80",
+          "vegetarian_dish": "Vegetable Curry Puff (Vegetarian) - $16.80"
+        }
+      ],
+      "alternatives": [
+        {
+          "leg": "Food fest and studio tour",
+          "good_weather": "Sunny, high near 80°F.",
+          "rain": "Swap to the free NCMA public tour at 1 PM and indoor galleries."
+        }
+      ],
+      "practical_notes": [
+        "Irregardless weekend brunch runs 10 AM–2:30 PM.",
+        "Moore Square and Boylan Heights are about 5 minutes apart by car."
+      ],
+      "weather": {
+        "summary": "Sunny, high near 80",
+        "temp_f": 80
+      },
+      "event_ids": [
+        "2417c251bd31",
+        "d6cf4bb53753",
+        "68ab60eac567",
+        "4ea8b9c05c41",
+        "5183678cb359"
+      ]
+    },
+    {
+      "id": "2026-W39-cary-apex-sunflowers",
+      "date": "2026-09-26",
+      "anchor_city": "Cary",
+      "title": "Cary & Apex: Sunflowers, Latino Arts and Dance Under the Stars",
+      "theme": "Farm festival, a free arts festival and outdoor dance",
+      "drive_time": "About 20 min from Raleigh; 15 min between Cary and Apex",
+      "cost_range": "About $25–$60 per person (sunflower festival $22, meals)",
+      "overview": "Start at the Cary farmers market, head out to Phillips Farms for the Sunflower Festival, and eat lunch at a fully vegan kitchen in Apex. Stay for the Latino Arts Festival downtown, then return to Downtown Cary Park for the American Dance Festival's free encore.",
+      "schedule": {
+        "morning": [
+          {
+            "time": "8:00 AM",
+            "title": "Cary Farmers Market",
+            "event_id": "baa486ce59da",
+            "location": "East Park Street, 327 S. Academy Street, Cary, NC, 27511",
+            "price": "Free",
+            "notes": "Downtown Cary market on Academy St."
+          },
+          {
+            "time": "10:00 AM",
+            "title": "Sunflower Festival at Phillips Farms",
+            "event_id": "c12c29a12f1a",
+            "location": "Phillips Farms of Cary, 6800 Good Hope Church Road, Cary, NC",
+            "price": "$22",
+            "notes": "Tickets on the farm's page; about 15 min southwest of downtown Cary."
+          }
+        ],
+        "afternoon": [
+          {
+            "time": "3:00 PM",
+            "title": "Latino Arts Festival",
+            "event_id": "71e41b21aa8c",
+            "location": "Downtown Apex, The Depot, 220 N. Salem St, Apex, NC 27502",
+            "price": "Free",
+            "notes": "Free, at the historic Depot on Salem St, 3–7 PM."
+          },
+          {
+            "time": "11:00 AM",
+            "title": "10-Year Anniversary Peaktoberfest",
+            "event_id": "6bc9ce4b6181",
+            "location": "Southern Peak Brewery",
+            "price": "Free",
+            "notes": "Southern Peak's 10th-anniversary party runs 11 AM–10 PM."
+          }
+        ],
+        "evening": [
+          {
+            "time": "7:30 PM",
+            "title": "American Dance Festival: Made in NC (Encore Performance)",
+            "event_id": "cdc52d476b51",
+            "location": "Downtown Cary Park, 327 S. Academy Street, Cary, NC, 27511",
+            "price": "Free",
+            "notes": "Free outdoor dance at Downtown Cary Park, 7:30 PM."
+          }
+        ]
+      },
+      "food": [
+        {
+          "slot": "breakfast",
+          "place": "Esteamed Coffee",
+          "city": "Cary",
+          "price": "$4-$10",
+          "url": "https://www.esteamedcoffee.com/menu",
+          "notes": "Fri-Sat 7:30 AM-5 PM (menu page). Home page says Tue-Sat 7:30 AM-4 PM, so treat 4 PM as the safe close.",
+          "vegan_dish": "Vegan/Gluten-Free Pumpkin Bar - $4.50",
+          "vegetarian_dish": "Blueberry Muffin - $3.95 (or Cream Cheese Danish - $3.95)"
+        },
+        {
+          "slot": "lunch",
+          "place": "Vegan Community Kitchen",
+          "city": "Apex",
+          "price": "$10-$20",
+          "url": "https://www.vegancommunitykitchen.com/online-ordering",
+          "notes": "Mon-Sat 11 AM-8 PM (closed Sun).",
+          "vegan_dish": "Falafel Combo - 5 falafels, 3 stuffed grape leaves, hummus, mixed salad, pita or GF corn tortillas - $13",
+          "vegetarian_dish": "Taste of Ethiopia (with injera) - spicy red lentil, yellow peas, collards, azifa, veggies - $17 (100% vegan kitchen, so also vegan)"
+        },
+        {
+          "slot": "dinner",
+          "place": "Academy Street Bistro",
+          "city": "Cary",
+          "price": "$15-$40",
+          "url": "https://www.academystreetbistro.com/dinner",
+          "notes": "Fri-Sat 11 AM-9:30 PM (closed Sun).",
+          "vegan_dish": "Vegetarian Medley (GF)(V) - roasted sweet potato medallions, stewed black beans, sauteed seasonal vegetables - $29 (no animal products per listed ingredients; confirm no butter)",
+          "vegetarian_dish": "Beet and Arugula salad (GF)(V) - beets, pistachios, cranberries, avocado, herb chevre - $15"
+        }
+      ],
+      "alternatives": [
+        {
+          "leg": "Sunflower Festival",
+          "good_weather": "Sunny, near 78°F — go early for photos before the heat.",
+          "rain": "The Cary Theater has an 11 AM Frida Kahlo exhibition-on-screen."
+        },
+        {
+          "leg": "ADF encore",
+          "good_weather": "Clear evening, low near 51°F.",
+          "rain": "Check Downtown Cary Park's page for weather calls; Southern Peak is indoors."
+        }
+      ],
+      "practical_notes": [
+        "Vegan Community Kitchen is about a mile east of Salem St — drive, don't walk.",
+        "Academy Street Bistro takes reservations; its (V) marks vegetarian, not vegan."
+      ],
+      "weather": {
+        "summary": "Sunny, high near 78",
+        "temp_f": 78
+      },
+      "event_ids": [
+        "baa486ce59da",
+        "c12c29a12f1a",
+        "71e41b21aa8c",
+        "6bc9ce4b6181",
+        "cdc52d476b51"
+      ]
+    },
+    {
+      "id": "2026-W39-carrboro-music-festival",
+      "date": "2026-09-27",
+      "anchor_city": "Carrboro",
+      "title": "Carrboro Music Festival Sunday",
+      "theme": "A free town-wide music festival on every corner of downtown Carrboro",
+      "drive_time": "About 40 min from Raleigh; 20 min from Durham",
+      "cost_range": "Free festival; about $20–$50 per person for food",
+      "overview": "The Carrboro Music Festival fills downtown with free sets all afternoon and evening. Start with brunch music at Weaver Street Market, walk the Main Street stages from 1 PM, and duck into Cat's Cradle for the hip-hop showcase.",
+      "schedule": {
+        "morning": [
+          {
+            "time": "11:00 AM",
+            "title": "Sunday Brunch Music at Weaver Street Market (Carrboro Music Festival)",
+            "event_id": "bdfa9bea7279",
+            "location": "Weaver Street Market Carrboro lawn, 101 E Weaver St, Carrboro, NC 27510",
+            "price": "Free",
+            "notes": "Free brunch sets on the Weaver Street lawn."
+          }
+        ],
+        "afternoon": [
+          {
+            "time": "1:00 PM",
+            "title": "Carrboro Music Festival 2026",
+            "event_id": "f1fa7d37276f",
+            "location": "Downtown Carrboro, East and West Main Streets, Carrboro, NC 27510",
+            "price": "Free",
+            "notes": "Stages along East and West Main St, 1–10 PM."
+          },
+          {
+            "time": "2:00 PM",
+            "title": "Carrboro Music Festival Hip-Hop & Grooves Showcase",
+            "event_id": "3c7c72baae77",
+            "location": "Cat's Cradle, 300 E Main St, Carrboro, NC 27510",
+            "price": "Free",
+            "notes": "Indoor showcase at Cat's Cradle from 2 PM."
+          }
+        ],
+        "evening": []
+      },
+      "food": [
+        {
+          "slot": "breakfast",
+          "place": "Breakaway Carrboro (weekend brunch)",
+          "city": "Carrboro",
+          "price": "$10-$18",
+          "url": "https://breakawaync.co/carrboro-menus",
+          "notes": "Carrboro location: Sat 8 AM-3 PM, Sun 8 AM-2 PM. Sunday hours 8 AM–2 PM.",
+          "vegan_dish": "Vegan Paella - paella rice (peppers, onion, garlic, tomato, black beans, paprika, saffron) topped with fried tofu - $11.25",
+          "vegetarian_dish": "Avocado Toast (V) - avocado, olive oil, lemon, feta, cherry tomatoes, pine nuts - $13.75"
+        },
+        {
+          "slot": "lunch",
+          "place": "Weaver Street Market Carrboro (hot bar)",
+          "city": "Carrboro",
+          "price": "$10-$15",
+          "url": "https://www.weaverstreetmarket.coop/food/food-bar-specials/",
+          "notes": "Hot bar rotates weekly — check the labels in store. Vimala's and Glasshalfull are closed Sundays."
+        }
+      ],
+      "alternatives": [
+        {
+          "leg": "Outdoor stages",
+          "good_weather": "Sunny, high near 80°F — bring sunscreen and water.",
+          "rain": "Stick to the indoor venues: Cat's Cradle, The ArtsCenter and the bars along Main St host sets too."
+        }
+      ],
+      "practical_notes": [
+        "Expect crowds on Main St; arriving by bus or bike is easiest.",
+        "Want Saturday too? The kickoff open mic is 2 PM at Town Commons and the kickoff show is 8 PM at the Cat's Cradle Back Room."
+      ],
+      "weather": {
+        "summary": "Sunny, high near 80",
+        "temp_f": 80
+      },
+      "event_ids": [
+        "bdfa9bea7279",
+        "f1fa7d37276f",
+        "3c7c72baae77",
+        "6cab43ab7618",
+        "d3dc6c70a60d",
+        "d3a12b357798"
+      ]
+    },
+    {
+      "id": "2026-W39-pittsboro-farms-and-tigers",
+      "date": "2026-09-26",
+      "anchor_city": "Pittsboro",
+      "title": "Pittsboro: Markets, Sculpture and Twilight Tigers",
+      "theme": "Chatham County farms, an outdoor sculpture show and a big-cat sanctuary at dusk",
+      "drive_time": "About 45 min southwest of Raleigh via US-64",
+      "cost_range": "About $30–$90 per person (tiger tour price on its site; meals)",
+      "overview": "Chatham County at its best: the Chatham Mills farmers market, the free Mosaic market series, the Come Out and Play sculpture show at JimGin Farm, and a free Mead Fest in the afternoon. Book the Carolina Tiger Rescue twilight tour for the evening.",
+      "schedule": {
+        "morning": [
+          {
+            "time": "8:00 AM",
+            "title": "Chatham Mills Farmers Market",
+            "event_id": "20ca60a59bdc",
+            "location": "Chatham Mills, 480 Hillsboro Street, Pittsboro, NC, 27312",
+            "price": "unknown",
+            "notes": "Market at the historic mill; the Co-op cafe is in the same complex."
+          }
+        ],
+        "afternoon": [
+          {
+            "time": "12:00 PM",
+            "title": "Come Out and Play Sculpture Show",
+            "event_id": "5b759af7fc4c",
+            "location": "JimGin Farm, 150 Wild Horse Run, Pittsboro, NC, 27312",
+            "price": "Free",
+            "notes": "Free outdoor sculpture on farm trails, 12–5 PM."
+          },
+          {
+            "time": "12:00 PM",
+            "title": "MOSAIC Market Series",
+            "event_id": "dd34cc627c12",
+            "location": "Mosaic Family Commons (event lawn) at Mosaic at Chatham Park, Near 51 Mosaic Blvd, Pittsboro, NC 27312, NC",
+            "price": "Free",
+            "notes": "Free market at Mosaic, 12–4 PM."
+          },
+          {
+            "time": "12:00 PM",
+            "title": "Mead Fest",
+            "event_id": "f40da309df3c",
+            "location": "130 Lorax Lane Pittsboro, NC, 27312 United States, NC",
+            "price": "Free",
+            "notes": "Free mead festival, 12–5 PM."
+          }
+        ],
+        "evening": [
+          {
+            "time": "5:00 PM",
+            "title": "Twilight Tours at Carolina Tiger Rescue",
+            "event_id": "22be745bc9bf",
+            "location": "Carolina Tiger Rescue, 1940 Hanks Chapel Road, Pittsboro, NC, 27312",
+            "price": "unknown",
+            "notes": "Book ahead — twilight tours sell out."
+          }
+        ]
+      },
+      "food": [
+        {
+          "slot": "breakfast",
+          "place": "People's Coffee (Pittsboro)",
+          "city": "Pittsboro",
+          "price": "$8-$17",
+          "url": "https://www.pplscoffee.com/menus/mosaic-menu",
+          "notes": "Sat-Sun 8 AM-4 PM; breakfast all day.",
+          "vegan_dish": "Vegan Breakfast Sandwich - Impossible sausage, Just Egg, vegan cheese on a Kaiser roll with no dairy or honey - $10",
+          "vegetarian_dish": "Breakfast Burrito - cage-free eggs, potatoes, tomatoes, peppers, onions, queso fresco, poblano spread - $10"
+        },
+        {
+          "slot": "lunch",
+          "place": "Chatham Marketplace Co-op Cafe",
+          "city": "Pittsboro",
+          "price": "$9-$12",
+          "url": "https://chathammarketplace.coop/co-op-cafe/",
+          "notes": "Cafe lunch 11 AM-4 PM; store open daily 9 AM-7 PM.",
+          "vegan_dish": "Vegan Mushroom Melt - sourdough, house vegan cheeze, oyster mushrooms, peppers, onions - $9",
+          "vegetarian_dish": "Pickled Beet Reuben with house tempeh bacon - thousand island, pickled beets, sauerkraut, swiss - $9"
+        },
+        {
+          "slot": "dinner",
+          "place": "The Sycamore at Chatham Mills",
+          "city": "Pittsboro",
+          "price": "$30-$60",
+          "url": "https://thesycamoreatchathammills.com/menu/",
+          "notes": "Tue-Sat 5-9 PM, so it is open Sat Sep 26. A separate Wild Game Dinner event is Sep 27.",
+          "vegan_dish": "Lions Mane Mushrooms w/ Herb Oil - $13 (side; no animal products per listed ingredients). The menu says it is 'easily adaptable for vegan'; ask for a vegan entree.",
+          "vegetarian_dish": "Burrata & Basil Pesto - sundried tomato bisque, Reggiano - $33"
+        }
+      ],
+      "alternatives": [
+        {
+          "leg": "Sculpture show",
+          "good_weather": "Sunny, near 78°F; the farm trails are unpaved.",
+          "rain": "Browse West End Emporium or the Chatham Marketplace co-op instead."
+        }
+      ],
+      "practical_notes": [
+        "Chatham Mills, the Co-op and The Sycamore share one parking lot at 480 Hillsboro St.",
+        "Carolina Tiger Rescue is a short drive outside downtown Pittsboro; confirm tour details on its page.",
+        "The Sycamore's only plant-based items are sides — vegans should ask for an adapted entrée."
+      ],
+      "weather": {
+        "summary": "Sunny, high near 78",
+        "temp_f": 78
+      },
+      "event_ids": [
+        "20ca60a59bdc",
+        "5b759af7fc4c",
+        "dd34cc627c12",
+        "f40da309df3c",
+        "22be745bc9bf"
+      ]
+    },
+    {
+      "id": "2026-W39-canes-opening-night",
+      "date": "2026-09-29",
+      "anchor_city": "Raleigh",
+      "title": "Tuesday Canes Opener at Lenovo Center",
+      "theme": "An NC State-area afternoon before the Hurricanes' 5 PM game against Florida",
+      "drive_time": "West Raleigh — 10 min between NC State and Lenovo Center",
+      "cost_range": "About $170–$220 per person (tickets from $167 listed)",
+      "overview": "The Hurricanes host the Panthers at 5 PM on Tuesday. Take the morning at JC Raulston Arboretum or the Gregg Museum, eat an early lunch off Hillsborough St, and head to Lenovo Center with time to spare. Pizza at Trophy after the final horn.",
+      "schedule": {
+        "morning": [
+          {
+            "time": "9:00 AM",
+            "title": "Take a Child Outside Week: Plant Explorer Adventure",
+            "event_id": "c2390d934487",
+            "location": "JC Raulston Arboretum, 4415 Beryl Road, Raleigh, NC 27606",
+            "price": "Free",
+            "notes": "Free all-day family programming at the arboretum."
+          },
+          {
+            "time": "10:00 AM",
+            "title": "Community Stories: Sustaining North Carolina’s Black Heritage",
+            "event_id": "931034bb8ffd",
+            "location": "Gregg Museum of Art & Design, 1903 Hillsborough Street Raleigh, NC 27607",
+            "price": "Free",
+            "notes": "Free exhibit programming at the Gregg on Hillsborough St."
+          }
+        ],
+        "afternoon": [
+          {
+            "time": "5:00 PM",
+            "title": "Florida Panthers vs. Carolina Hurricanes",
+            "event_id": "a89cc0bea514",
+            "location": "Lenovo Center, 1400 Edwards Mill Rd., Raleigh, NC 27607",
+            "price": "$167",
+            "notes": "Puck drop 5 PM; parking lots open well before — arrive by 4 PM."
+          }
+        ],
+        "evening": []
+      },
+      "food": [
+        {
+          "slot": "breakfast",
+          "place": "Sosta Cafe",
+          "city": "Raleigh",
+          "price": "$8-$17",
+          "url": "https://www.sostacafe.com/menu",
+          "notes": "Mon-Thu 8 AM-8 PM; breakfast menu 8-10 AM Mon-Thu, so it applies Tue Sep 29.",
+          "vegan_dish": "This Little Piggy (Vegan, soy-based) - Eastern Carolina-style 'BBQ', lettuce, tomato, arugula on wheat - $14.54",
+          "vegetarian_dish": "Croissant egg sandwich with cheese - $8.34"
+        },
+        {
+          "slot": "lunch",
+          "place": "Lime & Lemon Indian Grill & Bar (Raleigh)",
+          "city": "Raleigh",
+          "price": "$10-$25",
+          "url": "https://www.lnlrestaurant.com/menu.jsp",
+          "notes": "Mon-Fri midday 11:30 AM-2:30 PM, dinner 4:30-9:30 PM Mon-Thu. For a 5 PM puck drop, arrive by about 1:30 PM for lunch; 4:30 PM dinner is too tight. Arrive by about 1:30 PM so you're done before the 2:30 PM close.",
+          "vegan_dish": "Baingan Bharta (Vegan, GF) - smoky eggplant - $17.99",
+          "vegetarian_dish": "Saag Paneer (GF) - $18.99"
+        },
+        {
+          "slot": "dinner",
+          "place": "Trophy Brewing & Pizza (Morgan St)",
+          "city": "Raleigh",
+          "price": "$12-$30",
+          "url": "https://order.toasttab.com/online/trophy-pizza",
+          "notes": "Mon-Thu 4-10 PM, so a post-game arrival around 7:30-8 PM works. Post-game, about 4.5 miles from the arena.",
+          "vegan_dish": "Small Farmer's Market pizza (df, vg) - sage & sweet potato puree, caramelized onion, pear, kale chips, balsamic - $15 (large $29)",
+          "vegetarian_dish": "Small Most Outgoing pizza (vegetarian) - tomato sauce, brie, mozzarella, caramelized onion, mushrooms, arugula - $15"
+        }
+      ],
+      "alternatives": [
+        {
+          "leg": "Arboretum morning",
+          "good_weather": "Sunny, high near 83°F.",
+          "rain": "Stay indoors at the Gregg Museum or the NC Museum of Natural Sciences downtown."
+        }
+      ],
+      "practical_notes": [
+        "A 5 PM weekday start means rush-hour traffic on Wade Ave and I-40 — leave early.",
+        "The 5 PM start time was confirmed against the NHL schedule.",
+        "Check the arena bag policy on lenovocenter.com before leaving."
+      ],
+      "weather": {
+        "summary": "Sunny, high near 83",
+        "temp_f": 83
+      },
+      "event_ids": [
+        "c2390d934487",
+        "931034bb8ffd",
+        "a89cc0bea514",
+        "ff52b5562594"
       ]
     }
   ]
