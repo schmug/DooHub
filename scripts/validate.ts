@@ -59,6 +59,20 @@ export interface ValidationResult {
 
 const URL_RE = /^https?:\/\/[^\s]+$/i;
 
+/**
+ * Markup that survived HTML-to-text: a tag, an `attr="…"` pair, or a CSS custom
+ * property. 2026-W40 shipped three trianglegrapevine.com blurbs that were a
+ * class list, because the page body is a pasted chat-app DOM whose class holds
+ * `&gt;` and the run's scraper decoded entities before stripping tags. Plain
+ * prose ("1 < 2", quoted wine names) matches none of these.
+ */
+const MARKUP_RESIDUE = /<\/?[a-z!][^>]*>|\b[a-z][\w-]*="[^"]*"|var\(--/i;
+
+/** Parallel requests `checkLinks` keeps open. ~8k urls per run; unbounded fan-out stalls. */
+const LINK_CHECK_CONCURRENCY = 16;
+/** Per-request ceiling, so one hung host can't hold the run. */
+const LINK_CHECK_TIMEOUT_MS = 15_000;
+
 function isFiniteNum(v: unknown): v is number {
   return typeof v === "number" && Number.isFinite(v);
 }
@@ -153,6 +167,10 @@ export function validateEvents(events: TriangleEvent[], window?: DateWindow): Va
     }
     if (!ev.image_url || ev.image_url === "unknown") {
       warnings.push(`${label}: no image_url (card will use a placeholder)`);
+    }
+
+    if (ev.description && MARKUP_RESIDUE.test(ev.description)) {
+      errors.push(`${label}: description looks like markup, not prose: "${ev.description.slice(0, 60)}…"`);
     }
 
     // Outdoor events should carry a forecast
@@ -492,10 +510,11 @@ function todayWindow(now: Date): DateWindow {
 
 async function checkUrl(url: string): Promise<{ url: string; ok: boolean; status: number | string }> {
   try {
-    let res = await fetch(url, { method: "HEAD", redirect: "follow" });
+    const signal = () => AbortSignal.timeout(LINK_CHECK_TIMEOUT_MS);
+    let res = await fetch(url, { method: "HEAD", redirect: "follow", signal: signal() });
     // Some hosts reject HEAD; fall back to a ranged GET.
     if (res.status === 405 || res.status === 403 || res.status === 501) {
-      res = await fetch(url, { method: "GET", headers: { Range: "bytes=0-0" }, redirect: "follow" });
+      res = await fetch(url, { method: "GET", headers: { Range: "bytes=0-0" }, redirect: "follow", signal: signal() });
     }
     return { url, ok: res.ok, status: res.status };
   } catch (err) {
@@ -503,7 +522,15 @@ async function checkUrl(url: string): Promise<{ url: string; ok: boolean; status
   }
 }
 
-async function checkLinks(events: TriangleEvent[]): Promise<string[]> {
+/**
+ * HTTP-check every event link. Each unique url is fetched once — aggregator
+ * images and booking pages repeat across hundreds of events — with at most
+ * `concurrency` requests open. A dead url is reported once per event using it.
+ */
+export async function checkLinks(
+  events: TriangleEvent[],
+  opts: { concurrency?: number } = {},
+): Promise<string[]> {
   const problems: string[] = [];
   const targets: Array<{ label: string; field: string; url: string }> = [];
   events.forEach((ev, i) => {
@@ -513,15 +540,22 @@ async function checkLinks(events: TriangleEvent[]): Promise<string[]> {
       if (url && url !== "unknown" && URL_RE.test(url)) targets.push({ label, field, url });
     }
   });
-  const results = await Promise.allSettled(targets.map((t) => checkUrl(t.url)));
-  results.forEach((r, i) => {
-    const t = targets[i]!;
-    if (r.status === "fulfilled" && !r.value.ok) {
-      problems.push(`${t.label}: ${t.field} -> ${r.value.status} (${t.url})`);
-    } else if (r.status === "rejected") {
-      problems.push(`${t.label}: ${t.field} -> error (${t.url})`);
+  const unique = [...new Set(targets.map((t) => t.url))];
+  const status = new Map<string, { ok: boolean; status: number | string }>();
+  let next = 0;
+  const worker = async (): Promise<void> => {
+    while (next < unique.length) {
+      const url = unique[next++]!;
+      status.set(url, await checkUrl(url));
     }
-  });
+  };
+  const width = Math.max(1, Math.min(opts.concurrency ?? LINK_CHECK_CONCURRENCY, unique.length));
+  console.log(`validate: ${unique.length} unique event url(s), ${width} at a time`);
+  await Promise.all(Array.from({ length: width }, worker));
+  for (const t of targets) {
+    const r = status.get(t.url)!;
+    if (!r.ok) problems.push(`${t.label}: ${t.field} -> ${r.status} (${t.url})`);
+  }
   return problems;
 }
 

@@ -2,6 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import {
+  checkLinks,
   validateCoverage,
   validateEvents,
   validateSources,
@@ -83,6 +84,20 @@ test("start outside the window warns when a window is supplied", () => {
   };
   const { warnings } = validateEvents([valid({ start: "2026-08-01T19:00:00-04:00" })], window);
   assert.ok(warnings.some((w) => w.includes("outside the today..+7d window")));
+});
+
+test("a description carrying HTML/CSS residue is an error", () => {
+  // 2026-W40: trianglegrapevine.com event bodies are a pasted chat-app DOM. A
+  // run-time scraper decoded `&gt;` inside a class attribute before stripping
+  // tags, so the tag ended early and the class list became the card blurb.
+  const junk =
+    '*]:pointer-events-auto R6Vx5W_threadScrollVars scroll-mb-[calc(var(--scroll-root-safe-area-inset-bottom,0px))]" dir="auto" data-turn-id="request-68c4"';
+  for (const description of [junk, "Tasting <b>flight</b> included", "Doors at 7. data-testid=\"x\""]) {
+    const { errors } = validateEvents([valid({ description })]);
+    assert.ok(errors.some((e) => e.includes("description looks like markup")), description);
+  }
+  const { errors } = validateEvents([valid({ description: 'Pairs with "Côtes du Rhône" — $100, 21+ (1 < 2).' })]);
+  assert.deepEqual(errors, []);
 });
 
 test("unknown category warns but does not error", () => {
@@ -561,4 +576,38 @@ test("validateSources rejects a leads hint whose feed_url is not http(s)", () =>
   const { errors } = validateSources(registry);
   assert.equal(errors.length, 1);
   assert.match(errors[0]!, /feed_url/);
+});
+
+test("checkLinks fetches each unique url once, with bounded concurrency", async () => {
+  const realFetch = globalThis.fetch;
+  let inFlight = 0;
+  let peak = 0;
+  const calls: string[] = [];
+  globalThis.fetch = (async (input: string | URL | Request) => {
+    const url = String(input);
+    calls.push(url);
+    inFlight++;
+    peak = Math.max(peak, inFlight);
+    await new Promise((r) => setTimeout(r, 5));
+    inFlight--;
+    return new Response(null, { status: url.includes("dead") ? 404 : 200 });
+  }) as typeof fetch;
+  try {
+    const events = Array.from({ length: 20 }, (_, i) =>
+      valid({
+        id: `id-${i}`,
+        name: `E${i}`,
+        info_url: `https://x.test/e/${i}`,
+        booking_url: "https://x.test/dead",
+        image_url: "https://x.test/img.png",
+      }),
+    );
+    const problems = await checkLinks(events, { concurrency: 4 });
+    assert.equal(calls.length, 22, "20 info urls + 1 shared booking url + 1 shared image url");
+    assert.ok(peak <= 4, `peak in-flight ${peak} exceeded 4`);
+    assert.equal(problems.length, 20, "the shared dead url is reported once per event that uses it");
+    assert.ok(problems.every((p) => p.includes("booking_url -> 404")));
+  } finally {
+    globalThis.fetch = realFetch;
+  }
 });
