@@ -145,7 +145,10 @@ both in the same commit** — CLAUDE.md wins on any conflict.
    week must not create duplicates (idempotent).
 5. **Enrich** each event to the **Event schema**. Geocode best-effort for
    `lat`/`lon`. Add a current forecast for outdoor events in range. Add a short
-   `description` (1–2 sentences) for the card. Unverifiable fields → `"unknown"`,
+   `description` (1–2 sentences) for the card. Turn page HTML into text with
+   `htmlToText` from `scripts/lib/render.ts`, never an ad-hoc tag regex — page
+   bodies can hold pasted app DOM with `&gt;` inside attributes, and
+   `npm run validate` errors on a description that still reads as markup. Unverifiable fields → `"unknown"`,
    never guessed. Never invent prices, addresses, links, or images.
 6. **Verify** every event against the **Verification checklist**. Drop events that
    fail (out of window, venue closed, dead links). Update `last_verified`.
