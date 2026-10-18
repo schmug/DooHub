@@ -85,6 +85,12 @@ describe("applyFilters", () => {
     // with no distance limit the checkbox is moot
     expect(ids(applyFilters(list, { ...emptyFilters, includeUnknownLocation: false }, RALEIGH))).toHaveLength(4);
   });
+  it("includes and excludes categories", () => {
+    const only = { ...emptyFilters, categories: { include: ["concerts"], exclude: [] } };
+    expect(ids(applyFilters(events, only, RALEIGH))).toEqual(["2"]);
+    const without = { ...emptyFilters, categories: { include: [], exclude: ["concerts"] } };
+    expect(ids(applyFilters(events, without, RALEIGH)).sort()).toEqual(["1", "3"]);
+  });
 });
 
 describe("sortEvents", () => {
@@ -119,11 +125,11 @@ describe("activeFilterCount", () => {
         budgets: ["$", "$$"],
         freeOnly: true,
         vegan: true,
-        categories: ["concerts"],
+        categories: { include: ["concerts"], exclude: ["parks"] },
         maxMiles: 10,
         timeRange: [720, 1020],
         includeAllDay: false,
       }),
-    ).toBe(1 + 2 + 1 + 1 + 1 + 1 + 2);
+    ).toBe(1 + 2 + 1 + 1 + 2 + 1 + 2);
   });
 });

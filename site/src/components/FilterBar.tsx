@@ -1,4 +1,5 @@
 import { useState } from "react";
+import InOutChips from "./InOutChips";
 import type { Budget } from "../types";
 import { driveMinutes, MAX_SLIDER_MILES, MIN_SLIDER_MILES } from "../lib/distance";
 import { categoryIcon, formatDayShort } from "../lib/format";
@@ -204,16 +205,11 @@ export default function FilterBar({ filters, setFilters, sort, setSort, view, se
             <div className="chip-row">
               <span className="row-label">Category</span>
               <div className="chips">
-                {categories.map((c) => (
-                  <button
-                    key={c}
-                    className="chip"
-                    aria-pressed={f.categories.includes(c)}
-                    onClick={() => set({ categories: toggle(f.categories, c) })}
-                  >
-                    {categoryIcon(c)} {c}
-                  </button>
-                ))}
+                <InOutChips
+                  options={categories.map((c) => ({ value: c, label: `${categoryIcon(c)} ${c}` }))}
+                  value={f.categories}
+                  onChange={(categories) => set({ categories })}
+                />
                 {isFilterActive(f) && (
                   <button className="chip" onClick={() => setFilters(emptyFilters)}>
                     ✕ Clear all

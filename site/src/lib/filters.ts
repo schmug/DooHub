@@ -2,6 +2,7 @@ import type { Budget, IndoorOutdoor, Origin, TriangleEvent } from "../types";
 import { distanceFrom } from "./distance";
 import { dayKey } from "./format";
 import { FULL_TIME_RANGE, isFullTimeRange, matchesTimeRange, type TimeRange } from "./timeRange";
+import { emptyInOut, inOutCount, matchesInOut, type InOut } from "./inOut";
 
 export type SortKey = "date" | "distance" | "price" | "city" | "category";
 
@@ -27,7 +28,7 @@ export interface FilterState {
   indoorOutdoor: IndoorOutdoor[];
   vegan: boolean;
   vegetarian: boolean;
-  categories: string[];
+  categories: InOut; // include / exclude by category
 }
 
 export const emptyFilters: FilterState = {
@@ -42,7 +43,7 @@ export const emptyFilters: FilterState = {
   indoorOutdoor: [],
   vegan: false,
   vegetarian: false,
-  categories: [],
+  categories: emptyInOut,
 };
 
 export function isFilterActive(f: FilterState): boolean {
@@ -56,7 +57,7 @@ export function isFilterActive(f: FilterState): boolean {
     f.indoorOutdoor.length > 0 ||
     f.vegan ||
     f.vegetarian ||
-    f.categories.length > 0
+    inOutCount(f.categories) > 0
   );
 }
 
@@ -75,7 +76,7 @@ export function activeFilterCount(f: FilterState): number {
     f.indoorOutdoor.length +
     (f.vegan ? 1 : 0) +
     (f.vegetarian ? 1 : 0) +
-    f.categories.length
+    inOutCount(f.categories)
   );
 }
 
@@ -107,7 +108,7 @@ export function applyFilters(events: TriangleEvent[], f: FilterState, origin: Or
     if (timeFilterCount(f) && !matchesTimeRange(ev, f.timeRange, f.includeAllDay)) return false;
     if (f.freeOnly && !/free/i.test(ev.price)) return false;
     if (f.budgets.length && !f.budgets.includes(ev.budget)) return false;
-    if (f.categories.length && !f.categories.includes(ev.category)) return false;
+    if (!matchesInOut(f.categories, ev.category)) return false;
 
     if (f.indoorOutdoor.length) {
       // "both" events match either indoor or outdoor selection.
