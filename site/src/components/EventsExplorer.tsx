@@ -112,7 +112,7 @@ export default function EventsExplorer({ events, origin, theme }: Props) {
                   △
                 </div>
                 <h3>No events match these filters</h3>
-                <p>Try clearing a filter or widening the distance band.</p>
+                <p>Try clearing a filter or widening the distance.</p>
                 <button className="btn btn-primary" onClick={() => setFilters(emptyFilters)}>
                   Clear all filters
                 </button>

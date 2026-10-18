@@ -559,6 +559,48 @@ select.control {
   color: var(--pill-on);
 }
 
+/* distance slider: "within N miles" + unknown-location toggle */
+.distance-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+  max-width: 420px;
+  align-self: stretch;
+  padding-top: 4px;
+}
+.distance-slider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.distance-slider input[type="range"] {
+  flex: 1;
+  min-width: 0;
+  accent-color: var(--green-2);
+}
+.distance-readout {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--ink-2);
+  white-space: nowrap;
+  min-width: 15ch;
+}
+.distance-unknown {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--ink-2);
+}
+.distance-unknown input {
+  accent-color: var(--green-2);
+}
+.distance-unknown:has(input:disabled) {
+  opacity: 0.5;
+}
+
 /* results bar */
 .results-bar {
   display: flex;

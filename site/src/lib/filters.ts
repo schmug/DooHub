@@ -1,5 +1,5 @@
 import type { Budget, IndoorOutdoor, Origin, TimeOfDay, TriangleEvent } from "../types";
-import { bandFor, distanceFrom, type DistanceBand } from "./distance";
+import { distanceFrom } from "./distance";
 import { dayKey, timeOfDay } from "./format";
 
 export type SortKey = "date" | "distance" | "price" | "city" | "category";
@@ -16,7 +16,10 @@ export interface FilterState {
   search: string;
   days: string[]; // dayKeys; empty = all
   timesOfDay: TimeOfDay[];
-  distanceBands: DistanceBand[];
+  /** "Within N miles" of the origin; null = any distance. */
+  maxMiles: number | null;
+  /** With a distance limit set, keep events that have no coordinates. */
+  includeUnknownLocation: boolean;
   freeOnly: boolean;
   budgets: Budget[];
   indoorOutdoor: IndoorOutdoor[];
@@ -29,7 +32,8 @@ export const emptyFilters: FilterState = {
   search: "",
   days: [],
   timesOfDay: [],
-  distanceBands: [],
+  maxMiles: null,
+  includeUnknownLocation: true,
   freeOnly: false,
   budgets: [],
   indoorOutdoor: [],
@@ -43,7 +47,7 @@ export function isFilterActive(f: FilterState): boolean {
     f.search.trim() !== "" ||
     f.days.length > 0 ||
     f.timesOfDay.length > 0 ||
-    f.distanceBands.length > 0 ||
+    f.maxMiles !== null ||
     f.freeOnly ||
     f.budgets.length > 0 ||
     f.indoorOutdoor.length > 0 ||
@@ -62,7 +66,7 @@ export function activeFilterCount(f: FilterState): number {
   return (
     f.days.length +
     f.timesOfDay.length +
-    f.distanceBands.length +
+    (f.maxMiles !== null ? 1 : 0) +
     (f.freeOnly ? 1 : 0) +
     f.budgets.length +
     f.indoorOutdoor.length +
@@ -105,10 +109,11 @@ export function applyFilters(events: TriangleEvent[], f: FilterState, origin: Or
     if (f.vegan && ev.vegan !== "yes") return false;
     if (f.vegetarian && ev.vegetarian !== "yes") return false;
 
-    if (f.distanceBands.length) {
-      if (typeof ev.lat !== "number" || typeof ev.lon !== "number") return false;
+    if (f.maxMiles !== null) {
       const d = distanceFrom(origin, ev.lat, ev.lon);
-      if (!d || !f.distanceBands.includes(bandFor(d.miles))) return false;
+      if (!d) {
+        if (!f.includeUnknownLocation) return false;
+      } else if (d.miles > f.maxMiles) return false;
     }
     return true;
   });
