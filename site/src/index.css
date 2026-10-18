@@ -571,6 +571,9 @@ select.control {
   color: var(--b-4);
   text-decoration: line-through;
 }
+.chip-more {
+  border-style: dashed;
+}
 .chip-count {
   margin-left: 6px;
   font-family: var(--mono);

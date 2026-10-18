@@ -10,8 +10,10 @@ import {
   isFilterActive,
   SORT_OPTIONS,
   type FilterState,
+  type CityOption,
   type SortKey,
 } from "../lib/filters";
+import { inOutState } from "../lib/inOut";
 
 export type ViewKey = "day" | "city" | "category" | "table" | "map";
 
@@ -25,6 +27,9 @@ export const VIEWS: { key: ViewKey; label: string }[] = [
 
 const BUDGETS: Budget[] = ["$", "$$", "$$$", "$$$$"];
 
+/** Cities shown before the "More cities" toggle; the long tail collapses. */
+const TOP_CITIES = 8;
+
 interface Props {
   filters: FilterState;
   setFilters: (f: FilterState) => void;
@@ -34,19 +39,27 @@ interface Props {
   setView: (v: ViewKey) => void;
   days: string[];
   categories: string[];
+  cities: CityOption[];
 }
 
 function toggle<T>(arr: T[], v: T): T[] {
   return arr.includes(v) ? arr.filter((x) => x !== v) : [...arr, v];
 }
 
-export default function FilterBar({ filters, setFilters, sort, setSort, view, setView, days, categories }: Props) {
+export default function FilterBar({ filters, setFilters, sort, setSort, view, setView, days, categories, cities }: Props) {
   const f = filters;
   const set = (patch: Partial<FilterState>) => setFilters({ ...f, ...patch });
   // Chip filters collapse behind the "Filters" toggle on every viewport so the
   // toolbar stays compact and events sit right under the search box.
   const [open, setOpen] = useState(false);
+  const [allCities, setAllCities] = useState(false);
   const count = activeFilterCount(f);
+  // Collapsed, show the top cities plus any tail city that is currently set, so
+  // an active include/exclude never hides behind the toggle.
+  const shownCities = allCities
+    ? cities
+    : cities.filter((c, i) => i < TOP_CITIES || inOutState(f.cities, c.key) !== "neutral");
+  const hiddenCities = cities.length - shownCities.length;
 
   return (
     <div className="toolbar">
@@ -200,6 +213,29 @@ export default function FilterBar({ filters, setFilters, sort, setSort, view, se
               </button>
             </div>
           </div>
+
+          {cities.length > 1 && (
+            <div className="chip-row">
+              <span className="row-label">City</span>
+              <div className="chips">
+                <InOutChips
+                  options={shownCities.map((c) => ({ value: c.key, label: c.label, count: c.count }))}
+                  value={f.cities}
+                  onChange={(cities) => set({ cities })}
+                />
+                {cities.length > TOP_CITIES && (
+                  <button
+                    type="button"
+                    className="chip chip-more"
+                    aria-expanded={allCities}
+                    onClick={() => setAllCities((v) => !v)}
+                  >
+                    {allCities ? "Fewer cities" : `More cities (${hiddenCities})`}
+                  </button>
+                )}
+              </div>
+            </div>
+          )}
 
           {categories.length > 1 && (
             <div className="chip-row">

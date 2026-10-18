@@ -29,6 +29,7 @@ export interface FilterState {
   vegan: boolean;
   vegetarian: boolean;
   categories: InOut; // include / exclude by category
+  cities: InOut; // include / exclude by cityKey
 }
 
 export const emptyFilters: FilterState = {
@@ -44,6 +45,7 @@ export const emptyFilters: FilterState = {
   vegan: false,
   vegetarian: false,
   categories: emptyInOut,
+  cities: emptyInOut,
 };
 
 export function isFilterActive(f: FilterState): boolean {
@@ -57,7 +59,8 @@ export function isFilterActive(f: FilterState): boolean {
     f.indoorOutdoor.length > 0 ||
     f.vegan ||
     f.vegetarian ||
-    inOutCount(f.categories) > 0
+    inOutCount(f.categories) > 0 ||
+    inOutCount(f.cities) > 0
   );
 }
 
@@ -76,7 +79,8 @@ export function activeFilterCount(f: FilterState): number {
     f.indoorOutdoor.length +
     (f.vegan ? 1 : 0) +
     (f.vegetarian ? 1 : 0) +
-    inOutCount(f.categories)
+    inOutCount(f.categories) +
+    inOutCount(f.cities)
   );
 }
 
@@ -109,6 +113,7 @@ export function applyFilters(events: TriangleEvent[], f: FilterState, origin: Or
     if (f.freeOnly && !/free/i.test(ev.price)) return false;
     if (f.budgets.length && !f.budgets.includes(ev.budget)) return false;
     if (!matchesInOut(f.categories, ev.category)) return false;
+    if (!matchesInOut(f.cities, cityKey(ev.city))) return false;
 
     if (f.indoorOutdoor.length) {
       // "both" events match either indoor or outdoor selection.
@@ -158,4 +163,38 @@ export function uniqueDays(events: TriangleEvent[]): string[] {
 
 export function uniqueCategories(events: TriangleEvent[]): string[] {
   return [...new Set(events.map((e) => e.category))].sort();
+}
+
+/** Case/space-insensitive city key, so "DURHAM" and "Durham" are one chip. */
+export function cityKey(city: string): string {
+  return city.trim().replace(/\s+/g, " ").toLowerCase();
+}
+
+export interface CityOption {
+  key: string;
+  label: string; // the most common spelling in the data
+  count: number;
+}
+
+/** Cities by event count (desc), then name. */
+export function cityOptions(events: TriangleEvent[]): CityOption[] {
+  const byKey = new Map<string, { count: number; spellings: Map<string, number> }>();
+  for (const ev of events) {
+    const key = cityKey(ev.city);
+    if (!key) continue;
+    const entry = byKey.get(key) ?? { count: 0, spellings: new Map() };
+    entry.count++;
+    const label = ev.city.trim();
+    entry.spellings.set(label, (entry.spellings.get(label) ?? 0) + 1);
+    byKey.set(key, entry);
+  }
+  return [...byKey]
+    .map(([key, { count, spellings }]) => ({
+      key,
+      label: [...spellings].reduce((best, cur) =>
+        cur[1] > best[1] || (cur[1] === best[1] && cur[0] < best[0]) ? cur : best,
+      )[0],
+      count,
+    }))
+    .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
 }
