@@ -3,6 +3,7 @@ import type { Origin, TriangleEvent } from "../types";
 import type { Theme } from "../lib/theme";
 import {
   applyFilters,
+  cityOptions,
   emptyFilters,
   sortEvents,
   uniqueCategories,
@@ -44,6 +45,7 @@ export default function EventsExplorer({ events, origin, theme }: Props) {
 
   const days = useMemo(() => uniqueDays(events), [events]);
   const categories = useMemo(() => uniqueCategories(events), [events]);
+  const cities = useMemo(() => cityOptions(events), [events]);
 
   const visible = useMemo(() => {
     const filtered = applyFilters(events, filters, origin);
@@ -80,6 +82,7 @@ export default function EventsExplorer({ events, origin, theme }: Props) {
         setView={setView}
         days={days}
         categories={categories}
+        cities={cities}
       />
 
       <div className={`container section-pad${hasSelection ? " has-selection" : ""}`}>

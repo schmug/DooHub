@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { activeFilterCount, applyFilters, emptyFilters, isFilterActive, sortEvents } from "./filters";
+import { activeFilterCount, applyFilters, cityKey, cityOptions, emptyFilters, isFilterActive, sortEvents } from "./filters";
 import { makeEvent, RALEIGH } from "../test/factory";
 
 const ev1 = makeEvent({ id: "1" }); // trivia, Free, $, indoor, vegan, 6/20 7pm, near origin
@@ -131,5 +131,38 @@ describe("activeFilterCount", () => {
         includeAllDay: false,
       }),
     ).toBe(1 + 2 + 1 + 1 + 2 + 1 + 2);
+  });
+});
+
+describe("city include/exclude", () => {
+  it("include keeps only the chosen cities", () => {
+    const f = { ...emptyFilters, cities: { include: ["durham", "carrboro"], exclude: [] } };
+    expect(ids(applyFilters(events, f, RALEIGH)).sort()).toEqual(["2", "3"]);
+  });
+  it("exclude hides a city and is case-insensitive", () => {
+    const shouty = makeEvent({ id: "4", city: "DURHAM " });
+    const f = { ...emptyFilters, cities: { include: [], exclude: ["durham"] } };
+    expect(ids(applyFilters([...events, shouty], f, RALEIGH))).toEqual(["1", "2"]);
+  });
+  it("counts toward the active filter badge", () => {
+    const f = { ...emptyFilters, cities: { include: ["raleigh"], exclude: ["dunn"] } };
+    expect(isFilterActive(f)).toBe(true);
+    expect(activeFilterCount(f)).toBe(2);
+  });
+});
+
+describe("cityOptions", () => {
+  it("merges spellings, labels with the most common one, and sorts by count", () => {
+    const list = [
+      makeEvent({ id: "a", city: "Durham" }),
+      makeEvent({ id: "b", city: "Durham" }),
+      makeEvent({ id: "c", city: "DURHAM" }),
+      makeEvent({ id: "d", city: "Cary" }),
+    ];
+    expect(cityOptions(list)).toEqual([
+      { key: "durham", label: "Durham", count: 3 },
+      { key: "cary", label: "Cary", count: 1 },
+    ]);
+    expect(cityKey("  Chapel   Hill ")).toBe("chapel hill");
   });
 });
