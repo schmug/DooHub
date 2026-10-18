@@ -44,8 +44,20 @@ describe("applyFilters", () => {
   it("filters by day", () => {
     expect(ids(applyFilters(events, { ...emptyFilters, days: ["2026-06-21"] }, RALEIGH))).toEqual(["2"]);
   });
-  it("filters by time of day", () => {
-    expect(ids(applyFilters(events, { ...emptyFilters, timesOfDay: ["morning"] }, RALEIGH))).toEqual(["3"]);
+  it("filters by start-time range", () => {
+    expect(ids(applyFilters(events, { ...emptyFilters, timeRange: [360, 720] }, RALEIGH))).toEqual(["3"]);
+    expect(ids(applyFilters(events, { ...emptyFilters, timeRange: [1140, 1440] }, RALEIGH))).toEqual(["1", "2"]);
+  });
+  it("keeps all-day / TBD events under a time range unless excluded", () => {
+    const allDay = makeEvent({ id: "4", start: "2026-06-20T00:00:00-04:00" });
+    const tbd = makeEvent({ id: "5", start: "2026-06-20T10:00:00-04:00", tags: ["time-tbd"] });
+    const list = [...events, allDay, tbd];
+    expect(ids(applyFilters(list, { ...emptyFilters, timeRange: [1080, 1440] }, RALEIGH))).toEqual(["1", "2", "4", "5"]);
+    expect(
+      ids(applyFilters(list, { ...emptyFilters, timeRange: [1080, 1440], includeAllDay: false }, RALEIGH)),
+    ).toEqual(["1", "2"]);
+    // Hiding TBD alone (full range) still drops them.
+    expect(ids(applyFilters(list, { ...emptyFilters, includeAllDay: false }, RALEIGH))).toEqual(["1", "2", "3"]);
   });
   it("freeOnly keeps only free events", () => {
     expect(ids(applyFilters(events, { ...emptyFilters, freeOnly: true }, RALEIGH)).sort()).toEqual(["1", "3"]);
@@ -109,7 +121,9 @@ describe("activeFilterCount", () => {
         vegan: true,
         categories: ["concerts"],
         maxMiles: 10,
+        timeRange: [720, 1020],
+        includeAllDay: false,
       }),
-    ).toBe(1 + 2 + 1 + 1 + 1 + 1);
+    ).toBe(1 + 2 + 1 + 1 + 1 + 1 + 2);
   });
 });

@@ -587,6 +587,93 @@ select.control {
   white-space: nowrap;
   min-width: 15ch;
 }
+/* time slider: two stacked range inputs over one shared track */
+.time-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+  max-width: 420px;
+}
+.time-slider-readout {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-2);
+  padding-top: 7px;
+}
+.time-slider-track {
+  position: relative;
+  height: 22px;
+}
+.time-slider-track::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: var(--pill);
+  background: linear-gradient(
+    to right,
+    var(--track) var(--lo),
+    var(--green-2) var(--lo),
+    var(--green-2) var(--hi),
+    var(--track) var(--hi)
+  );
+}
+.time-slider-track input[type="range"] {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  margin: 0;
+  background: transparent;
+  pointer-events: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.time-slider-track input[type="range"]::-webkit-slider-runnable-track {
+  background: transparent;
+}
+.time-slider-track input[type="range"]::-moz-range-track {
+  background: transparent;
+}
+.time-slider-track input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  pointer-events: auto;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 2px solid var(--dark-pill);
+  cursor: pointer;
+}
+.time-slider-track input[type="range"]::-moz-range-thumb {
+  pointer-events: auto;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 2px solid var(--dark-pill);
+  cursor: pointer;
+}
+.time-slider-track input[type="range"]:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid var(--green-2);
+  outline-offset: 2px;
+}
+.time-slider-track input[type="range"]:focus-visible::-moz-range-thumb {
+  outline: 2px solid var(--green-2);
+  outline-offset: 2px;
+}
+.time-slider-tbd {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--ink-2);
+  cursor: pointer;
+}
 .distance-unknown {
   display: inline-flex;
   align-items: center;
