@@ -84,6 +84,12 @@ export function formatTimeRange(startISO: string, endISO?: string): string {
   return `${fmtClock(s)} ${s.ampm} – ${fmtClock(e)} ${e.ampm}`;
 }
 
+/** NY-local minutes after midnight (0–1439). */
+export function nyMinuteOfDay(iso: string): number {
+  const p = nyTimeParts(iso);
+  return p.hour24 * 60 + p.minute;
+}
+
 export function timeOfDay(iso: string): TimeOfDay {
   const h = nyTimeParts(iso).hour24;
   if (h < 12) return "morning";

@@ -1,7 +1,8 @@
 import { useState } from "react";
-import type { Budget, TimeOfDay } from "../types";
+import type { Budget } from "../types";
 import { driveMinutes, MAX_SLIDER_MILES, MIN_SLIDER_MILES } from "../lib/distance";
 import { categoryIcon, formatDayShort } from "../lib/format";
+import TimeSlider from "./TimeSlider";
 import {
   activeFilterCount,
   emptyFilters,
@@ -19,12 +20,6 @@ export const VIEWS: { key: ViewKey; label: string }[] = [
   { key: "category", label: "By Category" },
   { key: "table", label: "Table" },
   { key: "map", label: "Map" },
-];
-
-const TIMES: { value: TimeOfDay; label: string }[] = [
-  { value: "morning", label: "Morning" },
-  { value: "afternoon", label: "Afternoon" },
-  { value: "evening", label: "Evening" },
 ];
 
 const BUDGETS: Budget[] = ["$", "$$", "$$$", "$$$$"];
@@ -118,18 +113,11 @@ export default function FilterBar({ filters, setFilters, sort, setSort, view, se
 
           <div className="chip-row">
             <span className="row-label">Time</span>
-            <div className="chips">
-              {TIMES.map((t) => (
-                <button
-                  key={t.value}
-                  className="chip"
-                  aria-pressed={f.timesOfDay.includes(t.value)}
-                  onClick={() => set({ timesOfDay: toggle(f.timesOfDay, t.value) })}
-                >
-                  {t.label}
-                </button>
-              ))}
-            </div>
+            <TimeSlider
+              range={f.timeRange}
+              includeAllDay={f.includeAllDay}
+              onChange={(timeRange, includeAllDay) => set({ timeRange, includeAllDay })}
+            />
           </div>
 
           <div className="chip-row">
