@@ -62,6 +62,12 @@ describe("applyFilters", () => {
   it("filters by distance band", () => {
     expect(ids(applyFilters(events, { ...emptyFilters, distanceBands: ["0-5"] }, RALEIGH))).toEqual(["1"]);
   });
+  it("includes and excludes categories", () => {
+    const only = { ...emptyFilters, categories: { include: ["concerts"], exclude: [] } };
+    expect(ids(applyFilters(events, only, RALEIGH))).toEqual(["2"]);
+    const without = { ...emptyFilters, categories: { include: [], exclude: ["concerts"] } };
+    expect(ids(applyFilters(events, without, RALEIGH)).sort()).toEqual(["1", "3"]);
+  });
 });
 
 describe("sortEvents", () => {
@@ -96,8 +102,8 @@ describe("activeFilterCount", () => {
         budgets: ["$", "$$"],
         freeOnly: true,
         vegan: true,
-        categories: ["concerts"],
+        categories: { include: ["concerts"], exclude: ["parks"] },
       }),
-    ).toBe(1 + 2 + 1 + 1 + 1);
+    ).toBe(1 + 2 + 1 + 1 + 2);
   });
 });

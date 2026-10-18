@@ -559,6 +559,25 @@ select.control {
   color: var(--pill-on);
 }
 
+/* include / exclude chips: + included (solid), − excluded (struck, rose) */
+.chip-inout[data-state="include"] {
+  background: var(--dark-pill);
+  border-color: var(--dark-pill);
+  color: var(--pill-on);
+}
+.chip-inout[data-state="exclude"] {
+  background: var(--card);
+  border-color: var(--b-4);
+  color: var(--b-4);
+  text-decoration: line-through;
+}
+.chip-count {
+  margin-left: 6px;
+  font-family: var(--mono);
+  font-size: 10px;
+  opacity: 0.7;
+}
+
 /* results bar */
 .results-bar {
   display: flex;
@@ -1346,6 +1365,12 @@ table.events td.links .ics {
 }
 [data-theme="dark"] .chip {
   color: var(--ink-2);
+}
+[data-theme="dark"] .chip-inout[data-state="include"] {
+  color: var(--pill-on);
+}
+[data-theme="dark"] .chip-inout[data-state="exclude"] {
+  color: var(--b-4);
 }
 [data-theme="dark"] table.events td.when .clock {
   color: var(--muted);
