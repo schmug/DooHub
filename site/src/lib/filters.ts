@@ -1,6 +1,7 @@
-import type { Budget, IndoorOutdoor, Origin, TimeOfDay, TriangleEvent } from "../types";
-import { bandFor, distanceFrom, type DistanceBand } from "./distance";
-import { dayKey, timeOfDay } from "./format";
+import type { Budget, IndoorOutdoor, Origin, TriangleEvent } from "../types";
+import { distanceFrom } from "./distance";
+import { dayKey } from "./format";
+import { FULL_TIME_RANGE, isFullTimeRange, matchesTimeRange, type TimeRange } from "./timeRange";
 import { emptyInOut, inOutCount, matchesInOut, type InOut } from "./inOut";
 
 export type SortKey = "date" | "distance" | "price" | "city" | "category";
@@ -16,8 +17,12 @@ export const SORT_OPTIONS: { value: SortKey; label: string }[] = [
 export interface FilterState {
   search: string;
   days: string[]; // dayKeys; empty = all
-  timesOfDay: TimeOfDay[];
-  distanceBands: DistanceBand[];
+  timeRange: TimeRange; // NY-local start minutes; full range = any time
+  includeAllDay: boolean; // keep all-day / time-TBD events when filtering by time
+  /** "Within N miles" of the origin; null = any distance. */
+  maxMiles: number | null;
+  /** With a distance limit set, keep events that have no coordinates. */
+  includeUnknownLocation: boolean;
   freeOnly: boolean;
   budgets: Budget[];
   indoorOutdoor: IndoorOutdoor[];
@@ -29,8 +34,10 @@ export interface FilterState {
 export const emptyFilters: FilterState = {
   search: "",
   days: [],
-  timesOfDay: [],
-  distanceBands: [],
+  timeRange: FULL_TIME_RANGE,
+  includeAllDay: true,
+  maxMiles: null,
+  includeUnknownLocation: true,
   freeOnly: false,
   budgets: [],
   indoorOutdoor: [],
@@ -43,8 +50,8 @@ export function isFilterActive(f: FilterState): boolean {
   return (
     f.search.trim() !== "" ||
     f.days.length > 0 ||
-    f.timesOfDay.length > 0 ||
-    f.distanceBands.length > 0 ||
+    timeFilterCount(f) > 0 ||
+    f.maxMiles !== null ||
     f.freeOnly ||
     f.budgets.length > 0 ||
     f.indoorOutdoor.length > 0 ||
@@ -62,8 +69,8 @@ export function isFilterActive(f: FilterState): boolean {
 export function activeFilterCount(f: FilterState): number {
   return (
     f.days.length +
-    f.timesOfDay.length +
-    f.distanceBands.length +
+    timeFilterCount(f) +
+    (f.maxMiles !== null ? 1 : 0) +
     (f.freeOnly ? 1 : 0) +
     f.budgets.length +
     f.indoorOutdoor.length +
@@ -71,6 +78,11 @@ export function activeFilterCount(f: FilterState): number {
     (f.vegetarian ? 1 : 0) +
     inOutCount(f.categories)
   );
+}
+
+/** A narrowed time range and hiding all-day/TBD each count as one filter. */
+function timeFilterCount(f: FilterState): number {
+  return (isFullTimeRange(f.timeRange) ? 0 : 1) + (f.includeAllDay ? 0 : 1);
 }
 
 const budgetRank: Record<Budget, number> = {
@@ -93,7 +105,7 @@ export function applyFilters(events: TriangleEvent[], f: FilterState, origin: Or
   return events.filter((ev) => {
     if (q && !matchesSearch(ev, q)) return false;
     if (f.days.length && !f.days.includes(dayKey(ev.start))) return false;
-    if (f.timesOfDay.length && !f.timesOfDay.includes(timeOfDay(ev.start))) return false;
+    if (timeFilterCount(f) && !matchesTimeRange(ev, f.timeRange, f.includeAllDay)) return false;
     if (f.freeOnly && !/free/i.test(ev.price)) return false;
     if (f.budgets.length && !f.budgets.includes(ev.budget)) return false;
     if (!matchesInOut(f.categories, ev.category)) return false;
@@ -106,10 +118,11 @@ export function applyFilters(events: TriangleEvent[], f: FilterState, origin: Or
     if (f.vegan && ev.vegan !== "yes") return false;
     if (f.vegetarian && ev.vegetarian !== "yes") return false;
 
-    if (f.distanceBands.length) {
-      if (typeof ev.lat !== "number" || typeof ev.lon !== "number") return false;
+    if (f.maxMiles !== null) {
       const d = distanceFrom(origin, ev.lat, ev.lon);
-      if (!d || !f.distanceBands.includes(bandFor(d.miles))) return false;
+      if (!d) {
+        if (!f.includeUnknownLocation) return false;
+      } else if (d.miles > f.maxMiles) return false;
     }
     return true;
   });

@@ -1,8 +1,9 @@
 import { useState } from "react";
 import InOutChips from "./InOutChips";
-import type { Budget, TimeOfDay } from "../types";
-import { DISTANCE_BANDS, type DistanceBand } from "../lib/distance";
+import type { Budget } from "../types";
+import { driveMinutes, MAX_SLIDER_MILES, MIN_SLIDER_MILES } from "../lib/distance";
 import { categoryIcon, formatDayShort } from "../lib/format";
+import TimeSlider from "./TimeSlider";
 import {
   activeFilterCount,
   emptyFilters,
@@ -20,12 +21,6 @@ export const VIEWS: { key: ViewKey; label: string }[] = [
   { key: "category", label: "By Category" },
   { key: "table", label: "Table" },
   { key: "map", label: "Map" },
-];
-
-const TIMES: { value: TimeOfDay; label: string }[] = [
-  { value: "morning", label: "Morning" },
-  { value: "afternoon", label: "Afternoon" },
-  { value: "evening", label: "Evening" },
 ];
 
 const BUDGETS: Budget[] = ["$", "$$", "$$$", "$$$$"];
@@ -119,33 +114,45 @@ export default function FilterBar({ filters, setFilters, sort, setSort, view, se
 
           <div className="chip-row">
             <span className="row-label">Time</span>
-            <div className="chips">
-              {TIMES.map((t) => (
-                <button
-                  key={t.value}
-                  className="chip"
-                  aria-pressed={f.timesOfDay.includes(t.value)}
-                  onClick={() => set({ timesOfDay: toggle(f.timesOfDay, t.value) })}
-                >
-                  {t.label}
-                </button>
-              ))}
-            </div>
+            <TimeSlider
+              range={f.timeRange}
+              includeAllDay={f.includeAllDay}
+              onChange={(timeRange, includeAllDay) => set({ timeRange, includeAllDay })}
+            />
           </div>
 
           <div className="chip-row">
             <span className="row-label">Distance</span>
-            <div className="chips">
-              {DISTANCE_BANDS.map((b) => (
-                <button
-                  key={b.value}
-                  className="chip"
-                  aria-pressed={f.distanceBands.includes(b.value as DistanceBand)}
-                  onClick={() => set({ distanceBands: toggle(f.distanceBands, b.value) })}
-                >
-                  {b.label}
-                </button>
-              ))}
+            <div className="distance-filter">
+              <div className="distance-slider">
+                <input
+                  type="range"
+                  min={MIN_SLIDER_MILES}
+                  max={MAX_SLIDER_MILES}
+                  step={1}
+                  value={f.maxMiles ?? MAX_SLIDER_MILES}
+                  onChange={(e) => {
+                    const v = Number(e.target.value);
+                    set({ maxMiles: v >= MAX_SLIDER_MILES ? null : v });
+                  }}
+                  aria-label="Maximum distance in miles"
+                  aria-valuetext={f.maxMiles === null ? "Any distance" : `Within ${f.maxMiles} miles`}
+                />
+                <span className="distance-readout">
+                  {f.maxMiles === null
+                    ? "Any distance"
+                    : `Within ${f.maxMiles} mi · ~${driveMinutes(f.maxMiles)} min`}
+                </span>
+              </div>
+              <label className="distance-unknown">
+                <input
+                  type="checkbox"
+                  checked={f.includeUnknownLocation}
+                  disabled={f.maxMiles === null}
+                  onChange={(e) => set({ includeUnknownLocation: e.target.checked })}
+                />
+                Include events with unknown location
+              </label>
             </div>
           </div>
 

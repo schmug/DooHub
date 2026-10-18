@@ -2,14 +2,9 @@ import type { Origin } from "../types";
 
 const R_MILES = 3958.8;
 
-export type DistanceBand = "0-5" | "5-15" | "15-30" | "30+";
-
-export const DISTANCE_BANDS: { value: DistanceBand; label: string }[] = [
-  { value: "0-5", label: "≤ 5 mi" },
-  { value: "5-15", label: "5–15 mi" },
-  { value: "15-30", label: "15–30 mi" },
-  { value: "30+", label: "30+ mi" },
-];
+/** Range of the "within N miles" slider. The top stop means "any distance". */
+export const MIN_SLIDER_MILES = 1;
+export const MAX_SLIDER_MILES = 50;
 
 function toRad(deg: number): number {
   return (deg * Math.PI) / 180;
@@ -30,21 +25,13 @@ export function driveMinutes(miles: number): number {
   return Math.max(1, Math.round(miles / 0.62));
 }
 
-export function bandFor(miles: number): DistanceBand {
-  if (miles <= 5) return "0-5";
-  if (miles <= 15) return "5-15";
-  if (miles <= 30) return "15-30";
-  return "30+";
-}
-
 export interface DistanceInfo {
   miles: number;
   minutes: number;
-  band: DistanceBand;
 }
 
 export function distanceFrom(origin: Origin, lat: number | null, lon: number | null): DistanceInfo | null {
   if (typeof lat !== "number" || typeof lon !== "number") return null;
   const miles = haversineMiles(origin.lat, origin.lon, lat, lon);
-  return { miles, minutes: driveMinutes(miles), band: bandFor(miles) };
+  return { miles, minutes: driveMinutes(miles) };
 }
