@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { Budget, TimeOfDay } from "../types";
-import { DISTANCE_BANDS, type DistanceBand } from "../lib/distance";
+import { driveMinutes, MAX_SLIDER_MILES, MIN_SLIDER_MILES } from "../lib/distance";
 import { categoryIcon, formatDayShort } from "../lib/format";
 import {
   activeFilterCount,
@@ -134,17 +134,36 @@ export default function FilterBar({ filters, setFilters, sort, setSort, view, se
 
           <div className="chip-row">
             <span className="row-label">Distance</span>
-            <div className="chips">
-              {DISTANCE_BANDS.map((b) => (
-                <button
-                  key={b.value}
-                  className="chip"
-                  aria-pressed={f.distanceBands.includes(b.value as DistanceBand)}
-                  onClick={() => set({ distanceBands: toggle(f.distanceBands, b.value) })}
-                >
-                  {b.label}
-                </button>
-              ))}
+            <div className="distance-filter">
+              <div className="distance-slider">
+                <input
+                  type="range"
+                  min={MIN_SLIDER_MILES}
+                  max={MAX_SLIDER_MILES}
+                  step={1}
+                  value={f.maxMiles ?? MAX_SLIDER_MILES}
+                  onChange={(e) => {
+                    const v = Number(e.target.value);
+                    set({ maxMiles: v >= MAX_SLIDER_MILES ? null : v });
+                  }}
+                  aria-label="Maximum distance in miles"
+                  aria-valuetext={f.maxMiles === null ? "Any distance" : `Within ${f.maxMiles} miles`}
+                />
+                <span className="distance-readout">
+                  {f.maxMiles === null
+                    ? "Any distance"
+                    : `Within ${f.maxMiles} mi · ~${driveMinutes(f.maxMiles)} min`}
+                </span>
+              </div>
+              <label className="distance-unknown">
+                <input
+                  type="checkbox"
+                  checked={f.includeUnknownLocation}
+                  disabled={f.maxMiles === null}
+                  onChange={(e) => set({ includeUnknownLocation: e.target.checked })}
+                />
+                Include events with unknown location
+              </label>
             </div>
           </div>
 

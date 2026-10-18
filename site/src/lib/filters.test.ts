@@ -59,8 +59,19 @@ describe("applyFilters", () => {
   it("'both' events match an outdoor selection", () => {
     expect(ids(applyFilters(events, { ...emptyFilters, indoorOutdoor: ["outdoor"] }, RALEIGH))).toEqual(["3"]);
   });
-  it("filters by distance band", () => {
-    expect(ids(applyFilters(events, { ...emptyFilters, distanceBands: ["0-5"] }, RALEIGH))).toEqual(["1"]);
+  it("filters to events within N miles", () => {
+    expect(ids(applyFilters(events, { ...emptyFilters, maxMiles: 5 }, RALEIGH))).toEqual(["1"]);
+    expect(ids(applyFilters(events, { ...emptyFilters, maxMiles: 30 }, RALEIGH)).sort()).toEqual(["1", "2", "3"]);
+  });
+  it("keeps events with no coordinates under a distance limit unless told not to", () => {
+    const noGeo = makeEvent({ id: "4", lat: null, lon: null });
+    const list = [...events, noGeo];
+    expect(ids(applyFilters(list, { ...emptyFilters, maxMiles: 5 }, RALEIGH))).toEqual(["1", "4"]);
+    expect(
+      ids(applyFilters(list, { ...emptyFilters, maxMiles: 5, includeUnknownLocation: false }, RALEIGH)),
+    ).toEqual(["1"]);
+    // with no distance limit the checkbox is moot
+    expect(ids(applyFilters(list, { ...emptyFilters, includeUnknownLocation: false }, RALEIGH))).toHaveLength(4);
   });
 });
 
@@ -97,7 +108,8 @@ describe("activeFilterCount", () => {
         freeOnly: true,
         vegan: true,
         categories: ["concerts"],
+        maxMiles: 10,
       }),
-    ).toBe(1 + 2 + 1 + 1 + 1);
+    ).toBe(1 + 2 + 1 + 1 + 1 + 1);
   });
 });
