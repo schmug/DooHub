@@ -34,6 +34,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { ingestLeads, parseRedditAtom, rankVenues, type LeadsIngestResult } from "./lib/leads.js";
 import type { IngestWindow } from "./lib/feeds.js";
+import { USER_AGENT } from "./lib/http.js";
 import { nyFields, nyIso } from "./lib/render.js";
 import type { EventSource, EventsStore, SourcesRegistry } from "./lib/types.js";
 
@@ -41,10 +42,9 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SOURCES = join(ROOT, "data", "sources.json");
 const EVENTS = join(ROOT, "data", "events.json");
 
-// Identifies the fetcher to the origin; the URL points at the project and the
-// purpose. Reddit's Public Content Policy allows non-commercial use such as
-// learning and community — which this is.
-const USER_AGENT = "doohub/1.0 (+https://github.com/schmug/DooHub; non-commercial Triangle events calendar)";
+// The fetch identifies itself with the project's one fixed User-Agent
+// (scripts/lib/http.ts). Reddit's Public Content Policy allows non-commercial
+// use such as learning and community — which this is.
 
 /** today 00:00 .. today+days 23:59:59 in America/New_York — the run's window. */
 export function runWindow(now: Date, days: number): IngestWindow {

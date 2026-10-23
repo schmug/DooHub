@@ -36,6 +36,7 @@ import {
   type TriangleEvent,
 } from "./lib/types.js";
 import { normVenue, venueParent } from "./lib/dedup.js";
+import { USER_AGENT } from "./lib/http.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SRC = join(ROOT, "data", "events.json");
@@ -511,10 +512,11 @@ function todayWindow(now: Date): DateWindow {
 async function checkUrl(url: string): Promise<{ url: string; ok: boolean; status: number | string }> {
   try {
     const signal = () => AbortSignal.timeout(LINK_CHECK_TIMEOUT_MS);
-    let res = await fetch(url, { method: "HEAD", redirect: "follow", signal: signal() });
+    const headers = { "user-agent": USER_AGENT };
+    let res = await fetch(url, { method: "HEAD", headers, redirect: "follow", signal: signal() });
     // Some hosts reject HEAD; fall back to a ranged GET.
     if (res.status === 405 || res.status === 403 || res.status === 501) {
-      res = await fetch(url, { method: "GET", headers: { Range: "bytes=0-0" }, redirect: "follow", signal: signal() });
+      res = await fetch(url, { method: "GET", headers: { ...headers, Range: "bytes=0-0" }, redirect: "follow", signal: signal() });
     }
     return { url, ok: res.ok, status: res.status };
   } catch (err) {
