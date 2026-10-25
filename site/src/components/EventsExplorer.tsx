@@ -12,6 +12,8 @@ import {
   type SortKey,
 } from "../lib/filters";
 import { downloadIcs } from "../lib/ics";
+import { isOver } from "../lib/past";
+import { useNow } from "../lib/useNow";
 import { selectedEvents } from "../lib/selection";
 import { useSelection } from "../lib/useSelection";
 import SelectionSidebar from "./SelectionSidebar";
@@ -41,16 +43,32 @@ export default function EventsExplorer({ events, origin, theme }: Props) {
   const [view, setView] = useState<ViewKey>("day");
   const [focus, setFocus] = useState<Focus | null>(null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const [showPast, setShowPast] = useState(false);
+  const [stackRepeats, setStackRepeats] = useState(true);
   const selection = useSelection(events);
+  const now = useNow();
 
-  const days = useMemo(() => uniqueDays(events), [events]);
+  // Finished events drop out before any filter runs, so day chips and counts
+  // only offer what's still ahead. The week's store keeps days already gone.
+  const upcoming = useMemo(() => events.filter((ev) => !isOver(ev, now)), [events, now]);
+  const pastCount = events.length - upcoming.length;
+  const pool = showPast ? events : upcoming;
+
+  const days = useMemo(() => uniqueDays(pool), [pool]);
   const categories = useMemo(() => uniqueCategories(events), [events]);
   const cities = useMemo(() => cityOptions(events), [events]);
 
+  // A day chip left set for a day that has since passed would otherwise
+  // silently match nothing.
+  const activeFilters = useMemo(
+    () => (filters.days.some((d) => !days.includes(d)) ? { ...filters, days: filters.days.filter((d) => days.includes(d)) } : filters),
+    [filters, days],
+  );
+
   const visible = useMemo(() => {
-    const filtered = applyFilters(events, filters, origin);
+    const filtered = applyFilters(pool, activeFilters, origin);
     return sortEvents(filtered, sort, origin);
-  }, [events, filters, sort, origin]);
+  }, [pool, activeFilters, sort, origin]);
 
   // Chronological, and drawn from the full event set rather than `visible` —
   // the selection is deliberately independent of the active filters.
@@ -74,7 +92,7 @@ export default function EventsExplorer({ events, origin, theme }: Props) {
   return (
     <>
       <FilterBar
-        filters={filters}
+        filters={activeFilters}
         setFilters={setFilters}
         sort={sort}
         setSort={setSort}
@@ -88,7 +106,21 @@ export default function EventsExplorer({ events, origin, theme }: Props) {
       <div className={`container section-pad${hasSelection ? " has-selection" : ""}`}>
         <div className="results-bar">
           <div className="results-count">
-            <strong>{visible.length}</strong> of {events.length} events
+            <strong>{visible.length}</strong> of {pool.length} {showPast ? "events" : "upcoming events"}
+          </div>
+          <div className="results-toggles">
+            {pastCount > 0 && (
+              <label className="results-toggle">
+                <input type="checkbox" checked={showPast} onChange={(e) => setShowPast(e.target.checked)} />
+                Show {pastCount} past
+              </label>
+            )}
+            {(view === "day" || view === "city" || view === "category") && (
+              <label className="results-toggle">
+                <input type="checkbox" checked={stackRepeats} onChange={(e) => setStackRepeats(e.target.checked)} />
+                Stack repeats
+              </label>
+            )}
           </div>
           <div className="export-group">
             <button
@@ -114,11 +146,29 @@ export default function EventsExplorer({ events, origin, theme }: Props) {
                 <div className="empty-mark" aria-hidden>
                   △
                 </div>
-                <h3>No events match these filters</h3>
-                <p>Try clearing a filter or widening the distance.</p>
-                <button className="btn btn-primary" onClick={() => setFilters(emptyFilters)}>
-                  Clear all filters
-                </button>
+                {pool.length === 0 ? (
+                  <>
+                    <h3>Everything this week is over</h3>
+                    <p>The next weekly refresh brings in new events.</p>
+                  </>
+                ) : (
+                  <>
+                    <h3>No events match these filters</h3>
+                    <p>Try clearing a filter or widening the distance.</p>
+                  </>
+                )}
+                <div className="empty-actions">
+                  {pool.length > 0 && (
+                    <button className="btn btn-primary" onClick={() => setFilters(emptyFilters)}>
+                      Clear all filters
+                    </button>
+                  )}
+                  {!showPast && pastCount > 0 && (
+                    <button className="btn" onClick={() => setShowPast(true)}>
+                      Show past events
+                    </button>
+                  )}
+                </div>
               </div>
             ) : view === "table" ? (
               <TableView
@@ -150,6 +200,7 @@ export default function EventsExplorer({ events, origin, theme }: Props) {
                 events={visible}
                 origin={origin}
                 groupBy={view}
+                stackRepeats={stackRepeats}
                 isSelected={selection.isSelected}
                 onToggle={selection.toggle}
               />
