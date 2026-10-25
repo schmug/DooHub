@@ -47,7 +47,7 @@
     "the-pinhook": 8,
     "glass-jug": 18,
     "ponysaurus": 5,
-    "compass-rose": 6,
+    "compass-rose": 5,
     "raleigh-brewing": 6,
     "raleigh-little-theatre": 4,
     "theatre-raleigh": 7,
@@ -86,7 +86,7 @@
     "raleigh-city-events": 11,
     "cary-events": 12,
     "nc-historic-sites": 16,
-    "downtown-raleigh-alliance": 113,
+    "downtown-raleigh-alliance": 112,
     "raleigh-parks": 0,
     "knightdale-town": 1,
     "chapel-hill-public-library": 15,
@@ -108,6 +108,6 @@
     "raleigh-parks"
   ],
   "off_registry_sources": 45,
-  "off_registry_events": 2918,
-  "total_events": 4515
+  "off_registry_events": 2879,
+  "total_events": 4474
 }
