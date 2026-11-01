@@ -1813,3 +1813,85 @@ table.events td.links .ics {
 .events tr.is-selected {
   background: var(--line-soft);
 }
+
+/* ---------- Results toggles (past events, stacked repeats) ---------- */
+.results-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-right: auto;
+  margin-left: 6px;
+}
+.results-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: var(--ink-2);
+  cursor: pointer;
+}
+.results-toggle input {
+  accent-color: var(--green-2);
+}
+.empty-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+/* ---------- Stacked series footer ---------- */
+.repeats {
+  margin-top: 12px;
+  border-top: 1px dashed var(--c-line, var(--line));
+  padding-top: 10px;
+}
+.repeats-toggle {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: 0;
+  padding: 2px 0;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--c-strong, var(--ink));
+  cursor: pointer;
+}
+.repeats-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  max-height: 240px;
+  overflow-y: auto;
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+.repeats-list li {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 8px;
+  align-items: baseline;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.repeats-list li:last-child {
+  border-bottom: 0;
+}
+.repeats-list input {
+  accent-color: var(--green-2);
+}
+.repeats-when {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.repeats-where {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.repeats-where a {
+  color: var(--link);
+}

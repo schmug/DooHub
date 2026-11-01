@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import type { Origin, TriangleEvent } from "../types";
 import { distanceFrom } from "../lib/distance";
 import {
@@ -19,9 +19,11 @@ interface Props {
   showDay?: boolean;
   selected: boolean;
   onToggle: (id: string) => void;
+  /** Footer slot, e.g. the occurrence list on a stacked series card. */
+  children?: ReactNode;
 }
 
-export default function EventCard({ ev, origin, selected, onToggle }: Props) {
+export default function EventCard({ ev, origin, selected, onToggle, children }: Props) {
   const [imgOk, setImgOk] = useState(Boolean(ev.image_url) && ev.image_url !== "unknown");
   const dist = distanceFrom(origin, ev.lat, ev.lon);
   const link = ev.booking_url && ev.booking_url !== "unknown" ? ev.booking_url : "";
@@ -122,6 +124,7 @@ export default function EventCard({ ev, origin, selected, onToggle }: Props) {
             </a>
           )}
         </div>
+        {children}
       </div>
     </article>
   );
