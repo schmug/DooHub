@@ -68,6 +68,13 @@ tours, classes, breweries/tastings, trivia, parks, trails, historic sites,
 shopping, family/kids, food events, comedy, nightlife. (Beaches/lakes are out of
 metro scope unless inside the ring.)
 
+**Excluded:** dating events. Speed dating, singles mixers/nights, and outings
+posted by singles-oriented groups (e.g. a Meetup group named "…-singles") are
+out of scope whatever category a source files them under. Mixers that aren't
+dating (networking, pickleball, writers) and tennis "singles" stay in.
+`excludedTopic` in `scripts/lib/exclusions.ts` is the rule, and
+`npm run validate` errors on any event it flags, so drop them at discovery.
+
 **Time window:** events occurring within the next 7 days from run date.
 
 ## Event schema (per event in events.json)
@@ -131,6 +138,7 @@ Document your final dedup rules in a `## Dedup` section you append to this file.
 - [ ] Outdoor events have a current forecast
 - [ ] Distance/time is a sane Triangle same-day trip
 - [ ] No duplicate `id`s in events.json
+- [ ] No excluded-topic (dating) events
 
 ## Output #1 — Interactive site (React, Cloudflare Pages)
 

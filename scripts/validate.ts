@@ -37,6 +37,7 @@ import {
 } from "./lib/types.js";
 import { normVenue, venueParent } from "./lib/dedup.js";
 import { USER_AGENT } from "./lib/http.js";
+import { excludedTopic } from "./lib/exclusions.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SRC = join(ROOT, "data", "events.json");
@@ -172,6 +173,12 @@ export function validateEvents(events: TriangleEvent[], window?: DateWindow): Va
 
     if (ev.description && MARKUP_RESIDUE.test(ev.description)) {
       errors.push(`${label}: description looks like markup, not prose: "${ev.description.slice(0, 60)}…"`);
+    }
+
+    // Topics the audience has opted out of (lib/exclusions.ts)
+    const excluded = excludedTopic(ev);
+    if (excluded) {
+      errors.push(`${label}: ${excluded} event — excluded topic, drop it (see Coverage § Excluded)`);
     }
 
     // Outdoor events should carry a forecast

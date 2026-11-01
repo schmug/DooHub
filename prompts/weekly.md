@@ -154,7 +154,7 @@ both in the same commit** — CLAUDE.md wins on any conflict.
    `npm run validate` errors on a description that still reads as markup. Unverifiable fields → `"unknown"`,
    never guessed. Never invent prices, addresses, links, or images.
 6. **Verify** every event against the **Verification checklist**. Drop events that
-   fail (out of window, venue closed, dead links). Update `last_verified`.
+   fail (out of window, venue closed, dead links, excluded topic). Update `last_verified`.
 7. **Write outputs:**
    - `data/events.json` — the merged, deduped, enriched store. Update the
      envelope's `generated_at` (ISO now) and `week` (ISO week, e.g. `2026-W25`).
@@ -222,6 +222,13 @@ tours, classes, breweries/tastings, trivia, parks, trails, historic sites,
 shopping, family/kids, food events, comedy, nightlife. (Beaches/lakes are out of
 metro scope unless inside the ring.)
 
+**Excluded:** dating events. Speed dating, singles mixers/nights, and outings
+posted by singles-oriented groups (e.g. a Meetup group named "…-singles") are
+out of scope whatever category a source files them under. Mixers that aren't
+dating (networking, pickleball, writers) and tennis "singles" stay in.
+`excludedTopic` in `scripts/lib/exclusions.ts` is the rule, and
+`npm run validate` errors on any event it flags, so drop them at discovery.
+
 **Time window:** events occurring within the next 7 days from run date.
 
 ---
@@ -273,6 +280,7 @@ prices, addresses, or links. The whole store is wrapped in an envelope:
 - [ ] Outdoor events have a current forecast
 - [ ] Distance/time is a sane Triangle same-day trip
 - [ ] No duplicate `id`s in events.json (`npm run validate`)
+- [ ] No excluded-topic (dating) events (`npm run validate`)
 
 ---
 

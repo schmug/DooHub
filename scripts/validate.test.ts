@@ -77,6 +77,11 @@ test("end before start is an error", () => {
   assert.ok(errors.some((e) => e.includes("end is before start")));
 });
 
+test("a dating event is an error", () => {
+  const { errors } = validateEvents([valid({ name: "Raleigh Speed Dating | Ages 32-44" })]);
+  assert.ok(errors.some((e) => e.includes("excluded topic")), errors.join("\n"));
+});
+
 test("start outside the window warns when a window is supplied", () => {
   const window: DateWindow = {
     start: new Date("2026-06-20T00:00:00-04:00"),
