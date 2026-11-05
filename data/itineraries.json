@@ -1,74 +1,204 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-29T08:43:23-04:00",
-  "week": "2026-W44",
+  "generated_at": "2026-11-05T08:50:00-05:00",
+  "week": "2026-W45",
   "itineraries": [
     {
-      "id": "2026-W44-hillsborough-witch-barn-haunting-hour-last-fridays",
-      "date": "2026-10-30",
-      "anchor_city": "Hillsborough",
-      "title": "Hillsborough Halloween Friday: Studio Tour Preview, Witch's Barn, Merchants' Trick-or-Treat, Haunting Hour, Last Fridays",
-      "theme": "A small-town Halloween Friday: an art-guild preview show, the no-actor Witch's Haunted Barn at Firefly Farm, downtown merchants' trick-or-treat, ghost stories at the Visitors Center, then the Last Fridays Art Walk",
-      "drive_time": "About 45 min from downtown Raleigh to downtown Hillsborough via I-40 W / I-85 S; Elmo's Diner (Durham) is on the way, about 20 min short of Hillsborough. Drive time from downtown Hillsborough to Firefly Farm (4911 Hunt Rd) was not checked; look it up before leaving",
+      "id": "2026-W45-raleigh-first-friday-gregg-ncma-artspace-dia-de-los-muertos",
+      "date": "2026-11-06",
+      "anchor_city": "Raleigh",
+      "title": "Raleigh First Friday: Gregg Museum, NCMA Artist Talk, Artspace, Día de los Muertos at the City of Raleigh Museum, Live Music at The Davie",
+      "theme": "A free art day that ends at First Friday: NC State's Gregg Museum, a lunchtime artist talk at the NC Museum of Art, then downtown galleries, a Día de los Muertos celebration and no-cover live music",
+      "drive_time": "No highway driving. Gregg Museum is about 1.5 mi and NCMA about 4 mi (straight line) west of downtown Raleigh, roughly 10-15 min each by car (estimated from straight-line distance; not checked against a routing service). The evening is all downtown and walkable.",
       "weather": {
-        "summary": "Sunny",
-        "temp_f": 82
+        "summary": "Chance Showers And Thunderstorms (patchy fog early); Mostly Clear at night",
+        "temp_f": 72
       },
-      "cost_range": "Preview show, trick-or-treat, Art Walk and gallery reception free; Witch's Barn $13 per person (2 and under free); Haunting Hour $10-$20; about $40-$55 per person for meals",
-      "overview": "A warm, sunny Friday (high 82°F; sunset about 6:20 PM, before DST ends). Eat breakfast at Elmo's Diner in Durham on the drive west, see the Orange County Artists Guild studio-tour preview on Churton St, and have lunch at the Village Diner. Spend early afternoon at Firefly Farm's no-actor Witch's Haunted Barn and pumpkin patch, come back for the downtown merchants' trick-or-treat (3-5 PM), catch the 5 PM Haunting Hour storytelling at the Visitors Center, then walk Last Fridays & the Art Walk before a late dinner at Nomad.",
+      "cost_range": "All events free; about $45-$55 per person for meals",
+      "overview": "Friday has a chance of showers and thunderstorms in the day (high 72°F), clearing at night (low about 51°F); sunset is about 5:15 PM. Every daytime stop is indoors. Have breakfast downtown at The Morning Times, see Bobby C. Martin's exhibition at the Gregg Museum, have lunch at Irregardless, then hear artist Nancy Baker Cahill speak at NCMA at noon. Come back downtown for Artspace First Fridays from 5 PM, dinner at Sitti, the City of Raleigh Museum's 10th annual Día de los Muertos from 6:30 PM, and Michael Parker at The Davie from 8 PM.",
       "schedule": {
         "morning": [
           {
             "time": "10:00 AM",
-            "title": "Orange County Artist Guild Studio Tour Preview Show",
-            "event_id": "2bebf4b33592",
-            "location": "Hillsborough Gallery of Arts, 121 N. Churton St., Hillsborough, NC 27278",
+            "title": "A Creek in Carolina: Artworks by Bobby C. Martin",
+            "event_id": "d864c0e8bf50",
+            "location": "Gregg Museum of Art & Design, 1903 Hillsborough St., Raleigh, NC 27607",
             "price": "Free",
-            "notes": "Open 10 AM-9 PM. Preview exhibition of work by artists on the Orange County Artists Guild open studio tour; use it to plan studio visits. Info: http://www.HillsboroughGallery.com"
+            "notes": "Open 10 AM-5 PM. Solo exhibition by Muscogee (Creek) artist Bobby C. Martin. Info: https://gregg.arts.ncsu.edu/exhibitions/a-creek-in-carolina-artworks-by-bobby-c-martin/"
           }
         ],
         "afternoon": [
           {
-            "time": "12:45 PM",
-            "title": "Witch's Haunted Barn (No-Actor Friday) at Firefly Farm",
-            "event_id": "a6c1e4a0437a",
-            "location": "Firefly Farm, 4911 Hunt Road, Hillsborough, NC 27278",
-            "price": "$13",
-            "notes": "Noon-5 PM. Farm site lists Oct 30 as a No-Actor Friday (less scary, same barn and pumpkin patch). $13 per person; ages 2 and under free. Tickets/info: https://www.fireflyfarmnc.com/hauntedbarn-pumpkinpatch. Leave by about 2:30 PM to be downtown for trick-or-treat."
-          },
-          {
-            "time": "3:00 PM",
-            "title": "Downtown Hillsborough Merchants' Trick-or-Treat",
-            "event_id": "1d0cab6374ea",
-            "location": "Downtown Hillsborough, Churton & King St, Hillsborough, NC 27278",
+            "time": "12:00 PM",
+            "title": "Perceiving Otherwise: Ecological Imagination and Experiential Practice in Polycrisis (artist talk)",
+            "event_id": "945b1a01e2dd",
+            "location": "North Carolina Museum of Art, East Building SECU Auditorium, 2110 Blue Ridge Rd., Raleigh, NC 27607",
             "price": "Free",
-            "notes": "3-5 PM. Downtown small businesses hand out candy. Info: https://visithillsboroughnc.com/event/downtown-hillsborough-merchants-trick-or-treat/"
+            "notes": "Noon-1 PM. Talk by transdisciplinary artist Nancy Baker Cahill. Info: https://ncartmuseum.org/event/perceiving-otherwise-ecological-imagination-and-experiential-practice-in-polycrisis/"
           }
         ],
         "evening": [
           {
             "time": "5:00 PM",
-            "title": "The Haunting Hour",
-            "event_id": "f6c28c67a1b7",
-            "location": "Hillsborough Visitor Center, 150 E King St, Hillsborough, NC 27278",
-            "price": "$10-$20",
-            "notes": "Storytelling performances at 5, 6, 7, 8 and 9 PM (per The Triangle Weekender listing); the optional 'Tales from the Grave' graveyard mini-tour runs 5-8:30 PM. Tickets: https://www.zeffy.com/en-US/ticketing/the-haunting-hour--2026 (the ticket page blocked automated checks; open it in a browser)."
+            "title": "Artspace First Fridays",
+            "event_id": "c59d90b1a419",
+            "location": "Artspace, 201 East Davie Street, Raleigh, NC 27601",
+            "price": "Free",
+            "notes": "5-10 PM. New exhibitions, a hands-on art activity, and 30+ studio artists. Info: https://www.eventbrite.com/e/artspace-first-fridays-tickets-1976774095533"
           },
           {
-            "time": "6:00 PM",
-            "title": "Last Fridays & The Art Walk",
-            "event_id": "3c4e7368cd75",
-            "location": "Old Orange County Courthouse, 104 East King St, Hillsborough, NC 27278",
+            "time": "5:15 PM",
+            "title": "First Friday Market & Movie Night: Fantastic Mr. Fox (2009)",
+            "event_id": "702f2b7cd12e",
+            "location": "Moore Square, 201 S. Blount Street, Raleigh, NC 27601",
             "price": "Free",
-            "notes": "5:30-9 PM. Monthly Art Walk with 19 participating venues (receptions, demos). Info: https://www.hillsboroughartscouncil.org/last-fridays"
+            "notes": "5-9 PM. Outdoor screening, food trucks, vendor market, live music and field games; bring a blanket or chair. Walk through on the way to dinner. Info: https://www.get2knowraleigh.com/event-details/first-friday-market-movie-night-fantastic-mr-fox-2009"
           },
           {
             "time": "6:30 PM",
-            "title": "Backroads and Byways, Landscapes Opening Reception",
-            "event_id": "2a6ef6b812c9",
-            "location": "Margaret Lane Gallery, 121 W Margaret Lane, Hillsborough, NC 27278",
+            "title": "10th Annual Día de los Muertos",
+            "event_id": "fa4fe7845a01",
+            "location": "City of Raleigh Museum, 220 Fayetteville St., Ste. 100, Raleigh, NC 27601",
             "price": "Free",
-            "notes": "6-9 PM, part of the Art Walk: Jeff McEntire landscapes. Info: https://thetriangleweekender.com/event/backroads-and-byways-landscapes-opening-reception/"
+            "notes": "6:30-9 PM. Music, dance, poetry, art and traditional food. Info: https://www.visitraleigh.com/event/10th-annual-dia-de-los-muertos/111406/"
+          },
+          {
+            "time": "8:00 PM",
+            "title": "First Friday Live Music at The Davie: Michael Parker",
+            "event_id": "1a549f33985a",
+            "location": "The Davie, 444 S. Blount St., Ste. 101, Raleigh, NC 27601",
+            "price": "Free",
+            "notes": "8-11 PM, no cover. Info: https://www.thedavie.com/event-details/first-friday-michael-parker"
+          }
+        ]
+      },
+      "food": [
+        {
+          "slot": "breakfast",
+          "place": "The Morning Times",
+          "city": "Raleigh",
+          "vegetarian_dish": "Avocado Toast (Bread Shop multigrain, diced potatoes, house guacamole, sliced tomato, cotija)",
+          "price": "$7.50",
+          "url": "https://www.morningtimes-raleigh.com/menus",
+          "notes": "10 E. Hargett Street, Raleigh NC 27601. Own menu: all items served daily 7 AM-5 PM. Avocado Toast $7.50; vegetarian by its listed ingredients, not labeled. No vegan dish verified."
+        },
+        {
+          "slot": "lunch",
+          "place": "Irregardless",
+          "city": "Raleigh",
+          "vegan_dish": "\"Not Chos\" (VG, GF): cashew queso, vegan chorizo, pickled onion, guacamole, pico de gallo, tortilla chips",
+          "vegetarian_dish": "Spanakopita (VEG): spinach, feta, phyllo, green goddess",
+          "price": "$11-$14",
+          "url": "https://www.irregardless.com/menu",
+          "notes": "901 W Morgan St, Raleigh NC 27603, between the Gregg Museum and NCMA. Own menu: lunch Tue-Fri 11 AM-2:30 PM. \"Not Chos\" $11 (VG, GF), Spanakopita $14 (VEG). Eat at about 11:15 AM to reach NCMA by noon."
+        },
+        {
+          "slot": "dinner",
+          "place": "Sitti",
+          "city": "Raleigh",
+          "vegan_dish": "Vegan Tasting: hummus, mouhamra, fattoush, warak anab, roasted vegetables, falafel",
+          "vegetarian_dish": "Vegetarian Tasting: hummus, baba ghanouj, fattoush, cheese rolls, warak anab, falafel",
+          "price": "$19.95",
+          "url": "https://sitti-raleigh.com/menu/dinner",
+          "notes": "135 S. Wilmington Street, Raleigh NC 27601, about two blocks from the City of Raleigh Museum. Own contact page: Fri-Sat 11 AM-10 PM. Own dinner menu: Vegan Tasting $19.95 (labeled vegan), Vegetarian Tasting $19.95 (labeled vegetarian)."
+        }
+      ],
+      "alternatives": [
+        {
+          "leg": "Moore Square market and outdoor movie (outdoor)",
+          "good_weather": "The forecast clears by evening (mostly clear, about 51°F at night). Bring a blanket or chair and a layer.",
+          "rain": "If showers linger, stay indoors: Artspace is open until 10 PM (event c59d90b1a419), and the City of Raleigh Museum is open 6-9 PM (event b006c8d9c3a8, free)."
+        },
+        {
+          "leg": "Evening theater instead of live music",
+          "good_weather": "Michael Parker plays The Davie from 8 PM; its listing marks it as both indoor and outdoor.",
+          "rain": "Raleigh Little Theatre's Rosencrantz and Guildenstern Are Dead starts at 7:30 PM indoors, $30-$33 (event ad0f05f99efd; https://raleighlittletheatre.org/shows/rosencrantz-and-guildenstern-are-dead/). It is about 2 mi west of downtown, so skip the last part of Día de los Muertos."
+        }
+      ],
+      "practical_notes": [
+        "Suggested start: breakfast at The Morning Times at 8:30 AM; Gregg Museum opens at 10 AM.",
+        "Daytime stops (Gregg Museum, Irregardless, NCMA) are west of downtown; drive between them, then return downtown by 5 PM.",
+        "Sitti's contact page lists nearby parking: the Blount Street Deck (314 Blount St; public parking restricted 7 AM-7 PM Monday-Friday), 214 S. Salisbury Street, the 313 S. Wilmington Street lot, and the McClatchy lot (123 W. Hargett St).",
+        "Artspace, Moore Square, the City of Raleigh Museum, Sitti and The Davie are all downtown; park once and walk.",
+        "All events are free. NCMA talk details: https://ncartmuseum.org/event/perceiving-otherwise-ecological-imagination-and-experiential-practice-in-polycrisis/"
+      ],
+      "event_ids": [
+        "d864c0e8bf50",
+        "945b1a01e2dd",
+        "c59d90b1a419",
+        "702f2b7cd12e",
+        "fa4fe7845a01",
+        "1a549f33985a",
+        "b006c8d9c3a8",
+        "ad0f05f99efd"
+      ]
+    },
+    {
+      "id": "2026-W45-durham-farmers-market-mums-pauli-murray-the-minutes",
+      "date": "2026-11-07",
+      "anchor_city": "Durham",
+      "title": "Durham Saturday: Farmers' Market, Festival of Fabulous Mums at Duke Gardens, Pauli Murray House Tour, Golden Belt Winter Market, \"The Minutes\" at Hayti",
+      "theme": "Durham history and gardens: the Saturday farmers' market, Duke Gardens' mum festival with a free floral-design demo, a guided tour of Pauli Murray's childhood home, an artists' market, and a Tracy Letts dark comedy at the Hayti Heritage Center",
+      "drive_time": "About 21 mi straight line from downtown Raleigh to downtown Durham, roughly 30-35 min by car (estimated from straight-line distance; not checked against a routing service). All stops are within about 3 mi of each other.",
+      "weather": {
+        "summary": "Sunny",
+        "temp_f": 65
+      },
+      "cost_range": "Market, gardens, floral demo and art market free; Pauli Murray tour $10; The Minutes $11-$21; about $45-$60 per person for meals",
+      "overview": "A sunny Saturday (high 65°F, low about 42°F; sunset about 5:15 PM). Eat breakfast at Elmo's Diner, shop the Durham Farmers' Market, then spend late morning at Duke Gardens for A Festival of Fabulous Mums and the free 11 AM floral design demo. Lunch at Luna, take the 1 PM guided tour of Pauli Murray's childhood home, and catch the last hour of the Golden Belt Artists Winter Market. Have dinner at Viceroy, then see Bulldog Ensemble Theater's \"The Minutes\" at the Hayti Heritage Center at 7:30 PM.",
+      "schedule": {
+        "morning": [
+          {
+            "time": "8:45 AM",
+            "title": "Durham Farmers' Market (Saturday)",
+            "event_id": "f29bf8a3c09c",
+            "location": "Durham Central Park, 501 Foster Street, Durham, NC 27701",
+            "price": "Free",
+            "notes": "8 AM-noon. Local farmers and food producers. Info: https://www.durhamfarmersmarket.com/"
+          },
+          {
+            "time": "10:00 AM",
+            "title": "A Festival of Fabulous Mums",
+            "event_id": "5a16d79cac89",
+            "location": "Sarah P. Duke Gardens, 420 Anderson Street, Durham, NC 27708",
+            "price": "Free",
+            "notes": "10 AM-4 PM. Exhibition mums outdoors at the Japanese Garden in the Culberson Asiatic Arboretum and indoors at the Doris Duke Center. Info: https://gardens.duke.edu/event/a-festival-of-fabulous-mums-5/"
+          },
+          {
+            "time": "11:00 AM",
+            "title": "Festival of Fabulous Mums: Basic Floral Design with Patty Stimmel",
+            "event_id": "24f7df1dc163",
+            "location": "Pelham-Cullen Classroom, Barnes Welcome Center, Duke Gardens, 420 Anderson Street, Durham, NC 27705",
+            "price": "Free",
+            "notes": "11 AM-noon. Free demonstration by a retired floral designer. Info: https://gardens.duke.edu/event/festival-of-fabulous-mums-basic-floral-design-with-patty-stimell/"
+          }
+        ],
+        "afternoon": [
+          {
+            "time": "1:00 PM",
+            "title": "Guided Tours of Pauli Murray's Childhood Home",
+            "event_id": "a93faab93e1f",
+            "location": "The Pauli Murray Center for History and Social Justice, 906 Carroll Street, Durham, NC 27701",
+            "price": "$10",
+            "notes": "1-2:15 PM. Tickets: https://www.ticketsource.com/pauli-murray-center-for-history-and-social-justice/ (the ticket site blocked automated checks; open it in a browser). Info: https://www.discoverdurham.com/events/guided-tours-of-pauli-murrays-childhood-home/"
+          },
+          {
+            "time": "2:30 PM",
+            "title": "Golden Belt Artists Winter Market 2026",
+            "event_id": "0de2d7e93edd",
+            "location": "Golden Belt Arts, 800 Taylor Street, Mill No. 1, Durham, NC 27701",
+            "price": "Free",
+            "notes": "11 AM-3 PM; arrive by 2:30 for the last half hour. Local artists' holiday market. Info: https://www.eventbrite.com/e/golden-belt-artists-winter-market-2026-tickets-2001063358372"
+          }
+        ],
+        "evening": [
+          {
+            "time": "7:30 PM",
+            "title": "\"The Minutes,\" presented by Bulldog Ensemble Theater",
+            "event_id": "114ae705ec30",
+            "location": "Hayti Heritage Center, St. Joseph's Performance Hall, 804 Old Fayetteville St, Durham, NC 27701",
+            "price": "$11-$21",
+            "notes": "7:30-9 PM. Tracy Letts' dark comedy about a town council meeting. Tickets/info: https://www.bulldogdurham.org/minutes"
           }
         ]
       },
@@ -77,333 +207,347 @@
           "slot": "breakfast",
           "place": "Elmo's Diner",
           "city": "Durham",
-          "vegetarian_dish": "Breakfast \"Soyrrito\" (scrambled eggs, soy sausage, sautéed onions, red sauce, melted cheese, served with frijoles and a side)",
+          "vegetarian_dish": "Breakfast \"Soyrrito\" (scrambled eggs, soy sausage, sautéed onions, red sauce, melted cheese, with frijoles and a side)",
           "price": "$9.50",
           "url": "https://www.elmosdiner.com/",
-          "notes": "776 9th Street, Durham NC 27705, on the way from Raleigh. Own site: Mon-Fri 7 AM-3 PM. Own menu: Breakfast 'Soyrrito' $9.50 (scrambled eggs, soy sausage, onions, red sauce, melted cheese; vegetarian by its listed ingredients, not labeled). No vegan dish verified."
+          "notes": "776 9th Street, Durham NC 27705. Own site: Saturday-Sunday 7 AM-3:30 PM. Own menu: Breakfast 'Soyrrito' $9.50 and Veggie Breakfast Burrito $8.90 (eggs, tomatoes, green peppers, onions, red sauce, cheese); vegetarian by listed ingredients, not labeled. No vegan dish verified."
         },
         {
           "slot": "lunch",
+          "place": "Luna Rotisserie and Taproom",
+          "city": "Durham",
+          "vegan_dish": "Chili Braised Jack Fruit (GF, V+)",
+          "vegetarian_dish": "Chili-lime Glazed Cauliflower (V): breaded and fried cauliflower with chili-lime glaze",
+          "price": "$11-$16",
+          "url": "https://lunarotisserie.com/s/Durham-Food-Spring-2026-4.pdf",
+          "notes": "112 W Main St, Durham NC 27701. Own hours page: open seven days, 11 AM-9 PM. Own menu (V = vegetarian, V+ = vegan): Chili Braised Jack Fruit $16 (GF, V+), Chili-lime Glazed Cauliflower $11 (V). Leave by 12:45 PM for the 1 PM tour."
+        },
+        {
+          "slot": "dinner",
+          "place": "Viceroy",
+          "city": "Durham",
+          "vegan_dish": "Gobi Sukka (GFr, V): crispy battered cauliflower sautéed with onions, peppers and curry leaves",
+          "vegetarian_dish": "Tandoori Mushrooms (Veg): mushrooms marinated in the chef's spices",
+          "price": "$12-$16",
+          "url": "https://www.viceroydurham.com/dinnermenu",
+          "notes": "335 West Main Street, Durham NC 27701. Own site: Friday-Saturday 5-10:30 PM. Own dinner menu (image; legend: V = vegan, Veg = vegetarian): Gobi Sukka $12 (GFr, V), Tandoori Mushrooms $16 (Veg), Achari Paneer $22 (Veg). Eat at 5:30 PM to reach Hayti by 7:15."
+        }
+      ],
+      "alternatives": [
+        {
+          "leg": "Farmers' market and Duke Gardens (outdoor)",
+          "good_weather": "Sunny and about 65°F; mornings are cool (low about 42°F), so bring a layer for the 8:45 AM market.",
+          "rain": "No rain is forecast. If plans change, the mum display is also inside the Doris Duke Center, and the floral design demo is indoors (event 24f7df1dc163)."
+        },
+        {
+          "leg": "History walk instead of the art market",
+          "good_weather": "Hymns for Salted Bones, a free theatrical walking tour of six homes along the historic Fayetteville Street corridor in Hayti, runs 2-3:30 PM from the Stanford L. Warren Library, 1201 Fayetteville St (event cd756d212f2c; registration: https://preservedurham.app.neoncrm.com/nx/portal/neonevents/events?path=%2Fportal%2Fevents%2F54061). It overlaps the end of the 1 PM Pauli Murray tour.",
+          "rain": "Stay with the indoor Golden Belt Artists Winter Market (event 0de2d7e93edd)."
+        }
+      ],
+      "practical_notes": [
+        "Leave downtown Raleigh by 7:30 AM for breakfast at Elmo's (776 9th St) at about 8 AM.",
+        "Durham Farmers' Market is at Durham Central Park, 501 Foster St.",
+        "Pauli Murray tour tickets ($10): https://www.ticketsource.com/pauli-murray-center-for-history-and-social-justice/",
+        "The Minutes tickets ($11-$21): https://www.bulldogdurham.org/minutes",
+        "Luna (112 W Main St) and Viceroy (335 W Main St) are both on W Main St downtown.",
+        "Drive back to Raleigh after the show takes roughly 30-35 min (estimate)."
+      ],
+      "event_ids": [
+        "f29bf8a3c09c",
+        "5a16d79cac89",
+        "24f7df1dc163",
+        "a93faab93e1f",
+        "0de2d7e93edd",
+        "114ae705ec30",
+        "cd756d212f2c"
+      ]
+    },
+    {
+      "id": "2026-W45-hillsborough-walking-tour-harvest-festival-eno-redbud-gala",
+      "date": "2026-11-07",
+      "anchor_city": "Hillsborough",
+      "title": "Hillsborough Saturday: Guided Walking Tour, Harvest Festival at the Burwell School, Fall Nature Fun Day on the Eno, Studio Tour Preview, Redbud Gala",
+      "theme": "Small-town history and fall outdoors: a guided walk through one of North Carolina's oldest towns, bluegrass on the Burwell School porch, a family nature day on the Eno River, an artists' preview show, and an optional literary fundraiser gala",
+      "drive_time": "About 33 mi straight line from downtown Raleigh to downtown Hillsborough, roughly 40-45 min by car (estimated from straight-line distance; not checked against a routing service). Confluence Natural Area is about 5 mi north of downtown Hillsborough; the gala venue on Dairyland Rd is about 8 mi south.",
+      "weather": {
+        "summary": "Sunny",
+        "temp_f": 65
+      },
+      "cost_range": "Walking tour $10; Harvest Festival free-$20; nature day and preview show free; Redbud gala $25 and up (optional); about $40-$55 per person for meals",
+      "overview": "A sunny Saturday (high 65°F, low about 42°F; sunset about 5:15 PM). Have breakfast at The Village Diner, take the 10:30 AM guided walking tour from the Visitors Center, and lunch at Antonia's on Churton St. Spend early afternoon at the Hillsborough Harvest Festival (bluegrass, food trucks, makers), then drive to the Eno River Association's Fall Nature Fun Day at Confluence Natural Area. Stop at the Orange County Artists Guild studio-tour preview before 6 PM, eat at Nomad, or go on to the Redbud Writing Project gala at 6:30 PM.",
+      "schedule": {
+        "morning": [
+          {
+            "time": "10:30 AM",
+            "title": "Hillsborough Guided Walking Tours",
+            "event_id": "d6422bc0f4a7",
+            "location": "Hillsborough Visitors Center, 150 East King Street, Hillsborough, NC 27278",
+            "price": "$10",
+            "notes": "10:30 AM-12:30 PM. Guided walk through historic downtown Hillsborough. Tickets: https://www.zeffy.com/ticketing/3277bebb-5a4c-48ec-9a1e-0c4e287138b5 (the ticket page blocked automated checks; open it in a browser). Info: https://thetriangleweekender.com/event/hillsborough-guided-walking-tours/2026-11-07/"
+          }
+        ],
+        "afternoon": [
+          {
+            "time": "1:30 PM",
+            "title": "Hillsborough Harvest Festival",
+            "event_id": "0f2bf266c1b7",
+            "location": "Elizabeth Keckly Center at the Burwell School, 319 N. Churton St., Hillsborough, NC 27278",
+            "price": "Free-$20",
+            "notes": "Noon-4 PM. Bluegrass on the front porch, food trucks, local artists and makers, beer and wine; proceeds benefit two local nonprofits. Listings disagree on admission (free, free-$20, $20); check https://www.etix.com/ticket/p/78629127/hillsborough-harvest-festival-hillsborough-hillsborough-community-media"
+          },
+          {
+            "time": "2:45 PM",
+            "title": "Fall Nature Fun Day on the Eno",
+            "event_id": "96b1842645ff",
+            "location": "Confluence Natural Area, 4214 Highland Farm Road, Hillsborough, NC 27278",
+            "price": "Free",
+            "notes": "Noon-4 PM. Free family-friendly hands-on day with the Eno River Association. Info: https://www.enoriver.org/events-on-the-eno/"
+          }
+        ],
+        "evening": [
+          {
+            "time": "4:30 PM",
+            "title": "Orange County Artist Guild Studio Tour Preview Show",
+            "event_id": "cb8366984e9d",
+            "location": "Hillsborough Gallery of Arts, 121 N. Churton St., Hillsborough, NC 27278",
+            "price": "Free",
+            "notes": "Open 10 AM-6 PM. Preview of work by artists on the guild's open studio tour. Info: http://www.HillsboroughGallery.com"
+          },
+          {
+            "time": "6:30 PM",
+            "title": "An Enchanted Evening with Redbud Writing: Fundraiser Gala (optional)",
+            "event_id": "ee17dac159dd",
+            "location": "The Honeysuckle Tea House, 3501 Dairyland Road, Hillsborough, NC 27278",
+            "price": "$25-$375.32",
+            "notes": "6:30-9 PM. Fairytale-themed fundraiser; its listing says buffet dinner, open bar, silent auction and a reading by NC Poet Laureate Jaki Shelton Green. If you go, skip dinner at Nomad. Tickets: https://www.eventbrite.com/e/redbud-writing-project-presents-an-enchanted-evening-gala-fundraiser-tickets-1996252144903 Info: https://www.redbudwriting.org/2026-fundraising-gala-1"
+          }
+        ]
+      },
+      "food": [
+        {
+          "slot": "breakfast",
           "place": "The Village Diner",
           "city": "Hillsborough",
-          "vegetarian_dish": "Grilled Cheese and Tomato Soup Cup (American cheese, tomato, onion, pesto mayo on potato bread, with tomato soup)",
-          "price": "$9-$13",
+          "vegetarian_dish": "Veggie Omelet (Swiss cheese, spinach, mushrooms, onions; with seasoned homefries)",
+          "price": "$14",
           "url": "https://villagedinernc.com/wp-content/uploads/2025/10/Village-Diner-Menu-10-2025.pdf",
-          "notes": "600 W. King St., Hillsborough NC 27278. Menu PDF (dated 10-2025, linked from its own site) lists hours Tue-Sat 8 AM-1:30 PM; arrive by about 12:15. Grilled Cheese and Tomato Soup Cup $13 (American cheese, tomato, onion, pesto mayo on potato bread) and Tomato Soup Bowl $9. Vegetarian by listed ingredients, not labeled. No vegan dish verified."
+          "notes": "600 W. King St., Hillsborough NC 27278. The menu PDF (dated 10-2025) lists Tuesday-Saturday 8 AM-1:30 PM; the restaurant's homepage says Tuesday-Sunday 8 AM-1:30 PM. Veggie Omelet $14; vegetarian by listed ingredients, not labeled. No vegan dish verified."
+        },
+        {
+          "slot": "lunch",
+          "place": "Antonia's",
+          "city": "Hillsborough",
+          "vegetarian_dish": "Grilled Vegetable Panini (grilled portobello, roasted red pepper, roasted tomato, spinach, mozzarella, pesto aioli; with a small salad)",
+          "price": "$14.50",
+          "url": "https://antoniashillsborough.com/hillsborough-antonia-s-restaurant-food-menu",
+          "notes": "101 North Churton Street, Hillsborough NC 27278, near the Visitors Center. Own site: lunch Tuesday-Saturday 11 AM-4 PM. Grilled Vegetable Panini $14.50; vegetarian by listed ingredients, not labeled. No vegan dish verified."
         },
         {
           "slot": "dinner",
           "place": "Nomad",
           "city": "Hillsborough",
-          "vegan_dish": "Chana Masala (GF/VG): chickpeas, potato curry, pickled onions, basmati rice",
-          "vegetarian_dish": "Thai Cauliflower (GF/VG): roasted and flash-fried cauliflower, red Thai sauce, roasted coconut, peanuts",
+          "vegetarian_dish": "Chana Masala (marked GF/VG): chickpeas, potato curry, pickled onions, basmati rice",
           "price": "$13-$19",
           "url": "https://thenomadnc.com/menu/",
-          "notes": "122 West King Street, Hillsborough NC 27278 (in the historic Osbunn Theater), one block from the Art Walk. Own site: Wed-Fri 5-10 PM. Own menu: Chana Masala $19 (GF/VG), Thai Cauliflower $13 (GF/VG)."
+          "notes": "122 West King Street, Hillsborough NC 27278 (in the historic Osbunn Theater). Own site: Saturday 4-10 PM. Own menu: Chana Masala $19 (GF/VG) and Thai Cauliflower $13 (GF/VG: roasted and flash-fried cauliflower, red Thai sauce, roasted coconut, peanuts). The menu does not define 'VG'; ask whether a dish is vegan."
         }
       ],
       "alternatives": [
         {
-          "leg": "Firefly Farm Witch's Barn and pumpkin patch (outdoor and barn)",
-          "good_weather": "Sunny and about 80°F in the afternoon. Bring water and sun protection for the pumpkin patch.",
-          "rain": "No rain is forecast. If plans change, stay downtown: the Studio Tour Preview Show at Hillsborough Gallery of Arts is open until 9 PM (event 2bebf4b33592, free)."
-        },
-        {
-          "leg": "Merchants' Trick-or-Treat and Last Fridays Art Walk (outdoor, downtown)",
-          "good_weather": "Warm and clear into the evening; sunset about 6:20 PM. Walk the courthouse lawn before dark.",
-          "rain": "No rain is forecast. If needed, stay indoors: The Haunting Hour runs hourly until 9 PM at the Visitor Center (event f6c28c67a1b7), and the Margaret Lane Gallery reception is indoors (event 2a6ef6b812c9)."
+          "leg": "Walking tour and Fall Nature Fun Day (outdoor)",
+          "good_weather": "Sunny and about 65°F. Wear walking shoes for the 2-hour tour and the trails at Confluence Natural Area.",
+          "rain": "No rain is forecast. If plans change, stay on Churton St: the Studio Tour Preview Show is indoors from 10 AM (event cb8366984e9d), and the Harvest Festival listing is at the Keckly Center (event 0f2bf266c1b7)."
         }
       ],
       "practical_notes": [
-        "Leave downtown Raleigh by 7:30 AM for breakfast at Elmo's (776 9th St, Durham), then continue on I-85 S to Hillsborough by about 10 AM.",
-        "Downtown Hillsborough is walkable: the gallery (121 N Churton), Visitor Center (150 E King), courthouse lawn (104 E King) and Nomad (122 W King) are within a few blocks. Park once downtown for the evening.",
-        "Firefly Farm: $13 per person, ages 2 and under free. Info: https://www.fireflyfarmnc.com/hauntedbarn-pumpkinpatch",
-        "Haunting Hour tickets: https://www.zeffy.com/en-US/ticketing/the-haunting-hour--2026",
-        "Last Fridays details: https://www.hillsboroughartscouncil.org/last-fridays",
-        "Drive back to Raleigh takes about 45 min."
+        "Leave downtown Raleigh by 7:45 AM for breakfast at The Village Diner (600 W. King St) at about 8:30 AM.",
+        "Harvest Festival parking is available at Mount Bright Baptist Church, 211 W. Union St (per the visithillsboroughnc.com listing).",
+        "Downtown stops (Visitors Center, Antonia's, Burwell School, Hillsborough Gallery of Arts, Nomad) are a few blocks apart along Churton and King Streets.",
+        "Walking tour tickets ($10): https://www.zeffy.com/ticketing/3277bebb-5a4c-48ec-9a1e-0c4e287138b5",
+        "Redbud gala tickets: https://www.eventbrite.com/e/redbud-writing-project-presents-an-enchanted-evening-gala-fundraiser-tickets-1996252144903",
+        "Drive back to Raleigh takes roughly 40-45 min (estimate)."
       ],
       "event_ids": [
-        "2bebf4b33592",
-        "a6c1e4a0437a",
-        "1d0cab6374ea",
-        "f6c28c67a1b7",
-        "3c4e7368cd75",
-        "2a6ef6b812c9"
+        "d6422bc0f4a7",
+        "0f2bf266c1b7",
+        "96b1842645ff",
+        "cb8366984e9d",
+        "ee17dac159dd"
       ]
     },
     {
-      "id": "2026-W44-wake-forest-hill-ridge-barks-boos-ghost-walk",
-      "date": "2026-10-30",
-      "anchor_city": "Wake Forest",
-      "title": "Wake Forest Friday: Hill Ridge Farms Pumpkin Festival, Barks & Boos, Spirits of Wake Forest Ghost Walk",
-      "theme": "A northern-Wake Friday: the last week of the Hill Ridge Farms fall festival, a Halloween open house at the Saving Grace dog rescue, and a 75-minute ghost walk through historic downtown Wake Forest",
-      "drive_time": "About 30 min from downtown Raleigh to downtown Wake Forest via US-1 N / Capital Blvd; Hill Ridge Farms (Youngsville) is about 15 min further north. Drive times between stops were not checked",
+      "id": "2026-W45-cary-apex-storytelling-taste-of-china-ballet-roller-derby",
+      "date": "2026-11-07",
+      "anchor_city": "Cary",
+      "title": "Cary and Apex Saturday: Farmers Market, Old North State Storytelling Festival, Taste of China, Infinity Ballet at The Halle, Carolina Roller Derby",
+      "theme": "A family-friendly western-Wake day: the Cary farmers market, a sensory-friendly storytelling showcase, the Taste of China festival in Downtown Cary Park, a one-hour fairytale ballet in downtown Apex, and a roller derby doubleheader",
+      "drive_time": "About 8 mi straight line from downtown Raleigh to downtown Cary (roughly 20 min) and about 12 mi to downtown Apex (roughly 25 min) (estimated from straight-line distance; not checked against a routing service).",
       "weather": {
         "summary": "Sunny",
-        "temp_f": 82
+        "temp_f": 65
       },
-      "cost_range": "Hill Ridge Farms $24.95 per person ages 2-64 ($22.95 65+/military, under 2 free); Barks & Boos free; ghost walk $20 per person; about $40-$55 per person for meals",
-      "overview": "A warm, sunny Friday (high 82°F; sunset about 6:20 PM). Breakfast at Brigs in Wake Forest, then spend the morning at Hill Ridge Farms in Youngsville (train, carousel and wagon rides, barnyard, free pumpkin with admission). Lunch at Village Deli & Grill on S Main St, take an easy afternoon, then visit the Saving Grace Barks & Boos open house (5-7 PM) before the 6:30 PM Spirits of Wake Forest ghost walk downtown. Finish with dinner at Curry House.",
-      "schedule": {
-        "morning": [
-          {
-            "time": "9:30 AM",
-            "title": "Hill Ridge Farms Fall Pumpkin Festival",
-            "event_id": "658a3fd04ed7",
-            "location": "Hill Ridge Farms, 703 Tarboro Road, Youngsville, NC 27596",
-            "price": "$24.95 (ages 2-64); $22.95 (65+ / military); under 2 free",
-            "notes": "Open 9:30 AM-6:30 PM on Fri Oct 30 (farm site). Admission includes unlimited train, wagon and carousel rides, playland, and a free pumpkin. Tickets at the gate only (no online sales); cash, card and tap accepted. Prices are from the farm's admission page (the event record lists price as unknown). Info: https://www.hillridgefarms.com/"
-          }
-        ],
-        "afternoon": [
-          {
-            "time": "1:00 PM",
-            "title": "Lunch, then free time in downtown Wake Forest",
-            "location": "S White St, downtown Wake Forest, NC 27587",
-            "price": "Free",
-            "notes": "After lunch on S Main St, walk the downtown business district along S White St; the evening ghost walk covers the same blocks."
-          }
-        ],
-        "evening": [
-          {
-            "time": "5:00 PM",
-            "title": "Barks and Boos Open House & Supply Drive",
-            "event_id": "7335afa324e4",
-            "location": "Saving Grace, 13400 Old Creedmoor Rd, Wake Forest, NC 27587",
-            "price": "Free",
-            "notes": "5-7 PM. Meet adoptable dogs and tour the farm's Halloween decor; supply donations welcome. Stay about 45 min, then drive to Town Hall for the 6:30 PM walk. Info: https://www.visitraleigh.com/event/barks-and-boos-open-house-%26-supply-drive/111465/"
-          },
-          {
-            "time": "6:30 PM",
-            "title": "Spirits of Wake Forest Ghost Walk",
-            "event_id": "47678111e169",
-            "location": "Wake Forest Town Hall (meeting point), 301 South Brooks Street, Wake Forest, NC",
-            "price": "$20",
-            "notes": "Town page: Friday tours at 6:30 PM and 8 PM; about 1 hour 15 minutes; max 20 per tour; rain or shine; not recommended under 8; ticket required for every attendee. Tickets: https://www.eventbrite.com/e/2026-spirits-of-wake-forest-tickets-1994208274632"
-          }
-        ]
-      },
-      "food": [
-        {
-          "slot": "breakfast",
-          "place": "Brigs (Wake Forest)",
-          "city": "Wake Forest",
-          "vegetarian_dish": "Classic Avocado Toast (whole-grain toast, mashed avocado, lemon-olive oil, fresh cilantro, two eggs any style)",
-          "url": "https://www.brigs.com/menus/our-menu",
-          "notes": "12338 Wake Union Church Road, Wake Forest NC 27587; open 7 AM-2:30 PM daily (own site). Own menu: Classic avocado toast (whole-grain toast with mashed avocado, lemon-olive oil and cilantro, served with two eggs) and the Malibu omelet (spinach, avocado, mushrooms, tomatoes, cheddar-jack). Both vegetarian by listed ingredients, not labeled. The online menu shows no prices. No vegan dish verified."
-        },
-        {
-          "slot": "lunch",
-          "place": "Village Deli & Grill (Wake Forest)",
-          "city": "Wake Forest",
-          "vegetarian_dish": "Tempeh Reuben (marinated organic tempeh, sauerkraut, melted Swiss, 1000 Island, grilled rye)",
-          "price": "$13.50",
-          "url": "https://www.villagedeli.net/raleigh-village-deli-and-grill-food-menu",
-          "notes": "1849 S. Main St, #200, Wake Forest NC 27587; Mon-Fri 11 AM-9 PM (own location page). Own menu, Vegetarian section: Tempeh Reuben $13.50 and Anna's Veggie Pita $13.50 (hummus, spring mix, vegetables, feta). No vegan dish verified."
-        },
-        {
-          "slot": "dinner",
-          "place": "Curry House",
-          "city": "Wake Forest",
-          "vegetarian_dish": "Palak Paneer (chopped spinach with ginger, garlic, mild spices and homemade cheese)",
-          "price": "$14.95-$16.95",
-          "url": "https://www.toasttab.com/local/order/curry-house-wake-forest-2101-south-main-street",
-          "notes": "2101 S Main St #116, Wake Forest NC 27587. Its Toast ordering menu lists Palak Paneer $16.95 and Chana Masala $14.95 (chickpeas, ginger, garlic, tomatoes, onions; no dairy listed but not labeled vegan; ask). Friday hours (11:30 AM-9:45 PM) come from third-party listings, not the restaurant; call (919) 263-1222 to confirm."
-        }
-      ],
-      "alternatives": [
-        {
-          "leg": "Hill Ridge Farms (outdoor)",
-          "good_weather": "Sunny, warming toward 80°F by noon. Do the wagon ride and barnyard first.",
-          "rain": "No rain is forecast. The farm posts weather updates on its social media pages."
-        },
-        {
-          "leg": "Ghost walk (outdoor)",
-          "good_weather": "Clear and mild after sunset (about 6:20 PM). If 6:30 PM sells out, the 8 PM Friday tour is the other slot.",
-          "rain": "Tours run rain or shine. Indoor alternative: An Evening with Murray Attaway, Don Dixon & Peter Holsapple at Wake Forest Listening Room, 219 S. White St (doors 6:45 PM, show 7:30 PM, $33.90, event 729f0629726b)."
-        }
-      ],
-      "practical_notes": [
-        "Leave downtown Raleigh by 7:45 AM for breakfast at Brigs, then head north to Hill Ridge Farms for the 9:30 AM opening.",
-        "Hill Ridge Farms sells admission at the gate only; last admission is one hour before closing. Admission page: https://www.hillridgefarms.com/admission-tickets",
-        "Ghost walk tickets (Eventbrite): https://www.eventbrite.com/e/2026-spirits-of-wake-forest-tickets-1994208274632. Meet outside Wake Forest Town Hall, 301 S Brooks St; tours start on time.",
-        "Saving Grace is on Old Creedmoor Rd on the west side of Wake Forest; allow drive time to Town Hall before 6:30 PM (not checked).",
-        "Drive back to Raleigh from S Main St takes about 25-30 min."
-      ],
-      "event_ids": [
-        "658a3fd04ed7",
-        "7335afa324e4",
-        "47678111e169"
-      ]
-    },
-    {
-      "id": "2026-W44-raleigh-day-of-the-dead-hogwarts-pullen-rosencrantz",
-      "date": "2026-10-31",
-      "anchor_city": "Raleigh",
-      "title": "Raleigh Halloween Saturday: Day of the Dead Street Festival, Halloween at Hogwarts, Pumpkin Palooza, Rosencrantz and Guildenstern",
-      "theme": "A downtown-to-Pullen Park Halloween: a Día de los Muertos street festival, the NC Symphony's costumed Harry Potter family concert, Pumpkin Palooza at Pullen Park, and Stoppard at Raleigh Little Theatre",
-      "drive_time": "0-10 min: the festival, concert and lunch are a walk apart downtown; Pullen Park and Raleigh Little Theatre are about 10 min west by car",
-      "weather": {
-        "summary": "Partly Sunny",
-        "temp_f": 68
-      },
-      "cost_range": "Street festival free; Halloween at Hogwarts $32-$46; Pumpkin Palooza $14; Rosencrantz and Guildenstern $30-$33; about $45-$60 per person for meals",
-      "overview": "A mild Halloween (high 68°F, partly sunny; overnight 48°F and mostly cloudy; sunset about 6:20 PM). Breakfast at Morning Times, then the free Day of the Dead street festival on Wilmington St. Walk to the Martin Marietta Center for the 11 AM Halloween at Hogwarts concert (costumes welcome), lunch at Sitti, and spend mid-afternoon at Pumpkin Palooza in Pullen Park. Dinner at Irregardless, then Rosencrantz and Guildenstern Are Dead at Raleigh Little Theatre.",
+      "cost_range": "Farmers market and Taste of China free; storytelling showcase $27; ballet $12-$18; roller derby $8-$20; about $45-$60 per person for meals",
+      "overview": "A sunny Saturday (high 65°F, low about 42°F; sunset about 5:15 PM). Have brunch at Peck & Plume, walk the Cary Farmers Market, then see the sensory-friendly showcase of the Old North State Storytelling Festival at The Cary Theater. Walk over to the Taste of China Festival in Downtown Cary Park, lunch on dosai at Udupi Cafe, and drive to Apex for Infinity Ballet's \"Fairytale Fables\" at The Halle at 2 PM. Finish at the Carolina Roller Derby doubleheader from 5 PM and dinner on Salem Street at The Provincial.",
       "schedule": {
         "morning": [
           {
             "time": "9:00 AM",
-            "title": "Day of the Dead 5k & Street Festival",
-            "event_id": "538464249ec7",
-            "location": "Centro Mexican Restaurant, 106 S Wilmington St, Raleigh, NC 27601",
+            "title": "Cary Farmers Market",
+            "event_id": "affddea0185e",
+            "location": "East Park St. next to Downtown Cary Park, 327 S. Academy St., Cary, NC 27511",
             "price": "Free",
-            "notes": "9 AM-12 PM. Free street festival on Wilmington St between Hargett and Morgan Sts: artisans, vendors, food from Centro and food trucks, live music, cultural performances and Día de los Muertos altars. The 5K is a separate paid registration. Info: https://downtownraleigh.org/do/day-of-the-dead-5k-and-street-festival-1"
+            "notes": "9 AM-noon, winter season. Local produce, meat and artisan goods. Info: https://downtowncarypark.com/things-to-do/calendar/w_cary-farmers-market-121"
           },
           {
-            "time": "11:00 AM",
-            "title": "Family Fun Concert! Halloween at Hogwarts with the North Carolina Symphony",
-            "event_id": "dc98fe45be29",
-            "location": "Meymandi Concert Hall at Martin Marietta Center for the Performing Arts, 2 E South St., Raleigh, NC 27601",
-            "price": "$32-$46",
-            "notes": "11 AM-12 PM. Harry Potter music; costumes encouraged. NC Symphony page: lobby doors open 9:30 AM, pre-concert activities start an hour before the show, costume contest, Meredith Suzuki Strings at 10:15 AM. Leave the festival by about 10:30. Tickets: https://ncsymphony.org/events/halloween-at-hogwarts-11am/"
-          }
-        ],
-        "afternoon": [
-          {
-            "time": "1:45 PM",
-            "title": "Pumpkin Palooza at Pullen Park",
-            "event_id": "5a94d28e6ee2",
-            "location": "Pullen Park, 520 Ashe Avenue, Raleigh, NC 27606",
-            "price": "$14.00",
-            "notes": "10:30 AM-4 PM. Each ticket includes a digital scavenger hunt, a train ride, a small pumpkin, and autumn crafts and games. Pick a time slot and buy in advance. Tickets: https://raleighnc.gov/parks-and-recreation/events/pumpkin-palooza-pullen-park (city site blocked automated checks; listing confirmed at https://thetriangleweekender.com/event/pumpkin-palooza-at-pullen-park/2026-10-31/)."
-          }
-        ],
-        "evening": [
-          {
-            "time": "7:30 PM",
-            "title": "Rosencrantz and Guildenstern Are Dead",
-            "event_id": "626e655e7911",
-            "location": "Raleigh Little Theatre - Gaddy-Goodwin Teaching Theatre, 301 Pogue Street, Raleigh, NC 27607",
-            "price": "$30-$33",
-            "notes": "7:30 PM. RLT page: about 2 hours 30 minutes with one intermission; ages 13+; adult $33, senior/student/military $30. Tickets: https://raleighlittletheatre.org/shows/rosencrantz-and-guildenstern-are-dead/"
-          }
-        ]
-      },
-      "food": [
-        {
-          "slot": "breakfast",
-          "place": "Morning Times",
-          "city": "Raleigh",
-          "vegetarian_dish": "Avocado Toast (multigrain toast, diced potatoes, house guacamole, tomato, cotija)",
-          "price": "$7.50-$11.25",
-          "url": "https://www.morningtimes-raleigh.com/menus",
-          "notes": "10 E. Hargett Street, Raleigh NC 27601, about two blocks from the festival. Own menu: all items served daily 7 AM-5 PM. Avocado Toast $7.50 (Bread Shop multigrain, diced potatoes, house guacamole, tomato, cotija); Breakfast Burrito $11.25 (eggs, cotija, black beans, roasted jalapeño, salsa). Vegetarian by listed ingredients, not labeled. No vegan dish verified."
-        },
-        {
-          "slot": "lunch",
-          "place": "Sitti",
-          "city": "Raleigh",
-          "vegan_dish": "Vegan Tasting: hummus, mouhamra, fattoush, warak anab, roasted vegetables, falafel",
-          "vegetarian_dish": "Vegetarian Tasting: hummus, baba ghanouj, fattoush, cheese rolls, warak anab, falafel",
-          "price": "$19.95",
-          "url": "https://sitti-raleigh.com/menu/lunch",
-          "notes": "135 S. Wilmington Street, Raleigh NC 27601, a short walk from the Martin Marietta Center. Own site: Fri-Sat 11 AM-10 PM. Own lunch menu: Vegan Tasting $19.95 (labeled vegan) and Vegetarian Tasting $19.95 (labeled vegetarian)."
-        },
-        {
-          "slot": "dinner",
-          "place": "Irregardless",
-          "city": "Raleigh",
-          "vegan_dish": "Mujaddara (VG): beluga lentils, walnut muhamarra, jasmine rice, golden raisin chutney, pickled red onion, cabbage slaw, grilled pita",
-          "vegetarian_dish": "Eggplant Tower (VEG, GF): breaded and fried eggplant, mozzarella, marinara, basil oil",
-          "price": "$17-$19",
-          "url": "https://www.irregardless.com/menu",
-          "notes": "901 W Morgan St, Raleigh NC 27603, about 5 min from Raleigh Little Theatre. Own site: dinner Fri-Sat 4:30-10 PM. Own dinner menu: Mujaddara $19 (VG, GFO), Eggplant Tower $17 (VEG, GF). Eat by 5:30 PM to make the 7:30 curtain."
-        }
-      ],
-      "alternatives": [
-        {
-          "leg": "Day of the Dead street festival (outdoor)",
-          "good_weather": "Partly sunny and cool in the morning; bring a layer.",
-          "rain": "No rain is forecast. If needed, go straight to the Martin Marietta Center: the Hogwarts lobby opens at 9:30 AM with pre-concert activities."
-        },
-        {
-          "leg": "Pumpkin Palooza at Pullen Park (outdoor)",
-          "good_weather": "High 68°F. Do the train ride and scavenger hunt before the 4 PM close.",
-          "rain": "No rain is forecast. Indoor swap: Hocus Pocus at The Rialto Theatre, 1620 Glenwood Ave (doors 1:30 PM, show 2 PM, $11, event f601cd1723a6)."
-        }
-      ],
-      "practical_notes": [
-        "Park once downtown for the morning (decks near Moore Square or the Martin Marietta Center); the festival, concert and Sitti are walkable. Wilmington St between Hargett and Morgan is closed for the festival.",
-        "Hogwarts tickets: https://ncsymphony.org/events/halloween-at-hogwarts-11am/ (a 2 PM performance also exists if 11 AM sells out).",
-        "Pumpkin Palooza uses timed tickets; book a slot around 1:45 PM.",
-        "Irregardless and Raleigh Little Theatre are both west of downtown; RLT has its own lot off Pogue St.",
-        "Halloween night: expect crowds and bar-crawl traffic around Glenwood South after 4 PM."
-      ],
-      "event_ids": [
-        "538464249ec7",
-        "dc98fe45be29",
-        "5a94d28e6ee2",
-        "626e655e7911"
-      ]
-    },
-    {
-      "id": "2026-W44-chapel-hill-carrboro-market-goatober-improv-horror",
-      "date": "2026-10-31",
-      "anchor_city": "Chapel Hill",
-      "title": "Chapel Hill & Carrboro Halloween: Farmers' Market Costumes, Goatober Fest, LGBT+ History Walk, Scare-olina Skies, Improvised Horror Movie",
-      "theme": "Halloween across Chapel Hill and Carrboro: the market's vendor costume contest, goats and pumpkins at Spring Haven Farm, a walking tour of Chapel Hill's LGBT+ history, a Halloween planetarium show, and a live improvised horror movie",
-      "drive_time": "About 35-40 min from downtown Raleigh to downtown Chapel Hill via I-40 W; Carrboro is about 5 min further west. Drive time to Spring Haven Farm (5306 Homer Ruffin Rd) was not checked",
-      "weather": {
-        "summary": "Partly Sunny",
-        "temp_f": 68
-      },
-      "cost_range": "Farmers' market free; Goatober Fest $13.95-$19.95 (pumpkin carving extra); walking tour $14; Scare-olina Skies price unknown; Improvised Horror Movie $25; about $50-$70 per person for meals",
-      "overview": "A mild Halloween (high 68°F, partly sunny; 48°F overnight; sunset about 6:20 PM). Breakfast at Carolina Coffee Shop, then the Carrboro Farmers' Market Halloween costume contest. Late morning at Goatober Fest at Spring Haven Farm, brunch-lunch at Kipos, the 2 PM LGBT+ history walking tour, and the 4:30 PM Scare-olina Skies planetarium show. Dinner at Glasshalfull in Carrboro, then The Improvised Horror Movie at The ArtsCenter. UNC hosts Miami at Kenan Stadium at 7:30 PM, so downtown Chapel Hill will be crowded from mid-afternoon.",
-      "schedule": {
-        "morning": [
-          {
-            "time": "9:00 AM",
-            "title": "Halloween at the Carrboro Farmers' Market",
-            "event_id": "ced4d359f774",
-            "location": "Carrboro Farmers' Market, 301 W. Main Street, Carrboro, NC 27510",
-            "price": "Free",
-            "notes": "7 AM-noon. Last Saturday of main-season hours, with the annual vendor Halloween costume contest. Info: https://thetriangleweekender.com/event/%f0%9f%8e%83-halloween-at-the-carrboro-farmers-market/"
+            "time": "10:00 AM",
+            "title": "Old North State Storytelling Festival: Sensory Friendly Showcase",
+            "event_id": "04399e8db890",
+            "location": "The Cary Theater, 122 E. Chatham St., Cary, NC 27511",
+            "price": "$27",
+            "notes": "10-11:30 AM. Live storytelling and music. Tickets: https://www.etix.com/ticket/p/92179497/2026-old-north-state-story-telling-festivalsensory-friendly-showcase-cary-the-cary-theater?partner_id=100 Info: https://thecarytheater.com/event/2026-old-north-state-story-telling-festival-sensory-friendly-showcase/the-cary/cary/"
           },
           {
-            "time": "10:30 AM",
-            "title": "Goatober Fest | Carving Pumpkins with Goats",
-            "event_id": "a829c8de63ce",
-            "location": "Spring Haven Farm, 5306 Homer Ruffin Road, Chapel Hill, NC 27516",
-            "price": "$13.95-$19.95",
-            "notes": "Starts 10 AM. Farm animals, bubble barn, farm games. Ticket page: arrive within the arrival time on your ticket; weekend slots can sell out, so buy ahead. Pumpkin carving with the goats is separate (small $9, medium $12, large $15) and needs a Goatober ticket; VIP parking $10. Tickets: https://www.simpletix.com/e/goatober-fest-carving-pumpkins-with-goats-tickets-288348"
+            "time": "11:30 AM",
+            "title": "Taste of China Festival 2026",
+            "event_id": "fb954fa479d6",
+            "location": "Downtown Cary Park, 327 S. Academy St., Cary, NC 27511",
+            "price": "Free",
+            "notes": "11 AM-5 PM. Food, performances and culture; the listing expects 20,000-30,000 attendees. Info: https://www.tasteofchina.org/"
           }
         ],
         "afternoon": [
           {
             "time": "2:00 PM",
-            "title": "Chapel Hill LGBT+ History | Walking Tour",
-            "event_id": "03711b90624d",
-            "location": "Rougarou Cajun Kitchen (Imbibe), 108 Henderson Street, Chapel Hill, NC 27514",
-            "price": "$14",
-            "notes": "2-3 PM. Walking tour of Chapel Hill's LGBT+ history. Book: https://www.trianglewalkingtours.com/booking-calendar/chapel-hill-lgbt-history-tour?category=0fd7a45f-c9e7-4fde-8b77-b953462112a9&referral=service_list_widget"
-          },
-          {
-            "time": "4:30 PM",
-            "title": "Scare-olina Skies — A Thrilling Planetarium Experience",
-            "event_id": "7005a62cbd9a",
-            "location": "Morehead Planetarium & Science Center, 250 East Franklin Street, Chapel Hill, NC 27514",
-            "price": "unknown",
-            "notes": "4:30-5:30 PM. Halloween tour of Chapel Hill's spooky side under the dome. Price not shown on the listing; check the ticket link https://go.unc.edu/Scare-olina or https://moreheadplanetarium.org/calendar/scare-olina-skies-6/"
+            "title": "Infinity Ballet: \"Fairytale Fables\"",
+            "event_id": "98f924433f1e",
+            "location": "The Halle Cultural Arts Center, 237 N. Salem St., Apex, NC 27502",
+            "price": "$12-$18",
+            "notes": "2-3 PM. One-hour family dance performance in the Storybook Dance series. Info: https://www.visitraleigh.com/event/infinity-ballet%3a-%22fairytale-fables%22/108852/"
           }
         ],
         "evening": [
           {
-            "time": "8:30 PM",
-            "title": "The Improvised Horror Movie | Rated R",
-            "event_id": "7d11907dcdb6",
-            "location": "ArtsCenter, 400 Roberson Street, Carrboro, NC 27510",
+            "time": "5:00 PM",
+            "title": "Carolina Roller Derby Fall Double Header",
+            "event_id": "60720b4edd66",
+            "location": "XL Sports World (Sofive Soccer Centers Apex), 1016 Investment Blvd, Apex, NC 27502",
+            "price": "$8-$20",
+            "notes": "5-9 PM. At 5 PM the Carolina Bootleggers face Twin Valleys Roller Derby's Mountain Mayhem (per The Triangle Weekender). Listings give $8-$20 and $15-$20. Tickets: https://www.zeffy.com/en-US/ticketing/carolina-roller-derby-fall-double-header (blocked automated checks; open in a browser). Info: https://www.visitraleigh.com/event/carolina-roller-derby-fall-double-header/111866/"
+          }
+        ]
+      },
+      "food": [
+        {
+          "slot": "breakfast",
+          "place": "Peck & Plume",
+          "city": "Cary",
+          "vegetarian_dish": "Avocado Toast (NF, V): griddled sourdough, beet root hummus, avocado, whipped ricotta, pomegranate seeds, boondi, za'atar",
+          "price": "$11-$15",
+          "url": "https://www.peckandplume.com/menus/",
+          "notes": "In downtown Cary, steps from the farmers market (address 301 S Academy St per last week's check). Own menu: brunch Sat-Sun 8 AM-2 PM (V = vegetarian, VG = vegan). Avocado Toast $14 (NF, V), Peck & Plume Porridge $11 (NF, V), Chilaquiles Verdes $15 (NF, GF, V). No brunch item is labeled VG."
+        },
+        {
+          "slot": "lunch",
+          "place": "Udupi Cafe",
+          "city": "Cary",
+          "vegetarian_dish": "Masala Dosai (rice crepe with potato-onion filling); Mysore Masala Dosai adds a spicy chutney layer",
+          "price": "$12.99-$13.99",
+          "url": "https://udupicafenc.com/menu",
+          "notes": "590 E Chatham St, Ste 112 & 114, Cary NC. Own menu: Masala Dosai $12.99 and Mysore Masala Dosai $13.99, both labeled vegetarian; MLA Pesarattu Dosa $17.99 is Saturday-Sunday only. No item is labeled vegan; ask about ghee and dairy. The page says it opens at 11:30 AM but does not list hours by day. Eat by about 12:45 PM to reach Apex by 2."
+        },
+        {
+          "slot": "dinner",
+          "place": "The Provincial",
+          "city": "Apex",
+          "vegetarian_dish": "Spinach & Ricotta Gnocchi (Fox Farm mushrooms, garlic lemon cream, pecorino)",
+          "price": "$17",
+          "url": "https://www.theprovincialapex.com/menu",
+          "notes": "119 N. Salem St., Apex NC 27502, a block from The Halle. Own site: Friday-Saturday 4:30-9:30 PM. The food menu is a dated daily sheet (the one fetched was for Wednesday, Nov. 4) and listed Spinach & Ricotta Gnocchi at $17; vegetarian by listed ingredients, not labeled, and it may change. No vegan dish verified. Eat after the first bout (about 7 PM) or before the derby at 4:30 PM."
+        }
+      ],
+      "alternatives": [
+        {
+          "leg": "Farmers market and Taste of China (outdoor, Downtown Cary Park)",
+          "good_weather": "Sunny and about 65°F. The festival draws large crowds; arrive near 11:30 AM.",
+          "rain": "No rain is forecast. If plans change, stay at The Cary Theater for Showcase 2 of the storytelling festival, 1-3 PM, $27 (event 5f1bb3e4c125), and skip the ballet."
+        }
+      ],
+      "practical_notes": [
+        "Leave downtown Raleigh by 7:40 AM for brunch at Peck & Plume when it opens at 8 AM.",
+        "Peck & Plume, the farmers market, The Cary Theater and Downtown Cary Park are all in downtown Cary; park once and walk. Udupi Cafe is on E Chatham St east of downtown; drive.",
+        "Storytelling tickets ($27): https://www.etix.com/ticket/p/92179497/2026-old-north-state-story-telling-festivalsensory-friendly-showcase-cary-the-cary-theater?partner_id=100",
+        "Ballet info: https://thehalle.org/Calendar.aspx?EID=4777&month=7&year=2026&day=19&calType=0",
+        "Roller derby tickets: https://www.zeffy.com/en-US/ticketing/carolina-roller-derby-fall-double-header",
+        "Drive back to Raleigh from Apex takes roughly 25 min (estimate)."
+      ],
+      "event_ids": [
+        "affddea0185e",
+        "04399e8db890",
+        "fb954fa479d6",
+        "98f924433f1e",
+        "60720b4edd66",
+        "5f1bb3e4c125"
+      ]
+    },
+    {
+      "id": "2026-W45-chapel-hill-carrboro-goat-yoga-ackland-sweater-bazaar-jennifer-curtis",
+      "date": "2026-11-08",
+      "anchor_city": "Chapel Hill",
+      "title": "Chapel Hill and Carrboro Sunday: Goat Yoga, Ackland Art Museum Tour, Sweater Weather Bazaar, Jennifer Curtis Solo Violin, UpClose Chamber Music",
+      "theme": "An arts-and-makers Sunday: farm goat yoga, a free 30-minute Ackland collection tour, a 30-plus-maker outdoor bazaar on the Carrboro Town Commons, a solo violin concert at The ArtsCenter, and a free chamber music evening on Franklin Street",
+      "drive_time": "About 25 mi straight line from downtown Raleigh to downtown Chapel Hill, roughly 35-40 min by car (estimated from straight-line distance; not checked against a routing service). 1870 Farm is about 3 mi south of downtown Chapel Hill; Carrboro is about 1 mi west.",
+      "weather": {
+        "summary": "Sunny",
+        "temp_f": 64
+      },
+      "cost_range": "Goat yoga $25; Ackland tour, bazaar and chamber concert free; Jennifer Curtis $30-$35; about $45-$60 per person for meals",
+      "overview": "A sunny Sunday (high 64°F; sunset about 5:15 PM). Eat breakfast at Carolina Coffee Shop, then drive to 1870 Farm for 10 AM goat yoga. Have brunch at Kipos, take the free 1 PM Ackland tour, and shop the Sweater Weather Bazaar in Carrboro. Hear violinist Jennifer Curtis at The ArtsCenter at 3 PM, have dinner at Haw River Tap & Table, and end with The Durham Fellows at CURRENT Studio at 7:30 PM.",
+      "schedule": {
+        "morning": [
+          {
+            "time": "10:00 AM",
+            "title": "Goat Yoga at 1870 Farm",
+            "event_id": "7bce47242e4e",
+            "location": "1870 Farm, 1224 Old Lystra, Chapel Hill, NC 27517",
             "price": "$25",
-            "notes": "8:30 PM (confirmed on Black Sheep Comedy's show list). A horror movie improvised live from audience suggestions; rated R. Tickets: https://www.blacksheepcomedy.com/shows"
+            "notes": "10-11:30 AM. Beginner-friendly outdoor yoga with goats. Book: https://www.1870farm.com/goat-yoga"
+          }
+        ],
+        "afternoon": [
+          {
+            "time": "1:00 PM",
+            "title": "A Closer Look at the Collection | Ackland Tour",
+            "event_id": "4509a783b7ad",
+            "location": "Ackland Art Museum, 101 South Columbia Street, Chapel Hill, NC 27599",
+            "price": "Free",
+            "notes": "1-1:30 PM. Free, limited to 20 people, first come first served. Stay for Continental Shift: Recent Acquisitions of African Art (event 0297890a6287, free, 1-5 PM). Info: https://events.ackland.org/series/tour-a-closer-look-at-the-collection-5/"
+          },
+          {
+            "time": "2:00 PM",
+            "title": "The Sweater Weather Bazaar",
+            "event_id": "bbf4d61e18bd",
+            "location": "Carrboro Town Commons, 301 West Main Street, Carrboro, NC 27510",
+            "price": "Free",
+            "notes": "Noon-5 PM. Handmade goods from 30+ local makers plus food vendors. Info: https://www.takethehighstreet.com/thebazaar"
+          },
+          {
+            "time": "3:00 PM",
+            "title": "Jennifer Curtis (Solo) | Concert",
+            "event_id": "51ba8f8e0a24",
+            "location": "The ArtsCenter, 400 Roberson Street, Carrboro, NC 27510",
+            "price": "$30-$35",
+            "notes": "Solo performance by violinist Jennifer Curtis. Tickets: https://artscenterlive.org/november-8th-jennifer-curtis-solo/"
+          }
+        ],
+        "evening": [
+          {
+            "time": "7:30 PM",
+            "title": "UpClose Chamber Music Series: The Durham Fellows (Chamber Orchestra of the Triangle)",
+            "event_id": "e65542f3ceef",
+            "location": "CURRENT Studio, 123 W Franklin St, Chapel Hill, NC 27516",
+            "price": "Free",
+            "notes": "7:30-9 PM. Info: https://thecot.org/event/11082026-fellows/"
           }
         ]
       },
@@ -415,268 +559,159 @@
           "vegetarian_dish": "Avocado Toast (sliced avocado on toasted bread of your choice, arugula salad, fresh lemon)",
           "price": "$12-$13",
           "url": "https://www.carolinacoffeeshop.com/s/fall-2026-brunch-menu_-CCS.pdf",
-          "notes": "138 East Franklin Street, Chapel Hill NC 27514; brunch every day 8 AM-3 PM (own site). Fall 2026 brunch menu PDF: Avocado Toast $13 (sliced avocado on toast, arugula salad, fresh lemon; no animal products listed but not labeled vegan; ask about the bread) and Feta, Tomato, Spinach and Onion omelet $12. Weekends are busy and reservations are Mon-Thu only."
+          "notes": "On Franklin Street, Chapel Hill (138 East Franklin Street per last week's check). Own site: open daily 8 AM-3 PM; reservations Monday-Thursday only, so arrive early on weekends. Fall 2026 brunch menu: Avocado Toast $13 (no animal products listed but not labeled vegan; ask about the bread) and Feta, Tomato, Spinach and Onion omelet $12."
         },
         {
           "slot": "lunch",
           "place": "Kipos Greek Taverna",
           "city": "Chapel Hill",
-          "vegan_dish": "Briam (Vegan; GF): roasted zucchini, tomatoes, eggplant, potatoes, carrots",
-          "vegetarian_dish": "Greek Omelet (Vegetarian; GF): feta, tomato, spinach, scallion, mixed green salad, roasted potatoes",
+          "vegan_dish": "Briam (Vegan; Gluten Free): roasted zucchini, tomatoes, eggplant, potatoes, carrots",
+          "vegetarian_dish": "Greek Omelet (Vegetarian; Gluten Free): feta, tomato, spinach, scallion, with salad and roasted potatoes",
           "price": "$16",
           "url": "https://www.kiposchapelhill.com/menus/",
-          "notes": "1800 E. Franklin St. #16, Chapel Hill NC 27514 (own site; note this is east of downtown). Own site: brunch Sat-Sun 11 AM-2:30 PM. Own brunch menu: Briam $16 (Vegan; Gluten Free), Greek Omelet $16 (Vegetarian; Gluten Free). Leave by 1:40 PM for the 2 PM tour on Henderson St."
+          "notes": "1800 E. Franklin St. #16, Chapel Hill NC 27514 (east of downtown). Own location page: brunch Saturday-Sunday 11 AM-2:30 PM. Own brunch menu: Briam $16 (Vegan; GF), Greek Omelet $16 (Vegetarian; GF). Eat at about 11:45 AM; leave by 12:40 PM for the 1 PM Ackland tour."
         },
         {
           "slot": "dinner",
-          "place": "Glasshalfull",
+          "place": "Haw River Tap & Table",
           "city": "Carrboro",
-          "vegan_dish": "Fried Brussels Sprouts (V+ GF): agave-lemon glaze, red pepper flakes, toasted peanuts",
-          "vegetarian_dish": "Beet and Kale Lasagna (V): house beet pasta, kale, leeks, pine nuts, ricotta, goat cheese, beet purée",
-          "price": "$12-$26",
-          "url": "https://glasshalfull.net/eat/",
-          "notes": "106 South Greensboro Street, Carrboro NC 27510, a few blocks from The ArtsCenter. Own site: dinner Fri-Sat 5-9:30 PM. Own dinner menu (V = vegetarian, V+ = vegan): Fried Brussels Sprouts $12 (V+ GF), Turkish Hummus $13 (V+, GF without lavash), Beet and Kale Lasagna $26 (V)."
+          "vegetarian_dish": "Nashville Hot Tofu Sandwich (v): pickle-brined crispy fried tofu, Nashville hot sauce, peppadew aioli, shaved Brussels sprouts, bread & butter pickles, Ninth Street Bakery brioche",
+          "price": "$9-$11",
+          "url": "https://hawrivercarrboro.com/food",
+          "notes": "300 East Main St, Unit C, Carrboro NC 27510, near The ArtsCenter. Own site: kitchen Sunday noon-9 PM. Own menu: Nashville Hot Tofu Sandwich $11 (v) and Salsa Brava Tots $9 (v). The menu marks items (v) without a legend; the pretzel with cheese is also (v), so read it as vegetarian. No vegan dish verified. Its Second Sunday Bluegrass Jam runs 3-5 PM (event 6d568e058436)."
         }
       ],
       "alternatives": [
         {
-          "leg": "Farmers' market and Goatober Fest (outdoor)",
-          "good_weather": "Partly sunny and cool in the morning; dress for the farm.",
-          "rain": "No rain is forecast. Indoor swap: Magic Tree House Space Mission at Morehead Planetarium (10:30 AM, price unknown, event ffb3e95cba51)."
-        },
-        {
-          "leg": "LGBT+ History walking tour (outdoor)",
-          "good_weather": "Mild afternoon, high 68°F.",
-          "rain": "No rain is forecast. Indoor swap: 'A Closer Look at the Collection' free 30-min tour at the Ackland Art Museum, 101 S Columbia St (1 PM, event f2daaf308287), or We Are Stars at Morehead Planetarium (1:30 PM, price unknown, event d28e9832c66f)."
+          "leg": "Goat yoga at 1870 Farm and the Sweater Weather Bazaar (outdoor)",
+          "good_weather": "Sunny and about 64°F; cool in the morning, so bring a layer for 10 AM yoga.",
+          "rain": "No rain is forecast. If plans change, go indoors: the Carrboro CD & Record Show runs noon-6 PM at the Carrboro Century Center, free (event 57fd80d8ae7f), and Morehead Planetarium shows Supermassive Black Holes at 3 PM (event 694ad744f5b5; price not listed)."
         }
       ],
       "practical_notes": [
-        "Leave downtown Raleigh by 7:20 AM for breakfast on Franklin St.",
-        "UNC vs Miami kicks off at 7:30 PM at Kenan Stadium: expect closed streets, game-day parking rates and heavy traffic around campus and Franklin St from mid-afternoon. Morehead Planetarium and the walking tour start point are near campus; consider parking in Carrboro and walking or riding transit in.",
-        "Goatober tickets are timed by arrival window: https://www.simpletix.com/e/goatober-fest-carving-pumpkins-with-goats-tickets-288348",
-        "Walking tour booking: https://www.trianglewalkingtours.com/booking-calendar/chapel-hill-lgbt-history-tour?category=0fd7a45f-c9e7-4fde-8b77-b953462112a9&referral=service_list_widget",
-        "Improvised Horror Movie tickets: https://www.blacksheepcomedy.com/shows. Glasshalfull and The ArtsCenter are both in downtown Carrboro; park once.",
-        "Drive back to Raleigh from Carrboro takes about 40 min."
+        "Leave downtown Raleigh by 7:45 AM for breakfast at Carolina Coffee Shop at about 8:30 AM, then drive about 3 mi south to 1870 Farm by 10 AM.",
+        "Goat yoga booking ($25): https://www.1870farm.com/goat-yoga",
+        "Ackland tours are limited to 20 people; arrive a few minutes early.",
+        "The Carrboro stops (Town Commons, The ArtsCenter, Haw River Tap & Table) are within walking distance of each other.",
+        "Jennifer Curtis tickets ($30-$35): https://artscenterlive.org/november-8th-jennifer-curtis-solo/",
+        "Drive back to Raleigh takes roughly 35-40 min (estimate)."
       ],
       "event_ids": [
-        "ced4d359f774",
-        "a829c8de63ce",
-        "03711b90624d",
-        "7005a62cbd9a",
-        "7d11907dcdb6"
+        "7bce47242e4e",
+        "4509a783b7ad",
+        "0297890a6287",
+        "bbf4d61e18bd",
+        "51ba8f8e0a24",
+        "e65542f3ceef",
+        "6d568e058436",
+        "57fd80d8ae7f",
+        "694ad744f5b5"
       ]
     },
     {
-      "id": "2026-W44-cary-walking-tour-underground-market-soundscapes",
-      "date": "2026-11-01",
-      "anchor_city": "Cary",
-      "title": "Downtown Cary Sunday: Historic Walking Tour, Cary Underground Market, Symphonic Soundscapes",
-      "theme": "An easy, walkable downtown Cary Sunday on the day clocks fall back: a guided history walk, a maker market with live bands at Bond Brothers, and a Triangle Wind Ensemble concert",
-      "drive_time": "About 20 min from downtown Raleigh to downtown Cary via I-40 W / Walnut St; every stop is within about a mile in downtown Cary",
+      "id": "2026-W45-wake-forest-veterans-day-rolesville-calvin-jones-oakwood-kings",
+      "date": "2026-11-11",
+      "anchor_city": "Wake Forest",
+      "title": "Veterans Day in Wake Forest and Raleigh: Rolesville Ceremony, Calvin Jones House Tour, Historic Oakwood Cemetery Field of Honor, John R. Miller at Kings",
+      "theme": "A Veterans Day observance with local history: the Blue Star Memorial ceremony in Rolesville, a free tour of the Calvin Jones House in Wake Forest, the Field of Honor dedication at Historic Oakwood Cemetery, then dinner and a show in downtown Raleigh",
+      "drive_time": "About 13 mi straight line from downtown Raleigh to Rolesville and 16 mi to downtown Wake Forest, roughly 25-30 min each by car (estimated from straight-line distance; not checked against a routing service). Rolesville to Wake Forest is about 5 mi. Oakwood Cemetery is about 1 mi from downtown Raleigh.",
       "weather": {
-        "summary": "Mostly Cloudy",
-        "temp_f": 71
+        "summary": "Mostly Sunny",
+        "temp_f": 68
       },
-      "cost_range": "Walking tour $15; Underground Market free; Symphonic Soundscapes free-$20; about $40-$55 per person for meals",
-      "overview": "Daylight saving time ends at 2 AM, so everything runs on standard time and sunset moves to about 5:20 PM. A mostly cloudy, mild day (high 71°F). Breakfast at La Farm Bakery's downtown café, take the noon Downtown Cary historic walking tour, then brunch-lunch at Peck & Plume next door. Browse the Cary Underground Market (30+ vendors, live bands, food trucks) at Bond Brothers, hear the Triangle Wind Ensemble at 4 PM at the Cary Arts Center, and finish with South Indian vegetarian food at Udupi Cafe.",
+      "cost_range": "Rolesville ceremony and Calvin Jones House tour free; Oakwood ceremony price not listed; John R. Miller $20 advance / $22 day of; about $45-$60 per person for meals",
+      "overview": "A mostly sunny Veterans Day (high 68°F; sunset about 5:15 PM). Have breakfast at Brigs in Wake Forest, attend the Veterans Day ceremony at the Blue Star Memorial in front of Rolesville Town Hall (call to attention 10:45 AM), then tour the Calvin Jones House at the Wake Forest Historical Museum. Have lunch at Village Deli & Grill, drive to Raleigh for the 2 PM Honor Ceremony and Field of Honor dedication at Historic Oakwood Cemetery, then have dinner at Irregardless and see John R. Miller with Lou Hazel at Kings at 8 PM.",
       "schedule": {
         "morning": [
           {
-            "time": "10:00 AM",
-            "title": "Breakfast and a stroll in downtown Cary",
-            "location": "Downtown Cary, S Academy St / W Chatham St, Cary, NC 27511",
+            "time": "10:45 AM",
+            "title": "Veterans Day Celebration (Blue Star Memorial)",
+            "event_id": "da172beec387",
+            "location": "Rolesville Town Hall (Blue Star Memorial), 502 Southtown Circle, Rolesville, NC 27571",
             "price": "Free",
-            "notes": "No ticketed event this morning: eat at La Farm (220 W Chatham St) and walk the downtown blocks before the noon tour."
+            "notes": "Ceremony 11 AM-noon; call to attention 10:45 AM. Hosted by the Community Gardeners of Rolesville, the Rolesville Veterans Group and the Joel Fund; the rain location is the Community Center (514 Southtown Circle, event fbacf9fa6b48). Info: https://www.rolesvillenc.gov/parks-recreation/special-events/veterans-day"
           }
         ],
         "afternoon": [
           {
             "time": "12:00 PM",
-            "title": "Cary Downtown Historic Guided Walking Tour",
-            "event_id": "d83b16575310",
-            "location": "114 South Academy Street, Cary, NC 27511",
-            "price": "$15",
-            "notes": "12-1 PM. Guided walk through Cary's history as a railroad hub, with stories of agricultural invention and early integration. Book: https://www.trianglewalkingtours.com/book-online?category=207ada13-29de-4868-acc1-e68111265890"
-          },
-          {
-            "time": "2:15 PM",
-            "title": "Cary Underground Market",
-            "event_id": "4da177413d78",
-            "location": "Bond Brothers Beer Company, 202 East Cedar Street, Cary, NC 27511",
+            "title": "Tours of the Calvin Jones House",
+            "event_id": "1076c77120de",
+            "location": "Wake Forest Historical Museum, 414 North Main Street, Wake Forest, NC 27587",
             "price": "Free",
-            "notes": "12-4 PM. Monthly market and concert series with 30+ local vendors, live bands and food trucks; free to attend. Info: https://www.eventbrite.com/e/cary-underground-market-tickets-1999287158711"
+            "notes": "Tours 10:30 AM-12:30 PM; arrive by noon. Register: https://www.eventbrite.com/e/tours-of-the-calvin-jones-house-tickets-1990564958375"
           },
           {
-            "time": "4:00 PM",
-            "title": "Symphonic Soundscapes",
-            "event_id": "d8255c21fc01",
-            "location": "Cary Arts Center, 101 Dry Ave., Cary, NC 27511",
-            "price": "Free-$20",
-            "notes": "4-5:30 PM. Triangle Wind Ensemble: Tchaikovsky's Capriccio Italien, Elgar's Nimrod and more. Info: https://www.visitraleigh.com/event/symphonic-soundscapes/111726/ ; Town of Cary page: https://www.carync.gov/Home/Components/Calendar/Event/27074/1636?curm=11&cury=2026 (town site blocked automated checks)."
+            "time": "2:00 PM",
+            "title": "Veterans Day: Honor Ceremony and Dedication of the Field of Honor",
+            "event_id": "7b36ed510343",
+            "location": "Historic Oakwood Cemetery, 701 Oakwood Ave, Raleigh, NC 27601",
+            "price": "unknown",
+            "notes": "2-2:30 PM. Info: https://historicoakwoodcemetery.org/event/veterans-day-honor-ceremony-and-dedication-of-the-field-of-honor/"
           }
         ],
         "evening": [
           {
-            "time": "5:45 PM",
-            "title": "Dinner at Udupi Cafe",
-            "location": "Udupi Cafe, 590 E Chatham St, Ste 112 & 114, Cary, NC 27511",
-            "price": "$12.99-$14.99",
-            "notes": "Sunday hours 11:30 AM-9 PM on its own ordering site. See Food for the dish."
+            "time": "8:00 PM",
+            "title": "John R. Miller with Lou Hazel",
+            "event_id": "867179a41b04",
+            "location": "Kings, 14 W. Martin St., Raleigh, NC 27601",
+            "price": "$20-$22",
+            "notes": "8-11 PM. $20 advance / $22 day of. Tickets: https://tickets.venuepilot.com/e/john-r-miller-2026-11-11-kings-raleigh-f0bc16 Info: https://www.kingsraleigh.com/shows/john-r-miller"
           }
         ]
       },
       "food": [
         {
           "slot": "breakfast",
-          "place": "La Farm Bakery - Downtown Cary",
-          "city": "Cary",
-          "vegetarian_dish": "Spinach Feta Quiche (sautéed spinach, feta, onion, eggs, cream, flaky crust; with brunch potatoes, mini scone, fruit)",
-          "url": "https://www.lafarmbakery.com/cafe/brunch",
-          "notes": "220 W. Chatham St., Cary NC (own site). Own café brunch menu, served 8 AM-3 PM Sundays: Spinach Feta Quiche (spinach, feta, onion, eggs, cream, with brunch potatoes, mini scone and fruit) and Eggs Florentine. Vegetarian by listed ingredients, not labeled. The online menu shows no prices. No vegan dish verified."
+          "place": "Brigs (Wake Forest)",
+          "city": "Wake Forest",
+          "vegetarian_dish": "Malibu omelet (fresh spinach, avocado, mushrooms, tomatoes, cheddar-jack)",
+          "price": "unknown",
+          "url": "https://www.brigs.com/menus/our-menu",
+          "notes": "12338 Wake Union Church Road, Wake Forest NC 27587; open 7 AM-2:30 PM daily (own location page). Own menu: Malibu omelet and Classic Avocado Toast (whole-grain toast with mashed avocado, served with two eggs); vegetarian by listed ingredients, not labeled. The online menu shows no prices. No vegan dish verified."
         },
         {
           "slot": "lunch",
-          "place": "Peck & Plume",
-          "city": "Cary",
-          "vegetarian_dish": "Avocado Toast (NF, V): sourdough, beet root hummus, avocado, boondi, pomegranate, whipped ricotta, za'atar",
-          "price": "$14-$15",
-          "url": "https://www.peckandplume.com/menus/",
-          "notes": "301 S Academy St, Cary NC 27511, steps from the walking tour start. Own site: brunch Sat-Sun 8 AM-2 PM, so order by about 1:45 PM. Own brunch menu (V = vegetarian, VG = vegan): Avocado Toast (NF, V) $14, Chilaquiles Verdes (NF, GF, V) $15. No brunch item is labeled VG, so no vegan dish was verified."
+          "place": "Village Deli & Grill (Wake Forest)",
+          "city": "Wake Forest",
+          "vegetarian_dish": "Tempeh Reuben (marinated organic tempeh, sauerkraut, melted Swiss, 1000 Island dressing, grilled rye)",
+          "price": "$13.50",
+          "url": "https://www.villagedeli.net/raleigh-village-deli-and-grill-food-menu",
+          "notes": "1849 S. Main St, #200, Wake Forest NC 27587; Monday-Friday 11 AM-9 PM (own location page). Own menu, Vegetarian section: Tempeh Reuben $13.50 and Anna's Veggie Pita $13.50 (hummus, spring mix, vegetables, feta). No vegan dish verified. Leave by 1:15 PM for the 2 PM Oakwood ceremony."
         },
         {
           "slot": "dinner",
-          "place": "Udupi Cafe",
-          "city": "Cary",
-          "vegetarian_dish": "Mysore Masala Dosai (Vegetarian): thin rice crepe with spicy chutney, potato and onion stuffing",
-          "price": "$12.99-$13.99",
-          "url": "https://udupicafenc.com/menu",
-          "notes": "590 E Chatham St, Ste 112 & 114, Cary NC. Own site: Sunday 11:30 AM-9 PM; South Indian vegetarian cuisine. Own menu: Masala Dosai $12.99 (Vegetarian), Mysore Masala Dosai $13.99 (Vegetarian). No item is labeled vegan; the site calls the cuisine vegan-friendly, so ask about ghee and dairy."
+          "place": "Irregardless",
+          "city": "Raleigh",
+          "vegan_dish": "Mujaddara (VG, GFO): beluga lentils, walnut muhamarra, jasmine rice, golden raisin chutney, pickled red onion, cabbage slaw, grilled pita",
+          "vegetarian_dish": "Eggplant Tower (VEG, GF): breaded and fried eggplant, mozzarella, marinara, basil oil",
+          "price": "$17-$19",
+          "url": "https://www.irregardless.com/menu",
+          "notes": "901 W Morgan St, Raleigh NC 27603. Own menu: dinner Tuesday-Thursday 4:30-9 PM. Mujaddara $19 (VG, GFO), Eggplant Tower $17 (VEG, GF)."
         }
       ],
       "alternatives": [
         {
-          "leg": "Historic walking tour (outdoor)",
-          "good_weather": "Mostly cloudy and about 70°F at noon.",
-          "rain": "No rain is forecast. Indoor swap: Shaun the Sheep: The Beast of Mossy Bottom at The Cary Theater, 122 E. Chatham St. (12 PM, price unknown, event e1d235a2e087)."
-        },
-        {
-          "leg": "Cary Underground Market (indoor/patio at the brewery)",
-          "good_weather": "For an outdoor afternoon instead, go to Fall Farewell at Phillips Farms of Cary (1-6 PM, $22, event e064f78f2317); it is about 20 min from downtown, so skip the 4 PM concert if you do.",
-          "rain": "The market is at the brewery; the concert is indoors at the Cary Arts Center."
+          "leg": "Rolesville and Oakwood ceremonies (outdoor)",
+          "good_weather": "Mostly sunny and about 68°F; both are short outdoor ceremonies.",
+          "rain": "No rain is forecast. The Rolesville listing names the Community Center (514 Southtown Circle) as its rain location (event fbacf9fa6b48). For an indoor afternoon instead of Oakwood, the Gregg Museum at NC State is open 10 AM-5 PM, free (event e3b5e22c72a8)."
         }
       ],
       "practical_notes": [
-        "Clocks fall back one hour at 2 AM on Nov 1. All times here are standard time (EST).",
-        "Leave downtown Raleigh by 9:30 AM. Park once in downtown Cary: La Farm (220 W Chatham), the tour start (114 S Academy), Peck & Plume (301 S Academy), Bond Brothers (202 E Cedar) and the Cary Arts Center (101 Dry Ave) are all within about a mile.",
-        "Walking tour booking: https://www.trianglewalkingtours.com/book-online?category=207ada13-29de-4868-acc1-e68111265890",
-        "Udupi Cafe is on E Chatham St east of downtown; drive the last leg.",
-        "Drive back to Raleigh takes about 20-25 min."
+        "Leave downtown Raleigh by 8:45 AM for breakfast at Brigs (12338 Wake Union Church Rd) at about 9:15 AM, then drive to Rolesville by 10:40 AM.",
+        "Calvin Jones House tour registration: https://www.eventbrite.com/e/tours-of-the-calvin-jones-house-tickets-1990564958375",
+        "Allow roughly 30 min (estimate) from Wake Forest to Historic Oakwood Cemetery for the 2 PM ceremony.",
+        "Kings is downtown at 14 W. Martin St; Irregardless is on W Morgan St just west of downtown.",
+        "John R. Miller tickets: https://tickets.venuepilot.com/e/john-r-miller-2026-11-11-kings-raleigh-f0bc16"
       ],
       "event_ids": [
-        "d83b16575310",
-        "4da177413d78",
-        "d8255c21fc01"
-      ]
-    },
-    {
-      "id": "2026-W44-durham-election-day-candy-carver-astronomy-on-tap",
-      "date": "2026-11-03",
-      "anchor_city": "Durham",
-      "title": "Durham Election Day Tuesday: Candy Carver Installation, Kids Voting Celebration, Astronomy on Tap",
-      "theme": "A free weekday in downtown Durham on Election Day: a black-light art installation at the Durham Fringe Festival lounge, the Kids Voting celebration at Durham Central Park, and Astronomy on Tap science talks at Fullsteam",
-      "drive_time": "About 30 min from downtown Raleigh to downtown Durham via I-40 W / NC-147 (Durham Freeway); all stops are in or near downtown Durham",
-      "weather": {
-        "summary": "Partly Sunny",
-        "temp_f": 75
-      },
-      "cost_range": "All three events free; about $45-$60 per person for meals",
-      "overview": "A warm, partly sunny Election Day (high 75°F; standard time, sunset about 5:20 PM). Vote first if you are registered, then breakfast at Monuts on Ninth Street. Spend late morning at the Candy Carver black-light installation in the Fringe Festival lounge, lunch at Toast, and stop by the Kids Voting Election Day celebration at Durham Central Park. Dinner at Luna, then Astronomy on Tap talks and trivia at Fullsteam's American Tobacco Campus taproom.",
-      "schedule": {
-        "morning": [
-          {
-            "time": "10:30 AM",
-            "title": "Candy Carver, Find Your Glimmer",
-            "event_id": "3ba958520799",
-            "location": "Durham Fringe Festival Lounge, 113 Orange St, Durham, NC 27701",
-            "price": "Free",
-            "notes": "10 AM-10 PM. Immersive black-light art installation with affirmational text and interactive design. Info: https://durhamfringefestival.org/daily-schedule/ (site served a bot challenge to automated checks; open it in a browser to confirm the day's hours)."
-          }
-        ],
-        "afternoon": [
-          {
-            "time": "1:45 PM",
-            "title": "Kids Voting Event",
-            "event_id": "6bb7a3628cc9",
-            "location": "Durham Central Park - The Pavilion, 501 Foster Street, Durham, NC 27701",
-            "price": "Free",
-            "notes": "11 AM-4 PM. Kids Voting Durham Election Day Celebration with Durham 4-H and Juntos Durham. Info: https://durhamcentralpark.org/upcoming-event/kids-voting-event/ (site served a bot challenge to automated checks)."
-          }
-        ],
-        "evening": [
-          {
-            "time": "7:00 PM",
-            "title": "Astronomy on Tap at Fullsteam",
-            "event_id": "270e87e0ffcf",
-            "location": "Fullsteam Brewery (Fullsteam @ ATC), 320 Blackwell St, Suite 100, Durham, NC 27701",
-            "price": "Free",
-            "notes": "7-9:30 PM. Short talks by working astronomers plus trivia; always free (Fullsteam asks attendees to buy a drink or food). Info: https://www.fullsteam.ag/event/astronomy-on-tap-11/2026-11-03"
-          }
-        ]
-      },
-      "food": [
-        {
-          "slot": "breakfast",
-          "place": "Monuts",
-          "city": "Durham",
-          "vegetarian_dish": "Fall Hash (crispy smashed fingerling potatoes, marinated kale, lemon-garlic yogurt, two farm eggs, zhug, crispy za'atar chickpeas)",
-          "price": "$14",
-          "url": "https://www.monutsdonuts.com/menu",
-          "notes": "1002 Ninth Street, Durham NC 27705. Own site: full menu Tue-Fri 7 AM-3 PM. Fall 2026 menu PDF: Fall Hash $14 (smashed fingerling potatoes, marinated kale, lemon-garlic yogurt, two farm eggs, zhug, za'atar chickpeas); vegetarian by listed ingredients, not labeled. Vegan route: build-your-own bagel ($3) with Tofutti ($2) and avocado ($2) from the same menu; no item is labeled vegan."
-        },
-        {
-          "slot": "lunch",
-          "place": "Toast",
-          "city": "Durham",
-          "vegan_dish": "Portobello, Arugula, Roasted Tomato panino, made vegan on request (menu: 'vegetarian, can be vegan')",
-          "vegetarian_dish": "Portobello, Fontina, Arugula, Roasted Tomato panino (vegetarian)",
-          "price": "$11",
-          "url": "https://www.toast-fivepoints.com/menu",
-          "notes": "345 W. Main St., Durham NC 27701. Own site: Mon-Fri 11 AM-2:45 PM. Own menu: Portobello, Fontina, Arugula, Roasted Tomato panino $11 and Tuscan Kale, Ricotta Salata, Sweet & Hot Pickled Peppers panino $11, both '(vegetarian, can be vegan)'."
-        },
-        {
-          "slot": "dinner",
-          "place": "Luna Rotisserie and Taproom",
-          "city": "Durham",
-          "vegan_dish": "Chili Braised Jack Fruit (GF, V+)",
-          "vegetarian_dish": "Chili-lime Glazed Cauliflower (V): breaded and fried cauliflower, chili-lime glaze",
-          "price": "$11-$16",
-          "url": "https://lunarotisserie.com/s/Durham-Food-Spring-2026-4.pdf",
-          "notes": "112 W Main St, Durham NC 27701, about 10 min on foot from Fullsteam ATC. Own site: open seven days 11 AM-9 PM. Own menu (V = vegetarian, V+ = vegan): Chili Braised Jack Fruit (GF, V+) $16; Chili-lime Glazed Cauliflower (V) $11."
-        }
-      ],
-      "alternatives": [
-        {
-          "leg": "Kids Voting celebration at Durham Central Park (outdoor pavilion)",
-          "good_weather": "Partly sunny and about 75°F in the afternoon.",
-          "rain": "No rain is forecast. If plans change, spend more time at the indoor Candy Carver installation (open until 10 PM, event 3ba958520799)."
-        },
-        {
-          "leg": "Evening",
-          "good_weather": "Astronomy on Tap is indoors at Fullsteam ATC either way.",
-          "rain": "For live music instead: Maggie Koerner with Lydia Saint George at Stanczyks, 1007 W Main St (doors 7 PM, show 8 PM, all ages, $20-$25 in the event record; the ticket page showed $25.50; event 027e0e748fbe)."
-        }
-      ],
-      "practical_notes": [
-        "Nov 3 is Election Day; polls in North Carolina are open 6:30 AM-7:30 PM. Vote before leaving if you are registered.",
-        "Leave downtown Raleigh by 8 AM for breakfast on Ninth Street, then drive into downtown Durham (about 5 min) and park in a downtown deck for the rest of the day.",
-        "Downtown stops are walkable: Fringe lounge (113 Orange St), Toast (345 W Main), Durham Central Park (501 Foster St), Luna (112 W Main) and Fullsteam ATC (320 Blackwell St).",
-        "Astronomy on Tap details: https://www.fullsteam.ag/event/astronomy-on-tap-11/2026-11-03",
-        "Drive back to Raleigh takes about 30 min."
-      ],
-      "event_ids": [
-        "3ba958520799",
-        "6bb7a3628cc9",
-        "270e87e0ffcf"
+        "da172beec387",
+        "fbacf9fa6b48",
+        "1076c77120de",
+        "7b36ed510343",
+        "867179a41b04",
+        "e3b5e22c72a8"
       ]
     }
   ]
