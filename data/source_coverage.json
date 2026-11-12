@@ -1,6 +1,6 @@
 {
   "week": "2026-W46",
-  "generated_at": "2026-11-12T08:29:46-05:00",
+  "generated_at": "2026-11-12T08:36:54-05:00",
   "per_source": {
     "nc-museum-of-art": 10,
     "meymandi-concert-hall": 7,
@@ -27,7 +27,7 @@
     "duke-gardens": 6,
     "duke-athletics": 3,
     "triangle-on-the-cheap": 15,
-    "visit-raleigh": 495,
+    "visit-raleigh": 494,
     "discover-durham": 127,
     "visit-chapel-hill": 157,
     "thingstodo919": 0,
@@ -121,5 +121,5 @@
   ],
   "off_registry_sources": 63,
   "off_registry_events": 2537,
-  "total_events": 3801
+  "total_events": 3800
 }
